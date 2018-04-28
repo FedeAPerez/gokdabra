@@ -31,7 +31,7 @@ class ConversationContainer extends Component {
 
     render() {
         return (
-            <section>
+            <section className="messages-container">
             {
                 this.state.messageList.length && this.state.messageList.map(
                     (element, key) => {

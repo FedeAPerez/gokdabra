@@ -3,8 +3,8 @@
 // solution would be more appropriate.
 const BusinessAPI = {
     business: [
-      { number: 1, business_name: "Doers", color: "red" },
-      { number: 2, business_name: "KDABRA", color: "green" }
+      { number: 1, business_name: "Doers", color: "#34495e" },
+      { number: 2, business_name: "KDABRA", color: "#e74c3c" }
     ],
     all: function() { return this.business},
     getBusinessByName: function(business_name_param) {

@@ -13,10 +13,12 @@ class BusinessHeaderContainer extends Component {
 
     render() {
         return (
-            <section style = {
+            <section 
+                    className="business-header-container"
+                    style = {
                     {backgroundColor : this.state.businessOb.color}
                 }>
-                <p>{ this.state.businessOb.business_name }</p>
+                <h2>{ this.state.businessOb.business_name }</h2>
             </section>
         );
     }
