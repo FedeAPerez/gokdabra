@@ -58,10 +58,16 @@ height: 100%;
 }
 .message {
     display: inline-block;
-    border-radius: 8px;
+    border-radius: 16px;
     -webkit-box-shadow: 0 1px 3px 0 rgba(0,0,0,.5);
     box-shadow: 0 1px 3px 0 rgba(0,0,0,.5);
     font-family: Rubik,sans-serif;
     font-weight: 400;
     margin: 0.5em;
+}
+
+.message-handler-container {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
 }

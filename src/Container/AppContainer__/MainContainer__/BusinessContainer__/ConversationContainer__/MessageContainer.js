@@ -3,7 +3,7 @@
  */
 import React, { Component } from 'react';
 
-class MessageComponent extends Component {
+class MessageContainer extends Component {
     getMessageHtml() {
 		return { __html: this.props.messageOb.message }
 	}
@@ -24,4 +24,4 @@ class MessageComponent extends Component {
     }
 }
 
-export default MessageComponent;
+export default MessageContainer;
