@@ -14,7 +14,7 @@ class MessageContainer extends Component {
 
     render() {
         return(
-            <article className={"message"}>
+            <article className={ this.props.messageOb.sender =="user" ? "message-right" : "message"}>
                 <section className={ this.props.messageOb.class_used }>
 				    { this.props.messageOb.message_title && <p dangerouslySetInnerHTML={ this.getMessageTitleHTML() }></p> }
                     { this.props.messageOb.message && <p dangerouslySetInnerHTML={ this.getMessageHtml() }></p> }
