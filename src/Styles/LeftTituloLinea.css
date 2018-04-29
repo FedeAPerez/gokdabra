@@ -38,3 +38,10 @@
     margin: 0 auto;
     margin-top: 1em;
 }
+
+@media only screen and (max-width: 768px) 
+{
+    .left-titulo-linea p h3 {
+        margin-top: 0.5em;
+    }
+}
