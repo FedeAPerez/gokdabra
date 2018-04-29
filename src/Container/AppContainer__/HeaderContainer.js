@@ -1,3 +1,8 @@
+// HeaderContainer.js
+// Sin Uso
+/*
+ Código librerías de externos
+ */
 import React, { Component } from 'react';
 
 class HeaderContainer extends Component {

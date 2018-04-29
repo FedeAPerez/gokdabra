@@ -1,6 +1,13 @@
+// AppContainer.js
+/*
+ Código librerías de externos
+ */
 import React, { Component } from 'react';
 
-import HeaderContainer from './AppContainer__/HeaderContainer';
+/*
+ Código Propio y librerías desarrolladas por KDABRA
+ */
+//import HeaderContainer from './AppContainer__/HeaderContainer';
 import MainContainer from './AppContainer__/MainContainer';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 

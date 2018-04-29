@@ -1,3 +1,4 @@
+// ConversationContainer.js
 /*
  Código librerías de externos
  */
@@ -9,6 +10,12 @@ import React, { Component } from 'react';
 import MessagesAPI from '../../../../API/MessagesAPI';
 import MessageContainer from './ConversationContainer__/MessageContainer';
 import MessageHandlerContainer from './ConversationContainer__/MessageHandlerContainer';
+const __SENDER_USER = "user";
+const __SENDER_USER_CLASS = "right";
+const __CLEAR_CLASS = "clear";
+const __MESSAGE_HANDLER_CONTAINER_CLASS = "message-handler-container";
+const __BASE_CONTAINER_CLASS = "base-container";
+
 
 class ConversationContainer extends Component {
     constructor(props) {
@@ -28,8 +35,8 @@ class ConversationContainer extends Component {
     onAnswerSubmit = (text) => {        
         var userMessage = {};
         userMessage.message = text;
-        userMessage.class_used = "right";
-        userMessage.sender = "user";
+        userMessage.class_used = __SENDER_USER_CLASS;
+        userMessage.sender = __SENDER_USER;
         this.state.messageList.push(userMessage);
         this.setState(this.state);
 
@@ -41,25 +48,34 @@ class ConversationContainer extends Component {
 
     render() {
         return (
-            <section>
+            <section className= { __BASE_CONTAINER_CLASS }>
                 <section className="messages-container">
                 {
                     this.state.messageList.length && this.state.messageList.map(
                         (element, key) => {
                             return (
-                                <article className="messages-article-container" key={"messages-article-container-"+key}>
-                                    <MessageContainer messageOb = {element} key={"msg-component-" + key} />
+                                <article 
+                                    className="messages-article-container"
+                                    key= { "messages-article-container-" + key }
+                                >
+                                    <MessageContainer 
+                                        messageOb = {element} 
+                                        key={"msg-component-" + key} 
+                                    />
                                 </article>
                             );
                         }
                     )
                 }
-                <div className="clear">
-								</div>
+                <div 
+                    className= { __CLEAR_CLASS }>
+				</div>
                 </section>
-                <section className="message-handler-container">
+                <section 
+                    className= { __MESSAGE_HANDLER_CONTAINER_CLASS }>
                     <MessageHandlerContainer 
-                        onAnswerSubmit = {this.onAnswerSubmit} />
+                        onAnswerSubmit = {this.onAnswerSubmit} 
+                    />
                 </section>
             </section>
         );

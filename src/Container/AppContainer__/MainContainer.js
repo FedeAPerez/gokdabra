@@ -1,7 +1,13 @@
+// MainContainer.js
+/*
+ Código librerías de externos
+ */
 import React, { Component } from "react";
 import { Switch, Route } from 'react-router-dom'
 
-
+/*
+ Código Propio y librerías desarrolladas por KDABRA
+ */
 import HomeContainer from './MainContainer__/HomeContainer';
 import BusinessContainer from './MainContainer__/BusinessContainer';
 import ErrorContainer from './MainContainer__/ErrorContainer';

@@ -1,7 +1,10 @@
+// InputSender.js
 /*
 Código librerías de externos
 */
 import React, { Component } from 'react';
+const __SUBMIT_SVG_ROUTE = "/content/images/kdabra-submit.svg";
+const __SUBMIT_BUTTON_CLASS = "message-submit-button";
 
 class InputSender extends Component {
     constructor(props) {
@@ -10,10 +13,11 @@ class InputSender extends Component {
    render() {
        
        return(
-           <span className="message-submit-button">
-               <img src="/content/images/kdabra-submit.svg"
-                    onClick = {this.props.onClick}
-                    />
+           <span className= { __SUBMIT_BUTTON_CLASS }>
+               <img 
+                    src= { __SUBMIT_SVG_ROUTE }
+                    onClick= {this.props.onClick}
+                />
             </span>
        );
    }

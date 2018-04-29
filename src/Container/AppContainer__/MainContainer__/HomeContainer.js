@@ -1,3 +1,7 @@
+// HomeContainer.js
+/*
+ Código librerías de externos
+ */
 import React, { Component } from 'react';
 
 class HomeContainer extends Component {

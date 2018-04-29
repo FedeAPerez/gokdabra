@@ -1,7 +1,9 @@
+// BusinessHeaderContainer.js
 /*
  Código librerías de externos
  */
 import React, { Component } from 'react';
+const __BUSINESS_HEADER_CLASS = "business-header-container";
 
 class BusinessHeaderContainer extends Component {
     constructor(props) {
@@ -14,7 +16,7 @@ class BusinessHeaderContainer extends Component {
     render() {
         return (
             <section 
-                    className="business-header-container"
+                    className= { __BUSINESS_HEADER_CLASS }
                     style = {
                     {backgroundColor : this.state.businessOb.color}
                 }>

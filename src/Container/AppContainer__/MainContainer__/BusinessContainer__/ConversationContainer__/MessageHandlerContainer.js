@@ -1,9 +1,15 @@
+// MessageHandlerContainer.js
 /*
  Código librerías de externos
  */
 import React, { Component } from 'react';
 import TextField from 'material-ui/TextField';
+
+/*
+ Código Propio y librerías desarrolladas por KDABRA
+ */
 import InputSender from './InputSender';
+const __MESSAGE_HINT = "Escribí un mensaje...";
 
 class MessageHandlerContainer extends Component {
     constructor(props) {
@@ -40,7 +46,7 @@ class MessageHandlerContainer extends Component {
         return(
             <div>
                 <TextField 
-                    hintText="Escribí un mensaje..."
+                    hintText= {__MESSAGE_HINT}
                     style= {inputStyle}
                     onChange={ this.handleChange }
                     value={this.state.value}
