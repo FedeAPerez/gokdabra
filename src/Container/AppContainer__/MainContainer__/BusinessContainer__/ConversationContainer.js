@@ -13,8 +13,12 @@ import MessageHandlerContainer from './ConversationContainer__/MessageHandlerCon
 const __SENDER_USER = "user";
 const __SENDER_USER_CLASS = "right";
 const __CLEAR_CLASS = "clear";
-const __MESSAGE_HANDLER_CONTAINER_CLASS = "message-handler-container";
 const __BASE_CONTAINER_CLASS = "base-container";
+const __MESSAGES_CONTAINER_CLASS = "messages-container";
+const __MESSAGE_ARTICLE_CONTAINER_CLASS = "messages-article-container";
+const __MESSAGE_ARTICLE_CONTAINER_ID = "messages-article-container-";
+const __MESSAGE_CONTAINER_ID = "msg-component-";
+const __MESSAGE_HANDLER_CONTAINER_CLASS = "message-handler-container";
 
 
 class ConversationContainer extends Component {
@@ -49,18 +53,18 @@ class ConversationContainer extends Component {
     render() {
         return (
             <section className= { __BASE_CONTAINER_CLASS }>
-                <section className="messages-container">
+                <section className= { __MESSAGES_CONTAINER_CLASS }>
                 {
                     this.state.messageList.length && this.state.messageList.map(
                         (element, key) => {
                             return (
                                 <article 
-                                    className="messages-article-container"
-                                    key= { "messages-article-container-" + key }
+                                    className= { __MESSAGE_ARTICLE_CONTAINER_CLASS }
+                                    key= { __MESSAGE_ARTICLE_CONTAINER_ID + key }
                                 >
                                     <MessageContainer 
                                         messageOb = {element} 
-                                        key={"msg-component-" + key} 
+                                        key= { __MESSAGE_CONTAINER_ID + key} 
                                     />
                                 </article>
                             );

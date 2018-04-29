@@ -17,7 +17,7 @@ class BusinessContainer extends Component {
         
         const businessPojo = BusinessAPI.getBusinessByName(props.match.params.business);
         this.state = {
-            'businessOb':businessPojo
+            'businessOb' : businessPojo
         };
     }
 
