@@ -1,4 +1,4 @@
-// InputSender.js
+// input-sender-component.js
 /*
 Código librerías de externos
 */
@@ -6,7 +6,7 @@ import React, { Component } from 'react';
 const __SUBMIT_SVG_ROUTE = "/content/images/kdabra-submit.svg";
 const __SUBMIT_BUTTON_CLASS = "message-submit-button";
 
-class InputSender extends Component {
+class InputSenderComponent extends Component {
     constructor(props) {
         super(props);
     }
@@ -23,4 +23,4 @@ class InputSender extends Component {
    }
 }
 
-export default InputSender;
+export default InputSenderComponent;

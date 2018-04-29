@@ -8,6 +8,7 @@ import './Styles/Messages.css';
 import './Styles/Left.css';
 import './Styles/LeftTituloLinea.css';
 import './Styles/Right.css';
+import './Styles/Menu.css';
 
 ReactDom.render((
     <BrowserRouter>

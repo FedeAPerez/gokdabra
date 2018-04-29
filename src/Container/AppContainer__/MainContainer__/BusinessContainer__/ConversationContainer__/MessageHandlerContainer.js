@@ -8,7 +8,8 @@ import TextField from 'material-ui/TextField';
 /*
  Código Propio y librerías desarrolladas por KDABRA
  */
-import InputSender from './InputSender';
+import InputSenderComponent from '../../../../../Component/input-sender-component';
+import MenuContainer from './MenuContainer';
 const __MESSAGE_HINT = "Escribí un mensaje...";
 
 class MessageHandlerContainer extends Component {
@@ -45,13 +46,14 @@ class MessageHandlerContainer extends Component {
 
         return(
             <div>
+                <MenuContainer />
                 <TextField 
                     hintText= {__MESSAGE_HINT}
                     style= {inputStyle}
                     onChange={ this.handleChange }
                     value={this.state.value}
                     /> 
-                <InputSender 
+                <InputSenderComponent 
                     onClick={this.handleSubmit.bind(this)}/>
             </div>
         );
