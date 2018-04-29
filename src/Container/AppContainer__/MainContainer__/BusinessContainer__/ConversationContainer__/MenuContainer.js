@@ -17,16 +17,20 @@ class MenuContainer extends Component {
         this.state = {
             options : [
                 {
-                    'label' : 'Horarios de atención'
+                    'label' : 'Horarios de atención',
+                    'icon_src' : '/content/images/hours.svg'
                 },
                 {
-                    'label' : 'At. al Cliente'
+                    'label' : 'At. al Cliente',
+                    'icon_src' : '/content/images/chat.svg'
                 },
                 {
-                    'label' : 'Lugar de Trabajo'
+                    'label' : 'Lugar de Trabajo',
+                    'icon_src' : '/content/images/map.svg'
                 },
                 {
-                    'label' : 'Contacto'
+                    'label' : 'Contacto',
+                    'icon_src' : '/content/images/contact.svg'
                 },
             ]
         }
@@ -39,13 +43,19 @@ class MenuContainer extends Component {
                     this.state.options.map(
                         (element, key) => {
                             return (
-                                <span className= { __MENU_ITEM_CLASS }
+                                <div className= { __MENU_ITEM_CLASS }
                                     key= { __MENU_ITEM_ID + key }
                                 >
-                                {
-                                    element.label
-                                }
-                                </span>
+                                    <img
+                                        src= { element.icon_src }
+                                        key= { __MENU_ITEM_ID + key + '-img'}
+                                    />
+                                    <span>
+                                    {
+                                        element.label
+                                    }
+                                    </span>
+                                </div>
                             );
                         }
                     )
