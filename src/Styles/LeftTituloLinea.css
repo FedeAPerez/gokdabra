@@ -47,9 +47,6 @@
 }
 @media only screen and (max-width: 768px) 
 {
-    .left-titulo-linea {
-        padding: 0.5em;
-    }
     .left-titulo-linea p h3 {
         margin-top: 0.5em;
     }
