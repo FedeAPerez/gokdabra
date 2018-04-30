@@ -24,6 +24,18 @@ const MessagesAPI = {
                 }
             },
             {
+                'id_message':'msg_use_input',
+                'message_title':'',
+                'business_name':'default',
+                'message':'<h3>Dentro de poco vas a poder interactuar con los negocios de la misma forma que con tus amigos. <b>¡Estamos trabajando en esto!</b></h3>',
+                'class_used':'left-linea',
+                'intent':'text_input',
+                'scroll':'true',
+                'response_expected':{
+                    'type':'text_input'
+                }
+            },
+            {
                 'id_message':'msg_onboarding_kdabra',
                 'message_title':'<h1>En pocos pasos te voy a enseñar lo necesario de <span class="kdabra-orange">KDABRA</span>.</h1>',
                 'business_name':'default',

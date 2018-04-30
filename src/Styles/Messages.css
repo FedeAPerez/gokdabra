@@ -46,3 +46,7 @@
 .message-div {
     position: relative;
 }
+
+.focus-div {
+    height: 5vh;
+}
