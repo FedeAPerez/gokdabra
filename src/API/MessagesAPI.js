@@ -32,6 +32,18 @@ const MessagesAPI = {
                 }
             },
             {
+                'id_message':'msg_opening_hours',
+                'business_name':'doers',
+                'message_title':'',
+                'message':'<h3>Dentro de poco te vas a poder comunicar con los representantes de las marcas y locales que más te gustan. <b>¡Estamos trabajando en esto!</b></h3>',
+                'class_used':'left-linea',
+                'scroll':'true',
+                'intent':'talk_agent',
+                'response_expected':{
+                    'type':'text_input'
+                }
+            },
+            {
                 'id_message':'msg_map',
                 'business_name':'doers',
                 'message_title':'<h1>¡Hola!</h1>',
