@@ -25,7 +25,7 @@ const MessagesAPI = {
             },
             {
                 'id_message':'msg_onboarding_kdabra',
-                'message_title':'<h1>¡Perfecto! En pocos pasos te voy a enseñar lo que tenés que conocer de KDABRA</h1>',
+                'message_title':'<h1>¡Perfecto! En pocos pasos te voy a enseñar lo necesario de KDABRA.</h1>',
                 'business_name':'default',
                 'message':'<h3>Podés ingresar tanto mensajes en texto o usar los atajos que damos mediante botones.</h3>',
                 'class_used':'left-titulo-linea',
