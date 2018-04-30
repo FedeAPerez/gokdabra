@@ -6,8 +6,9 @@ export class IntentService {
     static getIntentFromText(text) {
         var serviceBody = {};
         serviceBody.message = text;
-        axios.post(intentServiceUrl,
-            serviceBody
+        axios.post(
+            intentServiceUrl,
+            JSON.stringify(serviceBody)
             )
           .then(function (response) {
             console.log(response);

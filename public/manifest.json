@@ -1,0 +1,12 @@
+{
+  "short_name": "GoKDABRA",
+  "name": "Comunicate usando KDABRA",
+  "icons": [
+    {
+      "src": "kdabra-icon-second.png",
+      "type": "image/png",
+      "sizes": "200x200"
+    }
+  ],
+  "start_url": "index.html"
+}
