@@ -3,10 +3,14 @@
 }
 
 .message-handler-container {
-    position: fixed;
     display: block;
+    clear: both;
+    /* position: fixed; */
     width: 100%;
+    overflow: hidden;
     bottom: 0;
+    -ms-flex: none;
+    flex: none;
 }
 
 .message-submit-button {
@@ -19,5 +23,13 @@
 .messages-container {
     clear:both;
     overflow: hidden;
-    padding-bottom: 100px;
+    
+    flex: 1 0 auto;
+}
+.message-div {
+    position: relative;
+}
+
+.view-container {
+    height: 100vh;
 }

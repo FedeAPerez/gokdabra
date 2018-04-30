@@ -20,6 +20,16 @@ height: 100%;
     clear:both;
 }
 
+.base-container {
+    width: 100%;
+    /* height: -webkit-fill-available; */
+    height: 94vh;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
 @media only screen and (max-width: 768px) 
 {
     .base-container {
@@ -30,8 +40,5 @@ height: 100%;
 {
     .base-container {
         width: 768px;
-        position: relative;
-        margin: 0 auto;
-        height: 90vh;
     }
 }

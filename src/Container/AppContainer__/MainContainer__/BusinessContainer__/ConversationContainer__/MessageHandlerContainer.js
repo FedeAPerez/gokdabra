@@ -12,6 +12,8 @@ import InputSenderComponent from '../../../../../Component/input-sender-componen
 import MenuContainer from './MenuContainer';
 const __MESSAGE_HINT = "Escribí un mensaje...";
 
+const __MESSAGE_DIV_CLASS = "message-div";
+
 class MessageHandlerContainer extends Component {
     constructor(props) {
         super(props);
@@ -51,7 +53,7 @@ class MessageHandlerContainer extends Component {
         }
 
         return(
-            <div>
+            <div className= { __MESSAGE_DIV_CLASS }>
                 <MenuContainer 
                     submitMessageMenuItem = { this.handleSubmitMenuItem.bind(this) }
                 />

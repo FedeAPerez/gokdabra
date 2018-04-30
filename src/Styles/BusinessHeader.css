@@ -2,6 +2,9 @@
     display: block;
     clear: both;
     overflow: hidden;
+    height: 6vh;
+    -ms-flex: none;
+    flex: none;
 }
 
 .business-header-container h2{

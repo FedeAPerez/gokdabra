@@ -28,7 +28,7 @@ class BusinessContainer extends Component {
         }
 
         return(
-            <section>
+            <section className="view-container">
                 <BusinessHeaderContainer 
                     __BUSINESS_INFORMATION__= { this.state.businessOb }
                     />
