@@ -52,26 +52,43 @@ class ConversationContainer extends Component {
             IntentService.getIntentFromText(text)
                 .then(
                     (response) => {
-                    console.log(response);
+                        if(response.data.intent) {
+                            mIntent = MessagesAPI.getMessageByIntent(this.props.__BUSINESS_INFORMATION__.business_name , response.data.intent);
+                        }
+                        else {
+                            mIntent = MessagesAPI.getMessageByIntent(this.props.__BUSINESS_INFORMATION__.business_name , input_value);
+                        }
+                        if(mIntent.scroll=='true')
+                        {
+                            this.state.scroll_item = mIntent.id_message;
+                        }
+                        this.state.messageList.push(mIntent);
+                        this.setState(this.state);
                     }
                 )
                 .catch(
                     (err) => {
-                        console.log(err);
+                        mIntent = MessagesAPI.getMessageByIntent(this.props.__BUSINESS_INFORMATION__.business_name , input_value);
+                        
+                        if(mIntent.scroll=='true')
+                        {
+                            this.state.scroll_item = mIntent.id_message;
+                        }
+                        this.state.messageList.push(mIntent);
+                        this.setState(this.state);
                     }
                 )
-
-            mIntent = MessagesAPI.getMessageByIntent(this.props.__BUSINESS_INFORMATION__.business_name , input_value);
         }
         else {
             mIntent = MessagesAPI.getMessageByIntent(this.props.__BUSINESS_INFORMATION__.business_name , input_value);
+            if(mIntent.scroll=='true')
+            {
+                this.state.scroll_item = mIntent.id_message;
+            }
+            this.state.messageList.push(mIntent);
+            this.setState(this.state);
         }
-        if(mIntent.scroll=='true')
-		{
-			this.state.scroll_item = mIntent.id_message;
-		}
-        this.state.messageList.push(mIntent);
-        this.setState(this.state);
+
     }
 
     componentDidMount() {
