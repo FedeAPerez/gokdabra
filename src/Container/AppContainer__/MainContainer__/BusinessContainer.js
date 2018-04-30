@@ -30,10 +30,12 @@ class BusinessContainer extends Component {
         return(
             <section>
                 <BusinessHeaderContainer 
-                    __BUSINESS_INFORMATION__={ this.state.businessOb }
+                    __BUSINESS_INFORMATION__= { this.state.businessOb }
                     />
 
-                <ConversationContainer />
+                <ConversationContainer 
+                    __BUSINESS_INFORMATION__= { this.state.businessOb }
+                    />
             </section>
         );
     }

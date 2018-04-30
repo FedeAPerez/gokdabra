@@ -8,8 +8,8 @@ const BusinessAPI = {
     ],
     all: function() { return this.business},
     getBusinessByName: function(business_name_param) {
-      const isPlayer = p => p.business_name.toLowerCase() === business_name_param.toLowerCase();
-      return this.business.find(isPlayer);
+      const isBusiness = p => p.business_name.toLowerCase() === business_name_param.toLowerCase();
+      return this.business.find(isBusiness);
     }
   }
   

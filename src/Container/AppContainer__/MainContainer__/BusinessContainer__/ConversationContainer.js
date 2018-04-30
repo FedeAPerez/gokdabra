@@ -43,7 +43,9 @@ class ConversationContainer extends Component {
         userMessage.sender = __SENDER_USER;
         this.state.messageList.push(userMessage);
         this.setState(this.state);
-
+        var mIntent = MessagesAPI.getMessageByIntent(this.props.__BUSINESS_INFORMATION__.business_name , input_value);
+        this.state.messageList.push(mIntent);
+        this.setState(this.state);
     }
 
     componentDidMount() {
@@ -78,7 +80,7 @@ class ConversationContainer extends Component {
                 <section 
                     className= { __MESSAGE_HANDLER_CONTAINER_CLASS }>
                     <MessageHandlerContainer 
-                        onAnswerSubmit = {this.onAnswerSubmit} 
+                        onAnswerSubmit = { this.onAnswerSubmit.bind(this) } 
                     />
                 </section>
             </section>
