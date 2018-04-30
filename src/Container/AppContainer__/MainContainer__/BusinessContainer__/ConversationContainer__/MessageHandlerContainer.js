@@ -44,6 +44,13 @@ class MessageHandlerContainer extends Component {
             }
         );
 	};
+    scrollToHandler() {
+        if(this['scroll_to_hanlder']) {
+            this['scroll_to_hanlder'].scrollIntoView( {
+                behavior: 'smooth'
+            });
+        }
+    }
 
     render() {
         const inputStyle = {
@@ -53,7 +60,10 @@ class MessageHandlerContainer extends Component {
         }
 
         return(
-            <div className= { __MESSAGE_DIV_CLASS }>
+            <div 
+                className= { __MESSAGE_DIV_CLASS }
+                ref={"scroll_to_hanlder"}
+                >
                 <MenuContainer 
                     submitMessageMenuItem = { this.handleSubmitMenuItem.bind(this) }
                 />
@@ -62,6 +72,7 @@ class MessageHandlerContainer extends Component {
                     style= {inputStyle}
                     onChange={ this.handleChange }
                     value={this.state.value}
+                    onFocus={ this.scrollToHandler }
                     /> 
                 <InputSenderComponent 
                     onClick={this.handleSubmit.bind(this)}/>
