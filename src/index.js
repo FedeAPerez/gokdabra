@@ -7,6 +7,7 @@ import './Styles/BusinessHeader.css';
 import './Styles/Messages.css';
 import './Styles/Left.css';
 import './Styles/LeftTituloLinea.css';
+import './Styles/LeftLinea.css';
 import './Styles/Right.css';
 import './Styles/Menu.css';
 

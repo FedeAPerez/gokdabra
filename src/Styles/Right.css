@@ -8,6 +8,7 @@
     background-color: #b2bec3;
     margin: 0.5em;
     float: right;
+    max-width: 70%;
 }
 
 .right {

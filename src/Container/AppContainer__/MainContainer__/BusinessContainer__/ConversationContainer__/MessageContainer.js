@@ -9,6 +9,7 @@ import React, { Component } from 'react';
  */
 const __SENDER_USER = "user";
 const __MESSAGE_RIGHT_CLASS = "message-right";
+const __MESSAGE_RIGHT_TIP_CLASS = "message-right-tip";
 const __MESSAGE_CLASS = "message";
 
 class MessageContainer extends Component {
@@ -19,6 +20,17 @@ class MessageContainer extends Component {
 	getMessageTitleHTML() {
 		return { __html: this.props.messageOb.message_title }
 	}
+
+    getMessageTip() {
+        return { __html: this.props.messageOb.message_tip.message }
+    }
+
+    messageTipHandler() {
+        if(this.props.MessageTipSubmit) {
+            this.props.MessageTipSubmit(this.props.messageOb.message_tip.intent, this.props.messageOb.message_tip.message);
+        }
+    }
+
 
     render() {
         return(
@@ -44,6 +56,15 @@ class MessageContainer extends Component {
                         this.props.messageOb.message && 
                         <p 
                             dangerouslySetInnerHTML={ this.getMessageHtml() }
+                        >
+                        </p>
+                    }
+                    { 
+                        this.props.messageOb.message_tip && 
+                        <p
+                            className= { __MESSAGE_RIGHT_TIP_CLASS }
+                            dangerouslySetInnerHTML={ this.getMessageTip() }
+                            onClick= { this.messageTipHandler.bind(this) }
                         >
                         </p>
                     }

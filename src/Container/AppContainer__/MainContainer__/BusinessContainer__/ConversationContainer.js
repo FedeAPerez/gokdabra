@@ -77,8 +77,9 @@ class ConversationContainer extends Component {
                                     key= { __MESSAGE_ARTICLE_CONTAINER_ID + key }
                                 >
                                     <MessageContainer 
-                                        messageOb = {element} 
-                                        key= { __MESSAGE_CONTAINER_ID + key} 
+                                        messageOb= { element } 
+                                        key= { __MESSAGE_CONTAINER_ID + key}
+                                        MessageTipSubmit= { this.onAnswerSubmit }
                                     />
                                     <div 
                                         id= {'shouldScroll$' + element.id_message}

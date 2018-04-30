@@ -22,9 +22,9 @@ const MessagesAPI = {
             {
                 'id_message':'msg_opening_hours',
                 'business_name':'doers',
-                'message_title':'<h1>¡Hola!</h1>',
-                'message':'<h3>De 9 a 18..</h3>',
-                'class_used':'left-titulo-linea',
+                'message_title':'',
+                'message':'<h3>Nuestro horario es de 9 a 18 hs de lunes a viernes. Sábados y domingos de 10 a 20hs.</h3>',
+                'class_used':'left-linea',
                 'scroll':'true',
                 'intent':'opening_hours',
                 'response_expected':{
@@ -46,9 +46,13 @@ const MessagesAPI = {
             {
                 'id_message':'msg_contact',
                 'business_name':'doers',
-                'message_title':'<h1>¡Hola!</h1>',
-                'message':'<h3>Llama al 22333.</h3>',
-                'class_used':'left-titulo-linea',
+                'message_title':'',
+                'message':'<h3>Podés llamar en nuestro horario de atención al <b>11-1111-2222</b></h3>',
+                'message_tip': {
+                    'message':'Ver el horario de atención.',
+                    'intent':'opening_hours'
+                },
+                'class_used':'left-linea',
                 'scroll':'true',
                 'intent':'contact',
                 'response_expected':{

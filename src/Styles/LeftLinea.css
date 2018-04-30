@@ -1,0 +1,51 @@
+.left-linea {
+    text-align: left;
+    font-family: 'Rubik';
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #000;
+    float: left;
+    padding: 1em;
+}
+.left-linea p {
+    margin: 0 auto;
+}
+.left-linea p h1{
+    font-family: 'Rubik';
+    font-size: 24px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    text-align: left;
+    margin: 0 auto;
+}
+.left-linea p h3{
+    font-family: 'Rubik';
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    text-align: left;
+    margin: 0 auto;
+    margin-top: 1em;
+}
+.left-linea p h3 b{
+    font-weight: 500;
+    color: rgb(52, 73, 94);
+}
+
+.left-linea .message-right-tip{
+    font-weight: 500;
+    font-size: 0.8em;
+    margin: 16px 0em 0em 0em;
+    color: #f16334;
+    cursor: pointer;
+}
