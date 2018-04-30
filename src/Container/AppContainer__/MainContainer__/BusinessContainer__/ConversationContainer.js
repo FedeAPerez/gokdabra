@@ -50,10 +50,15 @@ class ConversationContainer extends Component {
         var mIntent;
         if(input_value == "text_input") {
             IntentService.getIntentFromText(text)
-            .then((response) => {
-                console.log(response);
-                }
-            )
+                .then(
+                    (response) => {
+                    console.log(response);
+                    }
+                )
+                .catch(
+                    (err) => console.log(err);
+                )
+                
             mIntent = MessagesAPI.getMessageByIntent(this.props.__BUSINESS_INFORMATION__.business_name , input_value);
         }
         else {
