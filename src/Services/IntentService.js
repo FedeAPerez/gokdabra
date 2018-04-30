@@ -1,3 +1,4 @@
+import axios from 'axios';
 const intentServiceUrl = 'http://back.gokdabra.com/intent';
 
 export class IntentService {
@@ -5,12 +6,16 @@ export class IntentService {
     static getIntentFromText(text) {
         var serviceBody = {};
         serviceBody.message = text;
-        return fetch(intentServiceUrl, {
-            'method': 'post',
-            'headers': { 'Content-Type': 'application/json' },
-            'body': serviceBody
-        })
-            .then((response) => response.json());
+        axios.post(intentServiceUrl,
+            serviceBody
+            )
+          .then(function (response) {
+            console.log(response);
+            return response;
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
     }
 }
 
