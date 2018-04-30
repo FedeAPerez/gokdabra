@@ -56,9 +56,11 @@ class ConversationContainer extends Component {
                     }
                 )
                 .catch(
-                    (err) => console.log(err);
+                    (err) => {
+                        console.log(err);
+                    }
                 )
-                
+
             mIntent = MessagesAPI.getMessageByIntent(this.props.__BUSINESS_INFORMATION__.business_name , input_value);
         }
         else {
