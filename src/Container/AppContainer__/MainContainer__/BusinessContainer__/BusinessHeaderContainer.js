@@ -18,9 +18,12 @@ class BusinessHeaderContainer extends Component {
             <section 
                     className= { __BUSINESS_HEADER_CLASS }
                     style = {
-                    {backgroundColor : this.state.businessOb.color}
-                }>
-                <h2>{ this.state.businessOb.business_name }</h2>
+                        { 
+                            backgroundColor : this.state.businessOb.color
+                        }
+                    }
+            >
+                <h2>{ this.state.businessOb.business_name.toUpperCase() + " - " + this.state.businessOb.version }</h2>
             </section>
         );
     }
