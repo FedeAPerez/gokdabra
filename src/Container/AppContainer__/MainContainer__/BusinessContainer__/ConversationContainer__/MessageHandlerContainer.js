@@ -46,7 +46,6 @@ class MessageHandlerContainer extends Component {
 	};
     scrollToHandler() {
         if(this['scroll_to_hanlder']) {
-            console.log("deberpia ir al input de texto");
             this['scroll_to_hanlder'].scrollIntoView( {
                 behavior: 'smooth'
             });
@@ -63,9 +62,6 @@ class MessageHandlerContainer extends Component {
         return(
             <div 
                 className= { __MESSAGE_DIV_CLASS }
-                ref = {(ref) => {
-                    this['scroll_to_hanlder'] = ref
-                    }}
                 >
                 <MenuContainer 
                     submitMessageMenuItem = { this.handleSubmitMenuItem.bind(this) }
@@ -79,6 +75,12 @@ class MessageHandlerContainer extends Component {
                     /> 
                 <InputSenderComponent 
                     onClick={this.handleSubmit.bind(this)}/>
+                <div
+                    ref = {(ref) => {
+                    this['scroll_to_hanlder'] = ref
+                    }}
+                >
+                </div>
             </div>
         );
     }
