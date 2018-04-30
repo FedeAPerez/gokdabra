@@ -16,16 +16,15 @@
     line-height: 1.5;
     letter-spacing: normal;
     color: #fff;
-    margin: 1em auto;
     text-align: center;
 }
 
 @media only screen and (max-width: 768px) 
 {
     .business-header-container {
-        height: auto;
+        height: fit-content;
     }
-    
+
     .business-header-container h2 {
         
         vertical-align: middle;
