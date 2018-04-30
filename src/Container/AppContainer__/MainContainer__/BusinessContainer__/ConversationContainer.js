@@ -27,7 +27,8 @@ class ConversationContainer extends Component {
         this.state = {
             'messageList' : [
 
-			]
+            ],
+            'scroll_item' : 1
         }
     }
     getNextMessage() {
@@ -44,6 +45,10 @@ class ConversationContainer extends Component {
         this.state.messageList.push(userMessage);
         this.setState(this.state);
         var mIntent = MessagesAPI.getMessageByIntent(this.props.__BUSINESS_INFORMATION__.business_name , input_value);
+        if(mIntent.scroll=='true')
+		{
+			this.state.scroll_item = mIntent.id_message;
+		}
         this.state.messageList.push(mIntent);
         this.setState(this.state);
     }
@@ -52,6 +57,13 @@ class ConversationContainer extends Component {
 		this.getNextMessage();
     }
 
+    componentDidUpdate() {
+		if(this[`shouldScroll$`+this.state.scroll_item]) {
+			this[`shouldScroll$`+this.state.scroll_item].scrollIntoView( {
+				behavior: 'smooth'
+			});
+		}
+    }
     render() {
         return (
             <section className= { __BASE_CONTAINER_CLASS }>
@@ -68,6 +80,12 @@ class ConversationContainer extends Component {
                                         messageOb = {element} 
                                         key= { __MESSAGE_CONTAINER_ID + key} 
                                     />
+                                    <div 
+                                        id= {'shouldScroll$' + element.id_message}
+                                        ref = {(ref) => {
+                                                this['shouldScroll$' + element.id_message] = ref
+                                            }}>
+                                    </div>
                                 </article>
                             );
                         }

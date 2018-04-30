@@ -14,6 +14,7 @@ const MessagesAPI = {
                 'message':'<h3>Escribí tu mensaje o selecciona alguna de las opciones para comenzar.</h3>',
                 'class_used':'left-titulo-linea',
                 'intent':'welcome',
+                'scroll':'true',
                 'response_expected':{
                     'type':'text_input'
                 }
@@ -24,6 +25,7 @@ const MessagesAPI = {
                 'message_title':'<h1>¡Hola!</h1>',
                 'message':'<h3>De 9 a 18..</h3>',
                 'class_used':'left-titulo-linea',
+                'scroll':'true',
                 'intent':'opening_hours',
                 'response_expected':{
                     'type':'text_input'
@@ -35,6 +37,7 @@ const MessagesAPI = {
                 'message_title':'<h1>¡Hola!</h1>',
                 'message':'<h3>Estamos en tesei.</h3>',
                 'class_used':'left-titulo-linea',
+                'scroll':'true',
                 'intent':'map',
                 'response_expected':{
                     'type':'text_input'
@@ -46,6 +49,7 @@ const MessagesAPI = {
                 'message_title':'<h1>¡Hola!</h1>',
                 'message':'<h3>Llama al 22333.</h3>',
                 'class_used':'left-titulo-linea',
+                'scroll':'true',
                 'intent':'contact',
                 'response_expected':{
                     'type':'text_input'
