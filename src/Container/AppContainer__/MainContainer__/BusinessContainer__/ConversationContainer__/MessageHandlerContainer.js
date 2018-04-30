@@ -22,9 +22,15 @@ class MessageHandlerContainer extends Component {
     
     handleSubmit() {
         if(this.props.onAnswerSubmit) {
-            this.props.onAnswerSubmit(this.state.value);
+            this.props.onAnswerSubmit("text_input", this.state.value);
             this.state.value = '';
             this.setState(this.state);
+        }
+    }
+
+    handleSubmitMenuItem(value, showMessage) {
+        if(this.props.onAnswerSubmit) {
+            this.props.onAnswerSubmit(value, showMessage);
         }
     }
 
@@ -46,7 +52,9 @@ class MessageHandlerContainer extends Component {
 
         return(
             <div>
-                <MenuContainer />
+                <MenuContainer 
+                    submitMessageMenuItem = { this.handleSubmitMenuItem.bind(this) }
+                />
                 <TextField 
                     hintText= {__MESSAGE_HINT}
                     style= {inputStyle}

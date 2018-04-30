@@ -17,23 +17,47 @@ class MenuContainer extends Component {
         this.state = {
             options : [
                 {
+                    'id_menu_item':'opening_hours',
                     'label' : 'Horarios de atención',
                     'icon_src' : '/content/images/hours.svg'
                 },
                 {
+                    'id_menu_item':'talk_agent',
                     'label' : 'At. al Cliente',
                     'icon_src' : '/content/images/chat.svg'
                 },
                 {
+                    'id_menu_item':'map',
                     'label' : 'Lugar de Trabajo',
                     'icon_src' : '/content/images/map.svg'
                 },
                 {
+                    'id_menu_item':'contact',
                     'label' : 'Contacto',
                     'icon_src' : '/content/images/contact.svg'
                 },
             ]
         }
+    }
+
+    handleClick(e, value) {
+        e.preventDefault();
+        var showMessage;
+        switch(value) {
+            case "map":
+                showMessage = "¿En qué zonas trabajás?"
+                break;
+            case "talk_agent":
+                showMessage = "Me gustaría hablar con un representante."
+                break;
+            case "opening_hours":
+                showMessage = "¿En qué horarios trabajás?"
+                break;
+            case "contact":
+                showMessage = "¿Me podrías pasar un número de contacto?"
+                break;
+        }
+        this.props.submitMessageMenuItem(value, showMessage);
     }
 
     render() {
@@ -45,6 +69,8 @@ class MenuContainer extends Component {
                             return (
                                 <div className= { __MENU_ITEM_CLASS }
                                     key= { __MENU_ITEM_ID + key }
+                                    onClick= { (e) => this.handleClick(e, element.id_menu_item) }
+                                    value= { element.id_menu_item }
                                 >
                                     <img
                                         src= { element.icon_src }

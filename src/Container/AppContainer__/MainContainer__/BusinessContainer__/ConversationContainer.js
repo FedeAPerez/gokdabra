@@ -36,7 +36,7 @@ class ConversationContainer extends Component {
 		this.setState(this.state);
 	}
     
-    onAnswerSubmit = (text) => {        
+    onAnswerSubmit = (input_value, text) => {        
         var userMessage = {};
         userMessage.message = text;
         userMessage.class_used = __SENDER_USER_CLASS;
