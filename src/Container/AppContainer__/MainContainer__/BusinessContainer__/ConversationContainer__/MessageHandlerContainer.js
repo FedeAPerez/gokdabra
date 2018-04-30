@@ -46,9 +46,11 @@ class MessageHandlerContainer extends Component {
 	};
     scrollToHandler() {
         if(this['scroll_to_hanlder']) {
-            this['scroll_to_hanlder'].scrollIntoView( true, {
-                behavior: 'smooth'
-            });
+            setTimeout(function() {
+                this['scroll_to_hanlder'].scrollIntoView( false, {
+                    behavior: 'smooth'
+                });
+            }.bind(this), 1000);
         }
     }
 
