@@ -10,10 +10,26 @@ const MessagesAPI = {
             {
                 'id_message':'msg_welcome',
                 'message_title':'<h1>¡Hola!</h1>',
-                'business_name':'pepe',
+                'business_name':'default',
                 'message':'<h3>Escribí tu mensaje o selecciona alguna de las opciones para comenzar.</h3>',
+                'message_tip':{
+                    'message': 'Quiero aprender a usar KDABRA',
+                    'intent':'onboarding_kdabra'
+                },
                 'class_used':'left-titulo-linea',
                 'intent':'welcome',
+                'scroll':'true',
+                'response_expected':{
+                    'type':'text_input'
+                }
+            },
+            {
+                'id_message':'msg_onboarding_kdabra',
+                'message_title':'<h1>¡Perfecto! En pocos pasos te voy a enseñar lo que tenés que conocer de KDABRA</h1>',
+                'business_name':'default',
+                'message':'<h3>Podés ingresar tanto mensajes en texto o usar los atajos que damos mediante botones.</h3>',
+                'class_used':'left-titulo-linea',
+                'intent':'onboarding_kdabra',
                 'scroll':'true',
                 'response_expected':{
                     'type':'text_input'
@@ -32,8 +48,8 @@ const MessagesAPI = {
                 }
             },
             {
-                'id_message':'msg_opening_hours',
-                'business_name':'doers',
+                'id_message':'msg_talk_agent',
+                'business_name':'default',
                 'message_title':'',
                 'message':'<h3>Dentro de poco te vas a poder comunicar con los representantes de las marcas y locales que más te gustan. <b>¡Estamos trabajando en esto!</b></h3>',
                 'class_used':'left-linea',
@@ -85,7 +101,11 @@ const MessagesAPI = {
         const isIntent = p => p.intent === id_intent;
         var messageSelected = [];
         messageSelected = messagesForBusiness.filter(isIntent);
-        
+
+        if(messageSelected.length == 0) {
+            return this.getMessageByIntent('default', id_intent);
+        }
+
         return messageSelected[0];
     }
   }

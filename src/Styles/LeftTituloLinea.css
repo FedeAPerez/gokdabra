@@ -38,7 +38,13 @@
     margin: 0 auto;
     margin-top: 1em;
 }
-
+.left-titulo-linea .message-right-tip{
+    font-weight: 500;
+    font-size: 0.8em;
+    margin: 16px 0em 0em 0em;
+    color: #f16334;
+    cursor: pointer;
+}
 @media only screen and (max-width: 768px) 
 {
     .left-titulo-linea {
