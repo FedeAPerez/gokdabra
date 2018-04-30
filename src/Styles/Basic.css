@@ -22,12 +22,13 @@ height: 100%;
 
 .base-container {
     width: 100%;
-    /* height: -webkit-fill-available; */
     height: 94vh;
     display: -ms-flexbox;
     display: flex;
+    margin: 0 auto;
     -ms-flex-direction: column;
     flex-direction: column;
+
 }
 
 @media only screen and (max-width: 768px) 

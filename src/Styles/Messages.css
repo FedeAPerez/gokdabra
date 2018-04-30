@@ -5,9 +5,9 @@
 .message-handler-container {
     display: block;
     clear: both;
-    /* position: fixed; */
     width: 100%;
     overflow: hidden;
+    margin: 0 auto;
     bottom: 0;
     -ms-flex: none;
     flex: none;
@@ -20,11 +20,24 @@
     z-index: 10;
     cursor: pointer;
 }
+@media only screen and (max-width: 768px) 
+{
+
+}
+@media only screen and (min-width: 768px) 
+{
+    .message-submit-button { 
+        right: 1em;
+    }
+}
 .messages-container {
-    clear:both;
+    clear: both;
     overflow: hidden;
-    
+    -ms-flex: 1 0 auto;
     flex: 1 0 auto;
+    margin: 0 auto;
+    width: 100%;
+    display: block;
 }
 .message-div {
     position: relative;
