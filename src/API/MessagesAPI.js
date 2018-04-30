@@ -87,7 +87,7 @@ const MessagesAPI = {
                 'id_message':'msg_contact',
                 'business_name':'doers',
                 'message_title':'',
-                'message':'<h3>Podés llamar en nuestro horario de atención al <b>11-1111-2222</b></h3>',
+                'message':'<h3>Podés llamar en nuestro horario de atención <br />al <b>11-1111-2222</b></h3>',
                 'message_tip': {
                     'message':'Ver el horario de atención.',
                     'intent':'opening_hours'
@@ -106,6 +106,8 @@ const MessagesAPI = {
       return this.messages[0];
     },
     getMessageByIntent: function(id_business, id_intent) {
+        // Obteng el intent en caso de que sea un intento de text-input
+        
         const isBusiness = p => p.business_name.toLowerCase() === id_business.toLowerCase();
         var messagesForBusiness = [];
         messagesForBusiness = this.messages.filter(isBusiness);

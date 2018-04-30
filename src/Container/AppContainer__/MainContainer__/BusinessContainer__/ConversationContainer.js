@@ -8,6 +8,7 @@ import React, { Component } from 'react';
  Código Propio y librerías desarrolladas por KDABRA
  */
 import MessagesAPI from '../../../../API/MessagesAPI';
+import IntentService from '../../../../Services/IntentService';
 import MessageContainer from './ConversationContainer__/MessageContainer';
 import MessageHandlerContainer from './ConversationContainer__/MessageHandlerContainer';
 const __SENDER_USER = "user";
@@ -44,7 +45,20 @@ class ConversationContainer extends Component {
         userMessage.sender = __SENDER_USER;
         this.state.messageList.push(userMessage);
         this.setState(this.state);
-        var mIntent = MessagesAPI.getMessageByIntent(this.props.__BUSINESS_INFORMATION__.business_name , input_value);
+
+
+        var mIntent;
+        if(input_value == "text_input") {
+            IntentService.getIntentFromText(text)
+            .then((response) => {
+                console.log(response);
+                }
+            )
+            mIntent = MessagesAPI.getMessageByIntent(this.props.__BUSINESS_INFORMATION__.business_name , input_value);
+        }
+        else {
+            mIntent = MessagesAPI.getMessageByIntent(this.props.__BUSINESS_INFORMATION__.business_name , input_value);
+        }
         if(mIntent.scroll=='true')
 		{
 			this.state.scroll_item = mIntent.id_message;
