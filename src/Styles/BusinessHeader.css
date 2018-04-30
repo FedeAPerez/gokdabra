@@ -24,6 +24,7 @@
 {
     .business-header-container h2 {
         
-    margin: 0.5em auto;
+        vertical-align: middle;
+        margin: 0;
     }
 }
