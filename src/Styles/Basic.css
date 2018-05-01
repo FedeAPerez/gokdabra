@@ -54,7 +54,12 @@ height: 100%;
         width: 768px;
     }
 }
-
+@media only screen and (min-width: 1280px) 
+{
+    .base-container {
+        width: 1280px;
+    }
+}
 .kdabra-orange {
     color: #f16334;
 }
