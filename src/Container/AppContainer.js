@@ -20,6 +20,8 @@ class AppContainer extends Component {
         setTimeout(function() {
             var element = document.getElementsByClassName('loader');
             element[0].style.display = 'none';
+            var elementRoot = document.getElementById('root');
+            elementRoot.style.display = 'block';
         }.bind(this)
         , 1000);
     }
