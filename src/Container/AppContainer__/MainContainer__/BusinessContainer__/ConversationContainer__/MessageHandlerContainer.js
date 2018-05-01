@@ -56,9 +56,11 @@ class MessageHandlerContainer extends Component {
 
     render() {
         const inputStyle = {
-            width: '95%',
+            width: '90%',
             margin: '0em auto',
-            display: 'block'
+            display: 'inline-block',
+            marginRight: '0em',
+            marginLeft: '1em'
         }
 
         return(
