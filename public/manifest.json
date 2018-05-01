@@ -3,9 +3,9 @@
   "name": "Comunicate usando KDABRA",
   "icons": [
     {
-      "src": "kdabra-icon-second.png",
+      "src": "kdabra-icon-third.png",
       "type": "image/png",
-      "sizes": "200x200"
+      "sizes": "212x212"
     }
   ],
   "start_url": "index.html"
