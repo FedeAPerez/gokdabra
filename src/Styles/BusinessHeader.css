@@ -23,6 +23,7 @@
 {
     .business-header-container {
         height: fit-content;
+        padding: 1em;
     }
 
     .business-header-container h2 {
