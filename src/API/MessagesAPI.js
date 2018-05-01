@@ -60,6 +60,18 @@ const MessagesAPI = {
                 }
             },
             {
+                'id_message':'msg_know_payments',
+                'business_name':'doers',
+                'message_title':'',
+                'message':'<h3>Podés pagar con efectivo o Visa y MasterCard usando MercadoPago!</h3>',
+                'class_used':'left-linea',
+                'scroll':'true',
+                'intent':'payments',
+                'response_expected':{
+                    'type':'text_input'
+                }
+            },
+            {
                 'id_message':'msg_talk_agent',
                 'business_name':'default',
                 'message_title':'',

@@ -19,22 +19,32 @@ class MenuContainer extends Component {
                 {
                     'id_menu_item':'opening_hours',
                     'label' : 'Horarios de atención',
-                    'icon_src' : '/content/images/hours.svg'
+                    'icon_src' : '/content/images/hours.svg',
+                    'show_message' : '¿En qué horarios trabajás?'
                 },
                 {
                     'id_menu_item':'talk_agent',
                     'label' : 'At. al Cliente',
-                    'icon_src' : '/content/images/chat.svg'
+                    'icon_src' : '/content/images/chat.svg',
+                    'show_message' : 'Me gustaría hablar con un representante.'
                 },
                 {
                     'id_menu_item':'map',
                     'label' : 'Lugar de Trabajo',
-                    'icon_src' : '/content/images/map.svg'
+                    'icon_src' : '/content/images/map.svg',
+                    'show_message' : '¿En qué zonas trabajás?'
                 },
                 {
                     'id_menu_item':'contact',
                     'label' : 'Contacto',
-                    'icon_src' : '/content/images/contact.svg'
+                    'icon_src' : '/content/images/contact.svg',
+                    'show_message' : '¿Me podrías pasar un número de contacto?'
+                },
+                {
+                    'id_menu_item':'payments',
+                    'label' : 'Medios de Pago',
+                    'icon_src' : '/content/images/payments.svg',
+                    'show_message' : '¿Cuáles son las formas de pago?'
                 },
             ]
         }
@@ -42,22 +52,10 @@ class MenuContainer extends Component {
 
     handleClick(e, value) {
         e.preventDefault();
-        var showMessage;
-        switch(value) {
-            case "map":
-                showMessage = "¿En qué zonas trabajás?"
-                break;
-            case "talk_agent":
-                showMessage = "Me gustaría hablar con un representante."
-                break;
-            case "opening_hours":
-                showMessage = "¿En qué horarios trabajás?"
-                break;
-            case "contact":
-                showMessage = "¿Me podrías pasar un número de contacto?"
-                break;
-        }
-        this.props.submitMessageMenuItem(value, showMessage);
+        var element;
+        const isElement = p => p.id_menu_item === value;
+        element = this.state.options.find(isElement);
+        this.props.submitMessageMenuItem(value, element.show_message);
     }
 
     render() {
