@@ -60,7 +60,11 @@ class MessageHandlerContainer extends Component {
             margin: '0em auto',
             display: 'inline-block',
             marginRight: '0em',
-            marginLeft: '1em'
+            marginLeft: '1em',
+            backgroundColor: 'white',
+            borderRadius: '1em',
+            borderTopRightRadius: '0em',
+            borderBottomRightRadius: '0em'
         }
 
         return(

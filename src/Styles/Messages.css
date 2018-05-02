@@ -10,8 +10,10 @@
     margin: 0 auto;
     bottom: 0;
     -ms-flex: none;
+    border-radius: 1em;
     position:relative;
     flex: none;
+    background-color: #dfdfdf;
 }
 
 .message-submit-button {
@@ -21,6 +23,12 @@
     margin-left: 0.5em;
     z-index: 10;
     cursor: pointer;
+    background-color: white;
+    border-radius: 1em;
+    padding: 0.7em;
+    vertical-align: middle;
+    margin-bottom: 0.25em;
+    text-align: center;
 }
 @media only screen and (max-width: 768px) 
 {
@@ -28,11 +36,22 @@
 
      margin-bottom: 100px;
     }
+    .message-handler-container {
+
+    border-radius: 0em;
+    }
+    .message-submit-button {         
+        margin-left: 0em;
+        border-top-left-radius: 0em;
+        border-bottom-left-radius: 0em;
+    }
 }
 @media only screen and (min-width: 768px) 
 {
     .message-submit-button { 
         right: 1em;
+
+        margin-left: 2em;
     }
 }
 .messages-container {
