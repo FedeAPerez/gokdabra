@@ -86,9 +86,13 @@ const MessagesAPI = {
             {
                 'id_message':'msg_map',
                 'business_name':'doers',
-                'message_title':'<h1>¡Hola!</h1>',
-                'message':'<h3>Estamos en tesei.</h3>',
-                'class_used':'left-titulo-linea',
+                'message_title':'',
+                'message':'<h3>¡No tenemos fronteras! &#x1F5FA Podés contactarte desde cualquier punto del país y vamos a interactuar con vos.</h3>',
+                'class_used':'left-linea',
+                'message_tip': {
+                    'message':'Ver información de contacto.',
+                    'intent':'contact'
+                },
                 'scroll':'true',
                 'intent':'map',
                 'response_expected':{
