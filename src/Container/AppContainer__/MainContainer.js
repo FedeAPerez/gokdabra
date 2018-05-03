@@ -15,7 +15,7 @@ import ErrorContainer from './MainContainer__/ErrorContainer';
 class MainContainer extends Component {
     render() {
         return (
-            <Switch>
+            <Switch className="section-switch">
                 <Route path='/404' component={ErrorContainer} />
                 <Route exact path='/' component={HomeContainer} />
                 <Route path='/:business' component={BusinessContainer} />
