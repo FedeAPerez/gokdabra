@@ -105,7 +105,8 @@ const MessagesAPI = {
                 'class_used':'left-linea',
                 'message_tip': {
                     'message':'Ver información de contacto.',
-                    'intent':'contact'
+                    'intent':'contact',
+                    'should_dissapear':'true'
                 },
                 'scroll':'true',
                 'intent':'map',
