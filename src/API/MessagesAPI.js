@@ -9,12 +9,13 @@ const MessagesAPI = {
     messages: [
             {
                 'id_message':'msg_welcome',
-                'message_title':'<h1>¡Hola!</h1>',
+                'message_title':'<h1>¡Hola! ¿Cómo estás?</h1>',
                 'business_name':'default',
                 'message':'<h3>Escribí tu mensaje o selecciona alguna de las opciones para comenzar.</h3>',
                 'message_tip':{
-                    'message': 'Quiero aprender a usar KDABRA',
-                    'intent':'onboarding_kdabra'
+                    'message': '¿Es tu primera vez usando KDABRA? Hacé click &#x1F601',
+                    'intent':'onboarding_kdabra',
+                    'should_dissapear':'true'
                 },
                 'class_used':'left-titulo-linea',
                 'intent':'welcome',
@@ -37,12 +38,25 @@ const MessagesAPI = {
             },
             {
                 'id_message':'msg_onboarding_kdabra',
-                'message_title':'<h1>En pocos pasos te voy a enseñar lo necesario de <span class="kdabra-orange">KDABRA</span>.</h1>',
+                'message':"<span class='kdabra-orange'>KDABRA</span> es la herramienta que viene a cambiar la comunicación entre las marcas que amas y vos. &#x1F60D</h1>",
                 'business_name':'default',
-                'message':'<h3>Podés ingresar tanto mensajes en texto o usar los atajos que damos mediante botones.</h3>',
-                'class_used':'left-titulo-linea',
+                'message_title':'',
+                'next_message':'msg_onboarding_kdabra_2',
+                'class_used':'left-linea',
                 'intent':'onboarding_kdabra',
                 'scroll':'true',
+                'response_expected':{
+                    'type':'text_input'
+                }
+            },
+            {
+                'id_message':'msg_onboarding_kdabra_2',
+                'message':"Podés interactuar de la forma que lo hacés con tus amigos y familiares. Mediante texto y con una experiencia superadora.",
+                'business_name':'default',
+                'message_title':'',
+                'class_used':'left-linea',
+                'intent':'onboarding_kdabra_2',
+                'scroll':'false',
                 'response_expected':{
                     'type':'text_input'
                 }
@@ -106,7 +120,8 @@ const MessagesAPI = {
                 'message':'<h3>Podés llamar en nuestro horario de atención <br />al <b>11-1111-2222</b></h3>',
                 'message_tip': {
                     'message':'Ver el horario de atención.',
-                    'intent':'opening_hours'
+                    'intent':'opening_hours',
+                    'should_dissapear':'true'
                 },
                 'class_used':'left-linea',
                 'scroll':'true',
@@ -118,8 +133,12 @@ const MessagesAPI = {
         
     ],
     all: function() { return this.business},
-    getMessage: function(business_name_param) {
+    getFirstMessage: function(business_name_param) {
       return this.messages[0];
+    },
+    getMessageById: function(id_message) {
+        const isMessage = p => p.id_message == id_message;
+        return this.messages.find(isMessage);
     },
     getMessageByIntent: function(id_business, id_intent) {
         // Obteng el intent en caso de que sea un intento de text-input

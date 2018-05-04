@@ -21,7 +21,6 @@ const __MESSAGE_ARTICLE_CONTAINER_ID = "messages-article-container-";
 const __MESSAGE_CONTAINER_ID = "msg-component-";
 const __MESSAGE_HANDLER_CONTAINER_CLASS = "message-handler-container";
 
-
 class ConversationContainer extends Component {
     constructor(props) {
         super(props);
@@ -32,10 +31,10 @@ class ConversationContainer extends Component {
             'scroll_item' : 1
         }
     }
-    getNextMessage() {
-        var m = MessagesAPI.getMessage();
+    getFirstMessage() {
+        var m = MessagesAPI.getFirstMessage();
 		this.state.messageList.push(m);
-		this.setState(this.state);
+        this.setState(this.state);
 	}
     
     onAnswerSubmit = (input_value, text) => {        
@@ -45,7 +44,6 @@ class ConversationContainer extends Component {
         userMessage.sender = __SENDER_USER;
         this.state.messageList.push(userMessage);
         this.setState(this.state);
-
 
         var mIntent;
         if(input_value == "text_input") {
@@ -88,11 +86,19 @@ class ConversationContainer extends Component {
             this.state.messageList.push(mIntent);
             this.setState(this.state);
         }
+        // doy mensaje después de x tiempo
+        setTimeout(function() {
+            if(mIntent.next_message != '') {
+                var mNext = MessagesAPI.getMessageById(mIntent.next_message);
+                this.state.messageList.push(mNext);
+                this.setState(this.state);
+            }
+        }.bind(this), 1000);
 
     }
 
     componentDidMount() {
-		this.getNextMessage();
+		this.getFirstMessage();
     }
 
     componentDidUpdate() {

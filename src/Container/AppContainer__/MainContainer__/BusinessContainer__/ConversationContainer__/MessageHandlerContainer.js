@@ -69,7 +69,7 @@ class MessageHandlerContainer extends Component {
 
         return(
             <section>
-            <div 
+                <div 
                 className= { __MESSAGE_DIV_CLASS }
                 >
                 <MenuContainer 
@@ -85,15 +85,15 @@ class MessageHandlerContainer extends Component {
                 <InputSenderComponent 
                     onClick={this.handleSubmit.bind(this)}/>
 
-            </div>
-            <div
+                </div>
+                <div
                     className="focus-div"
                     ref = {(ref) => {
                     this['scroll_to_hanlder'] = ref
                     }}
                 >
                 </div>
-                </section>
+            </section>
         );
     }
 }

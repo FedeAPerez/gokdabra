@@ -16,7 +16,7 @@
 }
 .left-titulo-linea p h1{
     font-family: 'Rubik';
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 500;
     font-style: normal;
     font-stretch: normal;
@@ -34,7 +34,7 @@
     line-height: 1.5;
     letter-spacing: normal;
     text-align: left;
-    color: #8d847f;
+    color: #34495e;
     margin: 0 auto;
     margin-top: 1em;
 }

@@ -13,6 +13,13 @@ const __MESSAGE_RIGHT_TIP_CLASS = "message-right-tip";
 const __MESSAGE_CLASS = "message";
 
 class MessageContainer extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            show_tip : true
+        }
+    }
+
     getMessageHtml() {
 		return { __html: this.props.messageOb.message }
 	}
@@ -28,6 +35,10 @@ class MessageContainer extends Component {
     messageTipHandler() {
         if(this.props.MessageTipSubmit) {
             this.props.MessageTipSubmit(this.props.messageOb.message_tip.intent, this.props.messageOb.message_tip.message);
+            if(this.props.messageOb.message_tip.should_dissapear == 'true') {
+                this.state.show_tip = false;
+                this.setState(this.state);
+            }
         }
     }
 
@@ -60,7 +71,7 @@ class MessageContainer extends Component {
                         </p>
                     }
                     { 
-                        this.props.messageOb.message_tip && 
+                        (this.props.messageOb.message_tip && this.state.show_tip) && 
                         <p
                             className= { __MESSAGE_RIGHT_TIP_CLASS }
                             dangerouslySetInnerHTML={ this.getMessageTip() }
