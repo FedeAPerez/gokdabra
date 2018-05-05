@@ -4,7 +4,8 @@
 const MessagesAPI = {
     business: [
       { number: 1, business_name: "Doers", color: "#34495e" },
-      { number: 2, business_name: "KDABRA", color: "#e74c3c" }
+      { number: 2, business_name: "KDABRA", color: "#e74c3c" },
+      { number: 3, business_name: "eColitas", color: "#2ecc71" }
     ],
     messages: [
             {
@@ -19,6 +20,22 @@ const MessagesAPI = {
                 },
                 'class_used':'left-titulo-linea',
                 'intent':'welcome',
+                'scroll':'true',
+                'response_expected':{
+                    'type':'text_input'
+                }
+            },
+            {
+                'id_message':'msg_thanks',
+                'message_title':'<h1>¡Gracias a vos!</h1>',
+                'business_name':'default',
+                'message':'<h3>También te quería comentar que al hablar por KDABRA te ahorraste 8 minutos de tu tiempo!</h3>',
+                'message_tip':{
+                    'message': '¡Compartir en las redes!',
+                    'intent':'share_kdabra'
+                },
+                'class_used':'left-titulo-linea',
+                'intent':'thanks',
                 'scroll':'true',
                 'response_expected':{
                     'type':'text_input'
@@ -74,10 +91,34 @@ const MessagesAPI = {
                 }
             },
             {
+                'id_message':'msg_opening_hours',
+                'business_name':'ecolitas',
+                'message_title':'',
+                'message':'<h3>Nuestro horario es de 9 a 18 hs de lunes a domingo.</h3>',
+                'class_used':'left-linea',
+                'scroll':'true',
+                'intent':'opening_hours',
+                'response_expected':{
+                    'type':'text_input'
+                }
+            },
+            {
                 'id_message':'msg_know_payments',
                 'business_name':'doers',
                 'message_title':'',
                 'message':'<h3>Podés pagar con efectivo o Visa y MasterCard usando MercadoPago!</h3>',
+                'class_used':'left-linea',
+                'scroll':'true',
+                'intent':'payments',
+                'response_expected':{
+                    'type':'text_input'
+                }
+            },
+            {
+                'id_message':'msg_know_payments',
+                'business_name':'ecolitas',
+                'message_title':'',
+                'message':'<h3>Podés pagar con efectivo o Visa y MasterCard usando MercadoPago! Sino mediante transferencia bancaria.</h3>',
                 'class_used':'left-linea',
                 'scroll':'true',
                 'intent':'payments',
@@ -115,10 +156,44 @@ const MessagesAPI = {
                 },
             },
             {
+                'id_message':'msg_map',
+                'business_name':'ecolitas',
+                'message_title':'',
+                'message':'<h3>Estamos en San Martín &#x1F5FA</h3>',
+                'class_used':'left-linea',
+                'message_tip': {
+                    'message':'Ver información de contacto.',
+                    'intent':'contact',
+                    'should_dissapear':'true'
+                },
+                'scroll':'true',
+                'intent':'map',
+                'response_expected':{
+                    'type':'text_input'
+                },
+            },
+            {
                 'id_message':'msg_contact',
                 'business_name':'doers',
                 'message_title':'',
                 'message':'<h3>Podés llamar en nuestro horario de atención <br />al <b>11-1111-2222</b></h3>',
+                'message_tip': {
+                    'message':'Ver el horario de atención.',
+                    'intent':'opening_hours',
+                    'should_dissapear':'true'
+                },
+                'class_used':'left-linea',
+                'scroll':'true',
+                'intent':'contact',
+                'response_expected':{
+                    'type':'text_input'
+                }
+            },
+            {
+                'id_message':'msg_contact',
+                'business_name':'ecolitas',
+                'message_title':'',
+                'message':'<h3>Podés enviar un WhatsApp <br />al <b>11-1111-2222</b></h3>',
                 'message_tip': {
                     'message':'Ver el horario de atención.',
                     'intent':'opening_hours',

@@ -31,6 +31,14 @@ class ConversationContainer extends Component {
             'scroll_item' : 1
         }
     }
+    addUserMessage(text) {
+        var userMessage = {};
+        userMessage.message = text;
+        userMessage.class_used = __SENDER_USER_CLASS;
+        userMessage.sender = __SENDER_USER;
+        this.state.messageList.push(userMessage);
+        this.setState(this.state);
+    }
     getFirstMessage() {
         var m = MessagesAPI.getFirstMessage();
 		this.state.messageList.push(m);
@@ -38,12 +46,7 @@ class ConversationContainer extends Component {
 	}
     
     onAnswerSubmit = (input_value, text) => {        
-        var userMessage = {};
-        userMessage.message = text;
-        userMessage.class_used = __SENDER_USER_CLASS;
-        userMessage.sender = __SENDER_USER;
-        this.state.messageList.push(userMessage);
-        this.setState(this.state);
+        this.addUserMessage(text);
 
         var mIntent;
         if(input_value == "text_input") {

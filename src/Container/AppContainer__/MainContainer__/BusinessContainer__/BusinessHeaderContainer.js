@@ -12,6 +12,9 @@ class BusinessHeaderContainer extends Component {
             'businessOb' : this.props.__BUSINESS_INFORMATION__
         }
     }
+    businessMoreVersion() {
+        return this.state.businessOb.version != '' ? this.state.businessOb.business_name.toUpperCase() + " - " + this.state.businessOb.version :this.state.businessOb.business_name.toUpperCase();
+    }
 
     render() {
         return (
@@ -23,7 +26,7 @@ class BusinessHeaderContainer extends Component {
                         }
                     }
             >
-                <h2>{ this.state.businessOb.business_name.toUpperCase() + " - " + this.state.businessOb.version }</h2>
+                <h2>{ this.businessMoreVersion() }</h2>
             </section>
         );
     }
