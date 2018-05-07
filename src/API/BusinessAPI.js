@@ -6,7 +6,9 @@ const BusinessAPI = {
     business: [
       { number: 1, business_name: "Doers", color: "#34495e", version : apiVersion},
       { number: 2, business_name: "KDABRA", color: "#e74c3c", version : apiVersion},
-      { number: 3, business_name: "eColitas", color: "#2ecc71", version: ''}
+      { number: 3, business_name: "eColitas", color: "#2ecc71", version: ''},
+
+      { number: 4, business_name: "fotocabina", color: "#2ecc71", version: ''}
     ],
     all: function() { return this.business},
     getBusinessByName: function(business_name_param) {

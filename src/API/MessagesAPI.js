@@ -5,7 +5,9 @@ const MessagesAPI = {
     business: [
       { number: 1, business_name: "Doers", color: "#34495e" },
       { number: 2, business_name: "KDABRA", color: "#e74c3c" },
-      { number: 3, business_name: "eColitas", color: "#2ecc71" }
+      { number: 3, business_name: "eColitas", color: "#2ecc71" },
+
+      { number: 4, business_name: "fotocabina", color: "#2ecc71" }
     ],
     messages: [
             {
@@ -68,7 +70,7 @@ const MessagesAPI = {
             },
             {
                 'id_message':'msg_onboarding_kdabra_2',
-                'message':"Podés interactuar de la forma que lo hacés con tus amigos y familiares. Mediante texto y con una experiencia superadora.",
+                'message':"Podés enviar mensajes como lo harías con tus familiares y amigos; recibiendo respuestas al instante.",
                 'business_name':'default',
                 'message_title':'',
                 'class_used':'left-linea',
@@ -82,7 +84,7 @@ const MessagesAPI = {
                 'id_message':'msg_opening_hours',
                 'business_name':'doers',
                 'message_title':'',
-                'message':'<h3>Nuestro horario es de 9 a 18 hs de lunes a viernes. Sábados y domingos de 10 a 20hs.</h3>',
+                'message':'<h3>Nuestro horario es de 9 a 18 hs de lunes a viernes. Sábados y domingos de 10 a 20hs. &#x231A</h3>',
                 'class_used':'left-linea',
                 'scroll':'true',
                 'intent':'opening_hours',
@@ -94,7 +96,19 @@ const MessagesAPI = {
                 'id_message':'msg_opening_hours',
                 'business_name':'ecolitas',
                 'message_title':'',
-                'message':'<h3>Nuestro horario es de 9 a 18 hs de lunes a domingo.</h3>',
+                'message':'<h3>Nuestro horario es de 9 a 18 hs de lunes a domingo. &#x231A</h3>',
+                'class_used':'left-linea',
+                'scroll':'true',
+                'intent':'opening_hours',
+                'response_expected':{
+                    'type':'text_input'
+                }
+            },
+            {
+                'id_message':'msg_opening_hours',
+                'business_name':'fotocabina',
+                'message_title':'',
+                'message':'<h3>Operamos durante todo el día, y los fines de semana hacemos horario nocturno de 10pm a 2am.  &#x231A</h3>',
                 'class_used':'left-linea',
                 'scroll':'true',
                 'intent':'opening_hours',
@@ -119,6 +133,18 @@ const MessagesAPI = {
                 'business_name':'ecolitas',
                 'message_title':'',
                 'message':'<h3>Podés pagar con efectivo o Visa y MasterCard usando MercadoPago! Sino mediante transferencia bancaria.</h3>',
+                'class_used':'left-linea',
+                'scroll':'true',
+                'intent':'payments',
+                'response_expected':{
+                    'type':'text_input'
+                }
+            },
+            {
+                'id_message':'msg_know_payments',
+                'business_name':'fotocabina',
+                'message_title':'',
+                'message':'<h3>Podés pagar con efectivo o Visa y MasterCard usando MercadoPago!</h3>',
                 'class_used':'left-linea',
                 'scroll':'true',
                 'intent':'payments',
@@ -173,6 +199,24 @@ const MessagesAPI = {
                 },
             },
             {
+                'id_message':'msg_map',
+                'business_name':'fotocabina',
+                'message_title':'',
+                'message':'<h3>¡Somos de Morón, pero damos servicio desde Capital a Luján! &#x1F5FA</h3>',
+                'class_used':'left-linea',
+                'message_tip': {
+                    'message':'Ver información de contacto.',
+                    'intent':'contact',
+                    'should_dissapear':'true'
+                },
+                'scroll':'true',
+                'intent':'map',
+                'response_expected':{
+                    'type':'text_input'
+                },
+            },
+
+            {
                 'id_message':'msg_contact',
                 'business_name':'doers',
                 'message_title':'',
@@ -194,6 +238,23 @@ const MessagesAPI = {
                 'business_name':'ecolitas',
                 'message_title':'',
                 'message':'<h3>Podés enviar un WhatsApp <br />al <b>11-1111-2222</b></h3>',
+                'message_tip': {
+                    'message':'Ver el horario de atención.',
+                    'intent':'opening_hours',
+                    'should_dissapear':'true'
+                },
+                'class_used':'left-linea',
+                'scroll':'true',
+                'intent':'contact',
+                'response_expected':{
+                    'type':'text_input'
+                }
+            },
+            {
+                'id_message':'msg_contact',
+                'business_name':'fotocabina',
+                'message_title':'',
+                'message':'<h3>Podés enviar un WhatsApp <br />al <b>11-3454-8720</b></h3>',
                 'message_tip': {
                     'message':'Ver el horario de atención.',
                     'intent':'opening_hours',

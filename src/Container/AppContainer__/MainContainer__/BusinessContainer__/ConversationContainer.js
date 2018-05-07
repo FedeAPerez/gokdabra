@@ -89,6 +89,7 @@ class ConversationContainer extends Component {
             this.state.messageList.push(mIntent);
             this.setState(this.state);
         }
+        
         // doy mensaje después de x tiempo
         setTimeout(function() {
             if(mIntent && mIntent.next_message && mIntent.next_message != '') {
