@@ -9,7 +9,7 @@ import React, { Component } from 'react';
  */
 const __SENDER_USER = "user";
 const __MESSAGE_RIGHT_CLASS = "message-right";
-const __MESSAGE_RIGHT_TIP_CLASS = "message-right-tip";
+const __MESSAGE_LEFT_TIP_CLASS = "message-left-tip";
 const __MESSAGE_CLASS = "message";
 
 class MessageContainer extends Component {
@@ -73,7 +73,7 @@ class MessageContainer extends Component {
                     { 
                         (this.props.messageOb.message_tip && this.state.show_tip) && 
                         <p
-                            className= { __MESSAGE_RIGHT_TIP_CLASS }
+                            className= { __MESSAGE_LEFT_TIP_CLASS }
                             dangerouslySetInnerHTML={ this.getMessageTip() }
                             onClick= { this.messageTipHandler.bind(this) }
                         >
