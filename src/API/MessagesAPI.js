@@ -6,8 +6,7 @@ const MessagesAPI = {
       { number: 1, business_name: "Doers", color: "#34495e" },
       { number: 2, business_name: "KDABRA", color: "#e74c3c" },
       { number: 3, business_name: "eColitas", color: "#2ecc71" },
-
-      { number: 4, business_name: "fotocabina", color: "#2ecc71" }
+        { number: 4, business_name: "fotoflasheventos", color: "#2ecc71" }
     ],
     messages: [
             {
@@ -111,7 +110,7 @@ const MessagesAPI = {
             },
             {
                 'id_message':'msg_opening_hours',
-                'business_name':'fotocabina',
+                'business_name':'fotoflasheventos',
                 'message_title':'',
                 'message':'<h3>Operamos durante todo el día, y los fines de semana hacemos horario nocturno de 10pm a 2am.  &#x231A</h3>',
                 'class_used':'left-linea',
@@ -147,7 +146,7 @@ const MessagesAPI = {
             },
             {
                 'id_message':'msg_know_payments',
-                'business_name':'fotocabina',
+                'business_name':'fotoflasheventos',
                 'message_title':'',
                 'message':'<h3>Podés pagar con efectivo o Visa y MasterCard usando MercadoPago!</h3>',
                 'class_used':'left-linea',
@@ -205,7 +204,7 @@ const MessagesAPI = {
             },
             {
                 'id_message':'msg_map',
-                'business_name':'fotocabina',
+                'business_name':'fotoflasheventos',
                 'message_title':'',
                 'message':'<h3>¡Somos de Morón, pero damos servicio desde Capital a Luján! &#x1F5FA</h3>',
                 'class_used':'left-linea',
@@ -257,7 +256,7 @@ const MessagesAPI = {
             },
             {
                 'id_message':'msg_contact',
-                'business_name':'fotocabina',
+                'business_name':'fotoflasheventos',
                 'message_title':'',
                 'message':'<h3>Podés enviar un WhatsApp <br />al <b>11-3454-8720</b></h3>',
                 'message_tip': {
