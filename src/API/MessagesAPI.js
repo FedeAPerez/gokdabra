@@ -96,8 +96,13 @@ const MessagesAPI = {
                 'id_message':'msg_opening_hours',
                 'business_name':'ecolitas',
                 'message_title':'',
-                'message':'<h3>Nuestro horario es de 9 a 18 hs de lunes a domingo. &#x231A</h3>',
+                'message':'<h3>No tenemos horario fijo, pero podés agendar una visita enviándonos un mensaje a nuestro teléfono de contacto. &#x231A</h3>',
                 'class_used':'left-linea',
+                'message_tip': {
+                    'message':'Ver información de contacto.',
+                    'intent':'contact',
+                    'should_dissapear':'true'
+                },
                 'scroll':'true',
                 'intent':'opening_hours',
                 'response_expected':{
@@ -237,7 +242,7 @@ const MessagesAPI = {
                 'id_message':'msg_contact',
                 'business_name':'ecolitas',
                 'message_title':'',
-                'message':'<h3>Podés enviar un WhatsApp <br />al <b>11-1111-2222</b></h3>',
+                'message':'<h3>Podés enviar un WhatsApp <br />al <b>11-5161-3672</b></h3>',
                 'message_tip': {
                     'message':'Ver el horario de atención.',
                     'intent':'opening_hours',
