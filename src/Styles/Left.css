@@ -1,5 +1,6 @@
 .message {
     border-radius: 16px;
+    border-bottom-left-radius: 4px;
     display: inline-block;
     -webkit-box-shadow: 0 1px 3px 0 rgba(0,0,0,.5);
     box-shadow: 0 1px 3px 0 rgba(0,0,0,.5);
