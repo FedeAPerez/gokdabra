@@ -11,6 +11,7 @@ const __SENDER_USER = "user";
 const __MESSAGE_RIGHT_CLASS = "message-right";
 const __MESSAGE_LEFT_TIP_CLASS = "message-left-tip";
 const __MESSAGE_CLASS = "message";
+const __MESSAGE_SEND_FOR_CLASS = "message-sended-for";
 
 class MessageContainer extends Component {
     constructor(props) {
@@ -69,6 +70,12 @@ class MessageContainer extends Component {
                             dangerouslySetInnerHTML={ this.getMessageHtml() }
                         >
                         </p>
+                    }
+                    {
+                            this.props.messageOb.sender != __SENDER_USER &&
+                            <span className= {  __MESSAGE_SEND_FOR_CLASS }>
+                            {"Enviado por " + this.props.messageOb.sender_show}
+                            </span>
                     }
                     { 
                         (this.props.messageOb.message_tip && this.state.show_tip) && 

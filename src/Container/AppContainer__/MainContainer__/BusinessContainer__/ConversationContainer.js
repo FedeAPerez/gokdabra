@@ -12,6 +12,8 @@ import IntentService from '../../../../Services/IntentService';
 import MessageContainer from './ConversationContainer__/MessageContainer';
 import MessageHandlerContainer from './ConversationContainer__/MessageHandlerContainer';
 const __SENDER_USER = "user";
+const __SENDER_KDABRA = "KDABRA";
+
 const __SENDER_USER_CLASS = "right";
 const __CLEAR_CLASS = "clear";
 const __BASE_CONTAINER_CLASS = "base-container";
