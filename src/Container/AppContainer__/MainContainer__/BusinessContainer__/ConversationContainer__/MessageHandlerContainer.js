@@ -62,9 +62,7 @@ class MessageHandlerContainer extends Component {
             marginRight: '0em',
             marginLeft: '1em',
             backgroundColor: 'white',
-            borderRadius: '1em',
-            borderTopRightRadius: '0em',
-            borderBottomRightRadius: '0em'
+            borderRadius: '1em'
         }
 
         return(
