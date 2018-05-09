@@ -92,13 +92,21 @@ class ConversationContainer extends Component {
         
         // doy mensaje después de x tiempo
         setTimeout(function() {
-            if(mIntent && mIntent.next_message && mIntent.next_message != '') {
-                var mNext = MessagesAPI.getMessageById(mIntent.next_message);
-                this.state.messageList.push(mNext);
-                this.setState(this.state);
-            }
+            this.getNextMessage(mIntent);
         }.bind(this), 1000);
 
+    }
+
+    getNextMessage(mIntent) {
+        if(mIntent && mIntent.next_message && mIntent.next_message != '') {
+            var mNext = MessagesAPI.getMessageById(mIntent.next_message);
+            this.state.messageList.push(mNext);
+            this.setState(this.state);
+            setTimeout(function() {
+
+                this.getNextMessage(mNext);
+            }.bind(this), 1000 );
+        }
     }
 
     componentDidMount() {

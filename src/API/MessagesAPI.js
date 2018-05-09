@@ -11,15 +11,15 @@ const MessagesAPI = {
     messages: [
             {
                 'id_message':'msg_welcome',
-                'message_title':'<h1>¡Hola! ¿Cómo estás?</h1>',
+                'message_title':'',
                 'business_name':'default',
-                'message':'<h3>Escribí tu mensaje o selecciona alguna de las opciones para comenzar.</h3>',
+                'message':'<h3><b>¡Hola! ¿Cómo estás?</b> Escribí tu mensaje o selecciona alguna de las opciones para comenzar.</h3>',
                 'message_tip':{
                     'message': '¿Es tu primera vez usando KDABRA? Hacé click &#x1F601',
                     'intent':'onboarding_kdabra',
                     'should_dissapear':'true'
                 },
-                'class_used':'left-titulo-linea',
+                'class_used':'left-linea',
                 'intent':'welcome',
                 'scroll':'true',
                 'response_expected':{
@@ -74,6 +74,19 @@ const MessagesAPI = {
                 'message_title':'',
                 'class_used':'left-linea',
                 'intent':'onboarding_kdabra_2',
+                'next_message':'msg_onboarding_kdabra_3',
+                'scroll':'false',
+                'response_expected':{
+                    'type':'text_input'
+                }
+            },
+            {
+                'id_message':'msg_onboarding_kdabra_3',
+                'message':"Los mensajes que se identifiquen como Kdabra fueron enviados por nuestra inteligencia artificial para ahorrarte tiempo.",
+                'business_name':'default',
+                'message_title':'',
+                'class_used':'left-linea',
+                'intent':'onboarding_kdabra_3',
                 'scroll':'false',
                 'response_expected':{
                     'type':'text_input'
