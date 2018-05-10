@@ -19,7 +19,7 @@ class MenuContainer extends Component {
                 {
                     'id_menu_item':'start',
                     'label' : '¡Conocer Más!',
-                    'icon_src' : '/content/images/hours.svg',
+                    'icon_src' : '/content/images/cart.svg',
                     'show_message' : 'Quiero conocer tus productos!'
                 },
                 {

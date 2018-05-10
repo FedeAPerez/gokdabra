@@ -59,7 +59,7 @@ height: 100%;
 @media only screen and (min-width: 1280px) 
 {
     .base-container {
-        width: 1280px;
+        width: 768px;
     }
 }
 .kdabra-orange {

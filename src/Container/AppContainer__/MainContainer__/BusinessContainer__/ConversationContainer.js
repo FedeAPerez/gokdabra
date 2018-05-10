@@ -34,6 +34,7 @@ class ConversationContainer extends Component {
             'scroll_item' : 1
         }
     }
+
     addUserMessage(text) {
         var userMessage = {};
         userMessage.message = text;
@@ -42,6 +43,7 @@ class ConversationContainer extends Component {
         this.state.messageList.push(userMessage);
         this.setState(this.state);
     }
+
     getFirstMessage() {
         var m = MessagesAPI.getFirstMessage();
 		this.state.messageList.push(m);
@@ -106,6 +108,10 @@ class ConversationContainer extends Component {
             var that = this;
             MessagesAPI.getMessageById(mIntent.next_message)
                 .then((res) => {
+                    if(res.scroll=='true')
+                    {
+                        this.state.scroll_item = res.id_message;
+                    }
                     that.state.messageList.push(res);
                     that.setState(that.state);
                     setTimeout(function() {
