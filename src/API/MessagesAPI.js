@@ -220,7 +220,7 @@ const MessagesAPI = {
                 'business_name':'ecolitas',
                 'message_title':'',
                 'sender_show':'KDABRA',
-                'message':'<h3>Estamos en San Martín &#x1F5FA</h3>',
+                'message':'<h3>Estamos en Santos Lugares! &#x1F5FA</h3>',
                 'class_used':'left-linea',
                 'message_tip': {
                     'message':'Ver información de contacto.',
