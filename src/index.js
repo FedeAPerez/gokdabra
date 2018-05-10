@@ -11,6 +11,7 @@ import './Styles/LeftTituloLinea.css';
 import './Styles/LeftLinea.css';
 import './Styles/Right.css';
 import './Styles/Menu.css';
+import './Styles/Meli.css';
 
 ReactDom.render((
     <BrowserRouter>

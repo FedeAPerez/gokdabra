@@ -11,6 +11,7 @@ import MessagesAPI from '../../../../API/MessagesAPI';
 import IntentService from '../../../../Services/IntentService';
 import MessageContainer from './ConversationContainer__/MessageContainer';
 import MessageHandlerContainer from './ConversationContainer__/MessageHandlerContainer';
+
 const __SENDER_USER = "user";
 const __SENDER_KDABRA = "KDABRA";
 
@@ -101,13 +102,20 @@ class ConversationContainer extends Component {
 
     getNextMessage(mIntent) {
         if(mIntent && mIntent.next_message && mIntent.next_message != '') {
-            var mNext = MessagesAPI.getMessageById(mIntent.next_message);
-            this.state.messageList.push(mNext);
-            this.setState(this.state);
-            setTimeout(function() {
+            var mNext;
+            var that = this;
+            MessagesAPI.getMessageById(mIntent.next_message)
+                .then((res) => {
+                    that.state.messageList.push(res);
+                    that.setState(that.state);
+                    setTimeout(function() {
+                        this.getNextMessage(res);
+                    }.bind(that), 1000 );
+                })
+                .catch((err) => {
+                    alert(err);
+                });
 
-                this.getNextMessage(mNext);
-            }.bind(this), 1000 );
         }
     }
 

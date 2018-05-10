@@ -1,6 +1,9 @@
 // A simple data API that will be used to get the data for our
 // components. On a real website, a more robust data fetching
 // solution would be more appropriate.
+
+import MeliAPI from './MeliAPI';
+
 const MessagesAPI = {
     business: [
       { number: 1, business_name: "Doers", color: "#34495e" },
@@ -302,6 +305,51 @@ const MessagesAPI = {
                 'response_expected':{
                     'type':'text_input'
                 }
+            },
+            {
+                'id_message':'msg_start_intro',
+                'business_name':'ecolitas',
+                'message_title':'',
+                'sender_show':'KDABRA',
+                'next_message':'msg_start_hook',
+                'message':'<h3>Nos preocupamos por la salud y bienestar de los infantes. Por eso creamos eColitas, dándoles confort y protección en su higiene.</h3>',
+                'class_used':'left-linea',
+                'scroll':'true',
+                'intent':'start',
+                'response_expected':{
+                    'type':'text_input'
+                }
+            },
+            {
+                'id_message':'msg_start_hook',
+                'business_name':'ecolitas',
+                'message_title':'',
+                'sender_show':'KDABRA',
+                'next_message':'msg_start_product',
+                'message':'<h3>Utilizamos telas certificadas internacionalmente con protección solar para las diferentes etapas de tu hijo... por eso te ofrecemos este producto!</h3>',
+                'class_used':'left-linea',
+                'scroll':'true',
+                'intent':'start_hook',
+                'response_expected':{
+                    'type':'text_input'
+                }
+            },
+            {
+                'id_message':'msg_start_product',
+                'business_name':'ecolitas',
+                'message_title':'',
+                'sender_show':'MercadoLibre',
+                'type': {
+                    'id':'meli_item',
+                    'value':'MLA678733469'
+                },
+                'message':'',
+                'class_used':'left-product',
+                'scroll':'true',
+                'intent':'start_product',
+                'response_expected':{
+                    'type':'text_input'
+                }
             }
         
     ],
@@ -310,12 +358,38 @@ const MessagesAPI = {
       return this.messages[0];
     },
     getMessageById: function(id_message) {
-        const isMessage = p => p.id_message == id_message;
-        return this.messages.find(isMessage);
+        var that = this;
+        return new Promise(function(resolve, reject) {
+            const isMessage = p => p.id_message == id_message;
+
+            var message = that.messages.find(isMessage);
+            var thatMessage = {};
+            thatMessage.message = message;
+
+            if(message.type && message.type.id == 'meli_item') {
+                MeliAPI.getInfoByMLA(message.type.value)
+                .then(function(res) {
+                    thatMessage.message.meli_ob = {};
+                    thatMessage.message.meli_ob.title = res.data.title;
+                    thatMessage.message.meli_ob.available_quantity = res.data.available_quantity;
+                    thatMessage.message.meli_ob.price = res.data.price;
+                    thatMessage.message.meli_ob.permalink = res.data.permalink;
+                    thatMessage.message.meli_ob.thumbnail = res.data.thumbnail;
+                    thatMessage.message.meli_ob.picture_link = res.data.pictures[0].url;
+                    resolve(thatMessage.message);
+                })
+                .catch(function(err) {
+                    reject(err);
+                });
+            }
+            else {
+                resolve(thatMessage.message);
+            }
+        });
     },
     getMessageByIntent: function(id_business, id_intent) {
         // Obteng el intent en caso de que sea un intento de text-input
-        
+
         const isBusiness = p => p.business_name.toLowerCase() === id_business.toLowerCase();
         var messagesForBusiness = [];
         messagesForBusiness = this.messages.filter(isBusiness);

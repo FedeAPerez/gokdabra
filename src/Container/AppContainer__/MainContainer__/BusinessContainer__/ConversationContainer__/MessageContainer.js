@@ -42,7 +42,16 @@ class MessageContainer extends Component {
             }
         }
     }
-
+    renderMeliOb() {
+        return (
+            <section className="meli-ob-container"> 
+                <img className="meli-ob-img" src={this.props.messageOb.meli_ob.picture_link}/>
+                <span className="meli-ob-title">{this.props.messageOb.meli_ob.title}</span>
+                <span className="meli-ob-price">{"$" + this.props.messageOb.meli_ob.price}</span>
+                <a className="meli-ob-link" target="_blank" href={this.props.messageOb.meli_ob.permalink}>Finalizar la compra!</a>
+            </section>
+            );
+    }
 
     render() {
         return(
@@ -70,6 +79,9 @@ class MessageContainer extends Component {
                             dangerouslySetInnerHTML={ this.getMessageHtml() }
                         >
                         </p>
+                    }
+                    {
+                        this.props.messageOb.meli_ob && this.renderMeliOb()
                     }
                     {
                             this.props.messageOb.sender != __SENDER_USER &&

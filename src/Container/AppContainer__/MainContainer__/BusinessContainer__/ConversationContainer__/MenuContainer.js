@@ -17,6 +17,12 @@ class MenuContainer extends Component {
         this.state = {
             options : [
                 {
+                    'id_menu_item':'start',
+                    'label' : '¡Conocer Más!',
+                    'icon_src' : '/content/images/hours.svg',
+                    'show_message' : 'Quiero conocer tus productos!'
+                },
+                {
                     'id_menu_item':'opening_hours',
                     'label' : 'Horarios de atención',
                     'icon_src' : '/content/images/hours.svg',

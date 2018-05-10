@@ -1,0 +1,70 @@
+.left-product {
+    text-align: left;
+    font-family: 'Rubik';
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #000;
+    float: left;
+    padding: 1em;
+}
+.left-product p {
+    margin: 0 auto;
+}
+.left-product p h1{
+    font-family: 'Rubik';
+    font-size: 18px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    text-align: left;
+    margin: 0 auto;
+}
+.left-product p h3{
+    font-family: 'Rubik';
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    text-align: left;
+    margin: 0 auto;
+}
+.left-product p h3 b{
+    font-weight: 500;
+    color: rgb(52, 73, 94);
+}
+.left-product .meli-ob-container {
+    overflow: hidden;
+    clear: both;
+}
+.left-product .meli-ob-img {
+    height: 80%;
+    width: 100%;
+}
+.left-product .meli-ob-title {
+    color: grey;
+    display: block;
+    float:left;
+    font-weight: 300;
+}
+.left-product .meli-ob-price {
+    color: black;
+    display: inline-block;
+    float:left;
+    font-weight: 500;
+}
+.left-product .meli-ob-link {
+    cursor: pointer;
+    color: #f16334;
+    display: inline-block;
+    text-decoration: none;
+    float: right;
+    font-weight: 500;
+}
