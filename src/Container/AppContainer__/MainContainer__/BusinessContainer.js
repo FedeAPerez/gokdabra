@@ -10,6 +10,7 @@ import React, { Component } from 'react';
 import BusinessAPI from '../../../API/BusinessAPI';
 import ConversationContainer from './BusinessContainer__/ConversationContainer';
 import BusinessHeaderContainer from './BusinessContainer__/BusinessHeaderContainer';
+import ErrorContainer from './ErrorContainer';
 
 class BusinessContainer extends Component {
     constructor(props) {
@@ -24,7 +25,7 @@ class BusinessContainer extends Component {
     render() {
         
         if (!this.state.businessOb) {
-            return <div>No encontré ese negocio</div>
+            return <ErrorContainer />;
         }
 
         return(
