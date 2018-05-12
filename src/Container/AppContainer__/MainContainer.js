@@ -18,9 +18,10 @@ class MainContainer extends Component {
         return (
             <Switch className="section-switch">
                 <Route path="/login" component={LoginContainer} />
-                <Route path='/404' component={ErrorContainer} />
-                <Route exact path='/' component={HomeContainer} />
-                <Route path='/:business' component={BusinessContainer} />
+                <Route path="/404" component={ErrorContainer} />
+                <Route exact path="/" component={HomeContainer} />
+                <Route exact path="/index.html" component={HomeContainer} />
+                <Route path="/:business" component={BusinessContainer} />
             </Switch>
         );
     }
