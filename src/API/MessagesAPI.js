@@ -350,6 +350,18 @@ const MessagesAPI = {
                 'response_expected':{
                     'type':'text_input'
                 }
+            },
+            {
+                'id_message':'msg_ask_review',
+                'business_name':'default',
+                'intent':'give_review',
+                'message_title':'',
+                'sender_show':'KDABRA',
+                'message':'¿Qué te parece el producto que acabas de ver?',
+                'class_used':'left-linea',
+                'response_expected':{
+                    'type':'text_input'
+                }
             }
         
     ],
