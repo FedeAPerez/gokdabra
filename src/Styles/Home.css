@@ -1,12 +1,13 @@
 .home {
     width: 100%;
     background-color: #f16334;
-    height: 100%;
+    position:relative;
+    height: 100vh;
     vertical-align: middle;
 }
-.home h1 {
+.home{
     font-weight: 700;
-	font-size: 2em;
+	font-size: 1em;
 	text-align: center;
     color: white;
     font-family: 'Montserrat', sans-serif;
