@@ -1,0 +1,22 @@
+.no-found {
+    padding-left: 2em;
+    padding-right: 2em;
+    background-color: #f16334;
+    height: 100vh;
+    vertical-align: middle;
+}
+.no-found {
+    font-weight: 700;
+	font-size: 16px;
+	text-align: center;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    vertical-align: middle;
+}
+.no-found-title {
+    font-size: 3em;
+}
+
+.no-found-tagline {
+    font-size: 2em;
+}

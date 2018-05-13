@@ -42,13 +42,20 @@ class MessageContainer extends Component {
             }
         }
     }
+
+    messageInteractHandler() {
+        this.props.MessageTipSubmit('give_review', '');    
+    }
+
     renderMeliOb() {
         return (
-            <section className="meli-ob-container"> 
-                <img className="meli-ob-img" src={this.props.messageOb.meli_ob.picture_link}/>
+            <section className="meli-ob-container">
+                <div className="meli-ob-content-container"> 
+                <img className="meli-ob-img" src={this.props.messageOb.meli_ob.thumbnail}/>
                 <span className="meli-ob-title">{this.props.messageOb.meli_ob.title}</span>
+                </div>
                 <span className="meli-ob-price">{"$" + this.props.messageOb.meli_ob.price}</span>
-                <a className="meli-ob-link" target="_blank" href={this.props.messageOb.meli_ob.permalink}>Finalizar la compra!</a>
+                <a onClick={ () => this.messageInteractHandler() } className="meli-ob-link" target="_blank" href={this.props.messageOb.meli_ob.permalink}>Finalizar la compra!</a>
             </section>
             );
     }

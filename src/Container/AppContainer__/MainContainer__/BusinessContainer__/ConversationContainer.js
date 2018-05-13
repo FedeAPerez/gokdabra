@@ -51,7 +51,8 @@ class ConversationContainer extends Component {
 	}
     
     onAnswerSubmit = (input_value, text) => {        
-        this.addUserMessage(text);
+        if(text != '')
+            this.addUserMessage(text);
 
         var mIntent;
         if(input_value == "text_input") {

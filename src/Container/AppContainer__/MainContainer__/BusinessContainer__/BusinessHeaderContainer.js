@@ -20,11 +20,6 @@ class BusinessHeaderContainer extends Component {
         return (
             <section 
                     className= { __BUSINESS_HEADER_CLASS }
-                    style = {
-                        { 
-                            backgroundColor : this.state.businessOb.color
-                        }
-                    }
             >
                 <h2>{ this.businessMoreVersion() }</h2>
             </section>

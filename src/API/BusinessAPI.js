@@ -16,4 +16,4 @@ const BusinessAPI = {
     }
   }
   
-  export default BusinessAPI
+  export default BusinessAPI;

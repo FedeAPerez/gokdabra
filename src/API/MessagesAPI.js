@@ -220,7 +220,7 @@ const MessagesAPI = {
                 'business_name':'ecolitas',
                 'message_title':'',
                 'sender_show':'KDABRA',
-                'message':'<h3>Estamos en San Martín &#x1F5FA</h3>',
+                'message':'<h3>Estamos en Santos Lugares! &#x1F5FA</h3>',
                 'class_used':'left-linea',
                 'message_tip': {
                     'message':'Ver información de contacto.',
@@ -350,6 +350,18 @@ const MessagesAPI = {
                 'response_expected':{
                     'type':'text_input'
                 }
+            },
+            {
+                'id_message':'msg_ask_review',
+                'business_name':'default',
+                'intent':'give_review',
+                'message_title':'',
+                'sender_show':'KDABRA',
+                'message':'¿Qué te parece el producto que acabas de ver?',
+                'class_used':'left-linea',
+                'response_expected':{
+                    'type':'text_input'
+                }
             }
         
     ],
@@ -406,4 +418,4 @@ const MessagesAPI = {
     }
   }
   
-  export default MessagesAPI
+  export default MessagesAPI;

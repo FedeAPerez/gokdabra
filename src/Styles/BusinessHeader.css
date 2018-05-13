@@ -11,6 +11,7 @@
     display: block;
     z-index: 5;
     height: 3em;
+    background-color: #f16334;
 }
 
 .business-header-container h2{
