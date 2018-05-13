@@ -14,8 +14,8 @@ class HomeView extends Component {
 					<img className="wave-sgv" src={'content/images/wave.svg'} />
 				</div>
                 <article className="home-content">
-                <h1 className="home-title">KDABRA</h1>
-                <h2 className="home-tagline">¿Querés comunicarte con tus clientes como lo hacen <br />Coca-Cola y Johnnie Walker?</h2>
+                <h1 className="home-title">Presentando KDABRA</h1>
+                <h2 className="home-tagline">¿Querés comunicarte con tus clientes como lo hacen <br /><b>Coca-Cola</b> y <b>Johnnie Walker</b>?</h2>
                 </article>
 
                 <article className="home-tag">

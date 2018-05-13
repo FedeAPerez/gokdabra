@@ -26,10 +26,16 @@ main {
 }
 .home-title {
     font-size: 3em;
+    font-weight: 500;
 }
 
 .home-tagline {
     font-size: 2em;
+    font-weight: 400;
+}
+
+.home-tagline b{
+    font-weight: 500;
 }
 .home-tag {
     width: 80%;
@@ -78,6 +84,19 @@ main {
     }
     .home-title {
         font-size: 2em;
+    }
+    .home-tagline {
+        font-size: 1.5em;
+    }
+}
+
+@media only screen and (min-width: 1260px) 
+{
+    .home-content {
+        width: 80%;
+    }
+    .home-title {
+        font-size: 3em;
     }
     .home-tagline {
         font-size: 1.5em;
