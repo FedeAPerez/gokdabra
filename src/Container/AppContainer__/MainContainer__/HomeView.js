@@ -13,7 +13,7 @@ class HomeView extends Component {
 					<img className="wave-sgv" src={'content/images/wave.svg'} />
 				</div>
                 <h1 className="home-title">KDABRA</h1>
-                <h2 className="home-tagline">¿Quéres comunicarte con tus clientes y fans como lo harían con WhatsApp y Messenger?</h2>
+                <h2 className="home-tagline">¿Querés comunicarte con tus clientes como lo hacen <br />Coca-Cola y Johnnie Walker?</h2>
                 <FooterContainer />
             </section>
         );
