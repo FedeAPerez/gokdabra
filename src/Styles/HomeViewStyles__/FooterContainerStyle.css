@@ -56,3 +56,45 @@ footer .icon-button img {
     bottom: 0;
     margin: auto;
 }
+
+
+.registration-ok {
+    z-index: 1;
+    background-color: black;
+    opacity: 0.98;
+    top: 0;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+.registration-ok div{
+    background-color: white;
+    width: 90%;
+    top: 10%;
+    height: 80%;
+    margin: 0em auto;
+    vertical-align: middle;
+    position: relative;
+    border-radius: 1em;
+}
+.registration-ok-exit {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 2em;
+    margin-top: 2em;
+    cursor: pointer;
+}
+.registration-ok p{
+    color: #f16334;
+    font-weight: 500;
+    font-size: 2em;
+    font-family: 'Montserrat', sans-serif;
+    vertical-align: middle;
+    position: relative;
+    top: 3em;
+    margin: 0em auto;
+    width: 80%;
+}

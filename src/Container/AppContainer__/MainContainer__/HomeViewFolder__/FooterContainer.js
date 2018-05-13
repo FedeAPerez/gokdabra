@@ -21,7 +21,8 @@ class FooterContainer extends Component {
 		super(props);
 
 		this.state = {
-			value: ''
+			value: '',
+			registrationOkShow: false
 		}
 		
 		this.state.input_hint_text = MessagesContentAPI.getMessageContentFromId("footer-hint");		
@@ -39,11 +40,19 @@ class FooterContainer extends Component {
 	submitForm() {
 		ProspectsAPI.postProspectFrom('1', this.state.value)
 		.then((res) => {
-			console.log("Estás registrado!");
 		})
 		.catch((err) => {
-			console.log("hubo un error");
 		});
+
+		this.state.value = '';
+		this.state.registrationOkShow = true;
+		this.setState(this.state);
+	}
+
+	closeRegistrationOk() {
+
+		this.state.registrationOkShow = false;
+		this.setState(this.state);
 	}
 
 	render() {
@@ -78,6 +87,18 @@ class FooterContainer extends Component {
 				<section className="company-name">
 					<span dangerouslySetInnerHTML={ this.getMessageContentHTML("company-name") }>
 					</span>
+				</section>
+				<section className={this.state.registrationOkShow ? "registration-ok" : 'none'}>
+					<div>
+					<img 
+						className="registration-ok-exit" 
+						src={ 'content/images/cancel.svg' }
+						onClick={ this.closeRegistrationOk.bind(this) }
+					/>
+					<p
+						dangerouslySetInnerHTML={ this.getMessageContentHTML("registration-ok") }>
+					</p>
+					</div>
 				</section>
 			</footer>
 			</section>
