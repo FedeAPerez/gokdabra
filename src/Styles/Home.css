@@ -14,6 +14,9 @@
     margin: 0em auto;
     vertical-align: middle;
 }
+.home-content {
+    margin: 0em auto;
+}
 .home-title {
     font-size: 3em;
 }
@@ -24,6 +27,9 @@
 
 @media only screen and (max-width: 768px) 
 {
+    .home-content {
+        width: 80%;
+    }
     .home-title {
         font-size: 2em;
     }
