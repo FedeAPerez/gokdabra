@@ -418,4 +418,4 @@ const MessagesAPI = {
     }
   }
   
-  export default MessagesAPI
+  export default MessagesAPI;
