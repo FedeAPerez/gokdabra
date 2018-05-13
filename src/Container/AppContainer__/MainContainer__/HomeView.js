@@ -17,7 +17,7 @@ class HomeView extends Component {
                 <h1 className="home-title">KDABRA</h1>
                 <h2 className="home-tagline">¿Querés comunicarte con tus clientes como lo hacen <br />Coca-Cola y Johnnie Walker?</h2>
                 </article>
-                <hr />
+
                 <article className="home-tag">
                     <h2>Las personas se comunican con mensajes.</h2>
                     <h3>En el mundo se envían 60 mil millones de mensajes entre WhatsApp y Messenger.</h3>
