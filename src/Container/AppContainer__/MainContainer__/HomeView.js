@@ -6,11 +6,39 @@ import React, { Component } from 'react';
 import FooterContainer from './HomeViewFolder__/FooterContainer';
 
 class HomeView extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            fired:false,
+            scrollY:''
+        }
+    }
+
+    componentDidMount() {
+        window.addEventListener('scroll', this.handleScroll)
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this.handleScroll);
+    }
+    handleScroll(event) {
+    // do something like call `this.setState`
+    // access window.scrollY etc
+        if(!this.state.fired) {
+
+            this.state.scrollY = window.scrollY;
+            this.state.fired = true;
+            this.setState(this.state);
+
+        }
+
+    }
+
     render() {
         return (
-            <main>
+            <main onScroll={this.handleScroll.bind(this)}>
             <section className="home">
-            	<div className="container">
+            	<div className={this.state.fired ? "container-none": "container"}>
 					<img className="wave-sgv" src={'content/images/wave.svg'} />
 				</div>
                 <article className="home-content">
