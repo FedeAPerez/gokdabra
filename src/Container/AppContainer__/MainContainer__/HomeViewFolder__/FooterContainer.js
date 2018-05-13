@@ -37,7 +37,13 @@ class FooterContainer extends Component {
 	}
 
 	submitForm() {
-		ProspectsAPI.postProspectFrom('1', this.state.value);
+		ProspectsAPI.postProspectFrom('1', this.state.value)
+		.then((res) => {
+			console.log("Estás registrado!");
+		})
+		.catch((err) => {
+			console.log("hubo un error");
+		});
 	}
 
 	render() {
@@ -58,6 +64,7 @@ class FooterContainer extends Component {
 						underlineShow={ false }
 						onChange={ (e) => {this.changeForm(e)} }
 						value={ this.state.value }
+						type={ "email" } 
 					/>
 					<span
 						className="icon-button"
