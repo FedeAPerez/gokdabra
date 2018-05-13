@@ -1,15 +1,21 @@
 footer {
     background-color: #34495e;
-    position: fixed;
+    position: relative;
     bottom: 0;
     display: block;
+    flex-shrink: 0;
+    height: 100%;
     width: 100%;
 }
 
 footer {
     font-weight: 300;
     font-size: 1em;
+    padding-top: 1em;
     font-family: 'Montserrat', sans-serif;
+	text-align: center;
+    margin: 0em auto;
+    vertical-align: middle;
 }
 
 footer .company-name {
@@ -24,12 +30,10 @@ hr {
     width: 75%;
     border-color: #ecf0f1;
     opacity: 0.5;
-    margin-top: 2em;
+    margin-top: 1em;
     margin-bottom: 0em;
 }
-footer .mail-input {
-    margin-top: 1em;
-}
+
 footer .icon-button {
     width: 3em;
     vertical-align: middle;
@@ -52,18 +56,3 @@ footer .icon-button img {
     bottom: 0;
     margin: auto;
 }
-
-    .wave-sgv {
-    display: inline-block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    }
-    .container {
-        display: inline-block;
-        position: relative;
-        width: 100%;
-        padding-bottom: 30%;
-        vertical-align: middle;
-        overflow: hidden;
-    }
