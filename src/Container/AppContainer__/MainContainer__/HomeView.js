@@ -55,7 +55,11 @@ class HomeView extends Component {
                     <h2>Estamos alineados con tu negocio y con lo que querés para tus clientes.</h2>
                     <h3>Creemos que la comunicación y la conversación son vitales para distinguirte como una marca relevante.</h3>
                 </article>
-                
+                <hr />
+                <article className="home-tag">
+                    <h2>¡Queremos construir esta experiencia con nuestros usuarios!</h2>
+                    <h3>Sumate antes del lanzamiento y ayudanos a definir el futuro de KDABRA.</h3>
+                </article>
             </section>
             
             <FooterContainer />
