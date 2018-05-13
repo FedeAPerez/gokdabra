@@ -4,6 +4,8 @@
     position:relative;
     height: 100vh;
     vertical-align: middle;
+    
+    overflow-y: scroll;
 }
 .home{
     font-weight: 700;

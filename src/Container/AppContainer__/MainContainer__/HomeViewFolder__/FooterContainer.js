@@ -48,7 +48,8 @@ class FooterContainer extends Component {
 		}
 
 		return (
-			<footer>
+			<section>
+				<footer>
 				<section className="mail-input">
 					<TextField
 						id={ "mail-input-textfield" }
@@ -72,6 +73,7 @@ class FooterContainer extends Component {
 					</span>
 				</section>
 			</footer>
+			</section>
 		);
 	}
 
