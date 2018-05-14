@@ -1,6 +1,6 @@
 import axios from 'axios';
-const businessServiceUrl = 'http://back.gokdabra.com/business';
-
+const businessServiceUrl = process.env.REACT_APP_BACK_URL.trim() + '/business';
+console.log(businessServiceUrl);
 export class ProspectsAPI {
 
     static postProspectFrom(id_track, mail) {

@@ -5,6 +5,7 @@
   "description": "KDABRA APP for rendering Business's ChatBot",
   "main": "index.js",
   "scripts": {
+    "startdev":"set REACT_APP_BACK_URL=http://localhost:5000 && react-scripts start",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "echo \"Error: no test specified\" && exit 1"
