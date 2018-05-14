@@ -11,6 +11,7 @@ import MessagesAPI from '../../../../API/MessagesAPI';
 import IntentService from '../../../../Services/IntentService';
 import MessageContainer from './ConversationContainer__/MessageContainer';
 import MessageHandlerContainer from './ConversationContainer__/MessageHandlerContainer';
+import BusinessHeaderContainer from './BusinessHeaderContainer';
 
 const __SENDER_USER = "user";
 const __SENDER_KDABRA = "KDABRA";
@@ -140,6 +141,9 @@ class ConversationContainer extends Component {
     render() {
         return (
             <section className= { __BASE_CONTAINER_CLASS }>
+                <BusinessHeaderContainer 
+                    __BUSINESS_INFORMATION__= { this.props.__BUSINESS_INFORMATION__ }
+                    />
                 <section className= { __MESSAGES_CONTAINER_CLASS }>
                 {
                     this.state.messageList.length && this.state.messageList.map(

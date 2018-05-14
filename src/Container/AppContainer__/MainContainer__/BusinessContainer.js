@@ -9,7 +9,6 @@ import React, { Component } from 'react';
  */
 import BusinessAPI from '../../../API/BusinessAPI';
 import ConversationContainer from './BusinessContainer__/ConversationContainer';
-import BusinessHeaderContainer from './BusinessContainer__/BusinessHeaderContainer';
 import ErrorContainer from './ErrorContainer';
 
 class BusinessContainer extends Component {
@@ -30,10 +29,6 @@ class BusinessContainer extends Component {
 
         return(
             <section className="view-container">
-                <BusinessHeaderContainer 
-                    __BUSINESS_INFORMATION__= { this.state.businessOb }
-                    />
-
                 <ConversationContainer 
                     __BUSINESS_INFORMATION__= { this.state.businessOb }
                     />

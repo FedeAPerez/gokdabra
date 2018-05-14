@@ -2,12 +2,10 @@
     display: block;
     clear: both;
     overflow: hidden;
-    position: fixed;
     display: block;
     width: 100%;
-    -ms-flex: none;
-    flex: none;
-    top: 0;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
     display: block;
     z-index: 5;
     height: 3em;

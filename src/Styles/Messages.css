@@ -3,16 +3,14 @@
 }
 
 .message-handler-container {
-   display: block;
+       display: block;
     clear: both;
     width: 100%;
     overflow: hidden;
     margin: 0 auto;
-    bottom: 0;
-    -ms-flex: none;
     border-radius: 1em;
-    position:relative;
-    flex: none;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
 }
 
 .message-submit-button {

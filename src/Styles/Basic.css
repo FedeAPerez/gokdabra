@@ -27,17 +27,20 @@ height: 100%;
 .clear {
     clear:both;
 }
-
+.view-container {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+}
 .base-container {
     width: 100%;
-    min-height: 94vh;
-    display: -ms-flexbox;
-    display: flex;
+    height: 100%;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
     margin: 0 auto;
-    
-     margin-top: 3em;
-    -ms-flex-direction: column;
-    flex-direction: column;
+    overflow: hidden;
+    overflow-y: auto;
+    clear: both;
 
 }
 
@@ -52,7 +55,6 @@ height: 100%;
 {
     .base-container {
         width: 100%;
-        min-height: 80vh;
     }
 }
 @media only screen and (min-width: 768px) 
