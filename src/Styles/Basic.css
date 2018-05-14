@@ -40,7 +40,10 @@ height: 100%;
     margin: 0 auto;
     overflow: hidden;
     overflow-y: auto;
+    display: flex;
     clear: both;
+    flex-direction: column;
+    position: relative;
 
 }
 
