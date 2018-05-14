@@ -18,7 +18,7 @@ const MessagesAPI = {
                 'business_name':'default',
                 'message':'<h3><b>¡Hola! ¿Cómo estás?</b> Escribí tu mensaje o selecciona alguna de las opciones para comenzar.</h3>',
                 'message_tip':{
-                    'message': '¿Es tu primera vez usando KDABRA? Hacé click &#x1F601',
+                    'message': '¿Es tu primera vez usando KDABRA? Hacé click aquí para aprender a usarlo &#x1F601',
                     'intent':'onboarding_kdabra',
                     'should_dissapear':'true'
                 },
