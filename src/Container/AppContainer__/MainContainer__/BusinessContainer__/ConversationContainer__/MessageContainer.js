@@ -35,7 +35,7 @@ class MessageContainer extends Component {
 
     messageTipHandler() {
         if(this.props.MessageTipSubmit) {
-            this.props.MessageTipSubmit(this.props.messageOb.message_tip.intent, this.props.messageOb.message_tip.message);
+            this.props.MessageTipSubmit(this.props.messageOb.message_tip.intent, this.props.messageOb.message_tip.show_message);
             if(this.props.messageOb.message_tip.should_dissapear == 'true') {
                 this.state.show_tip = false;
                 this.setState(this.state);

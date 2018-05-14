@@ -20,7 +20,8 @@ const MessagesAPI = {
                 'message_tip':{
                     'message': '¿Es tu primera vez usando KDABRA? Hacé click aquí para aprender a usarlo &#x1F601',
                     'intent':'onboarding_kdabra',
-                    'should_dissapear':'true'
+                    'should_dissapear':'true',
+                    'show_message': '¡Quiero aprender a usar KDABRA!'
                 },
                 'class_used':'left-linea',
                 'sender_show':'KDABRA',
@@ -38,7 +39,8 @@ const MessagesAPI = {
                 'message':'<h3>También te quería comentar que al hablar por KDABRA te ahorraste 8 minutos de tu tiempo!</h3>',
                 'message_tip':{
                     'message': '¡Compartir en las redes!',
-                    'intent':'share_kdabra'
+                    'intent':'share_kdabra',
+                    'show_message': '¡Quiero compartir en las redes!'
                 },
                 'class_used':'left-titulo-linea',
                 'intent':'thanks',
@@ -124,7 +126,8 @@ const MessagesAPI = {
                 'message_tip': {
                     'message':'Ver información de contacto.',
                     'intent':'contact',
-                    'should_dissapear':'true'
+                    'should_dissapear':'true',
+                    'show_message': '¿Cómo me contacto con ustedes?'
                 },
                 'scroll':'true',
                 'intent':'opening_hours',
@@ -207,7 +210,8 @@ const MessagesAPI = {
                 'message_tip': {
                     'message':'Ver información de contacto.',
                     'intent':'contact',
-                    'should_dissapear':'true'
+                    'should_dissapear':'true',
+                    'show_message': '¿Cuál es otro medio de contacto?'
                 },
                 'scroll':'true',
                 'intent':'map',
@@ -225,7 +229,8 @@ const MessagesAPI = {
                 'message_tip': {
                     'message':'Ver información de contacto.',
                     'intent':'contact',
-                    'should_dissapear':'true'
+                    'should_dissapear':'true',
+                    'show_message': '¿Cómo me contacto con ustedes?'
                 },
                 'scroll':'true',
                 'intent':'map',
@@ -243,7 +248,8 @@ const MessagesAPI = {
                 'message_tip': {
                     'message':'Ver información de contacto.',
                     'intent':'contact',
-                    'should_dissapear':'true'
+                    'should_dissapear':'true',
+                    'show_message': '¿Cuál es otro medio de contacto?'
                 },
                 'scroll':'true',
                 'intent':'map',
@@ -261,7 +267,8 @@ const MessagesAPI = {
                 'message_tip': {
                     'message':'Ver el horario de atención.',
                     'intent':'opening_hours',
-                    'should_dissapear':'true'
+                    'should_dissapear':'true',
+                    'show_message': '¿En qué horarios trabajan?'
                 },
                 'class_used':'left-linea',
                 'scroll':'true',
@@ -279,7 +286,8 @@ const MessagesAPI = {
                 'message_tip': {
                     'message':'Ver el horario de atención.',
                     'intent':'opening_hours',
-                    'should_dissapear':'true'
+                    'should_dissapear':'true',
+                    'show_message': '¿Cuáles son sus horarios de atención?'
                 },
                 'class_used':'left-linea',
                 'scroll':'true',
@@ -297,7 +305,8 @@ const MessagesAPI = {
                 'message_tip': {
                     'message':'Ver el horario de atención.',
                     'intent':'opening_hours',
-                    'should_dissapear':'true'
+                    'should_dissapear':'true',
+                    'show_message': '¿Cuál es su horario de atención?'
                 },
                 'class_used':'left-linea',
                 'scroll':'true',
