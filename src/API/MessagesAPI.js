@@ -96,7 +96,7 @@ const MessagesAPI = {
                 'sender_show':'KDABRA',
                 'class_used':'left-linea',
                 'intent':'onboarding_kdabra_3',
-                'scroll':'false',
+                'scroll':'true',
                 'response_expected':{
                     'type':'text_input'
                 }
