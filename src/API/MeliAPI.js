@@ -3,6 +3,7 @@
 // solution would be more appropriate.
 import axios from 'axios';
 const meliServiceUrl = 'https://api.mercadolibre.com/items/';
+const meliBackDexter = process.env.REACT_APP_BACK_URL.trim() + '/meli/dexter/shoes';
 
 const MeliAPI = {
     getInfoByMLA: function(mla) {
@@ -11,6 +12,20 @@ const MeliAPI = {
             method: 'get',
             url: meliServiceUrl+mla,
             headers: {'Content-Type': 'application/json'}
+          }
+        );
+    },
+    getInfoByData: function(stack) {
+      return axios(
+          {
+            method: 'post',
+            url: meliBackDexter,
+            headers: {'Content-Type': 'application/json'},
+            data: {
+              talle: stack.talle,
+              max_price: stack.max_price,
+              gender : stack.gender
+            }
           }
         );
     }
