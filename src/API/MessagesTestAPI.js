@@ -15,10 +15,23 @@ const MessagesAPI = {
                 'id_message':'msg_welcome',
                 'message_title':'',
                 'business_name':'default',
-                'message':'<h3>¡Hola! ¿Cómo estás? Estoy para ayudarte a conocer nuestros productos y mejores ofertas. <b>¿Querés conocerlas?</b></h3>',
+                'message':'<h3>¡Hola! Soy el bot de KDABRA, y estoy para ayudarte a encontrar los mejores productos y ofertas de Dexter. <b>¿Querés conocerlas?</b></h3>',
                 'class_used':'left-linea',
                 'sender_show':'KDABRA',
                 'intent':'welcome',
+                'scroll':'true',
+                'response_expected':{
+                    'type':'text_input'
+                }
+            },
+            {
+                'id_message':'msg_anything',
+                'message_title':'',
+                'business_name':'default',
+                'message':'<h3>Ups... Por el momento únicamente te puedo ayudar a buscar zapatillas, próximamente me van a sumar funciones.</h3>',
+                'class_used':'left-linea',
+                'sender_show':'KDABRA',
+                'intent':'anything_else',
                 'scroll':'true',
                 'response_expected':{
                     'type':'text_input'
@@ -41,7 +54,7 @@ const MessagesAPI = {
                 'id_message':'msg_wanna_buy_size',
                 'message_title':'',
                 'business_name':'default',
-                'message':'<h3>Perfecto, ahora necesitaría conocer tu talle. ¿Cuánto calzás?</h3>',
+                'message':'<h3>Perfecto, ¿Cuál es tu talle?</h3>',
                 'class_used':'left-linea',
                 'sender_show':'KDABRA',
                 'intent':'wanna_buy_sex',
@@ -54,7 +67,7 @@ const MessagesAPI = {
                 'id_message':'msg_wanna_buy_price_range',
                 'message_title':'',
                 'business_name':'default',
-                'message':'<h3>¿Qué rango de precios te interesaría ver?</h3>',
+                'message':'<h3>¿Hasta cuánto te gustaría pagar? &#x1F911</h3>',
                 'class_used':'left-linea',
                 'sender_show':'KDABRA',
                 'intent':'wanna_buy_size',

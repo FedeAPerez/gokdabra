@@ -21,7 +21,8 @@ class MessageHandlerTestContainer extends Component {
         }
     }
     
-    handleSubmit() {
+    handleSubmit(e) {
+        e.preventDefault();
         if(this.props.onAnswerSubmit) {
             this.props.onAnswerSubmit("text_input", this.state.value);
             this.state.value = '';
@@ -66,20 +67,22 @@ class MessageHandlerTestContainer extends Component {
 
         return(
             <section>
+                <form onSubmit={this.handleSubmit.bind(this)}>
                 <div 
-                className= { __MESSAGE_DIV_CLASS }
+                    className= { __MESSAGE_DIV_CLASS }
                 >
-                <TextField 
-                    hintText= {__MESSAGE_HINT}
-                    style= {inputStyle}
-                    onChange={ this.handleChange }
-                    value={this.state.value}
-                    onFocus={ this.scrollToHandler.bind(this) }
-                    /> 
-                <InputSenderComponent 
-                    onClick={this.handleSubmit.bind(this)}/>
+                    <TextField 
+                        hintText= {__MESSAGE_HINT}
+                        style= {inputStyle}
+                        onChange={ this.handleChange }
+                        value={this.state.value}
+                        onFocus={ this.scrollToHandler.bind(this) }
+                        /> 
+                    <InputSenderComponent 
+                        onClick={this.handleSubmit.bind(this)}/>
 
                 </div>
+                </form>
                 <div
                     className="focus-div"
                     ref = {(ref) => {

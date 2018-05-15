@@ -67,6 +67,7 @@ class ConversationTestContainer extends Component {
             IntentService.getIntentFromText(text)
                 .then(
                     (response) => {
+                        console.log("tengo " + response.data.intent);
                         if(response.data.intent) {
 
                             mIntent = MessagesAPI.getMessageByIntent(this.props.__BUSINESS_INFORMATION__.business_name , response.data.intent);
@@ -125,13 +126,16 @@ class ConversationTestContainer extends Component {
                     }
                     // MELI
                     if(res.type && res.type.id == 'meli_item') {
+                        console.log("deberia traerte el de meli");
                         MessagesAPI.getMeliMessage(that.state.message_data_stack)
                         .then((mess) => {
+                            console.log("me llego el mess " + mess);
                             that.state.messageList.push(mess);
                             that.setState(that.state);
 
                         })
                         .catch((err) => {
+                            console.log("fallo con " + err);
                         });
                     }
                     // MELI

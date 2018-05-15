@@ -10,6 +10,18 @@ max-width: 100%;
 overflow-x: hidden;
 background-color: #f16334;
 }
+html {
+    overflow: scroll;
+    overflow-x: hidden;
+}
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
+/* optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: #FF0000;
+}
 .none {
     display: none;
     visibility: hidden;
