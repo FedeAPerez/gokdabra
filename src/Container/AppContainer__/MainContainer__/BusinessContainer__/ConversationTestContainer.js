@@ -10,6 +10,8 @@ import React, { Component } from 'react';
 import MessagesAPI from '../../../../API/MessagesTestAPI';
 import TrackAPI from '../../../../API/TrackAPI';
 
+import GUIDAPI from '../../../../API/GUIDAPI';
+
 import IntentService from '../../../../Services/IntentService';
 import MessageContainer from './ConversationContainer__/MessageContainer';
 import MessageHandlerTestContainer from './ConversationContainer__/MessageHandlerTestContainer';
@@ -28,6 +30,7 @@ const __MESSAGE_CONTAINER_ID = "msg-component-";
 const __MESSAGE_HANDLER_CONTAINER_CLASS = "message-handler-container";
 
 class ConversationTestContainer extends Component {
+
     constructor(props) {
         super(props);
         this.state = {
@@ -37,8 +40,10 @@ class ConversationTestContainer extends Component {
             'message_data_stack' : [
 
             ],
-            'scroll_item' : 1
+            'scroll_item' : 1,
+            'id_conversation':''
         }
+        this.state.id_conversation = GUIDAPI.guid();;
     }
 
     addUserMessage(text) {
@@ -66,11 +71,17 @@ class ConversationTestContainer extends Component {
 
         var mIntent;
         if(input_value == "text_input") {
+            TrackAPI.postDataToTrack({
+                "id_conversation":this.state.id_conversation,
+                "object":"text_input",
+                "info_saved":text
+            });
             IntentService.getIntentFromText(text)
                 .then(
                     (response) => {
                         console.log("tengo " + response.data.intent);
                         TrackAPI.postDataToTrack({
+                            "id_conversation":this.state.id_conversation,
                             "object":"intent",
                             "info_saved":response.data
                         });
@@ -137,8 +148,9 @@ class ConversationTestContainer extends Component {
                         .then((mess) => {
                             console.log("me llego el mess " + mess);
                             TrackAPI.postDataToTrack({
-                            "object":"recomended",
-                            "info_saved":mess
+                                "id_conversation":that.state.id_conversation,
+                                "object":"recomended",
+                                "info_saved":mess
                             });
                             that.state.messageList.push(mess);
                             that.setState(that.state);
