@@ -15,7 +15,7 @@ const MessagesAPI = {
                 'id_message':'msg_welcome',
                 'message_title':'',
                 'business_name':'default',
-                'message':'<h3>¡Hola! Soy el bot de KDABRA, y estoy para ayudarte a encontrar los mejores productos y ofertas de Dexter. <b>¿Querés conocerlas?</b></h3>',
+                'message':'<h3>¡Hola! Te voy a asistir desde KDABRA, mi misión es ayudarte a encontrar los mejores productos y ofertas de Dexter. <b>¿Querés conocerlas?</b></h3>',
                 'class_used':'left-linea',
                 'sender_show':'KDABRA',
                 'intent':'welcome',
