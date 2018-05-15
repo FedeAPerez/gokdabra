@@ -107,6 +107,19 @@ const MessagesAPI = {
                 }
             },
             {
+                'id_message':'msg_thanks_to_user',
+                'message_title':'',
+                'message':'<h3>¡Genial! Espero haber sido de ayuda &#x1F603</h3>',
+                'business_name':'default',
+                'class_used':'left-product',
+                'sender_show':'KDABRA',
+                'intent':'wanna_buy_completed',
+                'scroll':'true',
+                'response_expected':{
+                    'type':'text_input'
+                }
+            },
+            {
                 'id_message':'msg_talk_agent',
                 'business_name':'default',
                 'message_title':'',
