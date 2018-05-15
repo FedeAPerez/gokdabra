@@ -6,14 +6,14 @@ import axios from 'axios';
 const trackServiceURL = process.env.REACT_APP_BACK_URL.trim() + '/track';
 
 const TrackAPI = {
-    getInfoByData: function(stack) {
+    postDataToTrack: function(stack) {
       return axios(
           {
             method: 'post',
             url: trackServiceURL,
             headers: {'Content-Type': 'application/json'},
             data: {
-              stack
+              stack: stack
             }
           }
         );

@@ -8,6 +8,8 @@ import React, { Component } from 'react';
  Código Propio y librerías desarrolladas por KDABRA
  */
 import MessagesAPI from '../../../../API/MessagesTestAPI';
+import TrackAPI from '../../../../API/TrackAPI';
+
 import IntentService from '../../../../Services/IntentService';
 import MessageContainer from './ConversationContainer__/MessageContainer';
 import MessageHandlerTestContainer from './ConversationContainer__/MessageHandlerTestContainer';
@@ -68,6 +70,10 @@ class ConversationTestContainer extends Component {
                 .then(
                     (response) => {
                         console.log("tengo " + response.data.intent);
+                        TrackAPI.postDataToTrack({
+                            "object":"intent",
+                            "info_saved":response.data
+                        });
                         if(response.data.intent) {
 
                             mIntent = MessagesAPI.getMessageByIntent(this.props.__BUSINESS_INFORMATION__.business_name , response.data.intent);
@@ -130,6 +136,10 @@ class ConversationTestContainer extends Component {
                         MessagesAPI.getMeliMessage(that.state.message_data_stack)
                         .then((mess) => {
                             console.log("me llego el mess " + mess);
+                            TrackAPI.postDataToTrack({
+                            "object":"recomended",
+                            "info_saved":mess
+                            });
                             that.state.messageList.push(mess);
                             that.setState(that.state);
 
