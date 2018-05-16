@@ -3,8 +3,12 @@
  Código librerías de externos
  */
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
+/* *
+ * CONSTANTES Y RUTAS DE IMAGENES
+ * */
 const __BUSINESS_HEADER_CLASS = "business-header-container";
-const __BUSINESS_HEADER_CLASS_IMAGE = "business-header-image";
+const __BUSINESS_HEADER_CLASS_LINK = "business-header-link";
 const __BUSINESS_HEADER_TEXT_IMAGE = "business-header-text";
 const __BUSINESS_HEADER_ROUTE_IMAGE = "content/images/home.svg";
 
@@ -24,11 +28,15 @@ class BusinessHeaderContainer extends Component {
             <section 
                     className= { __BUSINESS_HEADER_CLASS }
             >
-                <span 
-                    className= { __BUSINESS_HEADER_CLASS_IMAGE }
+                <Link 
+                    className= { __BUSINESS_HEADER_CLASS_LINK }
+                    to="/"
                 >
-                    <img src={ __BUSINESS_HEADER_ROUTE_IMAGE } />
-                </span>
+                    <span 
+                    >
+                        <img src={ __BUSINESS_HEADER_ROUTE_IMAGE } />
+                    </span>
+                </Link>
                 <h2
                     className= { __BUSINESS_HEADER_TEXT_IMAGE }
                 >
