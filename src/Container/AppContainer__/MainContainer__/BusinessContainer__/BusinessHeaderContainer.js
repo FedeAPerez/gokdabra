@@ -4,6 +4,9 @@
  */
 import React, { Component } from 'react';
 const __BUSINESS_HEADER_CLASS = "business-header-container";
+const __BUSINESS_HEADER_CLASS_IMAGE = "business-header-image";
+const __BUSINESS_HEADER_TEXT_IMAGE = "business-header-text";
+const __BUSINESS_HEADER_ROUTE_IMAGE = "content/images/home.svg";
 
 class BusinessHeaderContainer extends Component {
     constructor(props) {
@@ -21,7 +24,16 @@ class BusinessHeaderContainer extends Component {
             <section 
                     className= { __BUSINESS_HEADER_CLASS }
             >
-                <h2>{ this.businessMoreVersion() }</h2>
+                <span 
+                    className= { __BUSINESS_HEADER_CLASS_IMAGE }
+                >
+                    <img src={ __BUSINESS_HEADER_ROUTE_IMAGE } />
+                </span>
+                <h2
+                    className= { __BUSINESS_HEADER_TEXT_IMAGE }
+                >
+                    { this.businessMoreVersion() }
+                </h2>
             </section>
         );
     }
