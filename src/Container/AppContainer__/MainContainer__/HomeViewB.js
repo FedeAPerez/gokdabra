@@ -44,9 +44,11 @@ class HomeView extends Component {
     scrollToRef() {
         if(this['scroll_element']) {
 			this['scroll_element'].scrollIntoView( {
-				behavior: 'smooth'
+                behavior: 'smooth',
+                block:    "start",
 			});
-		}
+        }
+        
     }
 
 
@@ -69,7 +71,7 @@ class HomeView extends Component {
                     </article>
 
                     <section 
-                        ref={(ref) => { this['scroll_element'] = ref }}
+                        
                         className="home-main-content">
                         <article className="home-tag">
                             <h2>Las personas se comunican con mensajes.</h2>
@@ -85,6 +87,7 @@ class HomeView extends Component {
                             <h2>¡Queremos construir esta experiencia con vos!</h2>
                             <h3>Dejanos tu mail y nos vamos a contactar para que KDABRA sea una herramienta creada desde y para los usuarios.</h3>
                         </article>
+                        <div ref={(ref) => { this['scroll_element'] = ref }}></div>
                     </section>
                 </section>
                 <FooterContainer />
