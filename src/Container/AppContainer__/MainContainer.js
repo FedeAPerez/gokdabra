@@ -8,7 +8,7 @@ import { Switch, Route } from 'react-router-dom'
 /*
  Código Propio y librerías desarrolladas por KDABRA
  */
-import HomeView from './MainContainer__/HomeView';
+import HomeView from './MainContainer__/HomeViewB';
 import TestView from './MainContainer__/TestView';
 import BusinessContainer from './MainContainer__/BusinessContainer';
 import ErrorContainer from './MainContainer__/ErrorContainer';

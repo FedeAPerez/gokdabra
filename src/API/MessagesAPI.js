@@ -16,7 +16,7 @@ const MessagesAPI = {
                 'id_message':'msg_welcome',
                 'message_title':'',
                 'business_name':'default',
-                'message':'<h3><b>¡Hola! ¿Cómo estás?</b> Escribí tu mensaje o selecciona alguna de las opciones para comenzar.</h3>',
+                'message':'<h3><b>¡Hola! ¿Cómo estás?</b> Soy el asistente de KDABRA y estoy acá para ayudarte. Escribí tu mensaje para comenzar.</h3>',
                 'message_tip':{
                     'message': '¿Es tu primera vez usando KDABRA? Hacé click aquí para aprender a usarlo &#x1F601',
                     'intent':'onboarding_kdabra',

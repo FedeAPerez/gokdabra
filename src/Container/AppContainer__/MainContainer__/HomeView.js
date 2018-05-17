@@ -4,7 +4,7 @@
  */
 import React, { Component } from 'react';
 import FooterContainer from './HomeViewFolder__/FooterContainer';
-
+import './HomeViewStyles.css';
 class HomeView extends Component {
     constructor(props) {
         super(props);

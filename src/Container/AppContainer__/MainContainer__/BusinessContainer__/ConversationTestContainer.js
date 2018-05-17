@@ -9,7 +9,6 @@ import React, { Component } from 'react';
  */
 import MessagesAPI from '../../../../API/MessagesTestAPI';
 import TrackAPI from '../../../../API/TrackAPI';
-
 import GUIDAPI from '../../../../API/GUIDAPI';
 
 import IntentService from '../../../../Services/IntentService';
