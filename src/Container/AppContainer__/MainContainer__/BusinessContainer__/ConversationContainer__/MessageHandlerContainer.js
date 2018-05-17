@@ -64,6 +64,9 @@ class MessageHandlerContainer extends Component {
             backgroundColor: 'white',
             borderRadius: '1em'
         }
+        const hintStyle = {
+            color: '#95a5a6'
+        }
 
         return(
             <section>
@@ -74,10 +77,11 @@ class MessageHandlerContainer extends Component {
                     submitMessageMenuItem = { this.handleSubmitMenuItem.bind(this) }
                 />
                 <TextField 
-                    hintText= {__MESSAGE_HINT}
-                    style= {inputStyle}
+                    hintText= { __MESSAGE_HINT }
+                    hintStyle= { hintStyle }
+                    style= { inputStyle }
                     onChange={ this.handleChange }
-                    value={this.state.value}
+                    value={ this.state.value}
                     onFocus={ this.scrollToHandler.bind(this) }
                     /> 
                 <InputSenderComponent 
