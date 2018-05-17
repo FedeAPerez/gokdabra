@@ -1,7 +1,6 @@
 footer {
     background-color: #34495e;
     position: relative;
-    bottom: 0;
     display: block;
     flex-shrink: 0;
     height: 100%;

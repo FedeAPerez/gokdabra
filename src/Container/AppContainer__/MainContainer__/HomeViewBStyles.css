@@ -72,7 +72,7 @@ main {
     font-weight: 400;
 }
 .home-cta {
-    border-radius: 1em;
+    border-radius: 0.2em;
     border-color: tomato;
     background-color: tomato;
     color: white;
@@ -83,8 +83,8 @@ main {
     display: block;
     margin: 0em auto;
     position: absolute;
-    padding-left: 3em;
-    padding-right: 3em;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
     left: 0;
     right: 0;
     cursor: pointer;

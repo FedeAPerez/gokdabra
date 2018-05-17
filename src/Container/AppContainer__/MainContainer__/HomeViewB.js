@@ -52,7 +52,7 @@ class HomeView extends Component {
 
     render() {
         return (
-            <main onScroll={this.handleScroll.bind(this)}>
+            <main>
                 <section className="home">
                     <article className="home-content-container">
                         <img className="home-bg-image" src={'content/images/bg-image-1920.png'} />
@@ -87,10 +87,7 @@ class HomeView extends Component {
                         </article>
                     </section>
                 </section>
-                
-                {   this.state.fired &&
-                    <FooterContainer />
-                }
+                <FooterContainer />
             </main>
         );
     }
