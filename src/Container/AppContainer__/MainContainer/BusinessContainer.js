@@ -3,7 +3,7 @@
  Código librerías de externos
  */
 import React, { Component } from 'react';
-
+import {browserHistory} from 'react-router';
 /*
  Código Propio y librerías desarrolladas por KDABRA
  */
@@ -24,7 +24,8 @@ class BusinessContainer extends Component {
     render() {
         
         if (!this.state.businessOb) {
-            return <ErrorView />;
+            browserHistory.push('/404');
+            //return <ErrorView />;
         }
 
         return(

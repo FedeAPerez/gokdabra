@@ -30,8 +30,8 @@ class MainContainer extends Component {
                 <Route exact path="/index.html" component={HomeView} />
                 <Route path="/404" component={ErrorView} />
                 <Route path="/login" component={LogInView} />
+                <Route exact path="/dexter" render={(props) =>( <TestView id={"dexter"} />)} />
                 <Route path="/:business" component={BusinessContainer} />
-                <Route path="/dexter" render={(props) =>( <TestView id={"dexter"} />)} />
             </Switch>
         );
     }
