@@ -1,10 +1,17 @@
-// ErrorContainer.js
-/*
- Código librerías de externos
- */
+// ErrorView.js
+/* *
+ * Código de librerías externas
+ * */
 import React, { Component } from 'react';
+/* *
+ * Código de librerías internas
+ * */ 
 
-class ErrorContainer extends Component {
+/* *
+ * Hojas de Estilo y Constantes
+ * */ 
+
+class ErrorView extends Component {
     render() {
         return (
             <section className="no-found">
@@ -16,4 +23,4 @@ class ErrorContainer extends Component {
     }
 }
 
-export default ErrorContainer;
+export default ErrorView;

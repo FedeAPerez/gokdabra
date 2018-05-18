@@ -1,19 +1,20 @@
 // FooterContainer.js
-/*
- Código de librerías de externos
- */
+/* *
+ * Código de librerías externas
+ * */
+
 import React, { Component } from 'react';
 import TextField from 'material-ui/TextField';
 import FontIcon from 'material-ui/FontIcon';
-/*
- Código de estilos
- */
-import '../../../../Styles/HomeViewStyles__/FooterContainerStyle.css';
-/*
- Código de librerías propias
- */
-import MessagesContentAPI from '../../../../API/MessagesContentAPI';
-import ProspectsAPI from '../../../../API/ProspectsAPI';
+/* *
+ * Código de librerías internas
+ * */
+import MessagesContentAPI from '../../../API/MessagesContentAPI';
+import ProspectsAPI from '../../../API/ProspectsAPI';
+/* *
+ * Hojas de Estilo y Constantes
+ * */ 
+import './FooterContainer.css';
 
 class FooterContainer extends Component {
 

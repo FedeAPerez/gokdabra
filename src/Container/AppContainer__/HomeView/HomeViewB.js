@@ -1,16 +1,16 @@
-// HomeView.js
+// HomeViewB.js
 /* *
- * Código librerías de externos
+ * Código de librerías externas
  * */
 import React, { Component } from 'react';
 /* *
  * Código de librerías internas
  * */ 
-import FooterContainer from './HomeViewFolder__/FooterContainer';
+import FooterContainer from './FooterContainer';
 /* *
-* Hojas de Estilo y Constantes
-* */
-import './HomeViewBStyles.css';
+ * Hojas de Estilo y Constantes
+ * */
+import './HomeViewB.css';
 
 class HomeView extends Component {
     constructor(props) {

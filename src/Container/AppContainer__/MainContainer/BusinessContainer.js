@@ -8,14 +8,14 @@ import React, { Component } from 'react';
  Código Propio y librerías desarrolladas por KDABRA
  */
 import BusinessAPI from '../../../API/BusinessAPI';
-import ConversationTestContainer from './BusinessContainer__/ConversationTestContainer';
-import ErrorContainer from './ErrorContainer';
+import ConversationContainer from './BusinessContainer__/ConversationContainer';
+import ErrorView from '../ErrorView/ErrorView';
 
-class TestView extends Component {
+class BusinessContainer extends Component {
     constructor(props) {
         super(props);
         
-        const businessPojo = BusinessAPI.getBusinessByName(this.props.id);
+        const businessPojo = BusinessAPI.getBusinessByName(props.match.params.business);
         this.state = {
             'businessOb' : businessPojo
         };
@@ -24,12 +24,12 @@ class TestView extends Component {
     render() {
         
         if (!this.state.businessOb) {
-            return <ErrorContainer />;
+            return <ErrorView />;
         }
 
         return(
             <section className="view-container">
-                <ConversationTestContainer 
+                <ConversationContainer 
                     __BUSINESS_INFORMATION__= { this.state.businessOb }
                     />
             </section>
@@ -37,4 +37,4 @@ class TestView extends Component {
     }
 }
 
-export default TestView;
+export default BusinessContainer;

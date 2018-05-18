@@ -1,10 +1,17 @@
 // HomeView.js
-/*
- Código librerías de externos
- */
+/* *
+ * Código de librerías externas
+ * */
 import React, { Component } from 'react';
-import FooterContainer from './HomeViewFolder__/FooterContainer';
-import './HomeViewStyles.css';
+/* *
+ * Código de librerías internas
+ * */ 
+import FooterContainer from './FooterContainer';
+/* *
+ * Hojas de Estilo y Constantes
+ * */ 
+import './HomeView.css';
+
 class HomeView extends Component {
     constructor(props) {
         super(props);
