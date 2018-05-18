@@ -30,6 +30,7 @@ main {
     top: 0;
     left: 0;
     background-image: url('http://mi.gokdabra.com/content/images/bg-image-1920.png');
+    background-repeat: no-repeat;
     height: 100%;
     width: 100%;
     bottom: 0;
