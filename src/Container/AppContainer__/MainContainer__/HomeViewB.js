@@ -57,7 +57,7 @@ class HomeView extends Component {
             <main>
                 <section className="home">
                     <article className="home-content-container">
-                        <img className="home-bg-image" src={'content/images/bg-image-1920.png'} />
+                        <img className="home-bg-image" />
                         <span className="home-bg-image-filter" />
                         <div className="home-content">
                         <h1 className="home-title">Presentando KDABRA</h1>
@@ -71,8 +71,9 @@ class HomeView extends Component {
                     </article>
 
                     <section 
-                        
                         className="home-main-content">
+                        
+                        <div ref={(ref) => { this['scroll_element'] = ref }}></div>
                         <article className="home-tag">
                             <h2>Las personas se comunican con mensajes.</h2>
                             <h3>¿Te imaginás poder contestar a todos tus clientes al instante y que se queden sin dudas antes de comprar?</h3>
@@ -87,7 +88,6 @@ class HomeView extends Component {
                             <h2>¡Queremos construir esta experiencia con vos!</h2>
                             <h3>Dejanos tu mail y nos vamos a contactar para que KDABRA sea una herramienta creada desde y para los usuarios.</h3>
                         </article>
-                        <div ref={(ref) => { this['scroll_element'] = ref }}></div>
                     </section>
                 </section>
                 <FooterContainer />
