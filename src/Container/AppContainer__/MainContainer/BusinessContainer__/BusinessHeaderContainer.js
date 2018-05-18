@@ -1,11 +1,11 @@
 // BusinessHeaderContainer.js
-/*
- Código librerías de externos
- */
+/* *
+ * Código de librerías externas
+ * */
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 /* *
- * CONSTANTES Y RUTAS DE IMAGENES
+ * Hojas de Estilo y Constantes
  * */
 const __BUSINESS_HEADER_CLASS = "business-header-container";
 const __BUSINESS_HEADER_CLASS_LINK = "business-header-link";

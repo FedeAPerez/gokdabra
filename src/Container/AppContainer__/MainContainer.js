@@ -1,13 +1,12 @@
 // MainContainer.js
-/*
- Código librerías de externos
- */
+/* *
+ * Código de librerías externas
+ * */
 import React, { Component } from "react";
 import { Switch, Route } from 'react-router-dom'
-
-/*
- Código Propio y librerías desarrolladas por KDABRA
- */
+/* *
+ * Código de librerías internas
+ * */  
 import HomeView from './HomeView/HomeViewB';
 import ErrorView from './ErrorView/ErrorView';
 import TestView from './MainContainer/TestView';

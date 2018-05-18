@@ -1,15 +1,13 @@
 // BusinessContainer.js
-/*
- Código librerías de externos
- */
+/* *
+ * Código de librerías externas
+ * */
 import React, { Component } from 'react';
-
-/*
- Código Propio y librerías desarrolladas por KDABRA
- */
+/* *
+ * Código de librerías internas
+ * */ 
 import BusinessAPI from '../../../API/BusinessAPI';
 import ConversationTestContainer from './BusinessContainer__/ConversationTestContainer';
-import ErrorView from '../ErrorView/ErrorView';
 
 class TestView extends Component {
     constructor(props) {
@@ -24,7 +22,7 @@ class TestView extends Component {
     render() {
         
         if (!this.state.businessOb) {
-            return <ErrorView />;
+            browserHistory.push('/404');
         }
 
         return(

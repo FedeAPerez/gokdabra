@@ -1,24 +1,23 @@
 // ConversationTestContainer.js
-/*
- Código librerías de externos
- */
+/* *
+ * Código de librerías externas
+ * */
 import React, { Component } from 'react';
-
-/*
- Código Propio y librerías desarrolladas por KDABRA
- */
+/* *
+ * Código de librerías internas
+ * */
 import MessagesAPI from '../../../../API/MessagesTestAPI';
 import TrackAPI from '../../../../API/TrackAPI';
 import GUIDAPI from '../../../../API/GUIDAPI';
-
 import IntentService from '../../../../Services/IntentService';
 import MessageContainer from './ConversationContainer__/MessageContainer';
 import MessageHandlerTestContainer from './ConversationContainer__/MessageHandlerTestContainer';
 import BusinessHeaderContainer from './BusinessHeaderContainer';
-
+/* *
+ * Hojas de Estilo y Constantes
+ * */
 const __SENDER_USER = "user";
 const __SENDER_KDABRA = "KDABRA";
-
 const __SENDER_USER_CLASS = "right";
 const __CLEAR_CLASS = "clear";
 const __BASE_CONTAINER_CLASS = "base-container";

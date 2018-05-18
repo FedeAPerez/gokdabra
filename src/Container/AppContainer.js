@@ -1,14 +1,13 @@
 // AppContainer.js
-/*
- Código librerías de externos
- */
+/* *
+ * Código de librerías externas
+ * */
 import React, { Component } from 'react';
-
-/*
- Código Propio y librerías desarrolladas por KDABRA
- */
-import MainContainer from './AppContainer__/MainContainer';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+/* *
+ * Código de librerías internas
+ * */ 
+import MainContainer from './AppContainer__/MainContainer';
 
 class AppContainer extends Component {
     constructor(props) {

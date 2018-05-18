@@ -1,15 +1,14 @@
 // BusinessContainer.js
-/*
- Código librerías de externos
- */
+/* *
+ * Código de librerías externas
+ * */
 import React, { Component } from 'react';
 import {browserHistory} from 'react-router';
-/*
- Código Propio y librerías desarrolladas por KDABRA
- */
+/* *
+ * Código de librerías internas
+ * */
 import BusinessAPI from '../../../API/BusinessAPI';
 import ConversationContainer from './BusinessContainer__/ConversationContainer';
-import ErrorView from '../ErrorView/ErrorView';
 
 class BusinessContainer extends Component {
     constructor(props) {
@@ -25,7 +24,6 @@ class BusinessContainer extends Component {
         
         if (!this.state.businessOb) {
             browserHistory.push('/404');
-            //return <ErrorView />;
         }
 
         return(
