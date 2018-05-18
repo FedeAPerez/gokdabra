@@ -16,13 +16,6 @@ import LogInView from './MainContainer/LogInView';
 class MainContainer extends Component {
 
     render() {
-        var dexterProps = {
-            id:"dexter"
-        }
-
-        var pruneProps = {
-            id:"prune"
-        };
         return (
             <Switch className="section-switch">
                 <Route exact path="/" component={HomeView} />
