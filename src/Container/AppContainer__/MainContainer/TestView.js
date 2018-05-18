@@ -3,6 +3,7 @@
  * Código de librerías externas
  * */
 import React, { Component } from 'react';
+//import {browserHistory} from 'react-router';
 /* *
  * Código de librerías internas
  * */ 
@@ -22,7 +23,7 @@ class TestView extends Component {
     render() {
         
         if (!this.state.businessOb) {
-            browserHistory.push('/404');
+            //browserHistory.push('/404');
         }
 
         return(
