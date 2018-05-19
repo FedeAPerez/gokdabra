@@ -22,7 +22,8 @@ class MessageHandlerContainer extends Component {
         }
     }
     
-    handleSubmit() {
+    handleSubmit(e) {
+        e.preventDefault();
         if(this.props.onAnswerSubmit) {
             this.props.onAnswerSubmit("text_input", this.state.value);
             this.state.value = '';
@@ -70,6 +71,7 @@ class MessageHandlerContainer extends Component {
 
         return(
             <section>
+                <form onSubmit={this.handleSubmit.bind(this)}>
                 <div 
                 className= { __MESSAGE_DIV_CLASS }
                 >
@@ -88,6 +90,7 @@ class MessageHandlerContainer extends Component {
                     onClick={this.handleSubmit.bind(this)}/>
 
                 </div>
+                </form>
                 <div
                     className="focus-div"
                     ref = {(ref) => {
