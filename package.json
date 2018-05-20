@@ -1,9 +1,8 @@
 {
-  "name": "@gokdabra/kdabra",
+  "name": "kdabra",
   "version": "1.0.0",
   "private": true,
   "description": "KDABRA APP for rendering Business's ChatBot",
-  "main": "index.js",
   "scripts": {
     "startdev": "set REACT_APP_BACK_URL=http://localhost:5000 && react-scripts start",
     "start": "react-scripts start",
@@ -25,13 +24,5 @@
   "devDependencies": {
     "eslint": "^4.19.1",
     "eslint-plugin-react": "^7.8.2"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/FedeAPerez/gokdabra.git"
-  },
-  "bugs": {
-    "url": "https://github.com/FedeAPerez/gokdabra/issues"
-  },
-  "homepage": "https://github.com/FedeAPerez/gokdabra#readme"
+  }
 }
