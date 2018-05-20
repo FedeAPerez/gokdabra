@@ -9,8 +9,8 @@ import FontIcon from 'material-ui/FontIcon';
 /* *
  * Código de librerías internas
  * */
-import MessagesContentAPI from '@gokdabra/gokdabraapi/MessagesContentAPI';
-import ProspectsAPI from './API/ProspectsAPI';
+import {MessagesContentAPI} from '@gokdabra/gokdabraapi';
+import {ProspectsAPI} from '@gokdabra/gokdabraapi';
 /* *
  * Hojas de Estilo y Constantes
  * */ 
