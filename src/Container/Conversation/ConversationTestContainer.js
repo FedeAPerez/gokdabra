@@ -10,8 +10,8 @@ import MessagesAPI from '../../API/MessagesTestAPI';
 import TrackAPI from '../../API/TrackAPI';
 import GUIDAPI from '../../API/GUIDAPI';
 import IntentService from '../../Services/IntentService';
-import MessageContainer from './MessageContainer';
-import MessageHandlerTestContainer from './MessageHandlerTestContainer';
+import MessageContainer from '../Message/MessageContainer';
+import MessageHandlerTestContainer from '../MessageHandler/MessageHandlerTestContainer';
 import BusinessHeaderContainer from '../BusinessHeader/BusinessHeaderContainer';
 /* *
  * Hojas de Estilo y Constantes

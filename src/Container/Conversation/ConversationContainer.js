@@ -8,8 +8,8 @@ import React, { Component } from 'react';
  * */
 import MessagesAPI from '../../API/MessagesAPI';
 import IntentService from '../../Services/IntentService';
-import MessageContainer from './MessageContainer';
-import MessageHandlerContainer from './MessageHandlerContainer';
+import MessageContainer from '../Message/MessageContainer';
+import MessageHandlerContainer from '../MessageHandler/MessageHandlerContainer';
 import BusinessHeaderContainer from '../BusinessHeader/BusinessHeaderContainer';
 /* *
  * Hojas de Estilo y Constantes
