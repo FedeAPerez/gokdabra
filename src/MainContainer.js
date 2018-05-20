@@ -10,8 +10,8 @@ import { Switch, Route } from 'react-router-dom';
 import HomeView from './RouteHome/HomeViewB';
 import ErrorView from './RouteError/ErrorView';
 import BusinessContainer from './RouteMain/BusinessContainer';
+import TestView from './RouteMain/TestView';
 import LogInView from './RouteLogIn/LogInView';
-import TestView from './RouteTest/TestView';
 
 class MainContainer extends Component {
 

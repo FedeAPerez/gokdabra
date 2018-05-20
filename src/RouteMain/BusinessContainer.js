@@ -5,15 +5,15 @@
 import React, { Component } from 'react';
 /* *
  * Código de librerías internas
- * */ 
-import BusinessAPI from '../../API/BusinessAPI';
-import ConversationTestContainer from '../Conversation/ConversationTestContainer';
+ * */
+import BusinessAPI from './API/BusinessAPI';
+import ConversationContainer from './Container/Conversation/ConversationContainer';
 
-class TestView extends Component {
+class BusinessContainer extends Component {
     constructor(props) {
         super(props);
         
-        const businessPojo = BusinessAPI.getBusinessByName(this.props.id);
+        const businessPojo = BusinessAPI.getBusinessByName(props.match.params.business);
         this.state = {
             'businessOb' : businessPojo
         };
@@ -21,11 +21,12 @@ class TestView extends Component {
 
     render() {
         
-        if (!this.state.businessOb) {        }
+        if (!this.state.businessOb) {
+        }
 
         return(
             <section className="view-container">
-                <ConversationTestContainer 
+                <ConversationContainer 
                     __BUSINESS_INFORMATION__= { this.state.businessOb }
                     />
             </section>
@@ -33,4 +34,4 @@ class TestView extends Component {
     }
 }
 
-export default TestView;
+export default BusinessContainer;

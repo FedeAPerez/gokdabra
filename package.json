@@ -1,5 +1,5 @@
 {
-  "name": "kdabra",
+  "name": "@gokdabra/kdabra",
   "version": "1.0.0",
   "private": true,
   "description": "KDABRA APP for rendering Business's ChatBot",
@@ -11,10 +11,12 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "fedeaperez",
   "license": "ISC",
   "dependencies": {
+    "@gokdabra/gokdabraapi": "^1.0.6",
     "axios": "^0.18.0",
+    "cross-env": "^5.1.5",
     "material-ui": "^0.20.0",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
@@ -24,5 +26,13 @@
   "devDependencies": {
     "eslint": "^4.19.1",
     "eslint-plugin-react": "^7.8.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FedeAPerez/gokdabra.git"
+  },
+  "bugs": {
+    "url": "https://github.com/FedeAPerez/gokdabra/issues"
+  },
+  "homepage": "https://github.com/FedeAPerez/gokdabra#readme"
 }
