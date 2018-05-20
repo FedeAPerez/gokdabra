@@ -3,10 +3,11 @@
 Código librerías de externos
 */
 import React, { Component } from 'react';
+import './MessageSubmitButton.css'
 const __SUBMIT_SVG_ROUTE = "/content/images/kdabra-submit.svg";
 const __SUBMIT_BUTTON_CLASS = "message-submit-button";
 
-class InputSenderComponent extends Component {
+class MessageSubmitButton extends Component {
     constructor(props) {
         super(props);
     }
@@ -23,4 +24,4 @@ class InputSenderComponent extends Component {
    }
 }
 
-export default InputSenderComponent;
+export default MessageSubmitButton;

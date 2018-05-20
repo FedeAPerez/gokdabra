@@ -42,27 +42,9 @@
         border-bottom-left-radius: 0em;
     }
 }
-@media only screen and (min-width: 768px) 
-{
-    .message-submit-button { 
-        right: 1em;
 
-        margin-left: 2em;
-    }
-}
-.messages-container {
-    clear: both;
-    overflow: hidden;
-    -ms-flex: 1 0 auto;
-    flex: 1 0 auto;
-    /* margin-top: 3em; */
-    margin: 0 auto;
-    width: 100%;
-    display: block;
-}
-.message-div {
-    position: relative;
-}
+
+
 
 .focus-div {
     height: 5vh;

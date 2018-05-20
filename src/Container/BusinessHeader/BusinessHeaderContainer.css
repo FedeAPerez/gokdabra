@@ -28,7 +28,6 @@
     text-align: center;
 }
 .business-header-link {
-    display: inline-block;
     float: left;
     position: absolute;
     margin-left: 0.5em;
@@ -37,14 +36,4 @@
     vertical-align: middle;
 
      margin: 0em auto;
-}
-
-@media only screen and (max-width: 768px) 
-{
-    .business-header-container {
-    }
-
-    .business-header-container h2 {
-        
-    }
 }

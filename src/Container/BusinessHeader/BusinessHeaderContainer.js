@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom'
 /* *
  * Hojas de Estilo y Constantes
  * */
+import './BusinessHeaderContainer.css';
 const __BUSINESS_HEADER_CLASS = "business-header-container";
 const __BUSINESS_HEADER_CLASS_LINK = "business-header-link";
 const __BUSINESS_HEADER_TEXT_IMAGE = "business-header-text";

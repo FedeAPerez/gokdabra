@@ -7,6 +7,10 @@ import React, { Component } from 'react';
 /*
  Código Propio y librerías desarrolladas por KDABRA
  */
+import './MessageContainer.css';
+import './Left.css';
+import './LeftTituloLinea.css';
+import './LeftLinea.css';
 const __SENDER_USER = "user";
 const __MESSAGE_RIGHT_CLASS = "message-right";
 const __MESSAGE_LEFT_TIP_CLASS = "message-left-tip";

@@ -10,6 +10,7 @@ import React, { Component } from 'react';
 /* *
  * Hojas de Estilo y Constantes
  * */ 
+import './NoFound.css';
 
 class ErrorView extends Component {
     render() {

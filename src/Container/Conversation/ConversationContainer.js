@@ -14,6 +14,7 @@ import BusinessHeaderContainer from '../BusinessHeader/BusinessHeaderContainer';
 /* *
  * Hojas de Estilo y Constantes
  * */
+import './ConversationContainer.css';
 const __SENDER_USER = "user";
 const __SENDER_KDABRA = "KDABRA";
 const __SENDER_USER_CLASS = "right";
@@ -23,7 +24,6 @@ const __MESSAGES_CONTAINER_CLASS = "messages-container";
 const __MESSAGE_ARTICLE_CONTAINER_CLASS = "messages-article-container";
 const __MESSAGE_ARTICLE_CONTAINER_ID = "messages-article-container-";
 const __MESSAGE_CONTAINER_ID = "msg-component-";
-const __MESSAGE_HANDLER_CONTAINER_CLASS = "message-handler-container";
 
 class ConversationContainer extends Component {
     constructor(props) {
@@ -173,12 +173,9 @@ class ConversationContainer extends Component {
                     className= { __CLEAR_CLASS }>
 				</div>
                 </section>
-                <section 
-                    className= { __MESSAGE_HANDLER_CONTAINER_CLASS }>
-                    <MessageHandlerContainer 
-                        onAnswerSubmit = { this.onAnswerSubmit.bind(this) } 
-                    />
-                </section>
+                <MessageHandlerContainer 
+                    onAnswerSubmit = { this.onAnswerSubmit.bind(this) } 
+                />
             </section>
         );
     }

@@ -8,10 +8,11 @@ import TextField from 'material-ui/TextField';
 /*
  Código Propio y librerías desarrolladas por KDABRA
  */
-import InputSenderComponent from '../../Component/input-sender-component';
+import MessageSubmitButton from '../../Component/MessageSubmitButton';
 import MenuContainer from './MenuContainer';
+import './MessageHandlerContainer.css';
 const __MESSAGE_HINT = "Escribí un mensaje...";
-
+const __MESSAGE_HANDLER_CONTAINER_CLASS = "message-handler-container";
 const __MESSAGE_DIV_CLASS = "message-div";
 
 class MessageHandlerContainer extends Component {
@@ -70,7 +71,8 @@ class MessageHandlerContainer extends Component {
         }
 
         return(
-            <section>
+            <section 
+            className= { __MESSAGE_HANDLER_CONTAINER_CLASS }>
                 <form onSubmit={this.handleSubmit.bind(this)}>
                 <div 
                 className= { __MESSAGE_DIV_CLASS }
@@ -86,7 +88,7 @@ class MessageHandlerContainer extends Component {
                     value={ this.state.value}
                     onFocus={ this.scrollToHandler.bind(this) }
                     /> 
-                <InputSenderComponent 
+                <MessageSubmitButton 
                     onClick={this.handleSubmit.bind(this)}/>
 
                 </div>
