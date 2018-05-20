@@ -7,6 +7,8 @@ import React, { Component } from 'react';
 /*
  Código Propio y librerías desarrolladas por KDABRA
  */
+
+import './Menu.css';
 const __MENU_CONTAINER_CLASS = "menu-container";
 const __MENU_ITEM_CLASS = "menu-item";
 const __MENU_ITEM_ID = "menu-item-";
