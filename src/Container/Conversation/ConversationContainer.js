@@ -7,7 +7,7 @@ import React, { Component } from 'react';
  * Código de librerías internas
  * */
 import MessagesAPI from '../../API/MessagesAPI';
-import IntentService from '../../Services/IntentService';
+import IntentAPI from '../../API/IntentAPI';
 import MessageContainer from '../Message/MessageContainer';
 import MessageHandlerContainer from '../MessageHandler/MessageHandlerContainer';
 import BusinessHeaderContainer from '../BusinessHeader/BusinessHeaderContainer';
@@ -57,7 +57,7 @@ class ConversationContainer extends Component {
 
         var mIntent;
         if(input_value == "text_input") {
-            IntentService.getIntentFromText(text)
+            IntentAPI.getIntentFromText(text)
                 .then(
                     (response) => {
                         if(response.data.intent) {

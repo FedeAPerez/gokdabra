@@ -9,7 +9,7 @@ import React, { Component } from 'react';
 import MessagesAPI from '../../API/MessagesTestAPI';
 import TrackAPI from '../../API/TrackAPI';
 import GUIDAPI from '../../API/GUIDAPI';
-import IntentService from '../../Services/IntentService';
+import IntentAPI from '../../API/IntentAPI';
 import MessageContainer from '../Message/MessageContainer';
 import MessageHandlerTestContainer from '../MessageHandler/MessageHandlerTestContainer';
 import BusinessHeaderContainer from '../BusinessHeader/BusinessHeaderContainer';
@@ -74,7 +74,7 @@ class ConversationTestContainer extends Component {
                 "object":"text_input",
                 "info_saved":text
             });
-            IntentService.getIntentFromText(text)
+            IntentAPI.getIntentFromText(text)
                 .then(
                     (response) => {
                         console.log("tengo " + response.data.intent);
