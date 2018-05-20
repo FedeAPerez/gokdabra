@@ -34,7 +34,7 @@
 		<polygon opacity="0.3" points="7,10.19 7,18 9,18 9,12 15,12 15,18 17,18 17,10.19 12,5.69 		"/>
 	</g>
 </g>
-<g id="Fill" display="none">
+<g id="Fill">
 	<g id="ui_x5F_spec_x5F_header_copy" display="inline">
 	</g>
 	<path display="inline" d="M10,20v-6h4v6h5v-8h3L12,3L2,12h3v8H10z"/>
