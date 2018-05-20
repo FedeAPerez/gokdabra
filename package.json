@@ -13,7 +13,7 @@
   "author": "fedeaperez",
   "license": "ISC",
   "dependencies": {
-    "@gokdabra/gokdabraapi": "git+https://github.com/FedeAPerez/gokdabraapi.git",
+    "@gokdabra/gokdabraapi": "github:fedeaperez/gokdabraapi",
     "axios": "^0.18.0",
     "material-ui": "^0.20.0",
     "react": "^16.3.2",

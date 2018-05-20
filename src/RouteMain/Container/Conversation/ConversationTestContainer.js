@@ -6,10 +6,10 @@ import React, { Component } from 'react';
 /* *
  * Código de librerías internas
  * */
-import MessagesAPI from '../../API/MessagesTestAPI';
-import TrackAPI from '../../API/TrackAPI';
-import GUIDAPI from '../../API/GUIDAPI';
-import IntentAPI from '../../API/IntentAPI';
+import { MessagesAPI } from  '@gokdabra/gokdabraapi';
+import { TrackAPI } from  '@gokdabra/gokdabraapi';
+import { GUIDAPI } from  '@gokdabra/gokdabraapi';
+import { IntentAPI } from  '@gokdabra/gokdabraapi';
 import MessageContainer from '../Message/MessageContainer';
 import MessageHandlerTestContainer from '../MessageHandler/MessageHandlerTestContainer';
 import BusinessHeaderContainer from '../BusinessHeader/BusinessHeaderContainer';
