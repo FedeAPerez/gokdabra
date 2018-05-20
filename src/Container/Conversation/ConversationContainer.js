@@ -102,7 +102,7 @@ class ConversationContainer extends Component {
             this.getNextMessage(mIntent);
         }.bind(this), 1000);
 
-    }
+    };
 
     getNextMessage(mIntent) {
         if(mIntent && mIntent.next_message && mIntent.next_message != '') {

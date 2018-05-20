@@ -55,7 +55,7 @@ class MenuContainer extends Component {
                     'show_message' : '¿Cuáles son las formas de pago?'
                 },
             ]
-        }
+        };
     }
 
     handleClick(e, value) {

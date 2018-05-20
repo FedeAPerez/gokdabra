@@ -24,19 +24,19 @@ class MessageContainer extends Component {
         super(props);
         this.state = {
             show_tip : true
-        }
+        };
     }
 
     getMessageHtml() {
-		return { __html: this.props.messageOb.message }
+		return { __html: this.props.messageOb.message };
 	}
 
 	getMessageTitleHTML() {
-		return { __html: this.props.messageOb.message_title }
+		return { __html: this.props.messageOb.message_title };
 	}
 
     getMessageTip() {
-        return { __html: this.props.messageOb.message_tip.message }
+        return { __html: this.props.messageOb.message_tip.message };
     }
 
     messageTipHandler() {

@@ -1,16 +1,20 @@
-// input-sender-component.js
-/*
-Código librerías de externos
-*/
+// MessageSubmitButton.js
+/* *
+ * Código de librerías externas
+ * */
 import React, { Component } from 'react';
-import './MessageSubmitButton.css'
-const __SUBMIT_SVG_ROUTE = "/content/images/kdabra-submit.svg";
+/* *
+ * Hojas de Estilo y Constantes
+ * */ 
+import './MessageSubmitButton.css';
+const __SUBMIT_SVG_ROUTE = "/content/images/MessageSubmitButton.svg";
 const __SUBMIT_BUTTON_CLASS = "message-submit-button";
 
 class MessageSubmitButton extends Component {
     constructor(props) {
         super(props);
     }
+    
    render() {
        
        return(

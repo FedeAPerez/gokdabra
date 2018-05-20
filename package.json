@@ -5,7 +5,7 @@
   "description": "KDABRA APP for rendering Business's ChatBot",
   "main": "index.js",
   "scripts": {
-    "startdev":"set REACT_APP_BACK_URL=http://localhost:5000 && react-scripts start",
+    "startdev": "set REACT_APP_BACK_URL=http://localhost:5000 && react-scripts start",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -20,5 +20,9 @@
     "react-dom": "^16.3.2",
     "react-router-dom": "^4.2.2",
     "react-scripts": "^1.1.4"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-plugin-react": "^7.8.2"
   }
 }

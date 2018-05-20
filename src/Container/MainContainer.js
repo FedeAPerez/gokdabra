@@ -3,7 +3,7 @@
  * Código de librerías externas
  * */
 import React, { Component } from "react";
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom';
 /* *
  * Código de librerías internas
  * */  

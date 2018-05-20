@@ -1,4 +1,5 @@
 // BlankFile.js
+/* BlankFile.css */
 /* *
  * Código de librerías externas
  * */

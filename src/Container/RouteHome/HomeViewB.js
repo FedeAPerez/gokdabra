@@ -22,11 +22,11 @@ class HomeView extends Component {
             scrollY:'',
             // For A/B
             id_version:''
-        }
+        };
     }
 
     componentDidMount() {
-        window.addEventListener('scroll', this.handleScroll)
+        window.addEventListener('scroll', this.handleScroll);
     }
 
     componentWillUnmount() {
@@ -73,7 +73,12 @@ class HomeView extends Component {
                     <section 
                         className="home-main-content">
                         
-                        <div ref={(ref) => { this['scroll_element'] = ref }}></div>
+                        <div 
+                            ref={(ref) => { 
+                                    this['scroll_element'] = ref; 
+                            }}
+                        >
+                        </div>
                         <article className="home-tag">
                             <h2>Las personas se comunican con mensajes.</h2>
                             <h3>¿Te imaginás poder contestar a todos tus clientes al instante y que se queden sin dudas antes de comprar?</h3>

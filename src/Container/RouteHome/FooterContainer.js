@@ -24,13 +24,13 @@ class FooterContainer extends Component {
 		this.state = {
 			value: '',
 			registrationOkShow: false
-		}
+		};
 		
 		this.state.input_hint_text = MessagesContentAPI.getMessageContentFromId("footer-hint");		
 	}
 
 	getMessageContentHTML(id_message_content) {
-		return { __html: MessagesContentAPI.getMessageContentFromId(id_message_content) }
+		return { __html: MessagesContentAPI.getMessageContentFromId(id_message_content) };
 	}
 
 	changeForm(e) {
@@ -61,7 +61,7 @@ class FooterContainer extends Component {
 			borderRadius: '0.5em',
 			backgroundColor:'white',
 			width: '60%'
-		}
+		};
 
 		return (
 			<section>
@@ -72,7 +72,7 @@ class FooterContainer extends Component {
 						hintText={ this.state.input_hint_text }
 						style={ inputStyle }
 						underlineShow={ false }
-						onChange={ (e) => {this.changeForm(e)} }
+						onChange={ (e) => { this.changeForm(e); } }
 						value={ this.state.value }
 						type={ "email" } 
 					/>

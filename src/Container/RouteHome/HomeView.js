@@ -18,11 +18,11 @@ class HomeView extends Component {
         this.state = {
             fired:false,
             scrollY:''
-        }
+        };
     }
 
     componentDidMount() {
-        window.addEventListener('scroll', this.handleScroll)
+        window.addEventListener('scroll', this.handleScroll);
     }
 
     componentWillUnmount() {
