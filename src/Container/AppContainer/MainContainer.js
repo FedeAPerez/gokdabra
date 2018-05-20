@@ -7,11 +7,11 @@ import { Switch, Route } from 'react-router-dom'
 /* *
  * Código de librerías internas
  * */  
-import HomeView from './HomeView/HomeViewB';
-import ErrorView from './ErrorView/ErrorView';
-import TestView from './MainContainer/TestView';
-import BusinessContainer from './MainContainer/BusinessContainer';
-import LogInView from './MainContainer/LogInView';
+import HomeView from './Home/HomeViewB';
+import ErrorView from './Error/ErrorView';
+import BusinessContainer from './Main/BusinessContainer';
+import LogInView from './LogIn/LogInView';
+import TestView from './Test/TestView';
 
 class MainContainer extends Component {
 

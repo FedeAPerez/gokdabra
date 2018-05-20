@@ -1,4 +1,4 @@
-// ConversationTestContainer.js
+// ConversationContainer.js
 /* *
  * Código de librerías externas
  * */
@@ -6,13 +6,11 @@ import React, { Component } from 'react';
 /* *
  * Código de librerías internas
  * */
-import MessagesAPI from '../../../../API/MessagesTestAPI';
-import TrackAPI from '../../../../API/TrackAPI';
-import GUIDAPI from '../../../../API/GUIDAPI';
-import IntentService from '../../../../Services/IntentService';
-import MessageContainer from './ConversationContainer__/MessageContainer';
-import MessageHandlerTestContainer from './ConversationContainer__/MessageHandlerTestContainer';
-import BusinessHeaderContainer from './BusinessHeaderContainer';
+import MessagesAPI from '../../../API/MessagesAPI';
+import IntentService from '../../../Services/IntentService';
+import MessageContainer from './MessageContainer';
+import MessageHandlerContainer from './MessageHandlerContainer';
+import BusinessHeaderContainer from '../BusinessHeader/BusinessHeaderContainer';
 /* *
  * Hojas de Estilo y Constantes
  * */
@@ -27,21 +25,15 @@ const __MESSAGE_ARTICLE_CONTAINER_ID = "messages-article-container-";
 const __MESSAGE_CONTAINER_ID = "msg-component-";
 const __MESSAGE_HANDLER_CONTAINER_CLASS = "message-handler-container";
 
-class ConversationTestContainer extends Component {
-
+class ConversationContainer extends Component {
     constructor(props) {
         super(props);
         this.state = {
             'messageList' : [
 
             ],
-            'message_data_stack' : [
-
-            ],
-            'scroll_item' : 1,
-            'id_conversation':''
+            'scroll_item' : 1
         }
-        this.state.id_conversation = GUIDAPI.guid();;
     }
 
     addUserMessage(text) {
@@ -57,10 +49,6 @@ class ConversationTestContainer extends Component {
         var m = MessagesAPI.getFirstMessage();
 		this.state.messageList.push(m);
         this.setState(this.state);
-        // doy mensaje después de x tiempo
-        setTimeout(function() {
-            this.getNextMessage(m);
-        }.bind(this), 1000);
 	}
     
     onAnswerSubmit = (input_value, text) => {        
@@ -69,22 +57,10 @@ class ConversationTestContainer extends Component {
 
         var mIntent;
         if(input_value == "text_input") {
-            TrackAPI.postDataToTrack({
-                "id_conversation":this.state.id_conversation,
-                "object":"text_input",
-                "info_saved":text
-            });
             IntentService.getIntentFromText(text)
                 .then(
                     (response) => {
-                        console.log("tengo " + response.data.intent);
-                        TrackAPI.postDataToTrack({
-                            "id_conversation":this.state.id_conversation,
-                            "object":"intent",
-                            "info_saved":response.data
-                        });
                         if(response.data.intent) {
-
                             mIntent = MessagesAPI.getMessageByIntent(this.props.__BUSINESS_INFORMATION__.business_name , response.data.intent);
                         }
                         else {
@@ -94,7 +70,6 @@ class ConversationTestContainer extends Component {
                         {
                             this.state.scroll_item = mIntent.id_message;
                         }
-                        this.state.message_data_stack.push(response.data);
                         this.state.messageList.push(mIntent);
                         this.setState(this.state);
                     }
@@ -139,33 +114,11 @@ class ConversationTestContainer extends Component {
                     {
                         this.state.scroll_item = res.id_message;
                     }
-                    // MELI
-                    if(res.type && res.type.id == 'meli_item') {
-                        console.log("deberia traerte el de meli");
-                        MessagesAPI.getMeliMessage(that.state.message_data_stack)
-                        .then((mess) => {
-                            console.log("me llego el mess " + mess);
-                            TrackAPI.postDataToTrack({
-                                "id_conversation":that.state.id_conversation,
-                                "object":"recomended",
-                                "info_saved":mess
-                            });
-                            that.state.messageList.push(mess);
-                            that.setState(that.state);
-
-                        })
-                        .catch((err) => {
-                            console.log("fallo con " + err);
-                        });
-                    }
-                    // MELI
-                    else {    
-                        that.state.messageList.push(res);
-                        that.setState(that.state);
-                        setTimeout(function() {
-                            this.getNextMessage(res);
-                        }.bind(that), 1000 );
-                    }
+                    that.state.messageList.push(res);
+                    that.setState(that.state);
+                    setTimeout(function() {
+                        this.getNextMessage(res);
+                    }.bind(that), 1000 );
                 })
                 .catch((err) => {
                     alert(err);
@@ -222,7 +175,7 @@ class ConversationTestContainer extends Component {
                 </section>
                 <section 
                     className= { __MESSAGE_HANDLER_CONTAINER_CLASS }>
-                    <MessageHandlerTestContainer 
+                    <MessageHandlerContainer 
                         onAnswerSubmit = { this.onAnswerSubmit.bind(this) } 
                     />
                 </section>
@@ -231,4 +184,4 @@ class ConversationTestContainer extends Component {
     }
 }
 
-export default ConversationTestContainer;
+export default ConversationContainer;
