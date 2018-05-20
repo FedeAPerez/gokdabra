@@ -8,7 +8,7 @@ import TextField from 'material-ui/TextField';
 /*
  Código Propio y librerías desarrolladas por KDABRA
  */
-import InputSenderComponent from '../../../Component/input-sender-component';
+import InputSenderComponent from '../../Component/input-sender-component';
 import MenuContainer from './MenuContainer';
 const __MESSAGE_HINT = "Escribí un mensaje...";
 

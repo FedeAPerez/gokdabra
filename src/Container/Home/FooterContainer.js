@@ -9,8 +9,8 @@ import FontIcon from 'material-ui/FontIcon';
 /* *
  * Código de librerías internas
  * */
-import MessagesContentAPI from '../../../API/MessagesContentAPI';
-import ProspectsAPI from '../../../API/ProspectsAPI';
+import MessagesContentAPI from '../../API/MessagesContentAPI';
+import ProspectsAPI from '../../API/ProspectsAPI';
 /* *
  * Hojas de Estilo y Constantes
  * */ 

@@ -7,7 +7,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 /* *
  * Código de librerías internas
  * */ 
-import MainContainer from './AppContainer/MainContainer';
+import MainContainer from './MainContainer';
 
 class AppContainer extends Component {
     constructor(props) {

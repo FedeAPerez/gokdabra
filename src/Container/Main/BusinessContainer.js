@@ -6,7 +6,7 @@ import React, { Component } from 'react';
 /* *
  * Código de librerías internas
  * */
-import BusinessAPI from '../../../API/BusinessAPI';
+import BusinessAPI from '../../API/BusinessAPI';
 import ConversationContainer from '../Conversation/ConversationContainer';
 
 class BusinessContainer extends Component {

@@ -8,7 +8,7 @@ import TextField from 'material-ui/TextField';
 /*
  Código Propio y librerías desarrolladas por KDABRA
  */
-import InputSenderComponent from '../../../Component/input-sender-component';
+import InputSenderComponent from '../../Component/input-sender-component';
 const __MESSAGE_HINT = "Escribí un mensaje...";
 
 const __MESSAGE_DIV_CLASS = "message-div";
