@@ -63,8 +63,8 @@
     height: 100%;
 }
 .admin-business-header-nav-container span img{
-    -webkit-transform: scale(2);
-    -ms-transform: scale(2);
+    -webkit-transform: scale(1.5);
+    -ms-transform: scale(1.5);
     vertical-align: bottom;
     margin: 0em auto;
     display: inline;
