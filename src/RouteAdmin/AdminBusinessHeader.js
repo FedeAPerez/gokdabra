@@ -25,13 +25,15 @@ class AdminBusinessHeader extends Component {
         super(props);
         this.state = {
             'business_object' : this.props.__BUSINESS_INFORMATION__,
-            'option_selected':'chat'
+            'option_selected':'chat',
+            'show_option':'Mensajes'
         };
     }
 
-    navigateOption(e, value) {
+    navigateOption(e, value, show_message) {
         e.preventDefault();
         this.state.option_selected = value;
+        this.state.show_option = show_message;
         this.setState(this.state);
     }
 
@@ -53,7 +55,7 @@ class AdminBusinessHeader extends Component {
                 <h2
                     className= { __BUSINESS_HEADER_TEXT_IMAGE }
                 >
-                    { this.state.business_object.business_name.toUpperCase() }
+                    { this.state.business_object.business_name.toUpperCase() + ' | ' + this.state.show_option}
                 </h2>
             </section>
                 <section 
@@ -62,14 +64,14 @@ class AdminBusinessHeader extends Component {
                     <span 
                         className= { this.state.option_selected == 'chat' ? 'resalt':'' }
                         value={"home"}
-                        onClick={ (e) => this.navigateOption(e, "chat") }
+                        onClick={ (e) => this.navigateOption(e, "chat", "Mensajes") }
                     >
                         <img src={ __BUSINESS_HEADER_MESSAGES_IMAGE } />
                     </span>
                     <span 
                         className= { this.state.option_selected == 'settings' ? 'resalt':'' }
                         value={"settigs"}
-                        onClick={ (e) => this.navigateOption(e, "settings") }
+                        onClick={ (e) => this.navigateOption(e, "settings", "Configuración") }
                     >
                         <img src={ __BUSINESS_HEADER_SETTINGS_IMAGE } />
                     </span>
