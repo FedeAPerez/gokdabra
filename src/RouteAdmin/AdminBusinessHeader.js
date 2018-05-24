@@ -44,6 +44,10 @@ class AdminBusinessHeader extends Component {
         this.props.handleNavigation(value);
     }
 
+    renderBusinessHeaderLabel() {
+        return {__html : this.state.business_object.business_name.toUpperCase() + " | <span class=biggerH2>" + this.state.show_option + "</span>"};
+    }
+
     render() {
         return (
             <section>
@@ -61,8 +65,8 @@ class AdminBusinessHeader extends Component {
                 </Link>
                 <h2
                     className= { __BUSINESS_HEADER_TEXT_IMAGE }
+                    dangerouslySetInnerHTML={ this.renderBusinessHeaderLabel() }
                 >
-                    { this.state.business_object.business_name.toUpperCase() + ' | ' + this.state.show_option}
                 </h2>
             </section>
                 <section 

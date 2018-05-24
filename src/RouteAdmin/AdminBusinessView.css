@@ -18,13 +18,17 @@
 .admin-business-header-container h2{
     font-family: 'Montserrat';
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 400;
     font-style: normal;
     font-stretch: normal;
     line-height: 1.5;
     letter-spacing: normal;
     color: black;
     text-align: center;
+}
+.admin-business-header-container h2 .biggerH2{
+    font-weight: 500;
+    color: #f16334;
 }
 .admin-business-header-link {
     float: left;
