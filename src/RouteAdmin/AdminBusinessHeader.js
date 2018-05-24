@@ -35,6 +35,7 @@ class AdminBusinessHeader extends Component {
         this.state.option_selected = value;
         this.state.show_option = show_message;
         this.setState(this.state);
+        this.props.handleNavigation(value);
     }
 
     render() {
