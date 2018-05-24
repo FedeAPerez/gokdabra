@@ -10,6 +10,7 @@ import { BusinessAPI } from  '@gokdabra/gokdabraapi';
 import AdminBusinessHeader from './AdminBusinessHeader';
 import MessagesContainer from './MessagesContainer';
 import SettingsContainer from './SettingsContainer';
+import AnalyticsContainer from './AnalyticsContainer';
 
 /* *
  * Hojas de Estilo y Constantes
@@ -18,6 +19,7 @@ import './AdminBusinessView.css';
 const keyMap = {
     'chat' : MessagesContainer,
     'settings' : SettingsContainer,
+    'analytics' : AnalyticsContainer,
     'default' : MessagesContainer
 };
 

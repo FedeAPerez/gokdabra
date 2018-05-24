@@ -52,7 +52,7 @@
     box-shadow: 0px 1.5px rgb(0, 0, 0, 0.16);
 }
 .admin-business-header-nav-container span{
-    width: 50%;
+    width: 33.333%;
     display: inline-flex;
     overflow: hidden;
     flex-direction: row;

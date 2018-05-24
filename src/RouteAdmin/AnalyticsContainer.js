@@ -1,4 +1,4 @@
-// SettingsContainer.js
+// AnalyticsContainer.js
 /* *
  * Código de librerías externas
  * */
@@ -9,9 +9,9 @@ import React, { Component } from 'react';
 /* *
  * Hojas de Estilo y Constantes
  * */
- import './SettingsContainer.css';
+import './AnalyticsContainer.css';
 
-class SettingsContainer extends Component {
+class AnalyticsContainer extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -20,7 +20,7 @@ class SettingsContainer extends Component {
 
     render() {
         return (
-            <main className="admin-settings-container">
+            <main className="admin-analytics-container">
                 <h2>Estamos desarrollando esta funcionalidad</h2>
 
                 <h2>Dentro de poco vas a poder comunicarte con tus clientes usando toda la tecnología de KDABRA</h2>
@@ -29,4 +29,4 @@ class SettingsContainer extends Component {
     }
 }
 
-export default SettingsContainer;
+export default AnalyticsContainer;

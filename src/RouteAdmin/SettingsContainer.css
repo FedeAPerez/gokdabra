@@ -1,0 +1,17 @@
+.admin-settings-container {
+
+}
+
+.admin-settings-container h2{
+	text-align: left;
+    font-family: 'Rubik';
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #f16334;
+    float: left;
+    padding: 1em;
+}

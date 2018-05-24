@@ -17,6 +17,7 @@ const __BUSINESS_HEADER_NAV_CLASS = "admin-business-header-nav-container";
 const __BUSINESS_HEADER_CLASS_LINK = "admin-business-header-link";
 const __BUSINESS_HEADER_TEXT_IMAGE = "admin-business-header-text";
 const __BUSINESS_HEADER_HOME_IMAGE = "/content/images/HomeButton.svg";
+const __BUSINESS_HEADER_ANALYTICS_IMAGE = "/content/images/AnalyticsButton.svg";
 const __BUSINESS_HEADER_SETTINGS_IMAGE = "/content/images/SettingsButton.svg";
 const __BUSINESS_HEADER_MESSAGES_IMAGE = "/content/images/MessagesButton.svg";
 
@@ -68,6 +69,13 @@ class AdminBusinessHeader extends Component {
                         onClick={ (e) => this.navigateOption(e, "chat", "Mensajes") }
                     >
                         <img src={ __BUSINESS_HEADER_MESSAGES_IMAGE } />
+                    </span>
+                    <span 
+                        className= { this.state.option_selected == 'analytics' ? 'resalt':'' }
+                        value={"analytics"}
+                        onClick={ (e) => this.navigateOption(e, "analytics", "Uso") }
+                    >
+                        <img src={ __BUSINESS_HEADER_ANALYTICS_IMAGE } />
                     </span>
                     <span 
                         className= { this.state.option_selected == 'settings' ? 'resalt':'' }
