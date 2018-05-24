@@ -11,7 +11,7 @@ import './BusinessHeaderContainer.css';
 const __BUSINESS_HEADER_CLASS = "business-header-container";
 const __BUSINESS_HEADER_CLASS_LINK = "business-header-link";
 const __BUSINESS_HEADER_TEXT_IMAGE = "business-header-text";
-const __BUSINESS_HEADER_ROUTE_IMAGE = "content/images/HomeButton.svg";
+const __BUSINESS_HEADER_ROUTE_IMAGE = "/content/images/HomeButton.svg";
 
 class BusinessHeaderContainer extends Component {
     constructor(props) {
