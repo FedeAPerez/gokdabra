@@ -23,7 +23,7 @@ class SettingsContainer extends Component {
             <main className="admin-settings-container">
                 <h2>Estamos desarrollando esta funcionalidad</h2>
 
-                <h2>Dentro de poco vas a poder comunicarte con tus clientes usando toda la tecnología de KDABRA</h2>
+                <h2>Dentro de poco vas a poder configurar todos tus mensajes.</h2>
             </main>
         );
     }

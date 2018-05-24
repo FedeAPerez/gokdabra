@@ -23,7 +23,7 @@ class AnalyticsContainer extends Component {
             <main className="admin-analytics-container">
                 <h2>Estamos desarrollando esta funcionalidad</h2>
 
-                <h2>Dentro de poco vas a poder comunicarte con tus clientes usando toda la tecnología de KDABRA</h2>
+                <h2>Dentro de poco vas a poder ver estadísticas de uso de tu bot</h2>
             </main>
         );
     }
