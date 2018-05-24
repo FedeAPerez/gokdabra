@@ -13,7 +13,6 @@
     height: 3em;
     top: 0;
     background-color: #ffffff;
-    box-shadow: 0px 1.5px rgb(0, 0, 0, 0.16);
 }
 
 .admin-business-header-container h2{
@@ -63,12 +62,10 @@
     position: relative;
     text-align: center;
     height: 100%;
-    box-shadow: 0px 1.5px 0px 4px rgb(0, 0, 0, 0.16);
 }
 .admin-business-header-nav-container span img{
     -webkit-transform: scale(2);
     -ms-transform: scale(2);
-    /* transform: scale(2); */
     vertical-align: bottom;
     margin: 0em auto;
     display: inline;
@@ -76,6 +73,7 @@
     top: 0;
     left: 0;
     right: 0;
-    /* height: 100%; */
-    /* position: absolute; */
+}
+.resalt {
+    border-bottom: 3px solid #f16334;
 }
