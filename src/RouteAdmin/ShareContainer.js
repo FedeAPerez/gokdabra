@@ -21,12 +21,32 @@ class ShareContainer extends Component {
         }
     }
 
+    renderImage() {
+        return(
+            <img 
+                src={'/content/images/ShareButtonWhite.svg'}
+            />
+        );
+    }
+
+    renderCopied() {
+        return(
+            <span className="admin-share-link-clicked">
+                Copiado
+            </span>
+
+        );
+    }
+
+
     render() {
 
         return(
             <main className="admin-share-container">
                 <h2>
-                Compartí tu link y logros en KDABRA.
+                1 - Copia tu link.<br />
+                2 - Subilo a las redes.<br />
+                3 - Que tus clientes se conviertan en tus fans usando KDABRA.
                 </h2>
                 <CopyToClipboard 
                 text={ "http://mi.gokdabra.com/" + this.props.businessObject.business_name.toLowerCase() }
@@ -35,16 +55,29 @@ class ShareContainer extends Component {
                     className="admin-share-link"
                 >
                 { "http://mi.gokdabra.com/" + this.props.businessObject.business_name.toLowerCase() }
-                <img 
-                    src={'/content/images/ShareButtonWhite.svg'}
-                />
-                {   this.state.copied && 
-                    <span className="admin-share-link-clicked">
-                        Copiado
-                    </span>
+                {
+                    this.renderImage()
+                }
+                {  
+                    this.state.copied &&
+                    this.renderCopied()
                 }
                 </div>
                 </CopyToClipboard>
+
+                <h2>
+                1 - Abrí la imagen.<br />
+                2 - Subila a las redes.<br />
+                3 - Comparti el logro de ser más innovador en la forma de comunicarte.
+                </h2>
+                <div className="admin-share-link-no-active">
+                <a className="admin-share-image" target="_blank" href={"/content/images/badges/kdabra_basic_badge.png"}>
+                Guardar logro como imagen
+                </a>
+                {
+                    this.renderImage()
+                }
+                </div>
             </main>
         );
         
