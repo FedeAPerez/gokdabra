@@ -10,6 +10,7 @@ import { BusinessAPI } from  '@gokdabra/gokdabraapi';
 import AdminBusinessHeader from './AdminBusinessHeader';
 import MessagesContainer from './MessagesContainer';
 import SettingsContainer from './SettingsContainer';
+import ShareContainer from './ShareContainer';
 import AnalyticsContainer from './AnalyticsContainer';
 
 /* *
@@ -20,7 +21,8 @@ const keyMap = {
     'chat' : MessagesContainer,
     'settings' : SettingsContainer,
     'analytics' : AnalyticsContainer,
-    'default' : MessagesContainer
+    'share': ShareContainer,
+    'default' : ShareContainer
 };
 
 class AdminBusinessView extends Component {
@@ -29,7 +31,7 @@ class AdminBusinessView extends Component {
         const businessPojo = BusinessAPI.getBusinessByName(props.match.params.business);
         this.state = {
             'businessOb' : businessPojo,
-            'selected_container' : MessagesContainer
+            'selected_container' : ShareContainer
         };
     }
 
@@ -47,7 +49,8 @@ class AdminBusinessView extends Component {
                 <AdminBusinessHeader 
                     handleNavigation= { this.handleNavigation.bind(this) }
                     __BUSINESS_INFORMATION__= { this.state.businessOb } />
-                <KeySelected />
+                <KeySelected 
+                        businessObject= { this.state.businessOb } />
             </main>
         );
     }

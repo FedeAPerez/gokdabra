@@ -20,7 +20,7 @@ class NavigationItem extends Component {
 	render() {
 		return (
 			<span 
-                className= { this.props.isSelected ? 'resalt' : '' }
+                className= { this.props.isSelected ? 'resalt' : 'admin-navigation-item' }
                 onClick={ (e) => this.props.navigateOption(e, this.props.value , this.props.showMessage) }
             >
                 <img src={ this.props.isSelected ? this.props.selectedImage : this.props.defaultImage } />

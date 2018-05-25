@@ -25,14 +25,16 @@ const __BUSINESS_HEADER_ANALYTICS_IMAGE = "/content/images/AnalyticsButton.svg";
 const __BUSINESS_HEADER_ANALYTICS_SELECTED_IMAGE = "/content/images/AnalyticsButtonSelected.svg";
 const __BUSINESS_HEADER_MESSAGES_IMAGE = "/content/images/MessagesButton.svg";
 const __BUSINESS_HEADER_MESSAGES_SELECTED_IMAGE = "/content/images/MessagesButtonSelected.svg";
+const __BUSINESS_HEADER_SHARE_IMAGE = "/content/images/ShareButton.svg";
+const __BUSINESS_HEADER_SHARE_SELECTED_IMAGE = "/content/images/ShareButtonSelected.svg";
 
 class AdminBusinessHeader extends Component {
 	constructor(props) {
         super(props);
         this.state = {
             'business_object' : this.props.__BUSINESS_INFORMATION__,
-            'option_selected':'chat',
-            'show_option':'Mensajes'
+            'option_selected':'share',
+            'show_option':'Compartir'
         };
     }
 
@@ -87,6 +89,14 @@ class AdminBusinessHeader extends Component {
                         selectedImage= { __BUSINESS_HEADER_ANALYTICS_SELECTED_IMAGE }
                         navigateOption= { this.navigateOption.bind(this) }
                         showMessage= { "Uso" }
+                    />
+                    <NavigationItem 
+                        value= { "share" }
+                        isSelected= { this.state.option_selected == "share" }
+                        defaultImage= { __BUSINESS_HEADER_SHARE_IMAGE }
+                        selectedImage= { __BUSINESS_HEADER_SHARE_SELECTED_IMAGE }
+                        navigateOption= { this.navigateOption.bind(this) }
+                        showMessage= { "Compartir" }
                     />
                     <NavigationItem 
                         value= { "settings" }
