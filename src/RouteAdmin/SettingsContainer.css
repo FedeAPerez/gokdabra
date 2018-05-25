@@ -1,5 +1,6 @@
 .admin-settings-container {
-
+    overflow-y: visible;
+    height: fit-content;
 }
 
 .admin-settings-container h2{
@@ -12,6 +13,63 @@
     line-height: 1.5;
     letter-spacing: normal;
     color: #f16334;
-    float: left;
     padding: 1em;
+}
+.admin-settings-item {
+    width: 95%;
+    margin: 1em auto;
+    background-color: #dfe6e9;
+    -webkit-box-shadow: 0 1px 3px 0 rgba(0,0,0,.5);
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.5);
+    clear: both;
+    overflow: hidden;
+}
+
+.admin-settings-item-header {
+    text-align: left;
+    font-family: 'Rubik';
+    font-size: 16px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #000;
+    padding-left: 1em;
+    margin: 0em auto;
+}
+
+.admin-settings-item-description {
+    text-align: left;
+    font-family: 'Rubik';
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #000;
+    padding: 1em;
+    margin: 0em auto;
+}
+
+.admin-settings-modify-button {
+    background-color: #e17055;
+    color: inherit;
+    border: none;
+    padding: 0.75em;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    margin-bottom: 1em;
+    margin-right: 1em;
+
+    font-family: 'Rubik';
+    font-size: 16px;
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: white;
 }
