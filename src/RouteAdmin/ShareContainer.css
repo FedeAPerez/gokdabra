@@ -53,6 +53,26 @@
     background-color: #f16334;
     color: white;
 }
+.admin-share-link-clicked {
+    position:absolute;
+    right: 0;
+    margin-right: 3em;
+
+    -webkit-animation: fadeinout 4s linear 1 forwards;
+    animation: fadeinout 4s linear 1 forwards;
+}
+
+@-webkit-keyframes fadeinout {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@keyframes fadeinout {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 0; }
+}
 
 .admin-share-link img {
     position: absolute;

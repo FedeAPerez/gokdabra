@@ -16,6 +16,9 @@ import './ShareContainer.css';
 class ShareContainer extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            copied:false
+        }
     }
 
     render() {
@@ -35,6 +38,11 @@ class ShareContainer extends Component {
                 <img 
                     src={'/content/images/ShareButtonWhite.svg'}
                 />
+                {   this.state.copied && 
+                    <span className="admin-share-link-clicked">
+                        Copiado
+                    </span>
+                }
                 </div>
                 </CopyToClipboard>
             </main>
