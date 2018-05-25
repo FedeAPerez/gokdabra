@@ -45,6 +45,24 @@
     padding: 1em;
     width: 90%;
     position: relative;
+
+    
+    
+    -webkit-transition: all 1s ease-out;
+    -moz-transition: all 1s ease-out;
+    -o-transition: all 1s ease-out;
+    -ms-transition: all 1s ease-out;
+    transition: all 1s ease-out;
+}
+.admin-share-link-no-active:hover{
+    -webkit-transition: all 0.5s ease-in;
+    -moz-transition: all 0.5s ease-in;
+    -o-transition: all 0.5s ease-in;
+    -ms-transition: all 0.5s ease-in;
+    transition: all 0.5s ease-in;
+
+    background-color: #f16334;
+    color: white;
 }
 .admin-share-link {
     font-family: 'Rubik';
@@ -117,10 +135,8 @@
 .admin-share-image {
     text-decoration: none;
     color: white;
-    background-color: #34495e;
     border-radius: 1em;
     margin: 0em auto;
-    padding: 1em;
     width: 90%;
     position: relative;
 }
@@ -132,25 +148,7 @@
     font-style: normal;
     font-stretch: normal;
     line-height: 1.5;
-    letter-spacing: normal;
-    cursor: pointer;
-
-    
-    -webkit-transition: all 1s ease-out;
-    -moz-transition: all 1s ease-out;
-    -o-transition: all 1s ease-out;
-    -ms-transition: all 1s ease-out;
-    transition: all 1s ease-out;
-}
-.admin-share-image:hover, .admin-share-image:active{
-    -webkit-transition: all 0.5s ease-in;
-    -moz-transition: all 0.5s ease-in;
-    -o-transition: all 0.5s ease-in;
-    -ms-transition: all 0.5s ease-in;
-    transition: all 0.5s ease-in;
-
-    background-color: #f16334;
-    color: white;
+    letter-spacing: normal;    
 }
 
 .hidden {
