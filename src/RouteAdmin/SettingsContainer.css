@@ -1,6 +1,10 @@
 .admin-settings-container {
-    overflow-y: visible;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
     height: fit-content;
+    height: 100%;
+    clear: both;
+    overflow: scroll;
 }
 
 .admin-settings-container h2{
