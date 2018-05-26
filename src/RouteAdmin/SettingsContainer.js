@@ -72,10 +72,10 @@ class SettingsContainer extends Component {
                                 </h3>
                                 <div className="admin-settings-item-description-container" key={"admin-settings-item-description-container-"+index}>
                                     <p className="admin-settings-item-description" key={"admin-settings-item-description-"+index}>
-                                        {element.description}
+                                        {element.description != undefined ? element.description : "¡Configurá este mensaje para que tus clientes lo vean en KDABRA!"}
                                     </p>
                                     <button className="admin-settings-modify-button" key={"admin-settings-modify-button-"+index}>
-                                        Modificar
+                                        { element.description != undefined ? "Modificar" : "Agregar" }
                                     </button>
                                 </div>
                             </div>

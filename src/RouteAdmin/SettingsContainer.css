@@ -42,7 +42,12 @@
     padding-left: 1em;
     margin: 0em auto;
 }
-
+.admin-settings-item-description-container {
+    position: relative;
+    clear: both;
+    overflow: hidden;
+    height: fit-content;
+}
 .admin-settings-item-description {
     text-align: left;
     font-family: 'Rubik';
@@ -64,11 +69,13 @@
     padding: 0.75em;
     font: inherit;
     cursor: pointer;
+    width: 100%;
     outline: inherit;
     margin-bottom: 1em;
     margin-right: 1em;
-
     font-family: 'Rubik';
+    position: inherit;
+    bottom: 0;
     font-size: 16px;
     font-weight: 300;
     font-style: normal;
@@ -76,4 +83,5 @@
     line-height: 1.5;
     letter-spacing: normal;
     color: white;
+    margin: 0em auto;
 }
