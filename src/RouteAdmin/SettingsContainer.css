@@ -100,3 +100,70 @@
     color: white;
     margin: 0em auto;
 }
+
+.admin-settings-modify {
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 1;
+    position: absolute;
+    z-index: 10;
+}
+
+
+.admin-settings-modify-area {
+    width: 90%;
+    background-color: white;
+    margin: 0em auto;
+    position: absolute;
+    top: 1em;
+    left: 0;
+    right: 0;
+    bottom: 1em;
+    border-radius: 1em;
+}
+.admin-settings-modify-area h2 {
+    margin: 0em auto;
+}
+.admin-settings-modify-close {
+    position: relative;
+    top: 0;
+    left: 0;
+    margin-top: 1em;
+    margin-left: 1em;
+}
+.admin-settings-modify-save {
+    background-color: #e17055;
+    color: inherit;
+    border: none;
+    padding: 0.75em;
+    font: inherit;
+    cursor: pointer;
+    width: 100%;
+    outline: inherit;
+    margin-bottom: 1em;
+    margin-right: 1em;
+    font-family: 'Rubik';
+    position: relative;
+    font-size: 16px;
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: white;
+    margin: 0em auto;
+}
+.admin-settings-modify-area h3{
+    text-align: left;
+    font-family: 'Rubik';
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #353b48;
+    padding: 1em;
+    margin: 0em auto;
+}
