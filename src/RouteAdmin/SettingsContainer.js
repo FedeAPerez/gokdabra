@@ -18,7 +18,9 @@ class SettingsContainer extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            options_list: []
+            options_list: [],
+            profile_completed: 0,
+            percentage_completed: '0%'
         };
     }
 
@@ -29,13 +31,26 @@ class SettingsContainer extends Component {
         .then((res) => {
             res.data.options_list.forEach(element => {
                 var indexElement = this.state.options_list.findIndex(p => p.id_option == element.id_option);
-                if(indexElement > 0) 
+                if(indexElement > 0) {
                     this.state.options_list[indexElement].description = element.show_message;
+                    this.state.profile_completed += 1;
+                }
             });
             this.setState(this.state);
+            this.profileCompletedPercentage();
         })
         .catch((err) => {
         });
+    }
+
+    profileCompletedPercentage() {
+        if(this.state.options_list) {
+            console.log(this.state.profile_completed);
+            var perce = (this.state.profile_completed / this.state.options_list.length) *100;
+            console.log(perce);
+            this.state.percentage_completed = "%"+perce;
+            this.setState(this.state);
+        }
     }
 
     fillOptions() {
@@ -63,6 +78,9 @@ class SettingsContainer extends Component {
         return (
             <main className="admin-settings-container">
                 <section className="admin-settings">
+                    <div className="admin-settings-reward">
+                        <h3>{"Perfil completo al: " + this.state.percentage_completed}</h3>
+                    </div>
                     {
                         this.state.options_list.length > 0 && this.state.options_list.map((element, index)=> {
                             return (
