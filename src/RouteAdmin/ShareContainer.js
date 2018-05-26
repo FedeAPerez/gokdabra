@@ -71,7 +71,7 @@ class ShareContainer extends Component {
                 3 - Comparti el logro de ser más innovador en la forma de comunicarte.
                 </h2>
                 <div className="admin-share-link-no-active">
-                <a className="admin-share-image" target="_blank" href={"/content/images/badges/kdabra_basic_badge.png"}>
+                <a className="admin-share-image" target="_blank" href={"/content/images/badges/KdabraFirstBadge.png"}>
                 Guardar logro como imagen
                 </a>
                 {
