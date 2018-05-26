@@ -24,7 +24,8 @@ class SettingsContainer extends Component {
             setting_item : false,
             setting_option : "",
             setting_show_message : "",
-            setting_value : ""
+            setting_value : "",
+            setting_dirty : false
         };
     }
 
@@ -106,7 +107,8 @@ class SettingsContainer extends Component {
         e.preventDefault();
         this.setState(
             {
-                setting_value: e.target.value
+                setting_value: e.target.value,
+                setting_dirty: true
             }
         );
 	};
@@ -168,10 +170,12 @@ class SettingsContainer extends Component {
                                 this.state.setting_show_message
                             }</h2>
 
+                            {
+                                !this.state.setting_dirty &&
                             <h3>
                                 Este mensaje va a ayudar a tus clientes a entender mejor tu negocio y obtener toda la información de antemano.
                             </h3>
-
+                            }
                             <TextField 
                                 hintStyle= { hintStyle }
                                 multiLine={true}
