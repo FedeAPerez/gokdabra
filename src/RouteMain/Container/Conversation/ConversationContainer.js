@@ -51,51 +51,75 @@ class ConversationContainer extends Component {
         this.setState(this.state);
 	}
     
+    processIntent(id_business, input_value, text) {
+        var ProcessPromise = new Promise(function(resolve, reject) {
+            if(input_value == "text_input") {
+                IntentAPI.getIntentFromText(text)
+                    .then(
+                        (responseIntentAPI) => {
+                            if(responseIntentAPI.data.intent) {
+                                // Si obtuve un intent del input de texto lo proceso
+                                MessagesAPI.getMessageByIntent(id_business , responseIntentAPI.data.intent)
+                                .then((responseMessagesAPI) => {
+                                    resolve(responseMessagesAPI);
+                                }).catch((errMessagesAPI) => {
+                                    reject(errMessagesAPI);
+                                });
+                            }
+                            else {
+                                // Sino lo obtengo de los mensajes
+                                MessagesAPI.getMessageByIntent(id_business , input_value)
+                                .then((responseMessagesAPI) => {
+                                    resolve(responseMessagesAPI);
+                                }).catch((errMessagesAPI) => {
+                                    reject(errMessagesAPI);
+                                });
+                            }
+                        }
+                    )
+                    .catch(
+                        (errIntentAPI) => {
+                            MessagesAPI.getMessageByIntent(id_business , input_value)
+                            .then((resMessagesAPI) => {
+                                resolve(resMessagesAPI);
+                            }).catch((errMessagesAPI) => {
+                                reject(errMessagesAPI);
+                            });
+                        }
+                    )
+            }
+            else {
+                MessagesAPI.getMessageByIntent(id_business , input_value)
+                .then((resMessagesAPI) => {
+                    resolve(resMessagesAPI);
+                }).catch((errMessagesAPI) => {
+                    reject(errMessagesAPI);
+                });
+            }
+        });
+        return ProcessPromise;
+    }
+
     onAnswerSubmit = (input_value, text) => {        
         if(text != '')
             this.addUserMessage(text);
 
         var mIntent;
-        if(input_value == "text_input") {
-            IntentAPI.getIntentFromText(text)
-                .then(
-                    (response) => {
-                        if(response.data.intent) {
-                            mIntent = MessagesAPI.getMessageByIntent(this.props.__BUSINESS_INFORMATION__.business_name , response.data.intent);
-                        }
-                        else {
-                            mIntent = MessagesAPI.getMessageByIntent(this.props.__BUSINESS_INFORMATION__.business_name , input_value);
-                        }
-                        if(mIntent.scroll=='true')
-                        {
-                            this.state.scroll_item = mIntent.id_message;
-                        }
-                        this.state.messageList.push(mIntent);
-                        this.setState(this.state);
-                    }
-                )
-                .catch(
-                    (err) => {
-                        mIntent = MessagesAPI.getMessageByIntent(this.props.__BUSINESS_INFORMATION__.business_name , input_value);
-                        
-                        if(mIntent.scroll=='true')
-                        {
-                            this.state.scroll_item = mIntent.id_message;
-                        }
-                        this.state.messageList.push(mIntent);
-                        this.setState(this.state);
-                    }
-                )
-        }
-        else {
-            mIntent = MessagesAPI.getMessageByIntent(this.props.__BUSINESS_INFORMATION__.business_name , input_value);
+
+        this.processIntent(this.props.__BUSINESS_INFORMATION__.business_name, input_value, text)
+        .then((res) => {
+            mIntent = res;
             if(mIntent.scroll=='true')
             {
                 this.state.scroll_item = mIntent.id_message;
             }
             this.state.messageList.push(mIntent);
             this.setState(this.state);
-        }
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+        
         
         // doy mensaje después de x tiempo
         setTimeout(function() {
