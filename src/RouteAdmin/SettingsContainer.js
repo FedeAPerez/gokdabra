@@ -7,8 +7,8 @@ import TextField from 'material-ui/TextField';
 /* *
  * Código de librerías internas
  * */
-import  { OptionsAPI }  from '@gokdabra/gokdabraapi';
-import  { OptionsBusinessAPI }  from '@gokdabra/gokdabraapi';
+import  { OptionsAPI }  from '../API';
+import  { OptionsBusinessAPI }  from '../API';
 /* *
  * Hojas de Estilo y Constantes
  * */

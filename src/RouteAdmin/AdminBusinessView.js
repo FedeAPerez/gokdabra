@@ -6,7 +6,7 @@ import React, { Component } from 'react';
 /* *
  * Código de librerías internas
  * */ 
-import { BusinessAPI } from  '@gokdabra/gokdabraapi';
+import { BusinessAPI } from  '../API';
 import AdminBusinessHeader from './AdminBusinessHeader';
 import MessagesContainer from './MessagesContainer';
 import SettingsContainer from './SettingsContainer';
