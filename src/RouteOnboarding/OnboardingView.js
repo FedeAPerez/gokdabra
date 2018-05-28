@@ -11,36 +11,29 @@ import SwipeableViews from 'react-swipeable-views';
 /* *
  * Hojas de Estilo y Constantes
  * */ 
-class OnboardingView extends Component {
-    render() {
-        const styles = {
-            slide: {
-              padding: 15,
-              minHeight: 100,
-              color: '#fff',
-            },
-            slide1: {
-              background: '#FEA900',
-            },
-            slide2: {
-              background: '#B3DC4A',
-            },
-            slide3: {
-              background: '#6AC0FF',
-            },
-          };
+import './OnboardingView.css';
 
+class OnboardingView extends Component {
+
+    render() {
+        const styleViewOnboarding = {
+            width: '100%',
+            height: '100%'
+        };
         return (
-            <section>
-                <SwipeableViews>
-                    <div style={Object.assign({}, styles.slide, styles.slide1)}>
-                    slide n°1
+            <section className="onboarding">
+                <SwipeableViews className="onboarding" style={ styleViewOnboarding }>
+                    <div className="onboarding-box onboarding-home">
+                        <h2>Las personas se comunican con mensajes.</h2>
+                        <h3>En el mundo se envían 60 mil millones de mensajes entre WhatsApp y Messenger.</h3>
                     </div>
-                    <div style={Object.assign({}, styles.slide, styles.slide2)}>
-                    slide n°2
+                    <div className="onboarding-box onboarding-hook">
+                        <h2>Alineados con tu negocio y con lo que querés para tus clientes.</h2>
+                        <h3>Creemos que la comunicación y la conversación son vitales para distinguirte como una marca relevante.</h3>
                     </div>
-                    <div style={Object.assign({}, styles.slide, styles.slide3)}>
-                    slide n°3
+                    <div className="onboarding-box onboarding-product">
+                        <h2>¡Queremos construir esta experiencia con nuestros usuarios!</h2>
+                        <h3>Sumate antes del lanzamiento y ayudanos a definir el futuro de KDABRA.</h3>
                     </div>
                 </SwipeableViews>
             </section>
