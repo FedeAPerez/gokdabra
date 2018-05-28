@@ -14,6 +14,7 @@ import TestView from './RouteMain/TestView';
 import LogInView from './RouteLogIn/LogInView';
 import LogInCallbackView from './RouteLogIn/LogInCallbackView';
 import AdminBusinessView from './RouteAdmin/AdminBusinessView';
+import OnboardingView from './RouteOnboarding/OnboardingView';
 
 class MainContainer extends Component {
 
@@ -21,6 +22,7 @@ class MainContainer extends Component {
         return (
             <Switch className="section-switch">
                 <Route exact path="/" component={HomeView} />
+                <Route exact path="/onboarding" component={OnboardingView} />
                 <Route exact path="/index.html" component={HomeView} />
                 <Route path="/404" component={ErrorView} />
                 <Route exac path="/login/callback" component={LogInCallbackView} />

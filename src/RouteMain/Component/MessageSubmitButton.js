@@ -10,11 +10,7 @@ import './MessageSubmitButton.css';
 const __SUBMIT_SVG_ROUTE = "/content/images/MessageSubmitButton.svg";
 const __SUBMIT_BUTTON_CLASS = "message-submit-button";
 
-class MessageSubmitButton extends Component {
-    constructor(props) {
-        super(props);
-    }
-    
+class MessageSubmitButton extends Component {  
    render() {
        
        return(
@@ -22,6 +18,7 @@ class MessageSubmitButton extends Component {
                <img 
                     src= { __SUBMIT_SVG_ROUTE }
                     onClick= {this.props.onClick}
+                    alt={"Enviar"}
                 />
             </span>
        );
