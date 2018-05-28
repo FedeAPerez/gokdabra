@@ -11,13 +11,16 @@
 }
 .onboarding-box h2{
     font-family: 'Rubik';
-    font-size: 3em;
+    font-size: 2.5em;
     font-weight: 400;
     font-style: normal;
     font-stretch: normal;
     line-height: 1.0;
     letter-spacing: normal;
     color: #fff;
+
+    margin:0em auto;
+    margin-top: 16px;
 }
 
 .onboarding-box h3{
@@ -29,4 +32,14 @@
     line-height: 1.3;
     letter-spacing: normal;
     color: #fff;
+
+    margin:0em auto;
+    margin-top: 16px;
+}
+.onboarding-state {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	margin-bottom: 16px;
+	margin-right: 16px;
 }
