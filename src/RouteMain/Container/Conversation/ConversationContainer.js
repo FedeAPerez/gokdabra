@@ -6,8 +6,8 @@ import React, { Component } from 'react';
 /* *
  * Código de librerías internas
  * */
-import MessagesAPI from  '../../../API/src/MessagesAPI';
-import IntentAPI from  '../../../API/src/IntentAPI';
+import { MessagesAPI } from  '../../../API';
+import { IntentAPI } from  '../../../API';
 import MessageContainer from '../Message/MessageContainer';
 import MessageHandlerContainer from '../MessageHandler/MessageHandlerContainer';
 import BusinessHeaderContainer from '../BusinessHeader/BusinessHeaderContainer';

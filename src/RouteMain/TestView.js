@@ -6,7 +6,7 @@ import React, { Component } from 'react';
 /* *
  * Código de librerías internas
  * */ 
-import { BusinessAPI } from  '@gokdabra/gokdabraapi';
+import { BusinessAPI } from  '../API';
 import ConversationTestContainer from './Container/Conversation/ConversationTestContainer';
 
 class TestView extends Component {
