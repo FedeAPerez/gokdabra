@@ -99,7 +99,19 @@
 .onboarding-image {
 	margin: 0em auto;
     display: block;
-    /* border: 3px solid #f16334; */
     border-radius: 1em;
-    margin-top: 1em;
+}
+
+@media only screen and (max-height: 500px) 
+{
+	.onboarding-box h2{
+		font-size: 2em;
+	}
+	.onboarding-box h3{
+		font-size: 1.3em;
+	}
+    .onboarding-image {
+        width: 150px;
+        height: 150px;
+    }
 }
