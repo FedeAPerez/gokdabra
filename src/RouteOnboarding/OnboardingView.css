@@ -92,3 +92,14 @@
   background: #bdc3c7;
   border-radius: 50%;
 }
+.onboarding-image-container {
+    position: relative;
+    display: block;
+}
+.onboarding-image {
+	margin: 0em auto;
+    display: block;
+    /* border: 3px solid #f16334; */
+    border-radius: 1em;
+    margin-top: 1em;
+}
