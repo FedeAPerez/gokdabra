@@ -50,8 +50,16 @@ class OnboardingView extends Component {
                         <h3>Sumate antes del lanzamiento y ayudanos a definir el futuro de <span className="kdabra-orange-text">KDABRA</span>.</h3>
                     </div>
                 </SwipeableViews>
-                <div className="onboarding-state">
-                    {(this.state.onboarding_actual+1) + ' de ' + this.state.onboarding_ammount}
+                <div className="pagination-wrapper">
+                    { this.state != undefined &&
+                    <div className="pagination">
+
+                      <span className={ this.state.onboarding_actual == 0 ? "active":""}></span>
+                      <span className={ this.state.onboarding_actual == 1 ? "active":""}></span>
+                      <span className={ this.state.onboarding_actual == 2 ? "active":""}></span>
+
+                    </div>
+                                        }
                 </div>
             </section>
         );

@@ -1,12 +1,13 @@
 .onboarding {
-    width: 100%;
+        width: 100%;
     height: 100%;
     font-size: 16px;
+    position: relative;
     background-color: #f5f6fa;
 }
 .onboarding-box {
 	width: 90%;
-	height: 90%;
+	height: 95%;
 	margin: 0em auto;
 }
 .onboarding-box h2{
@@ -50,4 +51,44 @@
 	bottom: 0;
 	margin-bottom: 16px;
 	margin-right: 16px;
+}
+
+.pagination-wrapper {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0em auto;
+    height: 5%;
+}
+.pagination {
+  position: absolute;
+    left: 0;
+    bottom: 0;
+    display: inline;
+    width: fit-content;
+    margin: 0em auto;
+    right: 0;
+}
+.pagination span{
+  display: inline-block;
+  position: relative;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+.pagination span.active:before{
+
+  background: #f16334;
+}
+.pagination span:before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  right: 3px;
+  bottom: 3px;
+  background: #bdc3c7;
+  border-radius: 50%;
 }
