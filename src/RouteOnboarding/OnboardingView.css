@@ -117,10 +117,10 @@
 @media only screen and (max-height: 600px) 
 {
 	.onboarding-box h2{
-		font-size: 2.5em;
+		font-size: 2.2em;
 	}
 	.onboarding-box h3{
-		font-size: 1.5em;
+		font-size: 1.2em;
 	}
     .onboarding-image {
         width: 150px;

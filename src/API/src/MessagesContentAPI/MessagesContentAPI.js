@@ -3,7 +3,7 @@ var MessagesContentAPI = function () {
     var getMessageContentFromId = function getMessageContentFromId(id_message_content) {
         switch(id_message_content) {
             case "footer-hint":
-                return "Ingresa tu mail para sumarte";
+                return "Ingresa tu mail";
             break;
             case "company-name":
                 return "¡Hecho con &#x2764 para el mundo! - 2018";
