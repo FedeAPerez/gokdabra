@@ -27,11 +27,12 @@ class OnboardingView extends Component {
     };
     render() {
         const styleViewOnboarding = {
-            width: '100%',
-            height: '100%'
+            width: '95%',
+            height: '95%',
+            margin: '0em auto'
         };
         return (
-            <section className="onboarding">
+            <section className="onboarding-container">
                 <SwipeableViews 
                     className="onboarding" style={ styleViewOnboarding }
                     index={this.state.onboarding_actual}
