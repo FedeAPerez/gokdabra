@@ -7,7 +7,7 @@ import SwipeableViews from 'react-swipeable-views';
 /* *
  * Código de librerías internas
  * */ 
-
+import OnboardingCard from './OnboardingCard';
 /* *
  * Hojas de Estilo y Constantes
  * */ 
@@ -29,47 +29,57 @@ class OnboardingView extends Component {
         const styleViewOnboarding = {
             width: '95%',
             height: '95%',
-            margin: '0em auto'
+            margin: '0em auto',
+            display: 'block'
         };
+
+        const styleViewOnboardingSlide= {
+            height: '100%'
+        }
         return (
             <section className="onboarding-container">
+                <div className="onboarding-wrapper">
                 <SwipeableViews 
-                    className="onboarding" style={ styleViewOnboarding }
+                    className="onboarding" 
+                    style={ styleViewOnboarding }
                     index={this.state.onboarding_actual}
+                    containerStyle = { styleViewOnboardingSlide}
                     onChangeIndex={this.handleChangeIndex.bind(this)}
                 >
-                    <div className="onboarding-box onboarding-home">
-                        <div className="onboarding-image-container">
-                        <img className="onboarding-image" src={"/content/images/icons/1.png"} alt="mensajes"/>
-                        </div>
-                        <h2>El futuro y presente de la comunicación está en los mensajes...</h2>
-                        <h3>En el mundo se envían 60 mil millones de mensajes entre WhatsApp y Messenger.</h3>
-                    </div>
-                    <div className="onboarding-box onboarding-hook">
-                        <div className="onboarding-image-container">
-                        <img className="onboarding-image" src={"/content/images/icons/2.png"} alt="mensajes"/>
-                        </div>
-                        <h2>Alineados con tu negocio y con lo que está ocurriendo en el mundo.</h2>
-                        <h3>Johnnie Walker y Coca-Cola son dos de las grandes marcas que utilizaron mensajes para potenciarse.</h3>
-                    </div>
-                    <div className="onboarding-box onboarding-product">
-                        <div className="onboarding-image-container">
-                        <img className="onboarding-image" src={"/content/images/icons/3.png"} alt="mensajes"/>
-                        </div>
-                        <h2>¡Queremos construir esta experiencia con nuestros usuarios!</h2>
-                        <h3>Sumate antes del lanzamiento y ayudanos a definir el futuro de <span className="kdabra-orange-text">KDABRA</span>.</h3>
-                    </div>
+                    <OnboardingCard 
+                        ImageSrc = { "/content/images/icons/1.png" }
+                        ImageAlt = { "mensajes" }
+                        CardTitle = { "El futuro y presente de la comunicación está en los mensajes..." }
+                        CardSubTitle = { "En el mundo se envían 60 mil millones de mensajes entre WhatsApp y Messenger." }
+                    />
+
+                    <OnboardingCard 
+                        ImageSrc = { "/content/images/icons/2.png" }
+                        ImageAlt = { "marcas" }
+                        CardTitle = { "Alineados con tu negocio y con lo que está ocurriendo en el mundo." }
+                        CardSubTitle = { "Johnnie Walker y Coca-Cola son dos de las grandes marcas que utilizaron mensajes para potenciarse." }
+                    />
+
+                    <OnboardingCard 
+                        ImageSrc = { "/content/images/icons/3.png" }
+                        ImageAlt = { "negocios" }
+                        CardTitle = { "¡Queremos construir esta experiencia con nuestros usuarios!" }
+                        CardSubTitle = { "Sumate antes del lanzamiento y ayudanos a definir el futuro de KDABRA." }
+                    />
+                    
                 </SwipeableViews>
                 <div className="pagination-wrapper">
-                    { this.state != undefined &&
-                    <div className="pagination">
+                    { 
+                        this.state != undefined &&
+                        <div className="pagination">
 
-                      <span className={ this.state.onboarding_actual == 0 ? "active":""}></span>
-                      <span className={ this.state.onboarding_actual == 1 ? "active":""}></span>
-                      <span className={ this.state.onboarding_actual == 2 ? "active":""}></span>
+                          <span className={ this.state.onboarding_actual == 0 ? "active":""}></span>
+                          <span className={ this.state.onboarding_actual == 1 ? "active":""}></span>
+                          <span className={ this.state.onboarding_actual == 2 ? "active":""}></span>
 
-                    </div>
-                                        }
+                        </div>
+                    }
+                </div>
                 </div>
             </section>
         );

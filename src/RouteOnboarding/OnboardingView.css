@@ -9,18 +9,25 @@
     -ms-flex-align: center;
     align-items: center;
 }
-
+.onboarding-wrapper {
+    width: 95%;
+  height: 95%;
+  margin: 0em auto;
+  display: block;
+  position: relative;
+}
 .onboarding {
-    font-size: 16px;
-    position: relative;
-    background-color: #ffffff;
-    border-radius: 0.3em;
-        box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+  font-size: 16px;
+  position: relative;
+  background-color: #ffffff;
+  border-radius: 0.3em;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
 }
 .onboarding-box {
 	width: 90%;
 	height: 100%;
 	margin: 0em auto;
+  position: relative;
 }
 .onboarding-box h2{
         font-family: 'Rubik';
