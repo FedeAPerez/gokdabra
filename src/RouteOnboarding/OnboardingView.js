@@ -27,14 +27,15 @@ class OnboardingView extends Component {
     };
     render() {
         const styleViewOnboarding = {
-            width: '95%',
-            height: '95%',
+            width: '100%',
+            height: '100%',
             margin: '0em auto',
             display: 'block'
         };
 
         const styleViewOnboardingSlide= {
-            height: '100%'
+            height: '100%',
+            alignItems: 'center'
         }
         return (
             <section className="onboarding-container">
