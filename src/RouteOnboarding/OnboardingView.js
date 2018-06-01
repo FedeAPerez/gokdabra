@@ -25,6 +25,15 @@ class OnboardingView extends Component {
     handleChangeIndex(index) {
         this.setState({ onboarding_actual : index });
     };
+    handleChangeButton() {
+      var next = this.state.onboarding_actual + 1;
+      this.setState({ onboarding_actual : next });
+    }
+
+    handleSkipButton() {
+        this.setState({ onboarding_actual : this.state.onboarding_ammount - 1 });
+    };
+
     render() {
         const styleViewOnboarding = {
             width: '100%',
@@ -70,16 +79,30 @@ class OnboardingView extends Component {
 
                 </SwipeableViews>
                 <div className="pagination-wrapper">
+                  {
+                    this.state.onboarding_actual !== this.state.onboarding_ammount -1 &&
+                    <div
+                      className={ "pagination-button" + " " + "pagination-first" }
+                      onClick={this.handleSkipButton.bind(this)}
+                    >
+                      Saltear
+                    </div>
+                  }
                     {
                         this.state != undefined &&
                         <div className="pagination">
-
                           <span className={ this.state.onboarding_actual == 0 ? "active":""}></span>
                           <span className={ this.state.onboarding_actual == 1 ? "active":""}></span>
                           <span className={ this.state.onboarding_actual == 2 ? "active":""}></span>
-
                         </div>
                     }
+
+                    <div
+                      className={ "pagination-button pagination-last" }
+                      onClick={this.handleChangeButton.bind(this)}
+                    >
+                      Siguiente
+                    </div>
                 </div>
                 </div>
             </section>
