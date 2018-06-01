@@ -96,13 +96,15 @@ class OnboardingView extends Component {
                           <span className={ this.state.onboarding_actual == 2 ? "active":""}></span>
                         </div>
                     }
-
+                    {
+                      this.state.onboarding_actual !== this.state.onboarding_ammount -1 &&
                     <div
                       className={ "pagination-button pagination-last" }
                       onClick={this.handleChangeButton.bind(this)}
                     >
                       Siguiente
                     </div>
+                  }
                 </div>
                 </div>
             </section>
