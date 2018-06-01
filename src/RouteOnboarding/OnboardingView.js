@@ -6,11 +6,11 @@ import React, { Component } from 'react';
 import SwipeableViews from 'react-swipeable-views';
 /* *
  * Código de librerías internas
- * */ 
+ * */
 import OnboardingCard from './OnboardingCard';
 /* *
  * Hojas de Estilo y Constantes
- * */ 
+ * */
 import './OnboardingView.css';
 
 class OnboardingView extends Component {
@@ -40,37 +40,37 @@ class OnboardingView extends Component {
         return (
             <section className="onboarding-container">
                 <div className="onboarding-wrapper">
-                <SwipeableViews 
-                    className="onboarding" 
+                <SwipeableViews
+                    className="onboarding"
                     style={ styleViewOnboarding }
                     index={this.state.onboarding_actual}
                     containerStyle = { styleViewOnboardingSlide}
                     onChangeIndex={this.handleChangeIndex.bind(this)}
                 >
-                    <OnboardingCard 
+                    <OnboardingCard
                         ImageSrc = { "/content/images/icons/1.png" }
                         ImageAlt = { "mensajes" }
                         CardTitle = { "El futuro y presente de la comunicación está en los mensajes..." }
                         CardSubTitle = { "En el mundo se envían 60 mil millones de mensajes entre WhatsApp y Messenger." }
                     />
 
-                    <OnboardingCard 
+                    <OnboardingCard
                         ImageSrc = { "/content/images/icons/2.png" }
                         ImageAlt = { "marcas" }
                         CardTitle = { "Alineados con tu negocio y con lo que está ocurriendo en el mundo." }
                         CardSubTitle = { "Johnnie Walker y Coca-Cola son dos de las grandes marcas que utilizaron mensajes para potenciarse." }
                     />
 
-                    <OnboardingCard 
+                    <OnboardingCard
                         ImageSrc = { "/content/images/icons/3.png" }
                         ImageAlt = { "negocios" }
                         CardTitle = { "¡Queremos construir esta experiencia con nuestros usuarios!" }
                         CardSubTitle = { "Sumate antes del lanzamiento y ayudanos a definir el futuro de KDABRA." }
                     />
-                    
+
                 </SwipeableViews>
                 <div className="pagination-wrapper">
-                    { 
+                    {
                         this.state != undefined &&
                         <div className="pagination">
 
