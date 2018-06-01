@@ -153,20 +153,7 @@
   color: #f16334;
   margin-bottom: 1em;
 }
-@media only screen and (max-width: 500px)
-{
-	.onboarding-box h2{
-		font-size: 2em;
-    height: 4em;
-	}
-	.onboarding-box h3{
-		font-size: 1.3em;
-	}
-    .onboarding-image {
-        width: 150px;
-        height: 150px;
-    }
-}
+
 @media only screen and (max-height: 500px)
 {
 	.onboarding-box h2{
@@ -189,6 +176,20 @@
 	}
 	.onboarding-box h3{
 		font-size: 1.2em;
+	}
+    .onboarding-image {
+        width: 150px;
+        height: 150px;
+    }
+}
+@media only screen and (max-width: 500px)
+{
+	.onboarding-box h2{
+		font-size: 2em;
+    height: 4em;
+	}
+	.onboarding-box h3{
+		font-size: 1.3em;
 	}
     .onboarding-image {
         width: 150px;
