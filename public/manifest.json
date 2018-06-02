@@ -6,7 +6,20 @@
       "src": "kdabra-icon-third.png",
       "type": "image/png",
       "sizes": "212x212"
+    },
+    {
+      "src": "kdabra-icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "kdabra-icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
     }
   ],
+  "display":"fullscreen",
+  "background_color":"#f16334",
+  "theme_color":"#f16334",
   "start_url": "index.html"
 }
