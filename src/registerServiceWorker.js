@@ -44,6 +44,7 @@ export default function register () {
 }
 
 function registerValidSW (swUrl) {
+  console.log(swUrl);
   navigator.serviceWorker
     .register(swUrl)
     .then(registration => {
