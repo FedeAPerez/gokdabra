@@ -29,7 +29,7 @@ main {
     position: absolute;
     top: 0;
     left: 0;
-    background-image: url('http://mi.gokdabra.com/content/images/bg-image-1920.png');
+    background-image: url('https://mi.gokdabra.com/content/images/bg-image-1920.png');
     background-repeat: no-repeat;
     background-size: cover;
     height: 100%;
@@ -149,10 +149,10 @@ main {
         opacity: 0.3;
         transition:opacity 1s linear;
     }
-@media only screen and (max-width: 768px) 
+@media only screen and (max-width: 768px)
 {
     .home-bg-image {
-        background-image: url('http://mi.gokdabra.com/content/images/bg-image-300.png');
+        background-image: url('https://mi.gokdabra.com/content/images/bg-image-300.png');
     }
     .home-content {
         width: 80%;
@@ -165,7 +165,7 @@ main {
     }
 }
 
-@media only screen and (max-width: 768px) and (orientation: landscape) { 
+@media only screen and (max-width: 768px) and (orientation: landscape) {
 
     .home-content {
         top: 1em;
@@ -173,7 +173,7 @@ main {
     }
 }
 
-@media only screen and (min-width: 1000px) 
+@media only screen and (min-width: 1000px)
 {
     .home-content {
         width: 50%;
