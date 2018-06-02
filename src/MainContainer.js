@@ -6,7 +6,7 @@ import React, { Component } from "react";
 import { Switch, Route } from 'react-router-dom';
 /* *
  * Código de librerías internas
- * */  
+ * */
 import HomeView from './RouteHome/HomeViewB';
 import ErrorView from './RouteError/ErrorView';
 import BusinessContainer from './RouteMain/BusinessContainer';
@@ -15,6 +15,7 @@ import LogInView from './RouteLogIn/LogInView';
 import LogInCallbackView from './RouteLogIn/LogInCallbackView';
 import AdminBusinessView from './RouteAdmin/AdminBusinessView';
 import OnboardingView from './RouteOnboarding/OnboardingView';
+import BusinessMessagesContainer from './RouteNewMessages/BusinessMessagesContainer';
 
 class MainContainer extends Component {
 
@@ -29,6 +30,7 @@ class MainContainer extends Component {
                 <Route exac path="/login" component={LogInView} />
                 <Route exact path="/dexter" render={(props) =>( <TestView id={"dexter"} />)} />
                 <Route path="/admin/:business" component={AdminBusinessView} />
+                <Route path="/:business/messages" component={BusinessMessagesContainer} />
                 <Route path="/:business" component={BusinessContainer} />
             </Switch>
         );
