@@ -1,0 +1,65 @@
+.conversation {
+    text-align: left;
+    font-family: 'Rubik';
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #000;
+    width: 100%;
+    overflow: hidden;
+    clear: both;
+    position: relative;
+    cursor: pointer;
+}
+
+.conversation:hover {
+    background-color: #f4f5f5;
+}
+
+.conversation .conversation-user-profile-pic {
+    vertical-align: middle;
+    margin: 0em auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 10%;
+}
+
+.conversation .conversation-container {
+    clear: both;
+    overflow: hidden;
+    display: inline-block;
+    width: 90%;
+    vertical-align: middle;
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    /* border-bottom: 1px solid #f4f5f5; */
+}
+
+.conversation .conversation-user-user-name {
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.conversation .conversation-last-message-text{
+    width: 100%;
+    color: #95a5a6;
+    font-weight: 300;
+    display: block;
+}
+
+.conversation .conversation-last-message-date{
+    position: absolute;
+    right: 0;
+    font-weight: 300;
+    color: #95a5a6;
+    top: 0;
+    /* margin-top: 1rem; */
+    margin-right: 1rem;
+    vertical-align: middle;
+    font-size: 0.7em;
+    /* font-size: 12px; */
+}

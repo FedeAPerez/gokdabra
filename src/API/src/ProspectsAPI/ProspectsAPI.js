@@ -16,8 +16,18 @@ var ProspectsAPI = function() {
 
     }
 
+    var getAllProspects = function() {
+        return axios({
+            method: 'get',
+            url: businessServiceUrl + '/all',
+            headers: {'Content-Type': 'application/json'}
+        });
+
+    }
+
     return {
-        postProspectFrom : postProspectFrom
+        postProspectFrom : postProspectFrom,
+        getAllProspects : getAllProspects
     }
 
 }();

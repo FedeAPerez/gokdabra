@@ -12,6 +12,7 @@ var _IntentAPI = require('./src/IntentAPI');
 var _MessagesAPI = require('./src/MessagesAPI');
 var _OptionsAPI = require('./src/OptionsAPI');
 var _OptionsBusinessAPI = require('./src/OptionsBusinessAPI');
+var _ConversationsAPI = require('./src/ConversationsAPI');
 
 exports.MessagesContentAPI = _MessagesContentAPI;
 exports.ProspectsAPI = _ProspectsAPI;
@@ -22,3 +23,4 @@ exports.IntentAPI = _IntentAPI;
 exports.MessagesAPI = _MessagesAPI;
 exports.OptionsAPI = _OptionsAPI;
 exports.OptionsBusinessAPI = _OptionsBusinessAPI;
+exports.ConversationsAPI = _ConversationsAPI;
