@@ -26,6 +26,9 @@ function mapStateToProps(state) {
         lastMessage :  {
             text : 'Perfecto, me queda bien ese horario!',
             date : '14:58'
+        },
+        relationship : {
+            text : 'Fan'
         }
     }
     return { conversation : conversation }

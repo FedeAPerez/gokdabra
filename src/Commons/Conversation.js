@@ -13,6 +13,20 @@ import React, { Component } from 'react';
 import './Conversation.css';
 
 class Conversation extends Component {
+
+    renderConversationRelationship() {
+        if(this.props.conversation.relationship) {
+            return(
+                <span className="conversation-relationship">
+                    { this.props.conversation.relationship.text }
+                </span>
+            );
+        }
+        else {
+            return null;
+        }
+    }
+
     render() {
         return (
             <div className="conversation">
@@ -31,6 +45,9 @@ class Conversation extends Component {
                     >
                         { this.props.conversation.lastMessage.text }
                     </span>
+                    {
+                        this.renderConversationRelationship()
+                    }
                     <span
                         className="conversation-last-message-date"
                     >
