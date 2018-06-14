@@ -20,8 +20,7 @@ class ConversationContainer extends Component {
 function mapStateToProps(state) {
     const conversation  = {
         user : {
-            userName: 'Federico',
-            profilePic: '/content/images/Profile.svg'
+            userName: 'Federico'
         },
         lastMessage :  {
             text : 'Perfecto, me queda bien ese horario!',

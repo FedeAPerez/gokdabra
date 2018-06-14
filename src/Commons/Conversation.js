@@ -30,10 +30,6 @@ class Conversation extends Component {
     render() {
         return (
             <div className="conversation">
-                <img 
-                    className="conversation-user-profile-pic"
-                    src={ this.props.conversation.user.profilePic } 
-                />
                 <div className="conversation-container">
                     <span
                         className="conversation-user-user-name"

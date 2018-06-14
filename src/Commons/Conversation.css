@@ -13,27 +13,22 @@
     clear: both;
     position: relative;
     cursor: pointer;
-}
-
-.conversation:hover {
-    background-color: #f4f5f5;
-}
-
-.conversation .conversation-user-profile-pic {
-    vertical-align: middle;
+    max-width: 900px;
     margin: 0em auto;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    width: 10%;
+}
+
+.conversation:hover, .conversation:active {
+    background-color: #f4f5f5;
 }
 
 .conversation .conversation-container {
     clear: both;
     overflow: hidden;
-    display: inline-block;
-    width: 90%;
+    display: block;
+    width: 95%;
     vertical-align: middle;
     position: relative;
+    margin: 0em auto;
     margin-top: 1rem;
     margin-bottom: 1rem;
     /* border-bottom: 1px solid #f4f5f5; */
@@ -70,15 +65,11 @@
     font-weight: 300;
     color: #95a5a6;
     top: 0;
-    margin-right: 1rem;
     vertical-align: middle;
     font-size: 0.7em;
 }
 
 @media only screen and (max-width : 350px) {
-    .conversation .conversation-user-profile-pic {
-        display: none;
-    }
     .conversation .conversation-container {
         width: 95%;
         margin-left: 1rem;
