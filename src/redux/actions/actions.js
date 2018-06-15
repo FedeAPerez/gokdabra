@@ -41,6 +41,12 @@ const receiveBusinessList = function(json) {
     received_at: moment().format('LLL')
   };
 }
+const receiveConversations = function(json) {
+  return {
+    type: Actions.RECEIVE_CONVERSATIONS,
+    conversations_list: json
+  };
+}
 
 const authUser = function() {
   return {
@@ -89,4 +95,17 @@ const getMessages = function(business_name, user) {
   }
 }
 
-export { authUser, fetchBusinessList, addMessage, getMessages };
+const getConversations = function(conversationsList) {
+  return function (dispatch) {
+    dispatch(startFetching());
+    dispatch(receiveConversations(conversationsList));
+    dispatch(finishedFetching());
+  }
+  return {
+    type: Actions.RECEIVE_CONVERSATIONS
+
+  };
+  
+}
+
+export { authUser, fetchBusinessList, addMessage, getMessages, getConversations };

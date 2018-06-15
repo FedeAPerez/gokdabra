@@ -17,7 +17,7 @@ class Conversation extends Component {
     renderConversationRelationship() {
         if(this.props.conversation.relationship) {
             return(
-                <span className="conversation-relationship">
+                <span className="conversation-relationship" style={{backgroundColor:this.props.conversation.relationship.color}}>
                     { this.props.conversation.relationship.text }
                 </span>
             );

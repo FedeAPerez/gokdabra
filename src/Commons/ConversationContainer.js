@@ -3,7 +3,6 @@
  * Código de librerías externas
  * */
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 /* *
  * Código de librerías internas
  * */ 
@@ -17,20 +16,4 @@ class ConversationContainer extends Component {
     }
 }
 
-function mapStateToProps(state) {
-    const conversation  = {
-        user : {
-            userName: 'Federico'
-        },
-        lastMessage :  {
-            text : 'Perfecto, me queda bien ese horario!',
-            date : '14:58'
-        },
-        relationship : {
-            text : 'Fan'
-        }
-    }
-    return { conversation : conversation }
-}
-
-export default connect(mapStateToProps)(ConversationContainer);
+export default ConversationContainer;

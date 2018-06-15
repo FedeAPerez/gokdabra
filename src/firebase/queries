@@ -1,0 +1,49 @@
+      const userName = 'kdabra';
+    const conversation  = {
+      user : {
+          userId : 'fedeaperez',
+          userName: 'Federico'
+      },
+      lastMessage :  {
+          text : 'Perfecto, me queda bien ese horario!',
+          date : '14:58'
+      },
+      relationship : {
+          text : 'Fan',
+          color : 'orange'
+      }
+    }
+    const conversation_dos  = {
+      user : {
+        userId:'jorgefcarlos',
+          userName: 'Jorge'
+      },
+      lastMessage :  {
+          text : 'Mañana a la tarde te llevo el pedido ',
+          date : '12:08'
+      },
+      relationship : {
+          text : 'Proveedor',
+          color : '#9b59b6'
+      }
+    }
+    
+    const conversation_tres  = {
+    user : {
+        userId: 'carlaaperez',
+        userName: 'Carla'
+    },
+    lastMessage :  {
+        text : '¡Me encantó el producto que me pasaste!',
+        date : '11:50'
+    },
+    relationship : {
+        text : 'Fan',
+        color : 'orange'
+    }
+    }
+      this.state.firebase.database().ref('/conversations/'+userName+'/'+conversation.user.userId).set(conversation);
+      
+      this.state.firebase.database().ref('/conversations/'+userName+'/'+conversation_dos.user.userId).set(conversation_dos);
+      
+      this.state.firebase.database().ref('/conversations/'+userName+'/'+conversation_tres.user.userId).set(conversation_tres);

@@ -15,7 +15,12 @@ export default (state = initialState, action) => {
                 messages: action.messages
             };
         break;
-
+        case Actions.RECEIVE_CONVERSATIONS:
+            return {
+                ...state,
+                conversations_list : action.conversations_list
+            };
+        break;
         default:
             return state;
         break;
