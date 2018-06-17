@@ -1,0 +1,40 @@
+.conversation-header-container {
+    display: block;
+    clear: both;
+    overflow: hidden;
+    display: block;
+    width: 100%;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    z-index: 5;
+    position: sticky;
+    display: flex;
+    align-items: center;
+    height: 3em;
+    top: 0;
+    background-color: #ffffff;
+    box-shadow: 0px 1.5px rgb(0, 0, 0, 0.16);
+}
+
+.conversation-header-container h2{
+    font-family: 'Montserrat';
+    font-size: 16px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: black;
+    text-align: center;
+}
+.conversation-header-left {
+    margin-left: 0.5rem;
+}
+.conversation-header-text {
+    vertical-align: middle;
+    margin: 0em auto;
+}
+
+.conversation-header-right {
+    margin-right: 0.5rem;
+}

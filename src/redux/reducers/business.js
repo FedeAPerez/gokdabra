@@ -2,7 +2,9 @@
 import * as Actions from '../actions/actions_type';
 const initialState = {
     businessList: [],
-    business: {}
+    business: {
+        business_name : 'kdabra'
+    }
 }
 export default (state = initialState, action) => {
     switch (action.type) {
