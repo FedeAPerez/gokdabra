@@ -1,0 +1,48 @@
+.next-function-container {
+    height: 100%;
+    width: 100%;
+    background-color: #192a56;
+}
+
+.next-function-message {
+    font-family: 'Rubik';
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+
+    margin: 1em auto;
+    text-align: center;
+    vertical-align: middle;
+    width: 70%;
+    color: #f5f6fa;
+}
+
+.next-function-values {
+    width: 70%;
+    margin: 0em auto;
+}
+
+.next-function-values-header {
+    font-family: 'Rubik';
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #e84118;
+}
+
+.next-function-values li {
+    font-family: 'Rubik';
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: white;
+}

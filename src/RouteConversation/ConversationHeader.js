@@ -19,24 +19,52 @@ class ConversationHeader extends Component {
             <section 
                     className= { "conversation-header-container" }
             >
-                <Link 
+                {
+                    this.props.left &&
+                    <Link 
                     className= { "conversation-header-left" }
-                    to="/"
-                >
-                    <span>
-                        <img src={ "/content/images/HomeButton.svg" } />
-                    </span>
-                </Link>
-                <h2
-                    className= { "conversation-header-text" }
-                >
-                    { this.props.business.business_name.toUpperCase() }
-                </h2>
-                <span
-                    className= { "conversation-header-right" }
-                >
-                    <img src={ "/content/images/actions/info.svg" } />
-                </span>
+                    to={ this.props.left.link }
+                    >
+                        <span>
+                            <img src={ this.props.left.image_link } />
+                        </span>
+                    </Link>
+                }
+
+                {
+                    this.props.isBack &&
+                    <Link 
+                        className= { "conversation-header-left" }
+                        to={"/" + this.props.business.business_name.toLowerCase() + "/messages/send" }
+                    >
+                        <span>
+                            <img src={ "/content/images/actions/back.svg" } />
+                        </span>
+                    </Link>
+                }
+
+                {
+                    this.props.business &&
+                    <h2
+                        className= { "conversation-header-text" }
+                    >
+                        { this.props.business.business_name.toUpperCase() }
+                    </h2>
+                }
+
+                {
+                    this.props.right &&
+                    <Link
+                        className= { "conversation-header-right" }
+                        to={ this.props.right.link }
+                    >
+                        <span
+                            className= { "conversation-header-right" }
+                        >
+                            <img src={ this.props.right.image_link } />
+                        </span>
+                    </Link>
+                }
             </section>
         );
     }
