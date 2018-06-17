@@ -17,20 +17,25 @@ class ConversationMessagesContainer extends Component {
 
     constructor(props) {
         super(props);
+        this.state = {
+            writing : true
+        }
         
-        // Si el usuario no tuvo onboarding hasta el momento
-        const { dispatch } = this.props;
-        dispatch(getMessagesOnboarding());
     }
 
     componentDidMount() {
-
+        // Si el usuario no tuvo onboarding hasta el momento
+        const { dispatch } = this.props;
+        setTimeout(() => { 
+            dispatch(getMessagesOnboarding());
+            this.setState({ writing : false });
+        }, 5000);
+        
     }
 
     onAnswerSubmit = (input_value, text) => {       
         const { dispatch } = this.props; 
         if(text != '') {
-            console.log("mando el mensaje del pibe " + text + " del val " + input_value);
             dispatch(addUserMessage(text)); 
         }
 
@@ -54,6 +59,18 @@ class ConversationMessagesContainer extends Component {
                                 );
                             }
                         )
+                    }
+                    {
+                        this.state.writing && 
+                        <MessageContainer
+                            message= { {
+                                text : "Está escribiendo...",
+                                type : {
+                                    class_used : "waiting"
+                                },
+                                sender : ''
+                            } }
+                        />
                     }
                 </section>
 
