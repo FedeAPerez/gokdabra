@@ -22,7 +22,8 @@ export default (state = initialState, action) => {
             };
         break;
         case Actions.RECEIVE_MESSAGES_ONBOARDING:
-            var messagesOb = state.messages;
+            var messagesOb = Object.assign([], state.messages);
+            console.log(messagesOb);
             messagesOb.push({
                 text : "<b>¡Hola! ¿Cómo estás? &#x1F44B;</b>Te presento a KDABRA, la herramienta que ayuda a que te comuniques mejor con los negocios que amás. &#x1F495;",
                 sender: "kdabra",
@@ -35,6 +36,23 @@ export default (state = initialState, action) => {
                 messages: messagesOb
             };
         break;
+
+        case Actions.ADD_USER_MESSAGE:
+            var messagesOb = Object.assign([], state.messages);
+            console.log(messagesOb);
+            messagesOb.push({
+                text : action.message,
+                sender: "user",
+                type : {
+                    class_used : "user-message"
+                }
+            });
+            return {
+                ...state,
+                messages: messagesOb
+            };
+        break;
+
         default:
             return state;
         break;

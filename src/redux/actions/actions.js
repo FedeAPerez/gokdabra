@@ -54,6 +54,13 @@ const getMessagesOnboarding = function() {
   };
 }
 
+const addUserMessage = function(message) {
+  return {
+    type: Actions.ADD_USER_MESSAGE,
+    message: message
+  };
+}
+
 const authUser = function() {
   return {
     type: Actions.AUTH_USER,
@@ -121,5 +128,6 @@ export
     addMessage, 
     getMessages, 
     getConversations,
-    getMessagesOnboarding
+    getMessagesOnboarding,
+    addUserMessage
  };

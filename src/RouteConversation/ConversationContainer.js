@@ -22,6 +22,7 @@ class ConversationContainer extends Component {
                     right= { right }
                 />
                 <ConversationMessagesContainer />
+                
             </main>
         );
     }
