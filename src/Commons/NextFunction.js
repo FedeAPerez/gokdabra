@@ -33,7 +33,7 @@ class NextFunction extends Component {
                     <h3
                         className= { "next-function-values-header" }
                     >
-                        Dentro de poco vas a poder
+                        Dentro de poco vas a poder...
                     </h3>
                     {
                         this.props.nextValues.map((element, index) => {
