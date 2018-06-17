@@ -48,6 +48,12 @@ const receiveConversations = function(json) {
   };
 }
 
+const getMessagesOnboarding = function() {
+  return {
+    type: Actions.RECEIVE_MESSAGES_ONBOARDING
+  };
+}
+
 const authUser = function() {
   return {
     type: Actions.AUTH_USER,
@@ -108,4 +114,12 @@ const getConversations = function(conversationsList) {
   
 }
 
-export { authUser, fetchBusinessList, addMessage, getMessages, getConversations };
+export 
+  { 
+    authUser, 
+    fetchBusinessList, 
+    addMessage, 
+    getMessages, 
+    getConversations,
+    getMessagesOnboarding
+ };

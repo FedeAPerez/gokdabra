@@ -21,6 +21,20 @@ export default (state = initialState, action) => {
                 conversations_list : action.conversations_list
             };
         break;
+        case Actions.RECEIVE_MESSAGES_ONBOARDING:
+            var messagesOb = state.messages;
+            messagesOb.push({
+                text : "<b>¡Hola! ¿Cómo estás? &#x1F44B;</b>Te presento a KDABRA, la herramienta que ayuda a que te comuniques mejor con los negocios que amás. &#x1F495;",
+                sender: "kdabra",
+                type : {
+                    class_used : "message-onboarding"
+                }
+            });
+            return {
+                ...state,
+                messages: messagesOb
+            };
+        break;
         default:
             return state;
         break;
