@@ -44,7 +44,7 @@ export default (state = initialState, action) => {
                 text : action.message,
                 sender: "user",
                 type : {
-                    class_used : "user-message"
+                    class_used : "message-user"
                 }
             });
             return {

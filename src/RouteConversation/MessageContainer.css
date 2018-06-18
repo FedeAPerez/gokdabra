@@ -1,70 +1,38 @@
-.message-container {
-    border-radius: 16px;
-    border-bottom-left-radius: 2px;
-    display: inline-block;
-    -webkit-box-shadow: 0 1px 3px 0 rgba(0,0,0,.5);
-    box-shadow: 0 1px 3px 0 rgba(0,0,0,.5);
-    font-family: 'Rubik',sans-serif;
-    font-weight: 400;
-    margin: 0.5rem;
-    position: relative;
-    padding: 1rem;
-    max-width: 70%;
+@import "./MessageContainerBasic.css";
+@import "./MessageContainerOnboarding.css";
+@import "./MessageContainerUser.css";
+
+.waiting main {
+    overflow: hidden;
+    /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid orange;
+    /* The typwriter cursor */
+    white-space: nowrap;
+    /* Keeps the content on a single line */
+    margin: 0 auto;
+    /* Gives that scrolling effect as the typing happens */
+    animation: typing 1.5s steps(30, end), blink-caret .5s step-end infinite;
 }
 
-.message-footer {
-    background-color: white;
-}
-
-.message-onboarding {
-    display: block;
-    padding: 1rem;
-    margin: 0;
-    background-color: #f16334;
-    background-image:
-    linear-gradient(
-      to bottom right, 
-      #f0932b, #f16334
-    );
-    border-radius: 0;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    margin: 0em auto;
-    width: 100%;
-    max-width: -webkit-fill-available;
-}
-
-.message-onboarding main {
-    color: white;
-    font-size: 1.5em;
-    font-weight: 300;
-}
-
-.message-onboarding main b {
-    font-weight: 500;
-}
-
-.message-onboarding .message-footer {
-    display: none;
-}
-
-.waiting main{
-    overflow: hidden; /* Ensures the content is not revealed until the animation */
-    border-right: .15em solid orange; /* The typwriter cursor */
-    white-space: nowrap; /* Keeps the content on a single line */
-    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-    animation: 
-      typing 1.5s steps(30, end),
-      blink-caret .5s step-end infinite;
-  }
 /* The typing effect */
+
 @keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
-  }
-  
+    from {
+        width: 0
+    }
+    to {
+        width: 100%
+    }
+}
+
 /* The typewriter cursor effect */
+
 @keyframes blink-caret {
-from, to { border-color: transparent }
-50% { border-color: orange }
+    from,
+    to {
+        border-color: transparent
+    }
+    50% {
+        border-color: orange
+    }
 }

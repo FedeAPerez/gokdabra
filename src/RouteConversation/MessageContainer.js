@@ -20,19 +20,23 @@ class MessageContainer extends Component {
     
     render() {
         return (
-            <article
-                className={ "message-container " + this.props.message.type.class_used }
+            <article 
+                className="messages-article-container"
             >
-                <main 
-                    dangerouslySetInnerHTML= { this.getMessageHtml() }>
-                </main>
-                {
-                    (this.props.message.sender || '') !== '' &&
-                    <footer 
-                        className="message-footer">
-                        Enviador por { this.props.message.sender }
-                    </footer>
-                }
+                <article
+                    className={ "message-container " + this.props.message.type.class_used }
+                >
+                    <main 
+                        dangerouslySetInnerHTML= { this.getMessageHtml() }>
+                    </main>
+                    {
+                        (this.props.message.sender || '') !== '' &&
+                        <footer 
+                            className="message-footer">
+                            Enviador por { this.props.message.sender }
+                        </footer>
+                    }
+                </article>
             </article>
         );
     }

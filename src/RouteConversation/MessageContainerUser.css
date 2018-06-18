@@ -1,0 +1,9 @@
+.message-user {
+    float: right;
+    display: block;
+    background-color: cornflowerblue;
+    color: white;
+    
+    border-radius: 16px;
+    border-bottom-right-radius: 2px;
+}

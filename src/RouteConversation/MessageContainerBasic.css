@@ -1,0 +1,17 @@
+.message-container {
+    border-radius: 16px;
+    border-bottom-left-radius: 2px;
+    display: inline-block;
+    -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .5);
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .5);
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+    margin: 0.5rem;
+    position: relative;
+    padding: 1rem;
+    max-width: 70%;
+}
+
+.message-footer {
+    background-color: inherit;
+}

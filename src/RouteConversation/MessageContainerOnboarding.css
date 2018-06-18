@@ -1,0 +1,27 @@
+.message-onboarding {
+    display: block;
+    padding: 1rem;
+    margin: 0;
+    background-color: #f16334;
+    background-image: linear-gradient( to bottom right, #f0932b, #f16334);
+    border-radius: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    margin: 0em auto;
+    width: 100%;
+    max-width: -webkit-fill-available;
+}
+
+.message-onboarding main {
+    color: white;
+    font-size: 1.5em;
+    font-weight: 300;
+}
+
+.message-onboarding main b {
+    font-weight: 500;
+}
+
+.message-onboarding .message-footer {
+    display: none;
+}
