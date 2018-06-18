@@ -27,14 +27,16 @@ class MessageContainer extends Component {
                     className={ "message-container " + this.props.message.type.class_used }
                 >
                     <main 
+                        className="message-main"
                         dangerouslySetInnerHTML= { this.getMessageHtml() }>
                     </main>
                     {
+                        /* Afuera hasta nuevo aviso
                         (this.props.message.sender || '') !== '' &&
                         <footer 
                             className="message-footer">
                             Enviador por { this.props.message.sender }
-                        </footer>
+                        </footer>*/
                     }
                 </article>
             </article>
