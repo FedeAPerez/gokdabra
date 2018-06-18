@@ -4,7 +4,8 @@ import * as Actions from '../actions/actions_type';
 const initialState = {
     conversations_list: [],
     conversation : {},
-    messages : []
+    messages : [],
+    isWriting : true
 }
 
 export default (state = initialState, action) => {
@@ -26,6 +27,7 @@ export default (state = initialState, action) => {
             console.log(messagesOb);
             messagesOb.push({
                 text : "<b>¡Hola! ¿Cómo estás? &#x1F44B;</b>Te presento a KDABRA, la herramienta que ayuda a que te comuniques mejor con los negocios que amás. &#x1F495;",
+                cta : "Mandá tu mensaje para que te contestemos lo antes posible!",
                 sender: "kdabra",
                 type : {
                     class_used : "message-onboarding"
@@ -52,6 +54,13 @@ export default (state = initialState, action) => {
                 messages: messagesOb
             };
         break;
+
+        case Actions.FINISHED_WRITING:
+            return {
+                ...state,
+                isWriting : false
+            }
+        break; 
 
         default:
             return state;

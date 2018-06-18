@@ -120,7 +120,11 @@ const getConversations = function(conversationsList) {
   };
   
 }
-
+const finishedWriting = function() {
+  return {
+    type: Actions.FINISHED_WRITING
+  };
+}
 export 
   { 
     authUser, 
@@ -129,5 +133,6 @@ export
     getMessages, 
     getConversations,
     getMessagesOnboarding,
-    addUserMessage
+    addUserMessage,
+    finishedWriting
  };

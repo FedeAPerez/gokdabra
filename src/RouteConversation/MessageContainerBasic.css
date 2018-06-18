@@ -1,18 +1,28 @@
 .message-container {
     border-radius: 16px;
     border-bottom-left-radius: 2px;
+
     display: inline-block;
+
     -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .5);
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .5);
+
     font-family: 'Rubik', sans-serif;
     font-weight: 400;
     margin: 0.5rem;
     position: relative;
     padding: 1rem;
-    max-width: 70%;
-    min-width: 30%;
 }
 
+.message-container footer {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin: 0em auto;
+    display: block;
+    border-radius: 1rem;
+}
 
 .message-footer {
     background-color: inherit;
@@ -27,9 +37,7 @@
 
 @media only screen and (max-width: 400px) 
 {
-    .message-container {
-        min-width: 70%;    
-    }
+
 }
 
 @media only screen and (min-width: 400px) and (max-width: 550px) 

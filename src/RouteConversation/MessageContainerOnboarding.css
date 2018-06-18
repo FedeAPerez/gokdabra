@@ -19,7 +19,9 @@
     
     margin: 1rem auto;
 }
-
+.message-onboarding .message-cta {
+    background-color: white;
+}
 .message-onboarding main b {
     font-weight: 500;
 }

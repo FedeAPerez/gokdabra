@@ -8,7 +8,7 @@ import { connect } from 'react-redux';
  * Código de librerías internas
  * */ 
 import MessageContainer from './MessageContainer';
-import { getMessagesOnboarding, addUserMessage } from '../redux/actions/actions';
+import { getMessagesOnboarding, addUserMessage, finishedWriting } from '../redux/actions/actions';
 import MessageHandlerTestContainer from '../RouteMain/Container/MessageHandler/MessageHandlerTestContainer';
 /* *
  * Hojas de Estilo y Constantes
@@ -28,7 +28,7 @@ class ConversationMessagesContainer extends Component {
         const { dispatch } = this.props;
         setTimeout(() => { 
             dispatch(getMessagesOnboarding());
-            this.setState({ writing : false });
+            dispatch(finishedWriting());
         }, 5000);
         
     }
@@ -61,7 +61,7 @@ class ConversationMessagesContainer extends Component {
                         )
                     }
                     {
-                        this.state.writing && 
+                        this.props.isWriting && 
                         <MessageContainer
                             message= { {
                                 text : "Está escribiendo...",
@@ -83,8 +83,9 @@ class ConversationMessagesContainer extends Component {
 }
 
 function mapStateToProps(state) {
-    const { messages } = state.conversations;
-    return { messages : messages };
+    const { messages, isWriting } = state.conversations;
+
+    return { messages : messages, isWriting : isWriting };
 }
 
 export default connect(mapStateToProps)(ConversationMessagesContainer);
