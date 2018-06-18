@@ -64,7 +64,7 @@ class ConversationMessagesContainer extends Component {
                         this.props.isWriting && 
                         <MessageContainer
                             message= { {
-                                text : "Está escribiendo...",
+                                text : "Escribiendo...",
                                 type : {
                                     class_used : "waiting"
                                 },
