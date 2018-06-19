@@ -42,7 +42,7 @@ class MessageContainer extends Component {
                             dangerouslySetInnerHTML= { this.getMessageCTAHtml() }
                         >
                         </footer>
-                    }
+                    }                    
                     {
                         /* Afuera hasta nuevo aviso
                         (this.props.message.sender || '') !== '' &&
@@ -52,6 +52,17 @@ class MessageContainer extends Component {
                         </footer>*/
                     }
                 </article>
+
+                {
+                    this.props.message.hour &&
+                    <aside
+                        className="message-hour"
+                    >
+                    { this.props.message.hour }
+                    </aside>
+                }
+                <div class="clear">
+                </div>
             </article>
         );
     }

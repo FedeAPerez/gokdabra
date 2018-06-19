@@ -3,8 +3,7 @@
  * Código de librerías externas
  * */
 import React, { Component } from "react";
-import { Router, Switch, Route } from 'react-router-dom';
-import createHistory from 'history/createBrowserHistory';
+import { Switch, Route } from 'react-router-dom';
 /* *
  * Código de librerías internas
  * */
@@ -20,13 +19,11 @@ import BusinessMessagesContainer from './RouteNewMessages/BusinessMessagesContai
 import ConversationContainer from './RouteConversation/ConversationContainer';
 import BusinessInfoContainer from './RouteConversation/BusinessInfoContainer';
 
-const history = createHistory();
 
 class MainContainer extends Component {
 
     render() {
         return (
-            <Router history={history}>
             <Switch className="section-switch">
                 <Route exact path="/" component={HomeView} />
                 <Route exact path="/onboarding" component={OnboardingView} />
@@ -41,7 +38,6 @@ class MainContainer extends Component {
                 <Route path="/:business/messages" component={BusinessMessagesContainer} />
                 <Route path="/:business" component={BusinessContainer} />
             </Switch>
-            </Router>
         );
     }
 }

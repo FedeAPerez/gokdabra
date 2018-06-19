@@ -45,6 +45,7 @@ export default (state = initialState, action) => {
             messagesOb.push({
                 text : action.message,
                 sender: "user",
+                hour: "22:38",
                 type : {
                     class_used : "message-user"
                 }

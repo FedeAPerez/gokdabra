@@ -7,34 +7,27 @@ import { connect } from 'react-redux';
 /* *
  * Código de librerías internas
  * */
+import { fbGetConversationsSuscription } from '../firebase';
 import { getConversations } from '../redux/actions/actions';
 import LoadingContainer from '../Commons/LoadingContainer';
 import ConversationContainer from '../Commons/ConversationContainer';
-import * as firebase from 'firebase';
 /* *
  * Hojas de Estilo y Constantes
  * */
 class BusinessMessagesContainer extends Component {
   constructor(props) {
     super(props);
-    var config = {
-        apiKey: "AIzaSyDBKnBlkI-Bz-jaPn3H5LrqPY0O7oDv6eU",
-        authDomain: "kdabrademo.firebaseapp.com",
-        databaseURL: "https://kdabrademo.firebaseio.com",
-        projectId: "kdabrademo",
-        storageBucket: "kdabrademo.appspot.com",
-        messagingSenderId: "494488149572"
-      };
+
 
     this.state = {
         name : '',
-        firebase : firebase.initializeApp(config)
     };
   }
 
   componentDidMount() {
       const { dispatch } = this.props;
-      const nameRef = this.state.firebase.database().ref().child('conversations/kdabra');
+      const nameRef = fbGetConversationsSuscription('kdabra');
+
       nameRef.on('value', snapshot => {
         dispatch(getConversations(
             snapshot.val()

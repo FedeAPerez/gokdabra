@@ -7,7 +7,8 @@ import { connect } from 'react-redux';
 /* *
  * Código de librerías internas
  * */ 
-import MessageContainer from './MessageContainer';
+import { fbCreateNewConversation } from '../firebase';
+import MessagesList from './MessagesList';
 import { getMessagesOnboarding, addUserMessage, finishedWriting } from '../redux/actions/actions';
 import MessageHandlerTestContainer from '../RouteMain/Container/MessageHandler/MessageHandlerTestContainer';
 /* *
@@ -39,41 +40,19 @@ class ConversationMessagesContainer extends Component {
             dispatch(addUserMessage(text)); 
         }
 
+        // Si es el primer mensaje, creo la conversación, o actualizo los mensajs en fb
+
+        fbCreateNewConversation("kdabra", "elchipibarijo", text, "22:38");
+
     };
 
     render() {
-        console.log(this.props.messages);
         return(
             <section className="base-container">
-                <section className="messages-container">
-                    {
-                        (this.props.messages).length > 0 &&
-                        this.props.messages.map(
-                            (element, index) => {
-                                console.log(element);
-                                return (
-                                    <MessageContainer 
-                                        message={ element } 
-                                        key={"conversation-messages" + index} 
-                                    />
-                                );
-                            }
-                        )
-                    }
-                    {
-                        this.props.isWriting && 
-                        <MessageContainer
-                            message= { {
-                                text : "Escribiendo...",
-                                type : {
-                                    class_used : "waiting"
-                                },
-                                sender : ''
-                            } }
-                        />
-                    }
-                </section>
-
+                <MessagesList
+                    messages = {this.props.messages}
+                    isWriting = {this.props.isWriting}
+                />
                 <MessageHandlerTestContainer 
                     onAnswerSubmit = { this.onAnswerSubmit.bind(this) } 
                 />

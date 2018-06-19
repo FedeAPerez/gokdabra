@@ -34,6 +34,16 @@
     margin-right: 0.5rem;
     padding: 0;
 }
+.message-hour {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+    float: right;
+    position: relative;
+    display: block;
+    color: #c6c6c6;
+    clear: right;
+    margin-right: 1rem;
+}
 
 @media only screen and (max-width: 400px) 
 {
