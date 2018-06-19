@@ -1,6 +1,6 @@
-@import "./MessageContainerBasic.css";
-@import "./MessageContainerOnboarding.css";
-@import "./MessageContainerUser.css";
+@import "./MessageBasic.css";
+@import "./MessageOnboarding.css";
+@import "./MessageUser.css";
 
 .waiting main {
     overflow: hidden;

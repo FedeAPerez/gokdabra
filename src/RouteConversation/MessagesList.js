@@ -7,7 +7,7 @@ import React, { Component } from 'react';
  * Código de librerías internas
  * */ 
 
-import MessageContainer from './MessageContainer';
+import Message from './Message';
 /* *
  * Hojas de Estilo y Constantes
  * */ 
@@ -19,9 +19,8 @@ class MessagesList extends Component {
                     (this.props.messages).length > 0 &&
                     this.props.messages.map(
                         (element, index) => {
-                            console.log(element);
                             return (
-                                <MessageContainer 
+                                <Message 
                                     message={ element } 
                                     key={"conversation-messages" + index} 
                                 />
@@ -31,7 +30,7 @@ class MessagesList extends Component {
                 }
                 {
                     this.props.isWriting && 
-                    <MessageContainer
+                    <Message
                         message= { {
                             text : "Escribiendo...",
                             type : {

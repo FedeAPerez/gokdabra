@@ -39,7 +39,6 @@ export default (state = initialState, action) => {
 
         case Actions.ADD_USER_MESSAGE:
             var messagesOb = Object.assign([], state.messages);
-            console.log(messagesOb);
             messagesOb.push({
                 text : action.message,
                 sender: "user",

@@ -5,9 +5,9 @@ const businessServiceUrl = process.env.REACT_APP_BACK_URL.trim() + '/business';
 var  BusinessAPI = function() {
     var _getBusiness = function() {
       var business = [
-      { number: 1, business_name: "Doers", },
-      { number: 2, business_name: "KDABRA" },
-      { number: 3, business_name: "eColitas" },
+      { number: 1, business_name: "doers", },
+      { number: 2, business_name: "kdabra" },
+      { number: 3, business_name: "ecolitas" },
       { number: 4, business_name: "fotoflasheventos" },
       { number: 5, business_name: "dexter" },
       { number: 6, business_name: "prune" }

@@ -31,7 +31,7 @@ const keyMap = {
 class AdminBusinessView extends Component {
     constructor(props) {
         super(props);
-        const businessPojo = BusinessAPI.getBusinessByName(props.match.params.business);
+        const businessPojo = BusinessAPI.getBusinessByName(this.props.match.params.business);
         this.state = {
             'businessOb' : businessPojo,
             'selected_container' : ShareContainer

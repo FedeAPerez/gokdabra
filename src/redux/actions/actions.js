@@ -62,7 +62,6 @@ const getMessagesOnboarding = function(business) {
     return function (dispatch) {
       return fbGetOnboarding(business)
       .then((res) => {
-        console.log(res.val());
         dispatch(getOnboardingAction(res.val()));
         dispatch(finishedWriting());
       })

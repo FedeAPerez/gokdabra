@@ -40,7 +40,7 @@ class ConversationMessagesContainer extends Component {
 
         // Si es el primer mensaje, creo la conversación, o actualizo los mensajs en fb
 
-        fbCreateNewConversation("kdabra", "elchipibarijo", text, "22:38");
+        fbCreateNewConversation(this.props.business.business_name, "elchipibarijo", text, "22:38");
 
     };
 

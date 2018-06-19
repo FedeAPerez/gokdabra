@@ -10,7 +10,7 @@ import React, { Component } from 'react';
 /* *
  * Hojas de Estilo y Constantes
  * */ 
-import './MessageContainer.css';
+import './Message.css';
 
 class MessageContainer extends Component {
 
