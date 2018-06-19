@@ -61,7 +61,7 @@ class MessageContainer extends Component {
                     { this.props.message.hour }
                     </aside>
                 }
-                <div class="clear">
+                <div className="clear">
                 </div>
             </article>
         );

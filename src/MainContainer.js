@@ -15,7 +15,6 @@ import LogInView from './RouteLogIn/LogInView';
 import LogInCallbackView from './RouteLogIn/LogInCallbackView';
 import AdminBusinessView from './RouteAdmin/AdminBusinessView';
 import OnboardingView from './RouteOnboarding/OnboardingView';
-import BusinessMessagesContainer from './RouteNewMessages/BusinessMessagesContainer';
 import ConversationContainer from './RouteConversation/ConversationContainer';
 import BusinessInfoContainer from './RouteConversation/BusinessInfoContainer';
 
@@ -34,9 +33,7 @@ class MainContainer extends Component {
                 <Route exact path="/dexter" render={(props) =>( <TestView id={"dexter"} />)} />
                 <Route path="/info/:business" component={BusinessInfoContainer} />
                 <Route path="/admin/:business" component={AdminBusinessView} />
-                <Route path="/:business/messages/send" component={ConversationContainer} />
-                <Route path="/:business/messages" component={BusinessMessagesContainer} />
-                <Route path="/:business" component={BusinessContainer} />
+                <Route path="/:business" component={ConversationContainer} />
             </Switch>
         );
     }

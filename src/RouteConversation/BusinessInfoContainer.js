@@ -13,6 +13,7 @@ import ConversationHeaderContainer from './ConversationHeaderContainer';
  * Hojas de Estilo y Constantes
  * */ 
 class BusinessInfoContainer extends Component {
+
     render() {
         var businessInfonextValues = [];
         businessInfonextValues.push({
@@ -21,11 +22,18 @@ class BusinessInfoContainer extends Component {
         businessInfonextValues.push({
             description : "Saber los horarios de trabajo y atención al público."
         });
+
+        const rightAction = {};
+        rightAction.image_link = "/content/images/actions/fav.svg";
+        rightAction.onClick = function() {
+        };
+
         return(
             <main>
                 <ConversationHeaderContainer 
                     business= { this.props.business }
                     isBack= { true }
+                    rightAction= { rightAction }
                 />
                 <NextFunction 
                     nextValues = { businessInfonextValues }

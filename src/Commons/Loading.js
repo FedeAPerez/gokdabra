@@ -14,17 +14,18 @@ import './Loading.css';
 
 class Loading extends Component {
     render() {
-        return (
+        if(this.props.isFetching) {
+            return (
                 <div>
-                {
-                    this.props.isFetching && 
                     <div className="loading-spinner">
                         <img src = {'/content/images/spinner.svg'} />
                     </div>
-                }
                 </div>
-            
-        );
+            );            
+        }
+        else {
+            return null;
+        }
     }
 }
 

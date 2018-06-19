@@ -12,7 +12,8 @@ var config = {
 firebase.initializeApp(config);
 
 function fbGetConversationsSuscription(business) {
-    return firebase.database().ref().child('conversations/' + business);
+    
+    return firebase.database().ref().child('/conversations/' + business);
 }
 
 function fbCreateNewConversation(business, username, message, hour) {

@@ -26,12 +26,20 @@ const errorFetching = function(json) {
     error_at: moment().format('MMMM Do YYYY, h:mm:ss a')
   };
 }
+
 const receiveMessages = function(json) {
   return {
     type: Actions.RECEIVE_MESSAGES,
     messages : json.data,
     received_at: moment().format('LLL')
   }
+}
+
+const selectBusiness = function(json) {
+  return {
+    type: Actions.SELECT_BUSINESS,
+    business: json
+  };
 }
 // Informa de la llegada de la información de la lista de negocios
 const receiveBusinessList = function(json) {
@@ -41,12 +49,7 @@ const receiveBusinessList = function(json) {
     received_at: moment().format('LLL')
   };
 }
-const receiveConversations = function(json) {
-  return {
-    type: Actions.RECEIVE_CONVERSATIONS,
-    conversations_list: json
-  };
-}
+
 
 const getMessagesOnboarding = function() {
   return {
@@ -108,30 +111,21 @@ const getMessages = function(business_name, user) {
   }
 }
 
-const getConversations = function(conversationsList) {
-  return function (dispatch) {
-    dispatch(startFetching());
-    dispatch(receiveConversations(conversationsList));
-    dispatch(finishedFetching());
-  }
-  return {
-    type: Actions.RECEIVE_CONVERSATIONS
 
-  };
-  
-}
 const finishedWriting = function() {
   return {
     type: Actions.FINISHED_WRITING
   };
 }
 export 
-  { 
+  {
+    startFetching,
+    finishedFetching, 
     authUser, 
     fetchBusinessList, 
     addMessage, 
-    getMessages, 
-    getConversations,
+    selectBusiness,
+    getMessages,
     getMessagesOnboarding,
     addUserMessage,
     finishedWriting

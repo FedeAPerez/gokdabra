@@ -3,7 +3,7 @@ import * as Actions from '../actions/actions_type';
 const initialState = {
     businessList: [],
     business: {
-        business_name : 'kdabra'
+        business_name : ''
     }
 }
 export default (state = initialState, action) => {
@@ -23,10 +23,13 @@ export default (state = initialState, action) => {
         break;
 
         case Actions.SELECT_BUSINESS:
-            return {
-                ...state,
-                business: action.business
-            };
+            return Object.assign(
+                {},
+                state,
+                {
+                    business : action.business
+                }
+            );
         break;
 
         case Actions.FAV_BUSINESS:

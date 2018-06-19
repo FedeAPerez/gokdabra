@@ -65,6 +65,15 @@ class ConversationHeader extends Component {
                         </span>
                     </Link>
                 }
+                {
+                    this.props.rightAction && 
+                    <span
+                            className= { "conversation-header-right" }
+                            onClick= { this.props.rightAction.onClick.bind(this) }
+                    >
+                            <img src={ this.props.rightAction.image_link } />
+                    </span>
+                }
             </section>
         );
     }

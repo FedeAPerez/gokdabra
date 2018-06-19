@@ -8,9 +8,10 @@ import { connect } from 'react-redux';
  * Código de librerías internas
  * */
 import { fbGetConversationsSuscription } from '../firebase';
-import { getConversations } from '../redux/actions/actions';
+import { getConversations } from '../redux/actions/conversationsActions';
 import LoadingContainer from '../Commons/LoadingContainer';
 import ConversationContainer from '../Commons/ConversationContainer';
+import NoMessages from '../Commons/NoMessages';
 /* *
  * Hojas de Estilo y Constantes
  * */
@@ -26,7 +27,7 @@ class BusinessMessagesContainer extends Component {
 
   componentDidMount() {
       const { dispatch } = this.props;
-      const nameRef = fbGetConversationsSuscription('kdabra');
+      const nameRef = fbGetConversationsSuscription(this.props.business.business_name);
 
       nameRef.on('value', snapshot => {
         dispatch(getConversations(
@@ -36,18 +37,20 @@ class BusinessMessagesContainer extends Component {
   }
 
   render() {
-    const conversations_list = this.props.conversations_list;
-    var conversationsList = [];
-    var keys = Object.keys(conversations_list);
-    for(var i =0; i< keys.length; i++)
-    {
-        conversationsList.push(conversations_list[keys[i]]);
+    if(this.props.conversations_list) {
+        const conversations_list = this.props.conversations_list;
+        var conversationsList = [];
+        var keys = Object.keys(conversations_list);
+        for(var i =0; i< keys.length; i++)
+        {
+            conversationsList.push(conversations_list[keys[i]]);
+        }
     }
     return (
       <div>
           <LoadingContainer />
           {
-              conversationsList &&
+              (conversationsList && conversationsList.length > 0) &&
               conversationsList.map((element, index) => {
                   return (
                       <ConversationContainer 
@@ -56,12 +59,19 @@ class BusinessMessagesContainer extends Component {
                   );
               })
           }
+          {
+              !conversationsList &&
+                <NoMessages
+                isBusiness = { true }
+                />
+          }
       </div>
     );
   }
 };
 function mapStateToProps(state) {
     const { conversations_list } = state.conversations;
-    return { conversations_list };
+    const { business } = state.business;
+    return { conversations_list, business };
 }
 export default connect(mapStateToProps)(BusinessMessagesContainer);

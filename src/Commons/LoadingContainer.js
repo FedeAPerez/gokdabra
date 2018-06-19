@@ -20,7 +20,9 @@ function mapStateToProps(state){
 }
 class LoadingContainer extends Component {
     render() {
-        return <Loading isFetching = { this.props.isFetching }/>
+        return (
+            <Loading isFetching = { this.props.isFetching }/>
+        );
     }
 }
 

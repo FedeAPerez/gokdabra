@@ -15,6 +15,7 @@ class ConversationHeaderContainer extends Component {
                 isBack= { this.props.isBack }
                 left= { this.props.left } 
                 right= { this.props.right }
+                rightAction= { this.props.rightAction }
             />
         );
     }

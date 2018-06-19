@@ -4,7 +4,17 @@ import { connect } from 'react-redux';
 import ConversationHeaderContainer from './ConversationHeaderContainer';
 import ConversationMessagesContainer from './ConversationMessagesContainer';
 
+import { BusinessAPI } from  '../API';
+import { selectBusiness } from '../redux/actions/actions';
 class ConversationContainer extends Component {
+    constructor(props) {
+        super(props);
+        
+        const businessPojo = BusinessAPI.getBusinessByName(props.match.params.business);
+        const { dispatch } = this.props;
+        dispatch(selectBusiness(businessPojo));
+    }
+
     render() {
         const left = {};
         left.image_link = "/content/images/HomeButton.svg";
@@ -21,7 +31,8 @@ class ConversationContainer extends Component {
                     left= { left }
                     right= { right }
                 />
-                <ConversationMessagesContainer />
+                <ConversationMessagesContainer 
+                />
                 
             </main>
         );
