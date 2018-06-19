@@ -6,6 +6,7 @@ import React, { Component } from 'react';
 /* *
  * Código de librerías internas
  * */
+import BusinessMessagesContainer from '../RouteNewMessages/BusinessMessagesContainer';
 /* *
  * Hojas de Estilo y Constantes
  * */
@@ -21,9 +22,7 @@ class MessagesContainer extends Component {
     render() {
         return (
             <main className="admin-messages-container">
-                <h2>Estamos desarrollando esta funcionalidad</h2>
-
-                <h2>Dentro de poco vas a poder comunicarte con tus clientes usando toda la tecnología de KDABRA</h2>
+                <BusinessMessagesContainer />
             </main>
         );
     }

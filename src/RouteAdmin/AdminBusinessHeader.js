@@ -33,8 +33,8 @@ class AdminBusinessHeader extends Component {
         super(props);
         this.state = {
             'business_object' : this.props.__BUSINESS_INFORMATION__,
-            'option_selected':'share',
-            'show_option':'Compartir'
+            'option_selected':'chat',
+            'show_option':'Mensajes'
         };
     }
 

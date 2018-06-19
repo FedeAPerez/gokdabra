@@ -22,7 +22,7 @@ const keyMap = {
     'settings' : SettingsContainer,
     'analytics' : AnalyticsContainer,
     'share': ShareContainer,
-    'default' : ShareContainer
+    'default' : MessagesContainer
 };
 
 class AdminBusinessView extends Component {
