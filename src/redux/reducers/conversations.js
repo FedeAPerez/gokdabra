@@ -24,11 +24,9 @@ export default (state = initialState, action) => {
         break;
         case Actions.RECEIVE_MESSAGES_ONBOARDING:
             var messagesOb = Object.assign([], state.messages);
-            console.log(messagesOb);
             messagesOb.push({
-                text : "<b>¡Hola! ¿Cómo estás? &#x1F44B;</b>Te presento a KDABRA, la herramienta que ayuda a que te comuniques mejor con los negocios que amás. &#x1F495;",
-                cta : "Mandanos un mensaje para que te contestemos lo antes posible!",
-                sender: "kdabra",
+                text : action.message,
+                cta : action.cta,
                 type : {
                     class_used : "message-onboarding"
                 }

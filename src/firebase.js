@@ -16,6 +16,19 @@ function fbGetConversationsSuscription(business) {
     return firebase.database().ref().child('/conversations/' + business);
 }
 
+function fbGetOnboarding(business) {
+    const route = '/onboardings/' + business.toLowerCase() + '/';
+    console.log(business);
+    return firebase.database().ref(route).once('value');
+}
+
+function fbUpdateOnboarding(business, message, cta) {
+    var onboardingOb = {};
+    onboardingOb.message = message;
+    onboardingOb.cta = cta;
+    firebase.database().ref('/onboardings/'+business+'/').set(onboardingOb);
+}
+
 function fbCreateNewConversation(business, username, message, hour) {
     const conversation  = {
         user : {
@@ -34,4 +47,4 @@ function fbCreateNewConversation(business, username, message, hour) {
     firebase.database().ref('/conversations/'+business+'/'+username).set(conversation);
 }
 
-export { fbGetConversationsSuscription, fbCreateNewConversation };
+export { fbGetConversationsSuscription, fbCreateNewConversation, fbUpdateOnboarding, fbGetOnboarding };

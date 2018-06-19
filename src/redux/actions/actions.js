@@ -1,5 +1,6 @@
 import { ProspectsAPI, ConversationsAPI } from '../../API';
 
+import { fbGetOnboarding } from '../../firebase';
 import * as Actions from './actions_type';
 import moment from 'moment';
 
@@ -50,11 +51,24 @@ const receiveBusinessList = function(json) {
   };
 }
 
-
-const getMessagesOnboarding = function() {
+const getOnboardingAction = function(data) {
   return {
-    type: Actions.RECEIVE_MESSAGES_ONBOARDING
+    type: Actions.RECEIVE_MESSAGES_ONBOARDING,
+    message: data.message,
+    cta: data.cta
   };
+}
+const getMessagesOnboarding = function(business) {
+    return function (dispatch) {
+      return fbGetOnboarding(business)
+      .then((res) => {
+        console.log(res.val());
+        dispatch(getOnboardingAction(res.val()));
+        dispatch(finishedWriting());
+      })
+      .catch((err) => {
+      });
+    }
 }
 
 const addUserMessage = function(message) {
