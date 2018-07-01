@@ -31,7 +31,7 @@ const errorFetching = function(json) {
 const receiveMessages = function(json) {
   return {
     type: Actions.RECEIVE_MESSAGES,
-    messages : json.data,
+    messages : json,
     received_at: moment().format('LLL')
   }
 }
@@ -62,6 +62,7 @@ const getMessagesOnboarding = function(business) {
     return function (dispatch) {
       return fbGetOnboarding(business)
       .then((res) => {
+        dispatch(startedWriting());
         dispatch(getOnboardingAction(res.val()));
         dispatch(finishedWriting());
       })
@@ -105,6 +106,14 @@ const fetchBusinessList = function (){
 const addMessage = function() {
 
 }
+const getCompleteConversation = function(messagesList) {
+  return function (dispatch) {
+    dispatch(startFetching());
+    // Enviar la lista de conversaciones desde firebase
+    dispatch(receiveMessages(messagesList));
+    dispatch(finishedFetching());
+  }
+}
 
 const getMessages = function(business_name, user) {
   return function (dispatch) {
@@ -123,7 +132,11 @@ const getMessages = function(business_name, user) {
     });
   }
 }
-
+const startedWriting = function() {
+  return {
+    type: Actions.STARTED_WRITING
+  };
+}
 
 const finishedWriting = function() {
   return {
@@ -141,5 +154,6 @@ export
     getMessages,
     getMessagesOnboarding,
     addUserMessage,
-    finishedWriting
+    finishedWriting,
+    getCompleteConversation
  };

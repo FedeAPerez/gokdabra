@@ -13,11 +13,23 @@ import Message from './Message';
  * */ 
 class MessagesList extends Component {
     render() {
+        var messages = [];
+        if(this.props.messages) {
+            const messages_list = this.props.messages;
+            var messages = [];
+            var keys = Object.keys(messages_list);
+            for(var i =0; i< keys.length; i++)
+            {
+                messages.push(messages_list[keys[i]]);
+            }
+        }
+        console.log("si y o la sacara así de limpia");
+        console.log(messages);
         return (
             <section className="messages-container">
                 {
-                    (this.props.messages).length > 0 &&
-                    this.props.messages.map(
+                    messages.length > 0 &&
+                    messages.map(
                         (element, index) => {
                             return (
                                 <Message 

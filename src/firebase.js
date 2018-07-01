@@ -15,6 +15,9 @@ function fbGetConversationsSuscription(business) {
     
     return firebase.database().ref().child('/conversations/' + business);
 }
+function fbGetMessagesConversationSuscription(business_name, user_name) {
+    return firebase.database().ref().child('/messages/' + business_name + '/' + user_name);
+}
 
 function fbGetOnboarding(business) {
     const route = '/onboardings/' + business.toLowerCase() + '/';
@@ -29,10 +32,18 @@ function fbUpdateOnboarding(business, message, cta) {
     firebase.database().ref('/onboardings/'+business+'/').set(onboardingOb);
 }
 
+function fbAddNewMessage(business, user, message, hour) {
+    const messageOb = {
+        text : message,
+        hour : hour
+    }
+    var pushRef = firebase.database().ref('/messages/'+business+'/'+user).push();
+    pushRef.set(messageOb);
+}
+
 function fbCreateNewConversation(business, username, message, hour) {
     const conversation  = {
         user : {
-            userId : username,
             userName: 'Federico'
         },
         lastMessage :  {
@@ -47,4 +58,11 @@ function fbCreateNewConversation(business, username, message, hour) {
     firebase.database().ref('/conversations/'+business+'/'+username).set(conversation);
 }
 
-export { fbGetConversationsSuscription, fbCreateNewConversation, fbUpdateOnboarding, fbGetOnboarding };
+export { 
+    fbGetConversationsSuscription, 
+    fbCreateNewConversation, 
+    fbUpdateOnboarding, 
+    fbGetOnboarding,
+    fbAddNewMessage,
+    fbGetMessagesConversationSuscription
+ };

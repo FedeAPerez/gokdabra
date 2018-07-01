@@ -5,7 +5,7 @@ const initialState = {
     conversations_list: [],
     conversation : {},
     messages : [],
-    isWriting : true
+    isWriting : false
 }
 
 export default (state = initialState, action) => {

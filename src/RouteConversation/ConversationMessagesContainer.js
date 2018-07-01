@@ -7,9 +7,9 @@ import { connect } from 'react-redux';
 /* *
  * Código de librerías internas
  * */ 
-import { fbCreateNewConversation, fbUpdateOnboarding } from '../firebase';
+import { fbCreateNewConversation, fbUpdateOnboarding, fbAddNewMessage, fbGetMessagesConversationSuscription } from '../firebase';
 import MessagesList from './MessagesList';
-import { getMessagesOnboarding, addUserMessage } from '../redux/actions/actions';
+import { getMessagesOnboarding, addUserMessage, getCompleteConversation } from '../redux/actions/actions';
 import MessageHandlerTestContainer from '../RouteMain/Container/MessageHandler/MessageHandlerTestContainer';
 /* *
  * Hojas de Estilo y Constantes
@@ -19,18 +19,32 @@ class ConversationMessagesContainer extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            writing : true
+            writing : false
         }
 }
 
     componentDidMount() {
         // Si el usuario no tuvo onboarding hasta el momento
         const { dispatch } = this.props;
-        setTimeout(() => { 
-            dispatch(getMessagesOnboarding(this.props.business.business_name))
-        }, 5000);
+
+        // Si no hay mensajes en el historial, largo onboarding
+        const nameRef = fbGetMessagesConversationSuscription(this.props.business.business_name, 'fedeaperez');
+        nameRef.on('value', snapshot => {
+            console.log(snapshot.val());
+            if(snapshot.val().length == 0) {
+                setTimeout(() => { 
+                    dispatch(getMessagesOnboarding(this.props.business.business_name))
+                }, 5000);
+            }
+            else {
+                dispatch(getCompleteConversation(
+                    snapshot.val()
+                ));
+            }
+          })
         
     }
+
 
     onAnswerSubmit = (input_value, text) => {       
         const { dispatch } = this.props; 
@@ -40,8 +54,8 @@ class ConversationMessagesContainer extends Component {
 
         // Si es el primer mensaje, creo la conversación, o actualizo los mensajs en fb
 
-        fbCreateNewConversation(this.props.business.business_name, "elchipibarijo", text, "22:38");
-
+        fbCreateNewConversation(this.props.business.business_name, "fedeaperez", text, "22:38");
+        fbAddNewMessage(this.props.business.business_name, "fedeaperez", text, "22:38");
     };
 
     render() {

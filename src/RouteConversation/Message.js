@@ -28,7 +28,7 @@ class MessageContainer extends Component {
                 className="messages-article-container"
             >
                 <article
-                    className={ "message-container " + this.props.message.type.class_used }
+                    className={ "message-container " + (this.props.message.type || this.props.message).class_used }
                 >
                     <main 
                         className="message-main"
