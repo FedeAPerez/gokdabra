@@ -32,13 +32,14 @@ function fbUpdateOnboarding(business, message, cta) {
     firebase.database().ref('/onboardings/'+business+'/').set(onboardingOb);
 }
 
-function fbAddNewMessage(business, user, message, hour) {
+function fbAddNewMessage(business, user, message, hour, sender, class_used) {
     const messageOb = {
         text : message,
         type : {
-            class_used : "message-user"
+            class_used : class_used
         },
-        hour : hour
+        hour : hour,
+        sender : sender
     }
     var pushRef = firebase.database().ref('/messages/'+business+'/'+user).push();
     pushRef.set(messageOb);

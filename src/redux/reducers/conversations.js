@@ -53,6 +53,22 @@ export default (state = initialState, action) => {
             };
         break;
 
+        case Actions.ADD_BUSINESS_MESSAGE:
+            var messagesOb = Object.assign([], state.messages);
+            messagesOb.push({
+                text : action.message,
+                sender: "business",
+                hour: "22:38",
+                type : {
+                    class_used : "message-business"
+                }
+            });
+            return {
+                ...state,
+                messages: messagesOb
+            };
+        break;
+
         case Actions.FINISHED_WRITING:
             return {
                 ...state,

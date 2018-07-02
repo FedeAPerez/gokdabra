@@ -9,7 +9,7 @@ import { connect } from 'react-redux';
  * */ 
 import { fbCreateNewConversation, fbUpdateOnboarding, fbAddNewMessage, fbGetMessagesConversationSuscription } from '../firebase';
 import MessagesList from './MessagesList';
-import { getMessagesOnboarding, addUserMessage, getCompleteConversation } from '../redux/actions/actions';
+import { getMessagesOnboarding, addUserMessage, addBusinessMessage, getCompleteConversation } from '../redux/actions/actions';
 import MessageHandlerTestContainer from '../RouteMain/Container/MessageHandler/MessageHandlerTestContainer';
 /* *
  * Hojas de Estilo y Constantes
@@ -48,14 +48,20 @@ class ConversationMessagesContainer extends Component {
 
     onAnswerSubmit = (input_value, text) => {       
         const { dispatch } = this.props; 
-        if(text != '') {
+        if(text != '' && !this.props.isBusiness) {
             dispatch(addUserMessage(text)); 
+            // Creo o actualizo la conversación, agrego nuevos mensajes
+            fbCreateNewConversation(this.props.business.business_name, "fedeaperez", text, "22:38");
+            fbAddNewMessage(this.props.business.business_name, "fedeaperez", text, "22:38", "fedeaperez", "message-user");
+        }
+        if(text != '' && this.props.isBusiness) {
+            dispatch(addBusinessMessage(text)); 
+            // Creo o actualizo la conversación, agrego nuevos mensajes
+            fbCreateNewConversation(this.props.business.business_name, "fedeaperez", text, "22:38");
+            fbAddNewMessage(this.props.business.business_name, "fedeaperez", text, "22:38", this.props.business.business_name, "message-business");
+        
         }
 
-        // Si es el primer mensaje, creo la conversación, o actualizo los mensajs en fb
-
-        fbCreateNewConversation(this.props.business.business_name, "fedeaperez", text, "22:38");
-        fbAddNewMessage(this.props.business.business_name, "fedeaperez", text, "22:38");
     };
 
     render() {

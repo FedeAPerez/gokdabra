@@ -14,7 +14,7 @@ import MessagesContainer from './MessagesContainer';
 import SettingsContainer from './SettingsContainer';
 import ShareContainer from './ShareContainer';
 import AnalyticsContainer from './AnalyticsContainer';
-import { selectBusiness } from '../redux/actions/actions';
+import { selectBusiness, isBusiness } from '../redux/actions/actions';
 
 /* *
  * Hojas de Estilo y Constantes
@@ -38,6 +38,7 @@ class AdminBusinessView extends Component {
         };
         const {dispatch} = this.props;
         dispatch(selectBusiness(businessPojo));
+        dispatch(isBusiness());
         
     }
 

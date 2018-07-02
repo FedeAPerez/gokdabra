@@ -42,6 +42,13 @@ const selectBusiness = function(json) {
     business: json
   };
 }
+
+const isBusiness = function() {
+  return {
+    type: Actions.IS_BUSINESS
+  };
+}
+
 // Informa de la llegada de la información de la lista de negocios
 const receiveBusinessList = function(json) {
   return {
@@ -77,7 +84,12 @@ const addUserMessage = function(message) {
     message: message
   };
 }
-
+const addBusinessMessage = function(message) {
+  return {
+    type: Actions.ADD_BUSINESS_MESSAGE,
+    message: message
+  };
+}
 const authUser = function() {
   return {
     type: Actions.AUTH_USER,
@@ -151,9 +163,11 @@ export
     fetchBusinessList, 
     addMessage, 
     selectBusiness,
+    isBusiness,
     getMessages,
     getMessagesOnboarding,
     addUserMessage,
+    addBusinessMessage,
     finishedWriting,
     getCompleteConversation
  };

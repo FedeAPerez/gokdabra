@@ -32,6 +32,7 @@ class ConversationContainer extends Component {
                     right= { right }
                 />
                 <ConversationMessagesContainer 
+                    isBusiness={ this.props.isBusiness }
                 />
                 
             </main>
@@ -41,7 +42,8 @@ class ConversationContainer extends Component {
 
 function mapStateToProps(state) {
     const { business } = state.business;
-    return { business : business };
+    const { isBusiness } = state.user;
+    return { business, isBusiness };
 }
 
 export default connect(mapStateToProps)(ConversationContainer);

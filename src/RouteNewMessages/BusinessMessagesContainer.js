@@ -36,6 +36,10 @@ class BusinessMessagesContainer extends Component {
       })
   }
 
+  handlerConversation() {
+
+  }
+
   render() {
     if(this.props.conversations_list) {
         const conversations_list = this.props.conversations_list;
@@ -55,7 +59,8 @@ class BusinessMessagesContainer extends Component {
                   return (
                       <ConversationContainer 
                         key={"conversation_"+index} 
-                        conversation = { element } />
+                        conversation = { element }
+                        onClick={ this.handlerConversation } />
                   );
               })
           }

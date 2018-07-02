@@ -3,6 +3,7 @@
  * Código de librerías externas
  * */
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 /* *
  * Código de librerías internas
  * */ 
@@ -29,7 +30,12 @@ class Conversation extends Component {
 
     render() {
         return (
-            <div className="conversation">
+            <Link
+            to={"/"+this.props.businessInfo.business_name+'/'+this.props.conversation.user.userName}
+            >
+            <div 
+                className="conversation"
+            >
                 <div className="conversation-container">
                     <span
                         className="conversation-user-user-name"
@@ -51,6 +57,7 @@ class Conversation extends Component {
                     </span>
                 </div>
             </div>
+            </Link>
         );
     }
 }
