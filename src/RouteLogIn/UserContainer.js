@@ -48,7 +48,7 @@ class UserContainer extends Component {
             color: "white"
         }
         const styledFocusUnderline = {
-            color: "#f16334"
+            borderColor: "#f16334"
         }
         const styledFloated = {
             color: "black"
