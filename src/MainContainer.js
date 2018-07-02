@@ -12,6 +12,7 @@ import ErrorView from './RouteError/ErrorView';
 import BusinessContainer from './RouteMain/BusinessContainer';
 import TestView from './RouteMain/TestView';
 import LogInView from './RouteLogIn/LogInView';
+import SingUpView from './RouteLogIn/SingUpView';
 import LogInCallbackView from './RouteLogIn/LogInCallbackView';
 import AdminBusinessView from './RouteAdmin/AdminBusinessView';
 import OnboardingView from './RouteOnboarding/OnboardingView';
@@ -30,6 +31,7 @@ class MainContainer extends Component {
                 <Route path="/404" component={ErrorView} />
                 <Route exac path="/login/callback" component={LogInCallbackView} />
                 <Route exac path="/login" component={LogInView} />
+                <Route exac path="/signup" component={SingUpView} />
                 <Route exact path="/dexter" render={(props) =>( <TestView id={"dexter"} />)} />
                 <Route path="/info/:business" component={BusinessInfoContainer} />
                 <Route path="/admin/:business" component={AdminBusinessView} />

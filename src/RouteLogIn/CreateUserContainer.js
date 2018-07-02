@@ -5,30 +5,35 @@
 import React, { Component } from 'react';
 import { TextField, RaisedButton   } from 'material-ui';
 import {
-    Redirect, Link
+    Redirect
   } from "react-router-dom";
 /* *
  * Código de librerías internas
  * */ 
-import { doSignInWithEmailAndPassword } from '../firebase';
+import { doCreateUserWithEmailAndPassword, fbCreateBusiness } from '../firebase';
 /* *
  * Hojas de Estilo y Constantes
  * */ 
-class UserContainer extends Component {
+class CreateUserContainer extends Component {
     constructor(props) {
         super(props);
         this.state = {
             email:'',
             password:'',
+            business_name:'',
             buttonEnabled:false,
             authed: false
         };
     }
     authUser() {
-        doSignInWithEmailAndPassword(this.state.email, this.state.password)
+        doCreateUserWithEmailAndPassword(this.state.email, this.state.password)
         .then((res) => {
             console.log(res);
             this.setState({authed:true});
+            var business = {};
+            business.email = this.state.email;
+            business.business_name = this.state.business_name;
+            fbCreateBusiness(business);
           })
           .catch(error => {
             console.log(error);
@@ -41,6 +46,11 @@ class UserContainer extends Component {
         if(this.state.email == '' || this.state.password == '') {
             this.setState({buttonEnabled:false});
         }
+    }
+    changeBusinessName(e, value) {
+        e.preventDefault();
+        this.setState({business_name : value});
+        this.checkEnabledButton();
     }
     changeUserName(e, value) {
         e.preventDefault();
@@ -73,6 +83,14 @@ class UserContainer extends Component {
         return (
             <section>
                 <img src={"/kdabra-icon-512.png"} className="kdabra-logo" />
+            <TextField
+                style= { styledTextField }
+                floatingLabelStyle= { styledFloated }
+                underlineFocusStyle = { styledFocusUnderline }
+                floatingLabelText="Nombre de Empresa" 
+                onChange={this.changeBusinessName.bind(this)}
+                value={this.state.business_name}
+            />
             <TextField 
                 style= { styledTextField }
                 floatingLabelStyle= { styledFloated }
@@ -92,20 +110,17 @@ class UserContainer extends Component {
             />
             <RaisedButton 
                 style= { styledButton }
-                label="Ingresar"
+                label="Crear"
                 backgroundColor={"#f16334"}
                 labelColor={"white"}
                 onClick={this.authUser.bind(this)}
                 fullWidth={true}
                 disabled={!this.state.buttonEnabled}
             />
-            <p>
-            <span className="secondary-label">¿No estás registrado?</span>
-            <Link to="/signup"> <span className="primary-label">Create una cuenta.</span></Link>
-            </p>
+
             </section>
         );
     }
 }
 
-export default UserContainer;
+export default CreateUserContainer;

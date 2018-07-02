@@ -68,6 +68,9 @@ function fbCreateNewConversation(business, username, message, hour) {
 }
 const doSignInWithEmailAndPassword = (email, password) =>
   auth.signInWithEmailAndPassword(email, password);
+
+  const doCreateUserWithEmailAndPassword = (email, password) =>
+  auth.createUserWithEmailAndPassword(email, password);
 export { 
     fbGetConversationsSuscription, 
     fbCreateNewConversation, 
@@ -75,5 +78,7 @@ export {
     fbGetOnboarding,
     fbAddNewMessage,
     fbGetMessagesConversationSuscription,
-    doSignInWithEmailAndPassword
+    fbCreateBusiness,
+    doSignInWithEmailAndPassword,
+    doCreateUserWithEmailAndPassword
  };
