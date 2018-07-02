@@ -6,16 +6,22 @@ import React, { Component } from 'react';
 /* *
  * Código de librerías internas
  * */ 
-
+import UserContainer from './UserContainer';
 /* *
 * Hojas de Estilo y Constantes
 * */ 
-
+import './LogInView.css';
 
 class LogInView extends Component {
     
     render() {
-        return (<p>log in</p>);
+        return (
+            <main className="main-container">
+                <section>
+                    <UserContainer />
+                </section>
+            </main>
+        );
     }
 }
 
