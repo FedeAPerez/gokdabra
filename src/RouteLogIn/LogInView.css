@@ -1,7 +1,10 @@
 .main-container {
     background-color: #f16334;
 }
-
+.main-section-container {
+    
+    box-shadow: black 1px 1px 4px -1px;
+}
 .main-container section {
     background-color: white;
     width: 90%;

@@ -1,5 +1,4 @@
 import * as firebase from 'firebase';
-
 var config = {
     apiKey: "AIzaSyDBKnBlkI-Bz-jaPn3H5LrqPY0O7oDv6eU",
     authDomain: "kdabrademo.firebaseapp.com",
@@ -10,7 +9,7 @@ var config = {
 };
 
 firebase.initializeApp(config);
-
+const auth = firebase.auth();
 function fbGetConversationsSuscription(business) {
     
     return firebase.database().ref().child('/conversations/' + business);
@@ -61,12 +60,14 @@ function fbCreateNewConversation(business, username, message, hour) {
       }
     firebase.database().ref('/conversations/'+business+'/'+username).set(conversation);
 }
-
+const doSignInWithEmailAndPassword = (email, password) =>
+  auth.signInWithEmailAndPassword(email, password);
 export { 
     fbGetConversationsSuscription, 
     fbCreateNewConversation, 
     fbUpdateOnboarding, 
     fbGetOnboarding,
     fbAddNewMessage,
-    fbGetMessagesConversationSuscription
+    fbGetMessagesConversationSuscription,
+    doSignInWithEmailAndPassword
  };

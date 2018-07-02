@@ -17,7 +17,7 @@ class LogInView extends Component {
     render() {
         return (
             <main className="main-container">
-                <section>
+                <section className="main-section-container">
                     <UserContainer />
                 </section>
             </main>
