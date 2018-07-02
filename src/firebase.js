@@ -17,6 +17,12 @@ function fbGetConversationsSuscription(business) {
 function fbGetMessagesConversationSuscription(business_name, user_name) {
     return firebase.database().ref().child('/messages/' + business_name + '/' + user_name);
 }
+function fbCreateBusiness(business) {
+    var businessOb = {};
+    businessOb.business_name = business.business_name;
+    businessOb.email = business.email;
+    firebase.database().ref('/business/'+business.business_name+'/').set(businessOb);
+}
 
 function fbGetOnboarding(business) {
     const route = '/onboardings/' + business.toLowerCase() + '/';

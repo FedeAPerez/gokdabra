@@ -4,6 +4,9 @@
  * */
 import React, { Component } from 'react';
 import { TextField, RaisedButton   } from 'material-ui';
+import {
+    Redirect
+  } from "react-router-dom";
 /* *
  * Código de librerías internas
  * */ 
@@ -17,13 +20,15 @@ class UserContainer extends Component {
         this.state = {
             email:'',
             password:'',
-            buttonEnabled:false
+            buttonEnabled:false,
+            authed: false
         };
     }
     authUser() {
         doSignInWithEmailAndPassword(this.state.email, this.state.password)
         .then((res) => {
             console.log(res);
+            this.setState({authed:true});
           })
           .catch(error => {
             console.log(error);
@@ -33,7 +38,7 @@ class UserContainer extends Component {
         if(this.state.email != '' && this.state.password != '') {
             this.setState({buttonEnabled:true});
         }
-        else {
+        if(this.state.email == '' || this.state.password == '') {
             this.setState({buttonEnabled:false});
         }
     }
@@ -62,6 +67,9 @@ class UserContainer extends Component {
         const styledFloated = {
             color: "black"
         }
+        if(this.state.authed) {
+            return <Redirect to={ '/admin/' + 'kdabra' } />;
+        }
         return (
             <section>
                 <img src={"/kdabra-icon-512.png"} className="kdabra-logo" />
@@ -89,13 +97,14 @@ class UserContainer extends Component {
                 labelColor={"white"}
                 onClick={this.authUser.bind(this)}
                 fullWidth={true}
-                disabled={this.state.buttonEnabled}
+                disabled={!this.state.buttonEnabled}
             />
-            <p><span className="secondary-label">¿No estás registrado?</span> <span className="primary-label">Create una cuenta.</span>
-                </p>
-                <p>
-                    <span className="secondary-label">(Próximamente)</span>
-                    </p>
+            <p>
+            <span className="secondary-label">¿No estás registrado?</span> <span className="primary-label">Create una cuenta.</span>
+            </p>
+            <p>
+                <span className="secondary-label">(Próximamente)</span>
+            </p>
             </section>
         );
     }
