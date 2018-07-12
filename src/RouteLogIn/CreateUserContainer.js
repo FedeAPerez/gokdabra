@@ -29,11 +29,13 @@ class CreateUserContainer extends Component {
         doCreateUserWithEmailAndPassword(this.state.email, this.state.password)
         .then((res) => {
             console.log(res);
-            this.setState({authed:true});
             var business = {};
             business.email = this.state.email;
             business.business_name = this.state.business_name;
+            console.log("creando el negocio " + business);
             fbCreateBusiness(business);
+
+            this.setState({authed:true});
           })
           .catch(error => {
             console.log(error);
@@ -78,7 +80,7 @@ class CreateUserContainer extends Component {
             color: "black"
         }
         if(this.state.authed) {
-            return <Redirect to={ '/admin/' + 'kdabra' } />;
+            return <Redirect to={ '/admin/' + this.state.business_name } />;
         }
         return (
             <section>

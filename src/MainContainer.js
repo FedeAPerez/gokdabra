@@ -18,14 +18,15 @@ import AdminBusinessView from './RouteAdmin/AdminBusinessView';
 import OnboardingView from './RouteOnboarding/OnboardingView';
 import ConversationContainer from './RouteConversation/ConversationContainer';
 import BusinessInfoContainer from './RouteConversation/BusinessInfoContainer';
-
+import ComponentsLibraryView from './ComponentsLibrary/ComponentsLibraryView';
 
 class MainContainer extends Component {
 
     render() {
         return (
             <Switch className="section-switch">
-                <Route exact path="/" component={HomeView} />
+                <Route exact path="/" component={LogInView} />
+                <Route exact path="/componentslibrary" component={ComponentsLibraryView} />
                 <Route exact path="/onboarding" component={OnboardingView} />
                 <Route exact path="/index.html" component={HomeView} />
                 <Route path="/404" component={ErrorView} />

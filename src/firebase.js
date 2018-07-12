@@ -24,6 +24,10 @@ function fbCreateBusiness(business) {
     firebase.database().ref('/business/'+business.business_name+'/').set(businessOb);
 }
 
+function fbGetBusiness(business_name) {
+    return firebase.database().ref('/business/'+business_name.toLowerCase()+'/').once('value');
+}
+
 function fbGetOnboarding(business) {
     const route = '/onboardings/' + business.toLowerCase() + '/';
     console.log(business);
@@ -79,6 +83,7 @@ export {
     fbAddNewMessage,
     fbGetMessagesConversationSuscription,
     fbCreateBusiness,
+    fbGetBusiness,
     doSignInWithEmailAndPassword,
     doCreateUserWithEmailAndPassword
  };

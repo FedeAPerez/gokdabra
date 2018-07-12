@@ -11,9 +11,10 @@ import { connect } from 'react-redux';
 import { BusinessAPI } from  '../API';
 import AdminBusinessHeader from './AdminBusinessHeader';
 import MessagesContainer from './MessagesContainer';
-import SettingsContainer from './SettingsContainer';
+import SettingsContainer from './NewSettingsContainer';
 import ShareContainer from './ShareContainer';
 import AnalyticsContainer from './AnalyticsContainer';
+import {fbGetBusiness} from '../firebase';
 import { selectBusiness, isBusiness } from '../redux/actions/actions';
 
 /* *
@@ -31,14 +32,24 @@ const keyMap = {
 class AdminBusinessView extends Component {
     constructor(props) {
         super(props);
-        const businessPojo = BusinessAPI.getBusinessByName(this.props.match.params.business);
         this.state = {
-            'businessOb' : businessPojo,
+            'businessOb' : null,
             'selected_container' : ShareContainer
         };
-        const {dispatch} = this.props;
-        dispatch(selectBusiness(businessPojo));
-        dispatch(isBusiness());
+
+        const businessPojo = fbGetBusiness(this.props.match.params.business);
+        businessPojo.then(
+        (snapshot) => { 
+            console.log(snapshot.val());
+            const {dispatch} = this.props;
+            dispatch(selectBusiness(snapshot.val()));
+            dispatch(isBusiness());
+
+            this.setState({ businessOb : snapshot.val() });
+        })
+        .catch((err) => {
+            console.log(err);
+        });
         
     }
 
@@ -50,16 +61,21 @@ class AdminBusinessView extends Component {
     render() {
         const key = this.state.selected_container;
         const KeySelected = keyMap[key] || keyMap.default;
+        if(this.state.businessOb) {
 
-        return (
-            <main>
-                <AdminBusinessHeader 
-                    handleNavigation= { this.handleNavigation.bind(this) }
-                    __BUSINESS_INFORMATION__= { this.state.businessOb } />
-                <KeySelected 
-                        businessObject= { this.state.businessOb } />
-            </main>
-        );
+            return (
+                <main>
+                    <AdminBusinessHeader 
+                        handleNavigation= { this.handleNavigation.bind(this) }
+                        __BUSINESS_INFORMATION__= { this.state.businessOb } />
+                    <KeySelected 
+                            businessObject= { this.state.businessOb } />
+                </main>
+            );
+        }
+        else {
+            return null;
+        }
     }
 }
 
