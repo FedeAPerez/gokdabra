@@ -21,7 +21,7 @@ const Button = styled.button`
     text-align: center;
     font-size: 1rem;
 
-    border: ${props => props.primary ? '0px' : '1px solid #696666' };
+    border: ${props => props.primary ? '0px' : '1px solid rgba(255,255,255,.5)' };
     -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .5);
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .5);
     &:focus {
