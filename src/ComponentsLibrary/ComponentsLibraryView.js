@@ -43,7 +43,7 @@ class ComponentsLibraryView extends Component {
                 </Section>
                 <Section>
                     <Title h2>Botones</Title>
-
+                    <Button onClick={this.handleButtonsClick} disabled>Completá los datos</Button>
                     <Button onClick={this.handleButtonsClick}>Crear una cuenta</Button>
                     <Button primary onClick={this.handleButtonsClick}>Ingresar</Button>
                 </Section>
