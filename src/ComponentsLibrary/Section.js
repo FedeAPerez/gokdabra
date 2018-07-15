@@ -5,8 +5,6 @@ const Section = styled.div`
     padding: 0rem;
     margin-right: 1rem;
     margin-left: 1rem;
-    overflow: hidden;
-    clear: both;
 `;
 
 export default Section;

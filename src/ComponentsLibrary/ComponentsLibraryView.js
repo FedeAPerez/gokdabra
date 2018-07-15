@@ -10,6 +10,7 @@ import { Text, BoldText } from './Text';
 import Title from './Title';
 import Section from './Section';
 import { TextGlobe, KdabraTextGlobe, TextGlobeArticle } from './TextGlobe';
+import Button from './Button';
 /* *
  * Hojas de Estilo y Constantes
  * */ 
@@ -34,6 +35,12 @@ class ComponentsLibraryView extends Component {
                     <TextGlobeArticle> Este es un mensaje de prueba</TextGlobeArticle>
                     
                     <TextGlobeArticle sender> Este es un mensaje de prueba del usuario</TextGlobeArticle>
+                </Section>
+                <Section>
+                    <Title h2>Botones</Title>
+
+                    <Button>Crear una cuenta</Button>
+                    <Button primary>Ingresar</Button>
                 </Section>
             </main>
         );

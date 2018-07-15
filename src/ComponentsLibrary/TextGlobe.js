@@ -33,7 +33,7 @@ const KdabraTextGlobe = TextGlobe.extend`
 `;
 
 const TextGlobeArticle = ({children, ...props}) => (
-    <article className="messages-article-container">
+    <article>
     <TextGlobe {...props}>
         {children}
     </TextGlobe>
