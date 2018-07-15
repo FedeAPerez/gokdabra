@@ -1,6 +1,7 @@
 import styled from "../../node_modules/styled-components";
+import React from 'react';
 
-const Button = styled.button`
+const ButtonComponent = styled.button`
 
     padding-left: 2rem;
     padding-right: 2rem;
@@ -35,5 +36,14 @@ const Button = styled.button`
         cursor: pointer;
     }
 `;
+
+const Button = ({children, ...props}) => {
+    return (
+        <ButtonComponent {...props} onClick={props.onClick.bind(this)}>
+            {children}
+        </ButtonComponent>
+    );
+};
+
 
 export default Button;

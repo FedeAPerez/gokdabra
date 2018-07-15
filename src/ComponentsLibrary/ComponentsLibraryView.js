@@ -15,6 +15,11 @@ import Button from './Button';
  * Hojas de Estilo y Constantes
  * */ 
 class ComponentsLibraryView extends Component {
+
+    handleButtonsClick(e) {
+        e.preventDefault();
+    }
+
     render() {
         return(
             <main>
@@ -39,8 +44,8 @@ class ComponentsLibraryView extends Component {
                 <Section>
                     <Title h2>Botones</Title>
 
-                    <Button>Crear una cuenta</Button>
-                    <Button primary>Ingresar</Button>
+                    <Button onClick={this.handleButtonsClick}>Crear una cuenta</Button>
+                    <Button primary onClick={this.handleButtonsClick}>Ingresar</Button>
                 </Section>
             </main>
         );
