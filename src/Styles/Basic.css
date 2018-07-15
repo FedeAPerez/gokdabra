@@ -46,7 +46,7 @@ min-height: 100%;
 #root {
     background-color: white;
     display: block;
-    height: 100%;
+    min-height: 100%;
 }
 .clear {
     clear:both;
