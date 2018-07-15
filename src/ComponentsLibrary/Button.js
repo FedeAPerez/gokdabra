@@ -20,7 +20,7 @@ const ButtonComponent = styled.button`
     border-radius: 0.5rem;
     min-width: 250px;
     background-color: ${ props => props.primary ? '#f16334' : 'white'};
-    background-color: ${ props => props.disabled ? '#7f8fa6' : 'white'};
+    background-color: ${ props => props.disabled ? '#CAD3C8' : 'white'};
 
     background-image: ${ props => props.primary ? 'linear-gradient( to bottom right, #f0932b, #f16334)' : 'none' };
 
@@ -28,7 +28,7 @@ const ButtonComponent = styled.button`
     margin: 1rem auto;
 
     color: ${ props => props.primary ? 'white' : 'black'};
-    color: ${ props => props.disabled ? '#dcdde1' : 'black'};
+    color: ${ props => props.disabled ? '#2C3A47' : 'black'};
 
     text-align: center;
     font-size: 1rem;
