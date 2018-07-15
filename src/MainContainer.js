@@ -19,7 +19,7 @@ import OnboardingView from './RouteOnboarding/OnboardingView';
 import ConversationContainer from './RouteConversation/ConversationContainer';
 import BusinessInfoContainer from './RouteConversation/BusinessInfoContainer';
 import ComponentsLibraryView from './ComponentsLibrary/ComponentsLibraryView';
-
+import UserAdminView from './UserAdminRoute/UserAdminView';
 class MainContainer extends Component {
 
     render() {
@@ -35,6 +35,7 @@ class MainContainer extends Component {
                 <Route exac path="/signup" component={SingUpView} />
                 <Route exact path="/dexter" render={(props) =>( <TestView id={"dexter"} />)} />
                 <Route path="/info/:business" component={BusinessInfoContainer} />
+                <Route path="/user_admin/" component={UserAdminView} />
                 <Route path="/admin/:business" component={AdminBusinessView} />
                 <Route path="/:business" component={ConversationContainer} />
             </Switch>

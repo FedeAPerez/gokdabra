@@ -23,7 +23,10 @@ function fbCreateBusiness(business) {
     businessOb.email = business.email;
     firebase.database().ref('/business/'+business.business_name+'/').set(businessOb);
 }
+function fbCreateUser(user) {
 
+    firebase.database().ref('/users/'+user.user_name+'/').set(user);
+}
 function fbGetBusiness(business_name) {
     return firebase.database().ref('/business/'+business_name.toLowerCase()+'/').once('value');
 }
@@ -83,6 +86,7 @@ export {
     fbAddNewMessage,
     fbGetMessagesConversationSuscription,
     fbCreateBusiness,
+    fbCreateUser,
     fbGetBusiness,
     doSignInWithEmailAndPassword,
     doCreateUserWithEmailAndPassword

@@ -11,13 +11,25 @@ import Title from './Title';
 import Section from './Section';
 import { TextGlobe, KdabraTextGlobe, TextGlobeArticle } from './TextGlobe';
 import Button from './Button';
+import CheckBox from './CheckBox';
 /* *
  * Hojas de Estilo y Constantes
  * */ 
 class ComponentsLibraryView extends Component {
+    constructor(props) {
+        super(props);
 
+        this.state = {
+            isBusiness: false
+        };
+    }
     handleButtonsClick(e) {
         e.preventDefault();
+    }
+
+    handleBusinessChange(e) {
+        e.preventDefault();
+        this.setState({ isBusiness : !this.state.isBusiness });
     }
 
     render() {
@@ -46,6 +58,8 @@ class ComponentsLibraryView extends Component {
                     <Button onClick={this.handleButtonsClick} disabled>Completá los datos</Button>
                     <Button onClick={this.handleButtonsClick}>Crear una cuenta</Button>
                     <Button primary onClick={this.handleButtonsClick}>Ingresar</Button>
+                    <CheckBox onClick={this.handleBusinessChange.bind(this)} checked={this.state.isBusiness} >Soy una empresa</CheckBox>
+
                 </Section>
             </main>
         );
