@@ -10,10 +10,12 @@ var config = {
 
 firebase.initializeApp(config);
 const auth = firebase.auth();
-function fbGetConversationsSuscription(business) {
+
+function fbGetConversationsSuscription(entity_name) {
     
-    return firebase.database().ref().child('/conversations/' + business);
+    return firebase.database().ref().child('/conversations/' + entity_name);
 }
+
 function fbGetMessagesConversationSuscription(business_name, user_name) {
     return firebase.database().ref().child('/messages/' + business_name + '/' + user_name);
 }

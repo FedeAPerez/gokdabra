@@ -12,6 +12,8 @@ import {
  * */ 
 import { doCreateUserWithEmailAndPassword, fbCreateBusiness, fbCreateUser } from '../firebase';
 import CheckBox from '../ComponentsLibrary/CheckBox';
+import Button from '../ComponentsLibrary/Button';
+import { Text, BoldText } from '../ComponentsLibrary/Text';
 
 /* *
  * Hojas de Estilo y Constantes
@@ -22,7 +24,6 @@ class CreateUserContainer extends Component {
         this.state = {
             email:'',
             password:'',
-            business_name:'',
             user_name : '',
             buttonEnabled:false,
             isBusiness : false
@@ -32,23 +33,13 @@ class CreateUserContainer extends Component {
         doCreateUserWithEmailAndPassword(this.state.email, this.state.password)
         .then((res) => {
             console.log(res);
-            if(this.state.isBusiness) {
-
-                var business = {};
-                business.email = this.state.email;
-                business.business_name = this.state.business_name;
-                fbCreateBusiness(business);
-                
-                this.setState({authedBusiness:true});
-            }
-            else {
                 var user = {};
                 user.email = this.state.email;
-                user.user_name = this.state.user_name;
+                user.user_name = this.state.user_name.toLowerCase();
+                user.isBusiness = this.state.isBusiness;
+
                 fbCreateUser(user);
-                
                 this.setState({authedUser:true});
-            }
 
           })
           .catch(error => {
@@ -62,11 +53,6 @@ class CreateUserContainer extends Component {
         if(this.state.email == '' || this.state.password == '') {
             this.setState({buttonEnabled:false});
         }
-    }
-    changeBusinessName(e, value) {
-        e.preventDefault();
-        this.setState({business_name : value});
-        this.checkEnabledButton();
     }
     changeUserName(e, value) {
         e.preventDefault();
@@ -111,26 +97,7 @@ class CreateUserContainer extends Component {
         return (
             <section>
                 <img src={"/kdabra-icon-512.png"} className="kdabra-logo" />
-
-                <CheckBox  onClick={this.handleBusinessChange.bind(this)} checked={this.state.isBusiness} >
-                    Tengo una empresa!
-                </CheckBox>
-            {
-                this.state.isBusiness &&
-                
-                <TextField
-                    style= { styledTextField }
-                    floatingLabelStyle= { styledFloated }
-                    underlineFocusStyle = { styledFocusUnderline }
-                    floatingLabelText="Nombre de Empresa" 
-                    onChange={this.changeBusinessName.bind(this)}
-                    value={this.state.business_name}
-                />
-            }
-
-            {
-                !this.state.isBusiness &&
-                
+ 
                 <TextField
                     style= { styledTextField }
                     floatingLabelStyle= { styledFloated }
@@ -139,33 +106,35 @@ class CreateUserContainer extends Component {
                     onChange={this.changeUserName.bind(this)}
                     value={this.state.user_name}
                 />
-            }
-            <TextField 
-                style= { styledTextField }
-                floatingLabelStyle= { styledFloated }
-                underlineFocusStyle = { styledFocusUnderline }
-                floatingLabelText="Mail" 
-                onChange={this.changeMail.bind(this)}
-                value={this.state.email}
-            />
-            <TextField
-                style= { styledTextField }
-                floatingLabelStyle= { styledFloated }
-                underlineFocusStyle = { styledFocusUnderline }
-                floatingLabelText="Contraseña" 
-                type="password"
-                onChange={this.changePassword.bind(this)}
-                value={this.state.password}
-            />
-            <RaisedButton 
-                style= { styledButton }
-                label="Crear"
-                backgroundColor={"#f16334"}
-                labelColor={"#fff"}
-                onClick={this.authUser.bind(this)}
-                fullWidth={true}
-                disabled={!this.state.buttonEnabled}
-            />
+
+                <Text secondary centered>{ "mi.gokdabra.com/"}<BoldText secondary>{this.state.user_name}</BoldText></Text>
+
+                <TextField 
+                    style= { styledTextField }
+                    floatingLabelStyle= { styledFloated }
+                    underlineFocusStyle = { styledFocusUnderline }
+                    floatingLabelText="Mail" 
+                    onChange={this.changeMail.bind(this)}
+                    value={this.state.email}
+                />
+                <TextField
+                    style= { styledTextField }
+                    floatingLabelStyle= { styledFloated }
+                    underlineFocusStyle = { styledFocusUnderline }
+                    floatingLabelText="Contraseña" 
+                    type="password"
+                    onChange={this.changePassword.bind(this)}
+                    value={this.state.password}
+                />
+                <CheckBox  onClick={this.handleBusinessChange.bind(this)} checked={this.state.isBusiness} >
+                    Tengo una empresa!
+                </CheckBox>
+                <Button primary
+                    onClick={this.authUser.bind(this)}
+                    disabled={!this.state.buttonEnabled}
+                >
+                    Crear Usuario
+                </Button>
 
             </section>
         );

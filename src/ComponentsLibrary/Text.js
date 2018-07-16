@@ -9,8 +9,11 @@ const TextComponent = styled.p`
     color: ${ props => props.secondary ? '#7f8c8d' : 'black' };
 `;
 
-const BoldText = TextComponent.extend`
-    font-weight: 600;
+const BoldText = styled.span`
+    font-family: 'Rubik', sans-serif;
+    font-size: 1rem;
+    font-weight: ${ props => props.secondary ? '400' : '600'};
+    color: black;
     display: inline;
 `;
 

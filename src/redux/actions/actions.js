@@ -43,6 +43,13 @@ const selectBusiness = function(json) {
   };
 }
 
+const selectUser = function(json) {
+  return {
+    type: Actions.SELECT_USER,
+    user: json
+  };
+}
+
 const isBusiness = function() {
   return {
     type: Actions.IS_BUSINESS
@@ -163,6 +170,7 @@ export
     fetchBusinessList, 
     addMessage, 
     selectBusiness,
+    selectUser,
     isBusiness,
     getMessages,
     getMessagesOnboarding,

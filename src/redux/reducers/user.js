@@ -2,8 +2,8 @@
 import * as Actions from '../actions/actions_type';
 
 const initialState = {
-    id: '',
-    name: '',
+    user_name: 'paulpog',
+    name: 'Paul Pogba',
     isBusiness: false
 }
 
@@ -17,6 +17,15 @@ export default (state = initialState, action) => {
                 isBusiness : true
             }
         );
+        break;
+        case Actions.SELECT_USER :
+            return Object.assign(
+                {},
+                state,
+                {
+                    user: action.user
+                }
+            );
         break;
         case Actions.AUTH_USER :
             return Object.assign(
@@ -32,6 +41,5 @@ export default (state = initialState, action) => {
 
         default:
             return state;
-        break;
     }
 }
