@@ -21,12 +21,10 @@ const __BUSINESS_HEADER_TEXT_IMAGE = "admin-business-header-text";
 const __BUSINESS_HEADER_HOME_IMAGE = "/content/images/HomeButton.svg";
 const __BUSINESS_HEADER_SETTINGS_IMAGE = "/content/images/SettingsButton.svg";
 const __BUSINESS_HEADER_SETTINGS_SELECTED_IMAGE = "/content/images/SettingsButtonSelected.svg";
-const __BUSINESS_HEADER_ANALYTICS_IMAGE = "/content/images/AnalyticsButton.svg";
-const __BUSINESS_HEADER_ANALYTICS_SELECTED_IMAGE = "/content/images/AnalyticsButtonSelected.svg";
+const EVENTS_IMAGE = "/content/images/actions/event.svg";
+const EVENTS_IMAGE_SECOND = "/content/images/actions/event_orange.svg";
 const __BUSINESS_HEADER_MESSAGES_IMAGE = "/content/images/MessagesButton.svg";
 const __BUSINESS_HEADER_MESSAGES_SELECTED_IMAGE = "/content/images/MessagesButtonSelected.svg";
-const __BUSINESS_HEADER_SHARE_IMAGE = "/content/images/ShareButton.svg";
-const __BUSINESS_HEADER_SHARE_SELECTED_IMAGE = "/content/images/ShareButtonSelected.svg";
 
 class AdminBusinessHeader extends Component {
 	constructor(props) {
@@ -84,8 +82,8 @@ class AdminBusinessHeader extends Component {
                     <NavigationItem 
                         value= { "events" }
                         isSelected= { this.state.option_selected == "events" }
-                        defaultImage= { __BUSINESS_HEADER_ANALYTICS_IMAGE }
-                        selectedImage= { __BUSINESS_HEADER_ANALYTICS_SELECTED_IMAGE }
+                        defaultImage= { EVENTS_IMAGE }
+                        selectedImage= { EVENTS_IMAGE_SECOND }
                         navigateOption= { this.navigateOption.bind(this) }
                         showMessage= { "Eventos" }
                     />
