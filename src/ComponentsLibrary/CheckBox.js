@@ -53,7 +53,7 @@ const CheckMark = styled.span`
     right: 0.5rem;
     bottom: 0.5rem;
     width: 1rem;
-
+    border-radius: 0.5rem;
     cursor:pointer;
     
     &:after {

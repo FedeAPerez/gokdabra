@@ -11,7 +11,7 @@ import { fbGetConversationsSuscription } from '../firebase';
 import { getConversations } from '../redux/actions/conversationsActions';
 import LoadingContainer from '../Commons/LoadingContainer';
 import ConversationContainer from '../Commons/ConversationContainer';
-import NoMessages from '../Commons/NoMessages';
+import Text from '../ComponentsLibrary/Text';
 /* *
  * Hojas de Estilo y Constantes
  * */
@@ -66,9 +66,7 @@ class BusinessMessagesContainer extends Component {
           }
           {
               !conversationsList &&
-                <NoMessages
-                isBusiness = { true }
-                />
+                <Text secondary centered >Parece que no tenés mensajes por el momento.</Text>
           }
       </div>
     );

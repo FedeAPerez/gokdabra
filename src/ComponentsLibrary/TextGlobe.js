@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import React from 'react';
-import { SSL_OP_CRYPTOPRO_TLSEXT_BUG } from 'constants';
 
 const TextGlobe = styled.div`
     border-radius: 16px;
