@@ -10,11 +10,10 @@ import { connect } from 'react-redux';
  * */ 
 import AdminBusinessHeader from './AdminBusinessHeader';
 import MessagesContainer from './MessagesContainer';
-import SettingsContainer from './NewSettingsContainer';
+import SettingsContainer from './SettingsContainer';
 import ShareContainer from './ShareContainer';
 import AnalyticsContainer from './AnalyticsContainer';
 import { fbGetUser  } from '../firebase';
-import { selectBusiness, isBusiness } from '../redux/actions/actions';
 
 /* *
  * Hojas de Estilo y Constantes
@@ -32,7 +31,7 @@ class AdminBusinessView extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            'businessOb' : null,
+            'userOb' : null,
             'selected_container' : ShareContainer
         };
 
@@ -42,7 +41,7 @@ class AdminBusinessView extends Component {
             console.log(snapshot.val());
             const {dispatch} = this.props;
 
-            this.setState({ businessOb : snapshot.val() });
+            this.setState({ userOb : snapshot.val() });
         })
         .catch((err) => {
             console.log(err);
@@ -58,15 +57,15 @@ class AdminBusinessView extends Component {
     render() {
         const key = this.state.selected_container;
         const KeySelected = keyMap[key] || keyMap.default;
-        if(this.state.businessOb) {
+        if(this.state.userOb) {
 
             return (
                 <main>
                     <AdminBusinessHeader 
                         handleNavigation= { this.handleNavigation.bind(this) }
-                        __BUSINESS_INFORMATION__= { this.state.businessOb } />
+                        user = { this.state.userOb } />
                     <KeySelected 
-                            businessObject= { this.state.businessOb } />
+                        user= { this.state.userOb } />
                 </main>
             );
         }

@@ -49,12 +49,12 @@ class ShareContainer extends Component {
                 3 - Que tus clientes se conviertan en tus fans usando KDABRA.
                 </h2>
                 <CopyToClipboard 
-                text={ "http://mi.gokdabra.com/" + this.props.businessObject.business_name.toLowerCase() }
+                text={ "http://mi.gokdabra.com/" + this.props.user.user_name.toLowerCase() }
                 onCopy={() => this.setState({copied: true})}>
                 <div 
                     className="admin-share-link"
                 >
-                { "http://mi.gokdabra.com/" + this.props.businessObject.business_name.toLowerCase() }
+                { "http://mi.gokdabra.com/" + this.props.user.user_name.toLowerCase() }
                 {
                     this.renderImage()
                 }

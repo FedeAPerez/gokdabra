@@ -32,7 +32,7 @@ class AdminBusinessHeader extends Component {
 	constructor(props) {
         super(props);
         this.state = {
-            'business_object' : this.props.__BUSINESS_INFORMATION__,
+            'userOb' : this.props.user,
             'option_selected':'chat',
             'show_option':'Mensajes'
         };
@@ -47,7 +47,7 @@ class AdminBusinessHeader extends Component {
     }
 
     renderBusinessHeaderLabel() {
-        return {__html : this.state.business_object.business_name.toUpperCase() + " | <span class=biggerH2>" + this.state.show_option + "</span>"};
+        return {__html : this.state.userOb.user_name.toUpperCase() + " | <span class=biggerH2>" + this.state.show_option + "</span>"};
     }
 
     render() {

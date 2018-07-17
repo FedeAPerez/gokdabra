@@ -27,7 +27,7 @@ class BusinessMessagesContainer extends Component {
 
   componentDidMount() {
       const { dispatch } = this.props;
-      const nameRef = fbGetConversationsSuscription(this.props.business.business_name);
+      const nameRef = fbGetConversationsSuscription(this.props.user_name);
 
       nameRef.on('value', snapshot => {
         dispatch(getConversations(
@@ -74,7 +74,7 @@ class BusinessMessagesContainer extends Component {
 };
 function mapStateToProps(state) {
     const { conversations_list } = state.conversations;
-    const { business } = state.business;
-    return { conversations_list, business };
+    const { user_name } = state.user;
+    return { conversations_list, user_name };
 }
 export default connect(mapStateToProps)(BusinessMessagesContainer);
