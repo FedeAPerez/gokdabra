@@ -5,6 +5,8 @@ const Section = styled.div`
     padding: 0rem;
     margin-right: 1rem;
     margin-left: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 `;
 
 export default Section;

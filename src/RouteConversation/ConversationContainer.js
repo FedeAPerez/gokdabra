@@ -4,15 +4,25 @@ import { connect } from 'react-redux';
 import ConversationHeaderContainer from './ConversationHeaderContainer';
 import ConversationMessagesContainer from './ConversationMessagesContainer';
 
-import { BusinessAPI } from  '../API';
 import { selectBusiness } from '../redux/actions/actions';
+import { fbGetBusiness  } from '../firebase';
+
 class ConversationContainer extends Component {
     constructor(props) {
         super(props);
         
-        const businessPojo = BusinessAPI.getBusinessByName(props.match.params.business);
-        const { dispatch } = this.props;
-        dispatch(selectBusiness(businessPojo));
+        const businessPojo = fbGetBusiness(props.match.params.business);
+        businessPojo.then(
+            (snapshot) => { 
+                console.log(snapshot.val());
+                const {dispatch} = this.props;
+                dispatch(selectBusiness(snapshot.val()));
+
+                this.setState({ businessOb : snapshot.val() });
+        })
+        .catch((err) => {
+            console.log(err);
+        });
     }
 
     render() {

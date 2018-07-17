@@ -1,4 +1,4 @@
-// MessageHandlerContainer.js
+// MessageHandlerTestContainer.js
 /*
  Código librerías de externos
  */
@@ -8,14 +8,13 @@ import TextField from 'material-ui/TextField';
 /*
  Código Propio y librerías desarrolladas por KDABRA
  */
-import MessageSubmitButton from '../../Component/MessageSubmitButton';
-import MenuContainer from './MenuContainer';
-import './MessageHandlerContainer.css';
+import MessageSubmitButton from './MessageSubmitButton';
+import './MessageHandler.css';
 const __MESSAGE_HINT = "Escribí un mensaje...";
 const __MESSAGE_HANDLER_CONTAINER_CLASS = "message-handler-container";
 const __MESSAGE_DIV_CLASS = "message-div";
 
-class MessageHandlerContainer extends Component {
+class MessageHandler extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -32,12 +31,6 @@ class MessageHandlerContainer extends Component {
         }
     }
 
-    handleSubmitMenuItem(value, showMessage) {
-        if(this.props.onAnswerSubmit) {
-            this.props.onAnswerSubmit(value, showMessage);
-        }
-    }
-
     handleChange = (e) => {        
         e.preventDefault();
         this.setState(
@@ -45,7 +38,8 @@ class MessageHandlerContainer extends Component {
                 value: e.target.value
             }
         );
-	};
+    };
+    
     scrollToHandler() {
         if(this['scroll_to_hanlder']) {
             setTimeout(function() {
@@ -66,30 +60,23 @@ class MessageHandlerContainer extends Component {
             backgroundColor: 'white',
             borderRadius: '1em'
         }
-        const hintStyle = {
-            color: '#95a5a6'
-        }
 
         return(
             <section 
             className= { __MESSAGE_HANDLER_CONTAINER_CLASS }>
                 <form onSubmit={this.handleSubmit.bind(this)}>
                 <div 
-                className= { __MESSAGE_DIV_CLASS }
+                    className= { __MESSAGE_DIV_CLASS }
                 >
-                <MenuContainer 
-                    submitMessageMenuItem = { this.handleSubmitMenuItem.bind(this) }
-                />
-                <TextField 
-                    hintText= { __MESSAGE_HINT }
-                    hintStyle= { hintStyle }
-                    style= { inputStyle }
-                    onChange={ this.handleChange }
-                    value={ this.state.value}
-                    onFocus={ this.scrollToHandler.bind(this) }
-                    /> 
-                <MessageSubmitButton 
-                    onClick={this.handleSubmit.bind(this)}/>
+                    <TextField 
+                        hintText= {__MESSAGE_HINT}
+                        style= {inputStyle}
+                        onChange={ this.handleChange }
+                        value={this.state.value}
+                        onFocus={ this.scrollToHandler.bind(this) }
+                        /> 
+                    <MessageSubmitButton 
+                        onClick={this.handleSubmit.bind(this)}/>
 
                 </div>
                 </form>
@@ -105,4 +92,4 @@ class MessageHandlerContainer extends Component {
     }
 }
 
-export default MessageHandlerContainer;
+export default MessageHandler;

@@ -9,7 +9,7 @@ import React, { Component } from 'react';
 import { Text, BoldText } from './Text';
 import Title from './Title';
 import Section from './Section';
-import { TextGlobe, KdabraTextGlobe, TextGlobeArticle } from './TextGlobe';
+import { TextGlobe, TextGlobeKdabra } from './TextGlobe';
 import Button from './Button';
 import CheckBox from './CheckBox';
 /* *
@@ -47,11 +47,11 @@ class ComponentsLibraryView extends Component {
                 <Section>
                     <Title h2>Globos</Title>
                     
-                    <KdabraTextGlobe>Este es un mensaje de KDABRA</KdabraTextGlobe>
+                    <TextGlobeKdabra>Este es un mensaje de KDABRA</TextGlobeKdabra>
 
-                    <TextGlobeArticle> Este es un mensaje de prueba</TextGlobeArticle>
+                    <TextGlobe> Este es un mensaje de prueba</TextGlobe>
                     
-                    <TextGlobeArticle sender> Este es un mensaje de prueba del usuario</TextGlobeArticle>
+                    <TextGlobe sender> Este es un mensaje de prueba del usuario</TextGlobe>
                 </Section>
                 <Section>
                     <Title h2>Botones</Title>

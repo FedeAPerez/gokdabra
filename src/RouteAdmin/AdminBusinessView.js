@@ -8,7 +8,6 @@ import { connect } from 'react-redux';
 /* *
  * Código de librerías internas
  * */ 
-import { BusinessAPI } from  '../API';
 import AdminBusinessHeader from './AdminBusinessHeader';
 import MessagesContainer from './MessagesContainer';
 import SettingsContainer from './NewSettingsContainer';

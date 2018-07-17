@@ -10,7 +10,7 @@ import { connect } from 'react-redux';
 import { fbCreateNewConversation, fbUpdateOnboarding, fbAddNewMessage, fbGetMessagesConversationSuscription } from '../firebase';
 import MessagesList from './MessagesList';
 import { getMessagesOnboarding, addUserMessage, addBusinessMessage, getCompleteConversation } from '../redux/actions/actions';
-import MessageHandlerTestContainer from '../RouteMain/Container/MessageHandler/MessageHandlerTestContainer';
+import MessageHandler from '../ComponentsLibrary/MessageHandler';
 /* *
  * Hojas de Estilo y Constantes
  * */ 
@@ -71,7 +71,7 @@ class ConversationMessagesContainer extends Component {
                     messages = {this.props.messages}
                     isWriting = {this.props.isWriting}
                 />
-                <MessageHandlerTestContainer 
+                <MessageHandler 
                     onAnswerSubmit = { this.onAnswerSubmit.bind(this) } 
                 />
             </section>

@@ -4,7 +4,6 @@
   "private": true,
   "description": "KDABRA APP for rendering Business's ChatBot",
   "scripts": {
-    "startdev": "set REACT_APP_BACK_URL=http://localhost:5000 && react-scripts start",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "mocha --compilers js:babel/register",

@@ -1,5 +1,3 @@
-import { ProspectsAPI, ConversationsAPI } from '../../API';
-
 import { fbGetOnboarding } from '../../firebase';
 import * as Actions from './actions_type';
 import moment from 'moment';
@@ -72,6 +70,7 @@ const getOnboardingAction = function(data) {
     cta: data.cta
   };
 }
+
 const getMessagesOnboarding = function(business) {
     return function (dispatch) {
       return fbGetOnboarding(business)
@@ -105,26 +104,6 @@ const authUser = function() {
   };
 };
 
-const fetchBusinessList = function (){
-
-  return function (dispatch) {
-    dispatch(startFetching());
-
-    return ProspectsAPI.getAllProspects()
-    .then((res) => {
-      dispatch(receiveBusinessList(res.data));
-      dispatch(finishedFetching());
-      
-    })
-    .catch((err) => {
-      dispatch(errorFetching());
-    });
-  }
-}
-
-const addMessage = function() {
-
-}
 const getCompleteConversation = function(messagesList) {
   return function (dispatch) {
     dispatch(startFetching());
@@ -134,23 +113,6 @@ const getCompleteConversation = function(messagesList) {
   }
 }
 
-const getMessages = function(business_name, user) {
-  return function (dispatch) {
-    dispatch(startFetching());
-    var obj = {};
-    obj.business_name  = business_name;
-    obj.user = user;
-    return ConversationsAPI.getMessagesConversation(obj)
-    .then((res) => {
-      dispatch(receiveMessages(res.data));
-      dispatch(finishedFetching());
-      
-    })
-    .catch((err) => {
-      dispatch(errorFetching());
-    });
-  }
-}
 const startedWriting = function() {
   return {
     type: Actions.STARTED_WRITING
@@ -167,12 +129,9 @@ export
     startFetching,
     finishedFetching, 
     authUser, 
-    fetchBusinessList, 
-    addMessage, 
     selectBusiness,
     selectUser,
     isBusiness,
-    getMessages,
     getMessagesOnboarding,
     addUserMessage,
     addBusinessMessage,

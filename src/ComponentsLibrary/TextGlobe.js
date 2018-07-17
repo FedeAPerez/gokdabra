@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import React from 'react';
 
-const TextGlobe = styled.div`
+const TextGlobeComponent = styled.div`
     border-radius: 16px;
     border-bottom-left-radius: ${ props => props.sender ? '16px' : '2px' };
 
@@ -21,7 +21,7 @@ const TextGlobe = styled.div`
     background-color: ${ props => props.sender ? 'cornflowerblue' : 'white' };
 `;
 
-const KdabraTextGlobe = TextGlobe.extend`
+const KdabraTextGlobe = TextGlobeComponent.extend`
     background-color: #f16334;
     background-image: linear-gradient( to bottom right, #f0932b, #f16334);
     border-radius: 16px;
@@ -31,17 +31,31 @@ const KdabraTextGlobe = TextGlobe.extend`
     color: white;
 `;
 
-const TextGlobeArticle = ({children, ...props}) => (
-    <article>
-    <TextGlobe {...props}>
+const TextArticle = styled.article`
+    position: relative;
+    clear: both;
+    overflow: hidden;
+`;
+
+const TextGlobe = ({children, ...props}) => (
+    <TextArticle>
+    <TextGlobeComponent {...props}>
         {children}
-    </TextGlobe>
-    </article>
+    </TextGlobeComponent>
+    </TextArticle>
 );
 
-export default TextGlobeArticle;
+const TextGlobeKdabra = ({children, ...props}) => (
+    <TextArticle>
+    <KdabraTextGlobe {...props}>
+        {children}
+    </KdabraTextGlobe>
+    </TextArticle>
+);
+
+export default TextGlobe;
+
 export {
     TextGlobe,
-    KdabraTextGlobe,
-    TextGlobeArticle
+    TextGlobeKdabra
 }
