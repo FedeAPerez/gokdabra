@@ -28,12 +28,12 @@ class ConversationMessagesContainer extends Component {
         const { dispatch } = this.props;
 
         // Si no hay mensajes en el historial, largo onboarding
-        const nameRef = fbGetMessagesConversationSuscription(this.props.visitedUser.user_name, 'fedeaperez');
+        const nameRef = fbGetMessagesConversationSuscription(this.props.user_name, 'fedeaperez');
         nameRef.on('value', snapshot => {
             console.log(snapshot.val());
             if(snapshot.val().length == 0) {
                 setTimeout(() => { 
-                    dispatch(getMessagesOnboarding(this.props.visitedUser.user_name))
+                    dispatch(getMessagesOnboarding(this.props.user_name))
                 }, 5000);
             }
             else {
@@ -48,8 +48,8 @@ class ConversationMessagesContainer extends Component {
 
     onAnswerSubmit = (input_value, text) => {     
         // Creo o actualizo la conversación, agrego nuevos mensajes
-        fbCreateNewConversation(this.props.visitedUser.user_name, "fedeaperez", text, "22:38");
-        fbAddNewMessage(this.props.visitedUser.user_name, "fedeaperez", text, "22:38", this.props.visitedUser.user_name, "message-user");
+        fbCreateNewConversation(this.props.user_name, "fedeaperez", text, "22:38");
+        fbAddNewMessage(this.props.user_name, "fedeaperez", text, "22:38", this.props.user_name, "message-user");
 
     };
 
@@ -70,9 +70,8 @@ class ConversationMessagesContainer extends Component {
 
 function mapStateToProps(state) {
     const { messages, isWriting } = state.conversations;
-    const { visitedUser } = state.visitedUser;
 
-    return { messages , isWriting, visitedUser  };
+    return { messages , isWriting, user_name : state.visitedUser.user_name };
 }
 
 export default connect(mapStateToProps)(ConversationMessagesContainer);

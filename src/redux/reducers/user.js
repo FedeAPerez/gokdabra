@@ -18,17 +18,6 @@ export default (state = initialState, action) => {
                 }
             );
         break;
-        case Actions.AUTH_USER :
-            return Object.assign(
-                {},
-                state,
-                {
-                    isBusiness : false,
-                    id: action.id,
-                    name: action.name
-                }
-            );
-        break;
 
         default:
             return state;

@@ -3,7 +3,6 @@ import * as Actions from '../actions/actions_type';
 
 const initialState = {
     user_name: '',
-    name: '',
     isBusiness: false
 }
 
@@ -14,7 +13,8 @@ export default (state = initialState, action) => {
                 {},
                 state,
                 {
-                    visitedUser: action.visitedUser
+                    user_name: action.visitedUser.user_name,
+                    isBusiness : action.visitedUser.isBusiness
                 }
             );
         break;

@@ -28,7 +28,7 @@ class ConversationContainer extends Component {
     }
 
     render() {
-        if(this.props.visitedUser) {
+        if(this.props.visitedUser && this.props.visitedUser.user_name != '') {
 
             const left = {};
             left.image_link = "/content/images/HomeButton.svg";
@@ -58,8 +58,7 @@ class ConversationContainer extends Component {
 }
 
 function mapStateToProps(state) {
-    const { visitedUser } = state.visitedUser;
-    return { visitedUser };
+    return { visitedUser: state.visitedUser };
 }
 
 export default connect(mapStateToProps)(ConversationContainer);

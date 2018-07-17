@@ -11,7 +11,7 @@ class ConversationHeaderContainer extends Component {
         
         return(
             <ConversationHeader 
-                business= { this.props.business } 
+                user= { this.props.user } 
                 isBack= { this.props.isBack }
                 left= { this.props.left } 
                 right= { this.props.right }

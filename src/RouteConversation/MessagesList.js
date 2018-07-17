@@ -23,7 +23,6 @@ class MessagesList extends Component {
                 messages.push(messages_list[keys[i]]);
             }
         }
-        console.log("si y o la sacara así de limpia");
         console.log(messages);
         return (
             <section className="messages-container">

@@ -35,7 +35,6 @@ const receiveMessages = function(json) {
 }
 
 const visitUser = function(json) {
-  console.log("lanzando accion");
   return {
     type: Actions.VISIT_USER,
     visitedUser: json
@@ -70,14 +69,6 @@ const getMessagesOnboarding = function(business) {
     }
 }
 
-const authUser = function() {
-  return {
-    type: Actions.AUTH_USER,
-    id: 'fedeaperez',
-    name: 'Federico Pérez'
-  };
-};
-
 const getCompleteConversation = function(messagesList) {
   return function (dispatch) {
     dispatch(startFetching());
@@ -101,8 +92,7 @@ const finishedWriting = function() {
 export 
   {
     startFetching,
-    finishedFetching, 
-    authUser, 
+    finishedFetching,
     visitUser,
     selectUser,
     getMessagesOnboarding,
