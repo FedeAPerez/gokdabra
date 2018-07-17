@@ -34,10 +34,11 @@ const receiveMessages = function(json) {
   }
 }
 
-const selectBusiness = function(json) {
+const visitUser = function(json) {
+  console.log("lanzando accion");
   return {
-    type: Actions.SELECT_BUSINESS,
-    business: json
+    type: Actions.VISIT_USER,
+    visitedUser: json
   };
 }
 
@@ -45,21 +46,6 @@ const selectUser = function(json) {
   return {
     type: Actions.SELECT_USER,
     user: json
-  };
-}
-
-const isBusiness = function() {
-  return {
-    type: Actions.IS_BUSINESS
-  };
-}
-
-// Informa de la llegada de la información de la lista de negocios
-const receiveBusinessList = function(json) {
-  return {
-    type: Actions.RECEIVE_BUSINESSLIST,
-    businessList: json.data,
-    received_at: moment().format('LLL')
   };
 }
 
@@ -84,18 +70,6 @@ const getMessagesOnboarding = function(business) {
     }
 }
 
-const addUserMessage = function(message) {
-  return {
-    type: Actions.ADD_USER_MESSAGE,
-    message: message
-  };
-}
-const addBusinessMessage = function(message) {
-  return {
-    type: Actions.ADD_BUSINESS_MESSAGE,
-    message: message
-  };
-}
 const authUser = function() {
   return {
     type: Actions.AUTH_USER,
@@ -129,12 +103,9 @@ export
     startFetching,
     finishedFetching, 
     authUser, 
-    selectBusiness,
+    visitUser,
     selectUser,
-    isBusiness,
     getMessagesOnboarding,
-    addUserMessage,
-    addBusinessMessage,
     finishedWriting,
     getCompleteConversation
  };

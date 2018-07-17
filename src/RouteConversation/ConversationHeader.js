@@ -35,7 +35,7 @@ class ConversationHeader extends Component {
                     this.props.isBack &&
                     <Link 
                         className= { "conversation-header-left" }
-                        to={"/" + this.props.business.business_name.toLowerCase() + "/messages/send" }
+                        to={"/" + this.props.visitedUser.user_name.toLowerCase() + "/messages/send" }
                     >
                         <span>
                             <img src={ "/content/images/actions/back.svg" } />
@@ -44,11 +44,11 @@ class ConversationHeader extends Component {
                 }
 
                 {
-                    this.props.business &&
+                    this.props.visitedUser &&
                     <h2
                         className= { "conversation-header-text" }
                     >
-                        { this.props.business.business_name.toUpperCase() }
+                        { this.props.visitedUser.user_name.toUpperCase() }
                     </h2>
                 }
 

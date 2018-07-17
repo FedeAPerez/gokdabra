@@ -7,9 +7,9 @@ import { connect } from 'react-redux';
 /* *
  * Código de librerías internas
  * */ 
-import { fbCreateNewConversation, fbUpdateOnboarding, fbAddNewMessage, fbGetMessagesConversationSuscription } from '../firebase';
+import { fbCreateNewConversation,  fbAddNewMessage, fbGetMessagesConversationSuscription } from '../firebase';
 import MessagesList from './MessagesList';
-import { getMessagesOnboarding, addUserMessage, addBusinessMessage, getCompleteConversation } from '../redux/actions/actions';
+import { getMessagesOnboarding, getCompleteConversation } from '../redux/actions/actions';
 import MessageHandler from '../ComponentsLibrary/MessageHandler';
 /* *
  * Hojas de Estilo y Constantes
@@ -28,12 +28,12 @@ class ConversationMessagesContainer extends Component {
         const { dispatch } = this.props;
 
         // Si no hay mensajes en el historial, largo onboarding
-        const nameRef = fbGetMessagesConversationSuscription(this.props.business.business_name, 'fedeaperez');
+        const nameRef = fbGetMessagesConversationSuscription(this.props.visitedUser.user_name, 'fedeaperez');
         nameRef.on('value', snapshot => {
             console.log(snapshot.val());
             if(snapshot.val().length == 0) {
                 setTimeout(() => { 
-                    dispatch(getMessagesOnboarding(this.props.business.business_name))
+                    dispatch(getMessagesOnboarding(this.props.visitedUser.user_name))
                 }, 5000);
             }
             else {
@@ -46,21 +46,10 @@ class ConversationMessagesContainer extends Component {
     }
 
 
-    onAnswerSubmit = (input_value, text) => {       
-        const { dispatch } = this.props; 
-        if(text != '' && !this.props.isBusiness) {
-            dispatch(addUserMessage(text)); 
-            // Creo o actualizo la conversación, agrego nuevos mensajes
-            fbCreateNewConversation(this.props.business.business_name, "fedeaperez", text, "22:38");
-            fbAddNewMessage(this.props.business.business_name, "fedeaperez", text, "22:38", "fedeaperez", "message-user");
-        }
-        if(text != '' && this.props.isBusiness) {
-            dispatch(addBusinessMessage(text)); 
-            // Creo o actualizo la conversación, agrego nuevos mensajes
-            fbCreateNewConversation(this.props.business.business_name, "fedeaperez", text, "22:38");
-            fbAddNewMessage(this.props.business.business_name, "fedeaperez", text, "22:38", this.props.business.business_name, "message-business");
-        
-        }
+    onAnswerSubmit = (input_value, text) => {     
+        // Creo o actualizo la conversación, agrego nuevos mensajes
+        fbCreateNewConversation(this.props.visitedUser.user_name, "fedeaperez", text, "22:38");
+        fbAddNewMessage(this.props.visitedUser.user_name, "fedeaperez", text, "22:38", this.props.visitedUser.user_name, "message-user");
 
     };
 
@@ -81,9 +70,9 @@ class ConversationMessagesContainer extends Component {
 
 function mapStateToProps(state) {
     const { messages, isWriting } = state.conversations;
-    const { business } = state.business;
+    const { visitedUser } = state.visitedUser;
 
-    return { messages , isWriting, business  };
+    return { messages , isWriting, visitedUser  };
 }
 
 export default connect(mapStateToProps)(ConversationMessagesContainer);

@@ -4,21 +4,23 @@ import { connect } from 'react-redux';
 import ConversationHeaderContainer from './ConversationHeaderContainer';
 import ConversationMessagesContainer from './ConversationMessagesContainer';
 
-import { selectBusiness } from '../redux/actions/actions';
+import { visitUser } from '../redux/actions/actions';
 import { fbGetUser  } from '../firebase';
 
 class ConversationContainer extends Component {
     constructor(props) {
         super(props);
-        
-        const businessPojo = fbGetUser(props.match.params.user);
-        businessPojo.then(
-            (snapshot) => { 
-                console.log(snapshot.val());
-                const {dispatch} = this.props;
-                dispatch(selectBusiness(snapshot.val()));
 
-                this.setState({ businessOb : snapshot.val() });
+        this.state = {
+            userOb : null
+        };
+
+        const userPogo = fbGetUser(props.match.params.user);
+        userPogo.then(
+            (snapshot) => { 
+                const {dispatch} = this.props;
+                dispatch(visitUser(snapshot.val()));
+                this.setState({ userOb : snapshot.val() });
         })
         .catch((err) => {
             console.log(err);
@@ -26,34 +28,38 @@ class ConversationContainer extends Component {
     }
 
     render() {
-        const left = {};
-        left.image_link = "/content/images/HomeButton.svg";
-        left.link = "/";
+        if(this.props.visitedUser) {
 
-        const right = {};
-        right.image_link = "/content/images/actions/info.svg";
-        right.link = "/info/" + this.props.business.business_name.toLowerCase();
-
-        return(
-            <main>
-                <ConversationHeaderContainer 
-                    business= { this.props.business }
-                    left= { left }
-                    right= { right }
-                />
-                <ConversationMessagesContainer 
-                    isBusiness={ this.props.isBusiness }
-                />
-                
-            </main>
-        );
+            const left = {};
+            left.image_link = "/content/images/HomeButton.svg";
+            left.link = "/";
+    
+            const right = {};
+            right.image_link = "/content/images/actions/info.svg";
+            right.link = "/info/" + this.props.visitedUser.user_name.toLowerCase();
+    
+            return(
+                <main>
+                    <ConversationHeaderContainer 
+                        user= { this.props.visitedUser }
+                        left= { left }
+                        right= { right }
+                    />
+                    <ConversationMessagesContainer 
+                        isBusiness={ this.props.visitedUser.isBusiness }
+                    />
+                    
+                </main>
+            );
+        }
+        else
+            return null;
     }
 }
 
 function mapStateToProps(state) {
-    const { business } = state.business;
-    const { isBusiness } = state.user;
-    return { business, isBusiness };
+    const { visitedUser } = state.visitedUser;
+    return { visitedUser };
 }
 
 export default connect(mapStateToProps)(ConversationContainer);

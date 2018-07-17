@@ -9,15 +9,6 @@ const initialState = {
 
 export default (state = initialState, action) => {
     switch (action.type) {
-        case Actions.IS_BUSINESS: 
-        return Object.assign(
-            {},
-            state,
-            {
-                isBusiness : true
-            }
-        );
-        break;
         case Actions.SELECT_USER :
             return Object.assign(
                 {},

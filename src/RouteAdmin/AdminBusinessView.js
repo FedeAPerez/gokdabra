@@ -41,8 +41,6 @@ class AdminBusinessView extends Component {
         (snapshot) => { 
             console.log(snapshot.val());
             const {dispatch} = this.props;
-            dispatch(selectBusiness(snapshot.val()));
-            dispatch(isBusiness());
 
             this.setState({ businessOb : snapshot.val() });
         })
