@@ -5,13 +5,13 @@ import ConversationHeaderContainer from './ConversationHeaderContainer';
 import ConversationMessagesContainer from './ConversationMessagesContainer';
 
 import { selectBusiness } from '../redux/actions/actions';
-import { fbGetBusiness  } from '../firebase';
+import { fbGetUser  } from '../firebase';
 
 class ConversationContainer extends Component {
     constructor(props) {
         super(props);
         
-        const businessPojo = fbGetBusiness(props.match.params.business);
+        const businessPojo = fbGetUser(props.match.params.user);
         businessPojo.then(
             (snapshot) => { 
                 console.log(snapshot.val());

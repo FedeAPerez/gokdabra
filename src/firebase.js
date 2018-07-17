@@ -19,23 +19,19 @@ function fbGetConversationsSuscription(entity_name) {
 function fbGetMessagesConversationSuscription(business_name, user_name) {
     return firebase.database().ref().child('/messages/' + business_name + '/' + user_name);
 }
-function fbCreateBusiness(business) {
-    var businessOb = {};
-    businessOb.business_name = business.business_name;
-    businessOb.email = business.email;
-    firebase.database().ref('/business/'+business.business_name+'/').set(businessOb);
-}
-function fbCreateUser(user) {
 
+
+function fbCreateUser(user) {
     firebase.database().ref('/users/'+user.user_name+'/').set(user);
 }
-function fbGetBusiness(business_name) {
-    return firebase.database().ref('/business/'+business_name.toLowerCase()+'/').once('value');
+
+function fbGetUser(user) {
+    const route = '/users/' + user.toLowerCase() + '/';
+    return firebase.database().ref(route).once('value');
 }
 
 function fbGetOnboarding(business) {
     const route = '/onboardings/' + business.toLowerCase() + '/';
-    console.log(business);
     return firebase.database().ref(route).once('value');
 }
 
@@ -87,9 +83,8 @@ export {
     fbGetOnboarding,
     fbAddNewMessage,
     fbGetMessagesConversationSuscription,
-    fbCreateBusiness,
     fbCreateUser,
-    fbGetBusiness,
+    fbGetUser,
     doSignInWithEmailAndPassword,
     doCreateUserWithEmailAndPassword
  };

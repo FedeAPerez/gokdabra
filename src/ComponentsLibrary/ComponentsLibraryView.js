@@ -12,6 +12,7 @@ import Section from './Section';
 import { TextGlobe, TextGlobeKdabra } from './TextGlobe';
 import Button from './Button';
 import CheckBox from './CheckBox';
+import TextInput from './TextInput';
 /* *
  * Hojas de Estilo y Constantes
  * */ 
@@ -52,6 +53,11 @@ class ComponentsLibraryView extends Component {
                     <TextGlobe> Este es un mensaje de prueba</TextGlobe>
                     
                     <TextGlobe sender> Este es un mensaje de prueba del usuario</TextGlobe>
+                </Section>
+                <Section>
+                    <Title h2>Ingreso de texto</Title>
+                    <TextInput placeholder="Usuario" /> 
+                    <TextInput placeholder="Enviar un mensaje..." />
                 </Section>
                 <Section>
                     <Title h2>Botones</Title>

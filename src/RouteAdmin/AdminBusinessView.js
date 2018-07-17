@@ -13,7 +13,7 @@ import MessagesContainer from './MessagesContainer';
 import SettingsContainer from './NewSettingsContainer';
 import ShareContainer from './ShareContainer';
 import AnalyticsContainer from './AnalyticsContainer';
-import {fbGetBusiness} from '../firebase';
+import { fbGetUser  } from '../firebase';
 import { selectBusiness, isBusiness } from '../redux/actions/actions';
 
 /* *
@@ -36,7 +36,7 @@ class AdminBusinessView extends Component {
             'selected_container' : ShareContainer
         };
 
-        const businessPojo = fbGetBusiness(this.props.match.params.business);
+        const businessPojo = fbGetUser(this.props.match.params.user);
         businessPojo.then(
         (snapshot) => { 
             console.log(snapshot.val());
