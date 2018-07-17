@@ -13,7 +13,6 @@ import NavigationItem from '../RouteAdmin/NavigationItem';
  * */ 
 // CSS Classes
 const __BUSINESS_HEADER_CLASS = "admin-business-header-container";
-const __BUSINESS_HEADER_HOME_CLASS = "admin-business-header-home-container";
 const __BUSINESS_HEADER_NAV_CLASS = "admin-business-header-nav-container";
 const __BUSINESS_HEADER_CLASS_LINK = "admin-business-header-link";
 const __BUSINESS_HEADER_TEXT_IMAGE = "admin-business-header-text";
@@ -37,9 +36,7 @@ class AdminBusinessHeader extends Component {
 
     navigateOption(e, value, show_message) {
         e.preventDefault();
-        this.state.option_selected = value;
-        this.state.show_option = show_message;
-        this.setState(this.state);
+        this.setState({ option_selected : value, show_option : show_message });
         this.props.handleNavigation(value);
     }
 
@@ -73,7 +70,7 @@ class AdminBusinessHeader extends Component {
                 >
                     <NavigationItem 
                         value= { "chat" }
-                        isSelected= { this.state.option_selected == "chat" }
+                        isSelected= { this.state.option_selected === "chat" }
                         defaultImage= { __BUSINESS_HEADER_MESSAGES_IMAGE }
                         selectedImage= { __BUSINESS_HEADER_MESSAGES_SELECTED_IMAGE }
                         navigateOption= { this.navigateOption.bind(this) }
@@ -81,7 +78,7 @@ class AdminBusinessHeader extends Component {
                     />
                     <NavigationItem 
                         value= { "events" }
-                        isSelected= { this.state.option_selected == "events" }
+                        isSelected= { this.state.option_selected === "events" }
                         defaultImage= { EVENTS_IMAGE }
                         selectedImage= { EVENTS_IMAGE_SECOND }
                         navigateOption= { this.navigateOption.bind(this) }
@@ -89,7 +86,7 @@ class AdminBusinessHeader extends Component {
                     />
                     <NavigationItem 
                         value= { "settings" }
-                        isSelected= { this.state.option_selected == "settings" }
+                        isSelected= { this.state.option_selected === "settings" }
                         defaultImage= { __BUSINESS_HEADER_SETTINGS_IMAGE }
                         selectedImage= { __BUSINESS_HEADER_SETTINGS_SELECTED_IMAGE }
                         navigateOption= { this.navigateOption.bind(this) }

@@ -18,14 +18,6 @@ const finishedFetching = function() {
   };
 }
 
-// Informa de un error en el pedido de la lista de negocios
-const errorFetching = function(json) {
-  return {
-    type: Actions.FINISHED_FETCHING,
-    error_at: moment().format('MMMM Do YYYY, h:mm:ss a')
-  };
-}
-
 const receiveMessages = function(json) {
   return {
     type: Actions.RECEIVE_MESSAGES,

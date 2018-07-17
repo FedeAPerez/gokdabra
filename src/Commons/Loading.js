@@ -18,7 +18,7 @@ class Loading extends Component {
             return (
                 <div>
                     <div className="loading-spinner">
-                        <img src = {'/content/images/spinner.svg'} />
+                        <img src = {'/content/images/spinner.svg'} alt="Cargando" />
                     </div>
                 </div>
             );            

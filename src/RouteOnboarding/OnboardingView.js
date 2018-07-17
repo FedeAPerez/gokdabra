@@ -82,18 +82,18 @@ class OnboardingView extends Component {
                   {
                     this.state.onboarding_actual !== this.state.onboarding_ammount -1 &&
                     <div
-                      className={ "pagination-button" + " " + "pagination-first" }
+                      className={ "pagination-button pagination-first" }
                       onClick={this.handleSkipButton.bind(this)}
                     >
                       Saltear
                     </div>
                   }
                     {
-                        this.state != undefined &&
+                        this.state !== undefined &&
                         <div className="pagination">
-                          <span className={ this.state.onboarding_actual == 0 ? "active":""}></span>
-                          <span className={ this.state.onboarding_actual == 1 ? "active":""}></span>
-                          <span className={ this.state.onboarding_actual == 2 ? "active":""}></span>
+                          <span className={ this.state.onboarding_actual === 0 ? "active":""}></span>
+                          <span className={ this.state.onboarding_actual === 1 ? "active":""}></span>
+                          <span className={ this.state.onboarding_actual === 2 ? "active":""}></span>
                         </div>
                     }
                     {

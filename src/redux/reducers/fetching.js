@@ -18,7 +18,6 @@ export default (state = initialState, action) => {
                     requested_at : action.requested_at
                 }
             );
-        break;
 
         case Actions.FINISHED_FETCHING:
             return Object.assign(
@@ -29,10 +28,8 @@ export default (state = initialState, action) => {
                     finished_at : action.finished_at
                 }
             );
-        break;
 
         default:
             return state;
-        break;
     }
 }

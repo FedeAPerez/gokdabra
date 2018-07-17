@@ -26,8 +26,7 @@ class MessageHandler extends Component {
         e.preventDefault();
         if(this.props.onAnswerSubmit) {
             this.props.onAnswerSubmit("text_input", this.state.value);
-            this.state.value = '';
-            this.setState(this.state);
+            this.setState({ value : ''});
         }
     }
 

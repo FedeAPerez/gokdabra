@@ -28,7 +28,7 @@ class ConversationContainer extends Component {
     }
 
     render() {
-        if(this.props.visitedUser && this.props.visitedUser.user_name != '') {
+        if(this.props.visitedUser && this.props.visitedUser.user_name !== '') {
 
             const left = {};
             left.image_link = "/content/images/HomeButton.svg";
@@ -41,12 +41,12 @@ class ConversationContainer extends Component {
             return(
                 <main>
                     <ConversationHeaderContainer 
-                        user= { this.props.visitedUser }
-                        left= { left }
-                        right= { right }
+                        user = { this.props.visitedUser }
+                        left = { left }
+                        right = { right }
                     />
                     <ConversationMessagesContainer 
-                        isBusiness={ this.props.visitedUser.isBusiness }
+                        isBusiness ={ this.props.visitedUser.isBusiness }
                     />
                     
                 </main>

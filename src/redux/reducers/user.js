@@ -17,7 +17,6 @@ export default (state = initialState, action) => {
                     user: action.user
                 }
             );
-        break;
 
         default:
             return state;

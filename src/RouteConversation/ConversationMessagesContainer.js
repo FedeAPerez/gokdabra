@@ -31,7 +31,7 @@ class ConversationMessagesContainer extends Component {
         const nameRef = fbGetMessagesConversationSuscription(this.props.user_name, 'fedeaperez');
         nameRef.on('value', snapshot => {
             console.log(snapshot.val());
-            if(snapshot.val().length == 0) {
+            if(snapshot.val().length === 0) {
                 setTimeout(() => { 
                     dispatch(getMessagesOnboarding(this.props.user_name))
                 }, 5000);

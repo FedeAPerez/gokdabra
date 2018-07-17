@@ -1,4 +1,6 @@
 import * as firebase from 'firebase';
+import ReactGA from 'react-ga';
+
 var config = {
     apiKey: "AIzaSyDBKnBlkI-Bz-jaPn3H5LrqPY0O7oDv6eU",
     authDomain: "kdabrademo.firebaseapp.com",
@@ -71,8 +73,13 @@ function fbCreateNewConversation(business, username, message, hour) {
       }
     firebase.database().ref('/conversations/'+business+'/'+username).set(conversation);
 }
-const doSignInWithEmailAndPassword = (email, password) =>
-  auth.signInWithEmailAndPassword(email, password);
+const doSignInWithEmailAndPassword = (email, password) => {
+    ReactGA.event({
+        category: 'User',
+        action: 'Created an Account'
+      });
+    auth.signInWithEmailAndPassword(email, password);
+}
 
   const doCreateUserWithEmailAndPassword = (email, password) =>
   auth.createUserWithEmailAndPassword(email, password);

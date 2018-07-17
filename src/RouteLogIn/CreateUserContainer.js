@@ -3,14 +3,14 @@
  * Código de librerías externas
  * */
 import React, { Component } from 'react';
-import { TextField, RaisedButton   } from 'material-ui';
+import { TextField   } from 'material-ui';
 import {
     Redirect
   } from "react-router-dom";
 /* *
  * Código de librerías internas
  * */ 
-import { doCreateUserWithEmailAndPassword, fbCreateBusiness, fbCreateUser } from '../firebase';
+import { doCreateUserWithEmailAndPassword, fbCreateUser } from '../firebase';
 import CheckBox from '../ComponentsLibrary/CheckBox';
 import Button from '../ComponentsLibrary/Button';
 import { Text, BoldText } from '../ComponentsLibrary/Text';
@@ -47,10 +47,10 @@ class CreateUserContainer extends Component {
           });
     } 
     checkEnabledButton() {
-        if(this.state.email != '' && this.state.password != '') {
+        if(this.state.email !== '' && this.state.password !== '') {
             this.setState({buttonEnabled:true});
         }
-        if(this.state.email == '' || this.state.password == '') {
+        if(this.state.email === '' || this.state.password === '') {
             this.setState({buttonEnabled:false});
         }
     }
@@ -78,10 +78,6 @@ class CreateUserContainer extends Component {
             margin: '0rem auto',
             display: 'block'
         };
-        const styledButton = {
-            margin: '1rem auto',
-            display: 'block'
-        }
         const styledFocusUnderline = {
             borderColor: "#f16334"
         }

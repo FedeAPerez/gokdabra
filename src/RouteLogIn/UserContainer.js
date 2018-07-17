@@ -3,7 +3,8 @@
  * Código de librerías externas
  * */
 import React, { Component } from 'react';
-import { TextField, RaisedButton   } from 'material-ui';
+import { TextField   } from 'material-ui';
+import Button from '../ComponentsLibrary/Button';
 import {
     Redirect, Link
   } from "react-router-dom";
@@ -35,10 +36,10 @@ class UserContainer extends Component {
           });
     } 
     checkEnabledButton() {
-        if(this.state.email != '' && this.state.password != '') {
+        if(this.state.email !== '' && this.state.password !== '') {
             this.setState({buttonEnabled:true});
         }
-        if(this.state.email == '' || this.state.password == '') {
+        if(this.state.email === '' || this.state.password === '') {
             this.setState({buttonEnabled:false});
         }
     }
@@ -57,10 +58,6 @@ class UserContainer extends Component {
             margin: '0rem auto',
             display: 'block'
         };
-        const styledButton = {
-            margin: '1rem auto',
-            display: 'block'
-        }
         const styledFocusUnderline = {
             borderColor: "#f16334"
         }
@@ -68,7 +65,8 @@ class UserContainer extends Component {
             color: "black"
         }
         if(this.state.authed) {
-            return <Redirect to={ '/admin/' + 'kdabra' } />;
+            console.log("Debo obtener su login user_name");
+            return <Redirect to={ '/admin/kdabra' } />;
         }
         return (
             <section>
@@ -90,15 +88,13 @@ class UserContainer extends Component {
                 onChange={this.changePassword.bind(this)}
                 value={this.state.password}
             />
-            <RaisedButton 
-                style= { styledButton }
-                label="Ingresar"
-                backgroundColor={"#f16334"}
-                labelColor={"white"}
+            <Button
                 onClick={this.authUser.bind(this)}
-                fullWidth={true}
+                primary
                 disabled={!this.state.buttonEnabled}
-            />
+            >
+                Ingresar
+            </Button>
             <p>
             <span className="secondary-label">¿No estás registrado?</span>
             <Link to="/signup"> <span className="primary-label">Create una cuenta.</span></Link>

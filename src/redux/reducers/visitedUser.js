@@ -17,7 +17,6 @@ export default (state = initialState, action) => {
                     isBusiness : action.visitedUser.isBusiness
                 }
             );
-        break;
 
         default:
             return state;

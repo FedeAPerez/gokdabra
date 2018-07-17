@@ -16,7 +16,7 @@ class ConversationContainer extends Component {
     render() {
         return <Conversation 
                 businessInfo = { this.props.business }
-                conversation={ this.props.conversation } />
+                conversation = { this.props.conversation } />
     }
 }
 function mapStateToProps(state) {

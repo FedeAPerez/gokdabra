@@ -15,13 +15,13 @@ export default (state = initialState, action) => {
                 ...state,
                 messages: action.messages
             };
-        break;
+
         case Actions.RECEIVE_CONVERSATIONS:
             return {
                 ...state,
                 conversations_list : action.conversations_list
             };
-        break;
+            
         case Actions.RECEIVE_MESSAGES_ONBOARDING:
             var messagesOb = Object.assign([], state.messages);
             messagesOb.push({
@@ -35,17 +35,14 @@ export default (state = initialState, action) => {
                 ...state,
                 messages: messagesOb
             };
-        break;
 
         case Actions.FINISHED_WRITING:
             return {
                 ...state,
                 isWriting : false
             }
-        break; 
 
         default:
             return state;
-        break;
     }
 }

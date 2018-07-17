@@ -12,10 +12,6 @@ import React, { Component } from 'react';
  * */ 
 
 class NavigationItem extends Component {
-	constructor(props) {
-		super(props);
-
-	}
 
 	render() {
 		return (
@@ -23,7 +19,7 @@ class NavigationItem extends Component {
                 className= { this.props.isSelected ? 'resalt' : 'admin-navigation-item' }
                 onClick={ (e) => this.props.navigateOption(e, this.props.value , this.props.showMessage) }
             >
-                <img src={ this.props.isSelected ? this.props.selectedImage : this.props.defaultImage } />
+                <img src={ this.props.isSelected ? this.props.selectedImage : this.props.defaultImage } alt="Navegación" />
             </span>
 		);
 	}

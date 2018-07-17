@@ -31,8 +31,7 @@ class UserAdminView extends Component {
     }
 
     handleNavigation(value) {
-        this.state.selected_container = value;
-        this.setState(this.state);
+        this.setState({ selected_container : value });
     }
     render() {
         

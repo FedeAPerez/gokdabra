@@ -1,6 +1,5 @@
 import * as Actions from './actions_type';
 import { startFetching, finishedFetching } from './actions';
-import moment from 'moment';
 
 const receiveConversations = function(json) {
     return {

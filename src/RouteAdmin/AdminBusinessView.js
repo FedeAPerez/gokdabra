@@ -35,12 +35,10 @@ class AdminBusinessView extends Component {
             'selected_container' : ShareContainer
         };
 
-        const businessPojo = fbGetUser(this.props.match.params.user);
-        businessPojo.then(
+        const userPojo = fbGetUser(this.props.match.params.user);
+        userPojo.then(
         (snapshot) => { 
             console.log(snapshot.val());
-            const {dispatch} = this.props;
-
             this.setState({ userOb : snapshot.val() });
         })
         .catch((err) => {
@@ -50,8 +48,7 @@ class AdminBusinessView extends Component {
     }
 
     handleNavigation(value) {
-        this.state.selected_container = value;
-        this.setState(this.state);
+        this.setState({ selected_container : value });
     }
 
     render() {
