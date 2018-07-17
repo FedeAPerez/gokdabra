@@ -107,7 +107,11 @@ class CreateUserContainer extends Component {
                     value={this.state.user_name}
                 />
 
-                <Text secondary centered>{ "mi.gokdabra.com/"}<BoldText secondary>{this.state.user_name}</BoldText></Text>
+                <Text 
+                    noMargin
+                    secondary centered>
+                    { "mi.gokdabra.com/"}<BoldText secondary>{this.state.user_name}</BoldText>
+                </Text>
 
                 <TextField 
                     style= { styledTextField }
