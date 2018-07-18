@@ -32,6 +32,13 @@ function fbGetUser(user) {
     return firebase.database().ref(route).once('value');
 }
 
+function fbGetUserByEmail(email) {
+    
+    const route = '/users/';
+
+    return firebase.database().ref(route).orderByChild("email").equalTo(email).once('value');
+}
+
 function fbGetOnboarding(business) {
     const route = '/onboardings/' + business.toLowerCase() + '/';
     return firebase.database().ref(route).once('value');
@@ -76,13 +83,19 @@ function fbCreateNewConversation(business, username, message, hour) {
 const doSignInWithEmailAndPassword = (email, password) => {
     ReactGA.event({
         category: 'User',
-        action: 'Created an Account'
+        action: 'Inición Sesión'
       });
-    auth.signInWithEmailAndPassword(email, password);
+    return auth.signInWithEmailAndPassword(email, password);
 }
 
-  const doCreateUserWithEmailAndPassword = (email, password) =>
-  auth.createUserWithEmailAndPassword(email, password);
+const doCreateUserWithEmailAndPassword = (email, password) => {
+    ReactGA.event({
+        category: 'User',
+        action: 'Creó una cuenta'
+      });
+    return auth.createUserWithEmailAndPassword(email, password);
+}
+
 export { 
     fbGetConversationsSuscription, 
     fbCreateNewConversation, 
@@ -92,6 +105,7 @@ export {
     fbGetMessagesConversationSuscription,
     fbCreateUser,
     fbGetUser,
+    fbGetUserByEmail,
     doSignInWithEmailAndPassword,
     doCreateUserWithEmailAndPassword
  };

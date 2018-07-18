@@ -6,6 +6,7 @@ import React, { Component } from 'react';
 /* *
  * Código de librerías internas
  * */
+import { Text } from '../ComponentsLibrary/Text';
 /* *
  * Hojas de Estilo y Constantes
  * */
@@ -24,7 +25,7 @@ class SettingsContainer extends Component {
         return (
             <main className="admin-settings-container">
                 <section className="admin-settings">
-                En desarrollo
+                <Text centered>Estamos construyendo esta sección!</Text>
                 </section>
             </main>
         );
