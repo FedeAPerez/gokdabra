@@ -4,7 +4,10 @@
  * */
 import React, { Component } from 'react';
 import { TextField   } from 'material-ui';
+import { connect } from 'react-redux';
+import * as Actions from '../redux/actions/actions';
 import Button from '../ComponentsLibrary/Button';
+import Text from '../ComponentsLibrary/Text';
 import { fbGetUserByEmail } from '../firebase';
 import {
     Redirect, Link
@@ -28,21 +31,26 @@ class UserContainer extends Component {
         };
     }
     authUser() {
+        const { dispatch } = this.props;
+        dispatch(Actions.startFetching());
         doSignInWithEmailAndPassword(this.state.email, this.state.password)
         .then((res) => {
 
             const userPojo = fbGetUserByEmail(this.state.email);
             userPojo.then(
                 (snapshot) => { 
+                    
+                    this.props.dispatch(Actions.finishedFetching());
                     this.setState({doneAuthed : true, user_name : Object.keys(snapshot.val())[0]});
             })
             .catch((err) => {
-                console.log("error in login");
-                console.log(err);
+                this.props.dispatch(Actions.finishedFetching());
+                this.setState({ errorLogin : true });
             });
           })
           .catch(error => {
-            console.log(error);
+            this.props.dispatch(Actions.finishedFetching());
+            this.setState({ errorLogin : true });
           });
     } 
     checkEnabledButton() {
@@ -109,6 +117,12 @@ class UserContainer extends Component {
                 <span className="secondary-label">¿No estás registrado?</span>
                 <Link to="/signup"> <span className="primary-label">Create una cuenta.</span></Link>
                 </p>
+                {
+                    this.state.errorLogin && 
+                    <footer>
+                        <Text secondary warning>Parece que hubo un error al ingresar, revisá tus datos!</Text>
+                    </footer>
+                }    
                 </section>
             );
 
@@ -116,4 +130,4 @@ class UserContainer extends Component {
     }
 }
 
-export default UserContainer;
+export default connect()(UserContainer);

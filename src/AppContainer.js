@@ -8,6 +8,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
  * Código de librerías internas
  * */ 
 import MainContainer from './MainContainer';
+import LoadingContanier from './Commons/LoadingContainer';
 
 class AppContainer extends Component {
     handleLoad() {
@@ -27,7 +28,8 @@ class AppContainer extends Component {
     render() {
         return(
             <main>
-                <MuiThemeProvider>
+                <MuiThemeProvider>    
+                <LoadingContanier />
                     <MainContainer />
                 </MuiThemeProvider>
             </main>

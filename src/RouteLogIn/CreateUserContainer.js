@@ -4,6 +4,8 @@
  * */
 import React, { Component } from 'react';
 import { TextField   } from 'material-ui';
+import { connect } from 'react-redux';
+import * as Actions from '../redux/actions/actions';
 import {
     Redirect
   } from "react-router-dom";
@@ -26,10 +28,13 @@ class CreateUserContainer extends Component {
             password:'',
             user_name : '',
             buttonEnabled:false,
+            errorLogin: false,
             isBusiness : false
         };
     }
     authUser() {
+        const { dispatch } = this.props;
+        dispatch(Actions.startFetching());
         doCreateUserWithEmailAndPassword(this.state.email, this.state.password)
         .then((res) => {
             console.log(res);
@@ -39,11 +44,15 @@ class CreateUserContainer extends Component {
                 user.isBusiness = this.state.isBusiness;
 
                 fbCreateUser(user);
+                
+                dispatch(Actions.finishedFetching());
                 this.setState({authedUser:true});
 
           })
           .catch(error => {
-            console.log(error);
+              
+            dispatch(Actions.finishedFetching());
+            this.setState({ errorLogin : true });
           });
     } 
     checkEnabledButton() {
@@ -139,4 +148,4 @@ class CreateUserContainer extends Component {
     }
 }
 
-export default CreateUserContainer;
+export default connect()(CreateUserContainer);
