@@ -20,8 +20,8 @@ const __BUSINESS_HEADER_TEXT_IMAGE = "admin-business-header-text";
 const __BUSINESS_HEADER_HOME_IMAGE = "/content/images/HomeButton.svg";
 const __BUSINESS_HEADER_SETTINGS_IMAGE = "/content/images/SettingsButton.svg";
 const __BUSINESS_HEADER_SETTINGS_SELECTED_IMAGE = "/content/images/SettingsButtonSelected.svg";
-const __BUSINESS_HEADER_ANALYTICS_IMAGE = "/content/images/AnalyticsButton.svg";
-const __BUSINESS_HEADER_ANALYTICS_SELECTED_IMAGE = "/content/images/AnalyticsButtonSelected.svg";
+const __BUSINESS_HEADER_ANALYTICS_IMAGE = "/content/images/actions/search.svg";
+const __BUSINESS_HEADER_ANALYTICS_SELECTED_IMAGE = "/content/images/actions/search_active.svg";
 const __BUSINESS_HEADER_MESSAGES_IMAGE = "/content/images/MessagesButton.svg";
 const __BUSINESS_HEADER_MESSAGES_SELECTED_IMAGE = "/content/images/MessagesButtonSelected.svg";
 const __BUSINESS_HEADER_SHARE_IMAGE = "/content/images/ShareButton.svg";
@@ -32,8 +32,8 @@ class AdminBusinessHeader extends Component {
         super(props);
         this.state = {
             'userOb' : this.props.user,
-            'option_selected':'chat',
-            'show_option':'Mensajes'
+            'option_selected':'search',
+            'show_option':'Buscar'
         };
     }
 
@@ -72,20 +72,20 @@ class AdminBusinessHeader extends Component {
                     className= { __BUSINESS_HEADER_NAV_CLASS }
                 >
                     <NavigationItem 
+                        value= { "search" }
+                        isSelected= { this.state.option_selected === "search" }
+                        defaultImage= { __BUSINESS_HEADER_ANALYTICS_IMAGE }
+                        selectedImage= { __BUSINESS_HEADER_ANALYTICS_SELECTED_IMAGE }
+                        navigateOption= { this.navigateOption.bind(this) }
+                        showMessage= { "Buscar" }
+                    />
+                    <NavigationItem 
                         value= { "chat" }
                         isSelected= { this.state.option_selected === "chat" }
                         defaultImage= { __BUSINESS_HEADER_MESSAGES_IMAGE }
                         selectedImage= { __BUSINESS_HEADER_MESSAGES_SELECTED_IMAGE }
                         navigateOption= { this.navigateOption.bind(this) }
                         showMessage= { "Mensajes" }
-                    />
-                    <NavigationItem 
-                        value= { "analytics" }
-                        isSelected= { this.state.option_selected === "analytics" }
-                        defaultImage= { __BUSINESS_HEADER_ANALYTICS_IMAGE }
-                        selectedImage= { __BUSINESS_HEADER_ANALYTICS_SELECTED_IMAGE }
-                        navigateOption= { this.navigateOption.bind(this) }
-                        showMessage= { "Uso" }
                     />
                     <NavigationItem 
                         value= { "share" }

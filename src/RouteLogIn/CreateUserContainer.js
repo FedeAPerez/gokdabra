@@ -84,11 +84,9 @@ class CreateUserContainer extends Component {
         const styledFloated = {
             color: "black"
         }
-        if(this.state.authedBusiness) {
-            return <Redirect to={ '/admin/' + this.state.business_name } />;
-        }
+
         if(this.state.authedUser) {
-            return <Redirect to={ '/user_admin/' + this.state.user_name.toLowerCase() } />;
+            return <Redirect to={ '/admin/' + this.state.user_name.toLowerCase() } />;
         }
         return (
             <section>

@@ -12,7 +12,7 @@ import AdminBusinessHeader from './AdminBusinessHeader';
 import MessagesContainer from './MessagesContainer';
 import SettingsContainer from './SettingsContainer';
 import ShareContainer from './ShareContainer';
-import AnalyticsContainer from './AnalyticsContainer';
+import SearchBusinessContainer from './SearchBusinessContainer';
 import { fbGetUser  } from '../firebase';
 
 /* *
@@ -22,9 +22,9 @@ import './AdminBusinessView.css';
 const keyMap = {
     'chat' : MessagesContainer,
     'settings' : SettingsContainer,
-    'analytics' : AnalyticsContainer,
     'share': ShareContainer,
-    'default' : MessagesContainer
+    'search': SearchBusinessContainer,
+    'default' : SearchBusinessContainer
 };
 
 class AdminBusinessView extends Component {

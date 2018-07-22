@@ -13,7 +13,6 @@ import AdminBusinessView from './RouteAdmin/AdminBusinessView';
 import OnboardingView from './RouteOnboarding/OnboardingView';
 import ConversationContainer from './RouteConversation/ConversationContainer';
 import ComponentsLibraryView from './ComponentsLibrary/ComponentsLibraryView';
-import UserAdminView from './UserAdminRoute/UserAdminView';
 
 class MainContainer extends Component {
 
@@ -25,7 +24,6 @@ class MainContainer extends Component {
                 <Route exact path="/onboarding" component={OnboardingView} />
                 <Route exac path="/login" component={LogInView} />
                 <Route exac path="/signup" component={SingUpView} />
-                <Route path="/user_admin/" component={UserAdminView} />
                 <Route path="/admin/:user" component={AdminBusinessView} />
                 <Route path="/:user" component={ConversationContainer} />
             </Switch>
