@@ -16,7 +16,6 @@ import { fbUpdateOnboarding, fbGetOnboarding } from '../firebase';
  * Hojas de Estilo y Constantes
  * */
  import './SettingsContainer.css';
-import MapsTransferWithinAStation from 'material-ui/SvgIcon';
 
 class SettingsContainer extends Component {
     constructor(props) {
@@ -75,7 +74,7 @@ class SettingsContainer extends Component {
                 <section className="admin-settings">
                 <Text centered>Actualizá tu mensaje de bienvenida, para que todos conozcan lo mejor de tu negocio.</Text>
                 
-                <TextGlobeKdabra 
+                <TextGlobeKdabra onboarding
                         dangerouslySetInnerHTML= { this.getHtml() }></TextGlobeKdabra>
                 <footer>
                     <TextField 
@@ -85,6 +84,7 @@ class SettingsContainer extends Component {
                         floatingLabelText="Mensaje de Bienvenida" 
                         onChange={this.changeOnBoarding.bind(this)}
                         value={this.state.newOnboarding}
+                        multiLine
                     />
                     <Button
                         onClick={ this.updateOnboarding.bind(this) }

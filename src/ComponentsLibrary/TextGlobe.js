@@ -26,7 +26,7 @@ const KdabraTextGlobe = TextGlobeComponent.extend`
     background-image: linear-gradient( to bottom right, #f0932b, #f16334);
     border-radius: 16px;
     display: block;
-    text-align: center;
+    text-align: ${ props => props.onboarding ? 'left' : 'center'};
     float: none;
     color: white;
 `;
