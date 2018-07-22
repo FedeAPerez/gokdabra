@@ -74,7 +74,12 @@ class SettingsContainer extends Component {
         return (
             <main className="admin-settings-container">
                 <section className="admin-settings">
-                <Text centered>Actualizá tu mensaje de bienvenida, para que todos conozcan lo mejor de tu negocio.</Text>
+                <Text centered>{
+                    this.props.user.isBusiness ?
+                    "Actualizá tu mensaje de bienvenida para que todos conozcan lo mejor de vos!":
+                    "Actualizá tu mensaje de bienvenida, para que todos conozcan lo mejor de tu negocio."
+                    }
+                </Text>
                 
                 <TextGlobeKdabra onboarding
                         dangerouslySetInnerHTML= { this.getHtml() }></TextGlobeKdabra>

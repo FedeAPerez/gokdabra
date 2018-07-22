@@ -4,6 +4,7 @@
  * */
 import React, { Component } from 'react';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
+import { connect } from 'react-redux';
 /* *
  * Código de librerías internas
  * */ 
@@ -43,11 +44,21 @@ class ShareContainer extends Component {
 
         return(
             <main className="admin-share-container">
-                <h2>
-                1 - Copia tu link.<br />
-                2 - Subilo a las redes.<br />
-                3 - Que tus clientes se conviertan en tus fans usando KDABRA.
-                </h2>
+                {
+                    this.props.user.isBusiness &&
+                    <h2>
+                    1 - Copia tu link.<br />
+                    2 - Subilo a las redes.<br />
+                    3 - Que tus clientes se conviertan en tus fans usando KDABRA.
+                    </h2>
+                }
+                {
+                    !this.props.user.isBusiness &&
+                    <h2>
+                    1 - Copia tu link.<br />
+                    2 - Compartilo para que negocios te envíen información.<br />
+                    </h2>
+                }
                 <CopyToClipboard 
                 text={ "http://mi.gokdabra.com/" + this.props.user.user_name.toLowerCase() }
                 onCopy={() => this.setState({copied: true})}>
@@ -83,5 +94,8 @@ class ShareContainer extends Component {
         
     }
 }
-
-export default ShareContainer;
+function mapStateToProps(state) {
+    const { user } = state;
+    return { user };
+}
+export default connect(mapStateToProps)(ShareContainer);
