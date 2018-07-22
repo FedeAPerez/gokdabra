@@ -45,6 +45,10 @@ function fbGetOnboarding(user_name) {
 }
 
 function fbUpdateOnboarding(user_name, message) {
+    ReactGA.event({
+        category: 'Usuario',
+        action: 'Modificación de Onboarding'
+      });
     var onboardingOb = {};
     onboardingOb.message = message;
     firebase.database().ref('/onboardings/'+user_name+'/').set(onboardingOb);
@@ -81,15 +85,15 @@ function fbCreateNewConversation(business, username, message, hour) {
 }
 const doSignInWithEmailAndPassword = (email, password) => {
     ReactGA.event({
-        category: 'User',
-        action: 'Inición Sesión'
+        category: 'Usuario',
+        action: 'Inició Sesión'
       });
     return auth.signInWithEmailAndPassword(email, password);
 }
 
 const doCreateUserWithEmailAndPassword = (email, password) => {
     ReactGA.event({
-        category: 'User',
+        category: 'Usuario',
         action: 'Creó una cuenta'
       });
     return auth.createUserWithEmailAndPassword(email, password);
