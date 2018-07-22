@@ -4,7 +4,8 @@
   "private": true,
   "description": "KDABRA APP for rendering Business's ChatBot",
   "scripts": {
-    "start": "react-scripts start",
+    "start": "HTTPS=true && react-scripts start",
+    "startdev": "react-scripts start",
     "build": "react-scripts build",
     "test": "mocha --compilers js:babel/register",
     "coverage-test": "nyc --reporter=html --all npm test"
