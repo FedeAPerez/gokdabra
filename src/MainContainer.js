@@ -18,6 +18,7 @@ class MainContainer extends Component {
     render() {
         return (
             <Switch className="section-switch">
+                <Route exact path="/index.html" component={LogInView}/>
                 <Route exact path="/" component={LogInView}/>
                 <Route exact path="/componentslibrary" component={ComponentsLibraryView} />
                 <Route exact path="/onboarding" component={OnboardingView} />
