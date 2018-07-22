@@ -41,6 +41,7 @@ class UserContainer extends Component {
                 (snapshot) => { 
                     
                     this.props.dispatch(Actions.finishedFetching());
+                    this.props.dispatch(Actions.selectUser(snapshot.val()));
                     this.setState({doneAuthed : true, user_name : Object.keys(snapshot.val())[0]});
             })
             .catch((err) => {

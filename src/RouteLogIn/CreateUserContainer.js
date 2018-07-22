@@ -37,7 +37,6 @@ class CreateUserContainer extends Component {
         dispatch(Actions.startFetching());
         doCreateUserWithEmailAndPassword(this.state.email, this.state.password)
         .then((res) => {
-            console.log(res);
                 var user = {};
                 user.email = this.state.email;
                 user.user_name = this.state.user_name.toLowerCase();

@@ -14,6 +14,7 @@ import SettingsContainer from './SettingsContainer';
 import ShareContainer from './ShareContainer';
 import SearchBusinessContainer from './SearchBusinessContainer';
 import { fbGetUser  } from '../firebase';
+import * as Actions from '../redux/actions/actions';
 
 /* *
  * Hojas de Estilo y Constantes
@@ -38,6 +39,8 @@ class AdminBusinessView extends Component {
         const userPojo = fbGetUser(this.props.match.params.user);
         userPojo.then(
         (snapshot) => { 
+            
+            this.props.dispatch(Actions.selectUser(snapshot.val()));
             this.setState({ userOb : snapshot.val() });
         })
         .catch((err) => {

@@ -39,16 +39,15 @@ function fbGetUserByEmail(email) {
     return firebase.database().ref(route).orderByChild("email").equalTo(email).once('value');
 }
 
-function fbGetOnboarding(business) {
-    const route = '/onboardings/' + business.toLowerCase() + '/';
+function fbGetOnboarding(user_name) {
+    const route = '/onboardings/' + user_name.toLowerCase() + '/';
     return firebase.database().ref(route).once('value');
 }
 
-function fbUpdateOnboarding(business, message, cta) {
+function fbUpdateOnboarding(user_name, message) {
     var onboardingOb = {};
     onboardingOb.message = message;
-    onboardingOb.cta = cta;
-    firebase.database().ref('/onboardings/'+business+'/').set(onboardingOb);
+    firebase.database().ref('/onboardings/'+user_name+'/').set(onboardingOb);
 }
 
 function fbAddNewMessage(business, user, message, hour, sender, class_used) {

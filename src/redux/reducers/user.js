@@ -2,8 +2,8 @@
 import * as Actions from '../actions/actions_type';
 
 const initialState = {
-    user_name: 'paulpog',
-    name: 'Paul Pogba',
+    user_name: '',
+    email: '',
     isBusiness: false
 }
 
@@ -13,9 +13,7 @@ export default (state = initialState, action) => {
             return Object.assign(
                 {},
                 state,
-                {
-                    user: action.user
-                }
+                action.user
             );
 
         default:

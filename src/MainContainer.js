@@ -15,15 +15,14 @@ import ConversationContainer from './RouteConversation/ConversationContainer';
 import ComponentsLibraryView from './ComponentsLibrary/ComponentsLibraryView';
 
 class MainContainer extends Component {
-
     render() {
         return (
             <Switch className="section-switch">
-                <Route exact path="/" component={LogInView} />
+                <Route exact path="/" component={LogInView}/>
                 <Route exact path="/componentslibrary" component={ComponentsLibraryView} />
                 <Route exact path="/onboarding" component={OnboardingView} />
-                <Route exac path="/login" component={LogInView} />
-                <Route exac path="/signup" component={SingUpView} />
+                <Route exact path="/login" component={LogInView} />
+                <Route exact path="/signup" component={SingUpView} />
                 <Route path="/admin/:user" component={AdminBusinessView} />
                 <Route path="/:user" component={ConversationContainer} />
             </Switch>
