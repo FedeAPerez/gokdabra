@@ -3,7 +3,7 @@
  * Código de librerías externas
  * */
 import React, { Component } from "react";
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 /* *
  * Código de librerías internas
  * */
@@ -13,6 +13,21 @@ import AdminBusinessView from './RouteAdmin/AdminBusinessView';
 import OnboardingView from './RouteOnboarding/OnboardingView';
 import ConversationContainer from './RouteConversation/ConversationContainer';
 import ComponentsLibraryView from './ComponentsLibrary/ComponentsLibraryView';
+
+const fakeAuth = () => {
+    const cachedUser = localStorage.getItem("userSession");
+    if(cachedUser);
+        return true;
+    return false;
+}
+  
+const PrivateRoute = ({ component: Component, ...rest }) => (
+    <Route {...rest} render={(props) => (
+      fakeAuth() === true
+        ? <Component {...props} />
+        : <Redirect to='/login' />
+    )} />
+  )
 
 class MainContainer extends Component {
     render() {
@@ -24,8 +39,8 @@ class MainContainer extends Component {
                 <Route exact path="/onboarding" component={OnboardingView} />
                 <Route exact path="/login" component={LogInView} />
                 <Route exact path="/signup" component={SingUpView} />
-                <Route path="/admin/:user" component={AdminBusinessView} />
-                <Route path="/:user" component={ConversationContainer} />
+                <PrivateRoute path="/admin/:user" component={AdminBusinessView} />
+                <PrivateRoute path="/:user" component={ConversationContainer} />
             </Switch>
         );
     }

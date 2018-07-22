@@ -22,13 +22,15 @@ class SettingsContainer extends Component {
         super(props);
         this.state = {
             onboarding : '',
-            newOnboarding : ''
+            newOnboarding : '',
+            enableUpdate : false
         };
     }
 
     changeOnBoarding(e, value) {
         e.preventDefault();
-        this.setState({ newOnboarding : value});
+        var shouldEnable = value != '';
+        this.setState({ newOnboarding : value, enableUpdate : shouldEnable});
     }
 
     updateOnboarding() {
@@ -87,6 +89,7 @@ class SettingsContainer extends Component {
                         multiLine
                     />
                     <Button
+                        disabled={ !this.state.enableUpdate }
                         onClick={ this.updateOnboarding.bind(this) }
                     >
                         Actualizar
