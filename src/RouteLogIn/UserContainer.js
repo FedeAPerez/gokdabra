@@ -75,6 +75,13 @@ class UserContainer extends Component {
         this.setState({password : value});
         this.checkEnabledButton();
     }
+    componentDidMount() {
+        const cachedUser = JSON.parse(localStorage.getItem("userSession"));
+        if(cachedUser) {
+            console.log(cachedUser);
+            this.setState({ doneAuthed : true, user_name : cachedUser.user_name });
+        }
+    }
     render() {
         const styledTextField = {
             margin: '0rem auto',

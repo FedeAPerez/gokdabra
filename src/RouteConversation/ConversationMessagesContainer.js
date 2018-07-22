@@ -48,8 +48,8 @@ class ConversationMessagesContainer extends Component {
 
     onAnswerSubmit = (input_value, text) => {     
         // Creo o actualizo la conversación, agrego nuevos mensajes
-        fbCreateNewConversation(this.props.user_name, "fedeaperez", text, "22:38");
-        fbAddNewMessage(this.props.user_name, "fedeaperez", text, "22:38", this.props.user_name, "message-user");
+        fbCreateNewConversation(this.props.visitedUser.user_name, this.props.user.user_name, text, "22:38");
+        fbAddNewMessage(this.props.visitedUser.user_name, this.props.user.user_name, text, "22:38", this.props.user.user_name, "message-user");
 
     };
 
@@ -70,8 +70,8 @@ class ConversationMessagesContainer extends Component {
 
 function mapStateToProps(state) {
     const { messages, isWriting } = state.conversations;
-
-    return { messages , isWriting, user_name : state.visitedUser.user_name };
+    const { visitedUser, user} = state;
+    return { messages , isWriting, visitedUser : visitedUser, user: user };
 }
 
 export default connect(mapStateToProps)(ConversationMessagesContainer);
