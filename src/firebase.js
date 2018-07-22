@@ -70,7 +70,7 @@ function fbAddNewMessage(business, user, message, hour, sender, class_used) {
 function fbCreateNewConversation(business, username, message, hour) {
     const conversation  = {
         user : {
-            userName: 'Federico'
+            userName: username
         },
         lastMessage :  {
             text : message,

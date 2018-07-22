@@ -15,12 +15,12 @@ class ConversationContainer extends Component {
 
     render() {
         return <Conversation 
-                businessInfo = { this.props.business }
+                userInfo = { this.props.user }
                 conversation = { this.props.conversation } />
     }
 }
 function mapStateToProps(state) {
-    const { business } = state.business;
-    return { business };
+    const { user } = state;
+    return { user };
 }
 export default connect(mapStateToProps)(ConversationContainer);

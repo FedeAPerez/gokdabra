@@ -31,7 +31,7 @@ class Conversation extends Component {
     render() {
         return (
             <Link
-            to={"/"+this.props.businessInfo.business_name+'/'+this.props.conversation.user.userName}
+            to={"/" + this.props.conversation.user.userName}
             >
             <div 
                 className="conversation"

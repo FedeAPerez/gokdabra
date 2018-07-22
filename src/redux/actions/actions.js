@@ -43,16 +43,17 @@ const selectUser = function(json) {
 const getOnboardingAction = function(data) {
   return {
     type: Actions.RECEIVE_MESSAGES_ONBOARDING,
-    message: data.message,
-    cta: data.cta
+    message: data.message
   };
 }
 
-const getMessagesOnboarding = function(business) {
+const getMessagesOnboarding = function(user_name) {
     return function (dispatch) {
-      return fbGetOnboarding(business)
+      
+      dispatch(startedWriting());
+      
+      return fbGetOnboarding(user_name)
       .then((res) => {
-        dispatch(startedWriting());
         dispatch(getOnboardingAction(res.val()));
         dispatch(finishedWriting());
       })

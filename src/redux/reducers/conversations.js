@@ -9,13 +9,18 @@ const initialState = {
 
 export default (state = initialState, action) => {
     switch (action.type) {
-
+        
         case Actions.RECEIVE_CONVERSATIONS:
             return {
                 ...state,
                 conversations_list : action.conversations_list
             };
-
+        
+        case Actions.STARTED_WRITING:
+            return {
+                ...state,
+                isWriting : true
+            }
         case Actions.FINISHED_WRITING:
             return {
                 ...state,

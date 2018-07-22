@@ -9,7 +9,6 @@ import { connect } from 'react-redux';
  * */
 import { fbGetConversationsSuscription } from '../firebase';
 import { getConversations } from '../redux/actions/conversationsActions';
-import LoadingContainer from '../Commons/LoadingContainer';
 import ConversationContainer from '../Commons/ConversationContainer';
 import Text from '../ComponentsLibrary/Text';
 /* *
@@ -27,7 +26,7 @@ class BusinessMessagesContainer extends Component {
 
   componentDidMount() {
       const { dispatch } = this.props;
-      const nameRef = fbGetConversationsSuscription(this.props.user_name);
+      const nameRef = fbGetConversationsSuscription(this.props.user.user_name);
 
       nameRef.on('value', snapshot => {
         dispatch(getConversations(
@@ -36,13 +35,9 @@ class BusinessMessagesContainer extends Component {
       })
   }
 
-  handlerConversation() {
-
-  }
-
   render() {
-    if(this.props.conversations_list) {
-        const conversations_list = this.props.conversations_list;
+    if(this.props.conversations.conversations_list) {
+        const conversations_list = this.props.conversations.conversations_list;
         var conversationsList = [];
         var keys = Object.keys(conversations_list);
         for(var i =0; i< keys.length; i++)
@@ -52,7 +47,6 @@ class BusinessMessagesContainer extends Component {
     }
     return (
       <div>
-          <LoadingContainer />
           {
               (conversationsList && conversationsList.length > 0) &&
               conversationsList.map((element, index) => {
@@ -73,8 +67,7 @@ class BusinessMessagesContainer extends Component {
   }
 };
 function mapStateToProps(state) {
-    const { conversations_list } = state.conversations;
-    const { user_name } = state.user;
-    return { conversations_list, user_name };
+    const { conversations, user } = state;
+    return { conversations, user };
 }
 export default connect(mapStateToProps)(BusinessMessagesContainer);
