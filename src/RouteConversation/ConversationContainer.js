@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import ConversationHeaderContainer from './ConversationHeaderContainer';
 import ConversationMessagesContainer from './ConversationMessagesContainer';
 
-import { visitUser } from '../redux/actions/actions';
+import { visitUser, selectUser } from '../redux/actions/actions';
 import { fbGetUser  } from '../firebase';
 
 class ConversationContainer extends Component {
@@ -14,6 +14,9 @@ class ConversationContainer extends Component {
         this.state = {
             userOb : null
         };
+        const cachedUser = JSON.parse(localStorage.getItem("userSession"));
+        const { dispatch } = this.props;
+        dispatch(selectUser(cachedUser));
 
         const userPogo = fbGetUser(props.match.params.user);
         userPogo.then(

@@ -24,13 +24,10 @@ class ConversationMessagesContainer extends Component {
 }
 
     componentDidMount() {
-        
-        const cachedUser = JSON.parse(localStorage.getItem("userSession"));
-        const { dispatch } = this.props;
-        dispatch(selectUser(cachedUser));
-        if(this.props.user) {
+    
+        if(this.props.user && this.props.user.user_name != '') {
         // Si no hay mensajes en el historial, largo onboarding
-        const nameRef = fbGetMessagesConversationSuscription(this.props.visitedUser.user_name, this.props.user.user_name);
+        const nameRef = fbGetMessagesConversationSuscription(this.props.user.user_name, this.props.visitedUser.user_name);
         nameRef.on('value', snapshot => {
             if(!snapshot.val()) {
                 setTimeout(() => {
@@ -38,8 +35,10 @@ class ConversationMessagesContainer extends Component {
                 }, 5000);
             }
             else {
+                console.log(snapshot.val());
+                const { dispatch } = this.props;
                 dispatch(getCompleteConversation(
-                    snapshot.val()[Object.keys(snapshot.val())[0]]
+                    snapshot.val()
                 ));
             }
           })
@@ -52,7 +51,7 @@ class ConversationMessagesContainer extends Component {
     onAnswerSubmit = (input_value, text) => {     
         // Creo o actualizo la conversación, agrego nuevos mensajes
         fbCreateNewConversation(this.props.visitedUser.user_name, this.props.user.user_name, text, "22:38");
-        fbAddNewMessage(this.props.visitedUser.user_name, this.props.user.user_name, text, "22:38", this.props.user.user_name, "message-user");
+        fbAddNewMessage(this.props.visitedUser.user_name, this.props.user.user_name, text, "22:38", this.props.user.user_name);
 
     };
 

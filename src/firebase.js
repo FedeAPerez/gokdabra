@@ -18,8 +18,11 @@ function fbGetConversationsSuscription(entity_name) {
     return firebase.database().ref().child('/conversations/' + entity_name);
 }
 
-function fbGetMessagesConversationSuscription(business_name, user_name) {
-    return firebase.database().ref().child('/messages/' + business_name + '/' + user_name);
+function fbGetMessagesConversationSuscription(user, visitedUser) {
+    console.log("voy por " + user + " de " + visitedUser);
+    var routeRef = '/messages/' + user + '/' + visitedUser;
+    console.log(routeRef);
+    return firebase.database().ref().child(routeRef);
 }
 
 
@@ -54,11 +57,11 @@ function fbUpdateOnboarding(user_name, message) {
     firebase.database().ref('/onboardings/'+user_name+'/').set(onboardingOb);
 }
 
-function fbAddNewMessage(visitedUser, user, message, hour, sender, class_used) {
+function fbAddNewMessage(visitedUser, user, message, hour, sender) {
     const messageOb = {
         text : message,
         type : {
-            class_used : class_used
+            category : "text_message"
         },
         hour : hour,
         sender : sender
