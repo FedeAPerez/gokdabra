@@ -17,10 +17,6 @@ class MessageContainer extends Component {
     getMessageHtml() {
 		return { __html: this.props.message.text };
     }
-    
-    getMessageCTAHtml() {
-        return { __html: this.props.message.cta };
-    }
 
     render() {
         return (
@@ -28,21 +24,13 @@ class MessageContainer extends Component {
                 className="messages-article-container"
             >
                 <article
-                    className={ "message-container " + (this.props.message.type || this.props.message).class_used }
+                    className={ "message-container " + this.props.class }
                 >
                     <main 
                         className="message-main"
                         dangerouslySetInnerHTML= { this.getMessageHtml() }
                     >
-                    </main>
-                    {
-                        this.props.message.cta &&
-                        <footer
-                            className="message-cta"
-                            dangerouslySetInnerHTML= { this.getMessageCTAHtml() }
-                        >
-                        </footer>
-                    }                    
+                    </main>                   
                 </article>
 
                 {

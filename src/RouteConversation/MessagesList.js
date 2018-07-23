@@ -30,10 +30,12 @@ class MessagesList extends Component {
                     messages.map(
                         (element, index) => {
                             console.log(element);
+                            var elementClass = element.sender == this.props.user.user_name ? 'message-user' : '';
                             return (
                                 <Message 
                                     message={ element } 
                                     key={"conversation-messages" + index} 
+                                    class = { elementClass }
                                 />
                             );
                         }

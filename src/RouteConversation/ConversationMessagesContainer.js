@@ -61,6 +61,7 @@ class ConversationMessagesContainer extends Component {
             <section className="base-container">
                 <MessagesList
                     messages = {this.props.messages}
+                    user = { this.props.user }
                     isWriting = {this.props.isWriting}
                 />
                 <MessageHandler 
