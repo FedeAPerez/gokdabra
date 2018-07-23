@@ -6,8 +6,8 @@ const TextComponent = styled.p`
     font-weight: 400;
     text-align: ${ props => props.centered ? 'center' : 'left' };
     font-size: 1rem;
-    color: ${ props => props.secondary ? '#7f8c8d' : 'black' };
-    color: ${ props => ( props.secondary && props.warning ) ? '#d63031' : '#7f8c8d' };
+    color: ${ props => props.secondary ? '#454949' : 'black' };
+    color: ${ props => ( props.secondary && props.warning ) ? '#d63031' : '#454949' };
     margin: ${ props => props.noMargin ? '0rem auto' : '1rem auto' };
 `;
 
