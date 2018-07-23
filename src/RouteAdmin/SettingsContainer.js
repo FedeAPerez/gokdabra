@@ -3,6 +3,7 @@
  * Código de librerías externas
  * */
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 import { TextField } from 'material-ui';
 import { connect } from 'react-redux';
 /* *
@@ -52,7 +53,10 @@ class SettingsContainer extends Component {
 
         });
     }
-
+    closeSession() {
+        localStorage.removeItem("userSession");
+        this.setState({ closeSession : true });
+    }
     getHtml() {
         if(this.state.onboarding != '')
             return { __html : this.state.onboarding };
@@ -70,6 +74,11 @@ class SettingsContainer extends Component {
         }
         const styledFloated = {
             color: "black"
+        }
+        if(this.state.closeSession) {
+            return (
+                <Redirect to='/login' />
+            );
         }
         return (
             <main className="admin-settings-container">
@@ -98,6 +107,12 @@ class SettingsContainer extends Component {
                         onClick={ this.updateOnboarding.bind(this) }
                     >
                         Actualizar
+                    </Button>
+
+                    <Button
+                        onClick={ this.closeSession.bind(this)  }
+                    >
+                        Cerrar Sesión
                     </Button>
                 </footer>
                 </section>

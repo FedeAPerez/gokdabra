@@ -4,6 +4,7 @@
  * */
 import React, { Component } from "react";
 import { Switch, Route, Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
 /* *
  * Código de librerías internas
  * */
@@ -13,11 +14,13 @@ import AdminBusinessView from './RouteAdmin/AdminBusinessView';
 import OnboardingView from './RouteOnboarding/OnboardingView';
 import ConversationContainer from './RouteConversation/ConversationContainer';
 import ComponentsLibraryView from './ComponentsLibrary/ComponentsLibraryView';
+import * as Actions from './redux/actions/actions';
 
 const fakeAuth = () => {
-    const cachedUser = localStorage.getItem("userSession");
-    if(cachedUser);
+    const cachedUser = JSON.parse(localStorage.getItem("userSession"));
+    if(cachedUser) {
         return true;
+    }
     return false;
 }
   
@@ -46,4 +49,4 @@ class MainContainer extends Component {
     }
 }
 
-export default MainContainer;
+export default connect()(MainContainer);

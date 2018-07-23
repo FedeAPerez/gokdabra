@@ -54,7 +54,7 @@ function fbUpdateOnboarding(user_name, message) {
     firebase.database().ref('/onboardings/'+user_name+'/').set(onboardingOb);
 }
 
-function fbAddNewMessage(business, user, message, hour, sender, class_used) {
+function fbAddNewMessage(visitedUser, user, message, hour, sender, class_used) {
     const messageOb = {
         text : message,
         type : {
@@ -63,14 +63,17 @@ function fbAddNewMessage(business, user, message, hour, sender, class_used) {
         hour : hour,
         sender : sender
     }
-    var pushRef = firebase.database().ref('/messages/'+business+'/'+user).push();
+
+    var pushRef = firebase.database().ref('/messages/'+visitedUser+'/'+user).push();
     pushRef.set(messageOb);
+    var pushVisitedRef = firebase.database().ref('/messages/'+user+'/'+visitedUser).push();
+    pushVisitedRef.set(messageOb);
 }
 
-function fbCreateNewConversation(business, username, message, hour) {
+function fbCreateNewConversation(visitedUser, user, message, hour) {
     const conversation  = {
         user : {
-            userName: username
+            userName: user
         },
         lastMessage :  {
             text : message,
@@ -81,7 +84,21 @@ function fbCreateNewConversation(business, username, message, hour) {
             color : 'orange'
         }
       }
-    firebase.database().ref('/conversations/'+business+'/'+username).set(conversation);
+      const conversationVisited  = {
+        user : {
+            userName: visitedUser
+        },
+        lastMessage :  {
+            text : message,
+            date : hour
+        },
+        relationship : {
+            text : 'Nuevo',
+            color : 'orange'
+        }
+      }
+    firebase.database().ref('/conversations/'+visitedUser+'/'+user).set(conversation);
+    firebase.database().ref('/conversations/'+user+'/'+visitedUser).set(conversationVisited);
 }
 const doSignInWithEmailAndPassword = (email, password) => {
     ReactGA.event({

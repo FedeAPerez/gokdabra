@@ -9,7 +9,7 @@ import { connect } from 'react-redux';
  * */ 
 import { fbCreateNewConversation,  fbAddNewMessage, fbGetMessagesConversationSuscription } from '../firebase';
 import MessagesList from './MessagesList';
-import { getMessagesOnboarding, getCompleteConversation } from '../redux/actions/actions';
+import { getMessagesOnboarding, getCompleteConversation, selectUser } from '../redux/actions/actions';
 import MessageHandler from '../ComponentsLibrary/MessageHandler';
 /* *
  * Hojas de Estilo y Constantes
@@ -24,11 +24,13 @@ class ConversationMessagesContainer extends Component {
 }
 
     componentDidMount() {
-        // Si el usuario no tuvo onboarding hasta el momento
+        
+        const cachedUser = JSON.parse(localStorage.getItem("userSession"));
         const { dispatch } = this.props;
-
+        dispatch(selectUser(cachedUser));
+        if(this.props.user) {
         // Si no hay mensajes en el historial, largo onboarding
-        const nameRef = fbGetMessagesConversationSuscription(this.props.user_name, 'fedeaperez');
+        const nameRef = fbGetMessagesConversationSuscription(this.props.visitedUser.user_name, this.props.user.user_name);
         nameRef.on('value', snapshot => {
             console.log(snapshot.val());
             if(!snapshot.val()) {
@@ -42,6 +44,8 @@ class ConversationMessagesContainer extends Component {
                 ));
             }
           })
+        }
+
         
     }
 

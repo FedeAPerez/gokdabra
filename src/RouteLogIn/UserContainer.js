@@ -42,9 +42,14 @@ class UserContainer extends Component {
                     
                     this.props.dispatch(Actions.finishedFetching());
                     this.props.dispatch(Actions.selectUser(snapshot.val()));
+                    const userFromFBPojo = snapshot.val()[Object.keys(snapshot.val())[0]];
+
                     localStorage.setItem("userSession", JSON.stringify({
-                        user_name : Object.keys(snapshot.val())[0]
+                        user_name : userFromFBPojo.user_name,
+                        email: userFromFBPojo.email,
+                        isBusiness : userFromFBPojo.isBusiness
                     }));
+                    
                     this.setState({doneAuthed : true, user_name : Object.keys(snapshot.val())[0]});
             })
             .catch((err) => {
