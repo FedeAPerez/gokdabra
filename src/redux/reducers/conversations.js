@@ -3,7 +3,9 @@ import * as Actions from '../actions/actions_type';
 
 const initialState = {
     conversations_list: [],
-    conversation : {},
+    conversation : {
+        messages : []
+    },
     isWriting : false
 }
 
@@ -14,6 +16,14 @@ export default (state = initialState, action) => {
             return {
                 ...state,
                 conversations_list : action.conversations_list
+            };
+
+        case Actions.RECEIVE_MESSAGES:
+            return {
+                ...state,
+                conversation : {
+                    messages : action.messages
+                }
             };
         
         case Actions.STARTED_WRITING:

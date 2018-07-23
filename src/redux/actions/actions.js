@@ -65,7 +65,8 @@ const getMessagesOnboarding = function(user_name) {
 const getCompleteConversation = function(messagesList) {
   return function (dispatch) {
     dispatch(startFetching());
-    // Enviar la lista de conversaciones desde firebase
+    // Enviar la conversación
+      console.log("procesemos los mensajes");
     dispatch(receiveMessages(messagesList));
     dispatch(finishedFetching());
   }

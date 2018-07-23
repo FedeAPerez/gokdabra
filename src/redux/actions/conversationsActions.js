@@ -11,7 +11,6 @@ const receiveConversations = function(json) {
 const getConversations = function(conversationsList) {
     return function (dispatch) {
       dispatch(startFetching());
-      // Enviar la lista de conversaciones desde firebase
       dispatch(receiveConversations(conversationsList));
       dispatch(finishedFetching());
     }

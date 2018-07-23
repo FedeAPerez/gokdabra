@@ -43,14 +43,6 @@ class MessageContainer extends Component {
                         >
                         </footer>
                     }                    
-                    {
-                        /* Afuera hasta nuevo aviso
-                        (this.props.message.sender || '') !== '' &&
-                        <footer 
-                            className="message-footer">
-                            Enviador por { this.props.message.sender }
-                        </footer>*/
-                    }
                 </article>
 
                 {

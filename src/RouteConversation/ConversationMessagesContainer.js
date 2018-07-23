@@ -32,7 +32,6 @@ class ConversationMessagesContainer extends Component {
         // Si no hay mensajes en el historial, largo onboarding
         const nameRef = fbGetMessagesConversationSuscription(this.props.visitedUser.user_name, this.props.user.user_name);
         nameRef.on('value', snapshot => {
-            console.log(snapshot.val());
             if(!snapshot.val()) {
                 setTimeout(() => {
                     
@@ -40,7 +39,7 @@ class ConversationMessagesContainer extends Component {
             }
             else {
                 dispatch(getCompleteConversation(
-                    snapshot.val()
+                    snapshot.val()[Object.keys(snapshot.val())[0]]
                 ));
             }
           })
@@ -73,9 +72,10 @@ class ConversationMessagesContainer extends Component {
 }
 
 function mapStateToProps(state) {
-    const { messages, isWriting } = state.conversations;
+    const { isWriting } = state.conversations;
+    const { messages } = state.conversations.conversation;
     const { visitedUser, user} = state;
-    return { messages , isWriting, visitedUser : visitedUser, user: user };
+    return { messages , isWriting, visitedUser, user};
 }
 
 export default connect(mapStateToProps)(ConversationMessagesContainer);
