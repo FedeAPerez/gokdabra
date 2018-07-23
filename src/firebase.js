@@ -66,7 +66,10 @@ function fbAddNewMessage(visitedUser, user, message, hour, sender) {
         hour : hour,
         sender : sender
     }
-
+    ReactGA.event({
+        category: 'Usuario',
+        action: 'Envió un Mensaje'
+      });
     var pushRef = firebase.database().ref('/messages/'+visitedUser+'/'+user).push();
     pushRef.set(messageOb);
     var pushVisitedRef = firebase.database().ref('/messages/'+user+'/'+visitedUser).push();
