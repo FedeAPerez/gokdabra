@@ -16,7 +16,6 @@ class MessagesList extends Component {
         var messages = [];
         if(this.props.messages) {
             const messages_list = this.props.messages;
-            var messages = [];
             var keys = Object.keys(messages_list);
             for(var i =0; i< keys.length; i++)
             {
@@ -30,7 +29,7 @@ class MessagesList extends Component {
                     messages.map(
                         (element, index) => {
                             console.log(element);
-                            var elementClass = element.sender == this.props.user.user_name ? 'message-user' : '';
+                            var elementClass = element.sender === this.props.user.user_name ? 'message-user' : '';
                             return (
                                 <Message 
                                     message={ element } 

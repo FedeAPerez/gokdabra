@@ -9,7 +9,7 @@ import { connect } from 'react-redux';
  * */ 
 import { fbCreateNewConversation,  fbAddNewMessage, fbGetMessagesConversationSuscription } from '../firebase';
 import MessagesList from './MessagesList';
-import { getMessagesOnboarding, getCompleteConversation, selectUser } from '../redux/actions/actions';
+import { getMessagesOnboarding, getCompleteConversation } from '../redux/actions/actions';
 import MessageHandler from '../ComponentsLibrary/MessageHandler';
 /* *
  * Hojas de Estilo y Constantes
@@ -25,7 +25,7 @@ class ConversationMessagesContainer extends Component {
 
     componentDidMount() {
     
-        if(this.props.user && this.props.user.user_name != '') {
+        if(this.props.user && this.props.user.user_name !== '') {
         // Si no hay mensajes en el historial, largo onboarding
         const nameRef = fbGetMessagesConversationSuscription(this.props.user.user_name, this.props.visitedUser.user_name);
         nameRef.on('value', snapshot => {

@@ -47,7 +47,8 @@ class SearchBusinessContainer extends Component {
                     this.state.usersList &&
                     this.state.usersList.map((element, index) => {
                         return (
-                            <UserDisplay 
+                            <UserDisplay
+                                key={ "user_display_" + index} 
                                 userName={ element.user_name }  
                                 userShowName ={ element.show_name }
                                 userDescription={ element.user_description }
