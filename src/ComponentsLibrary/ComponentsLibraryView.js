@@ -34,6 +34,9 @@ class ComponentsLibraryView extends Component {
         this.setState({ isBusiness : !this.state.isBusiness });
     }
 
+    handleShowInfo(e) {
+        console.log("en la empresa");
+    }
     render() {
         return(
             <main>
@@ -45,9 +48,16 @@ class ComponentsLibraryView extends Component {
                     
                     <Title h2>Display de Usuario</Title>
                     <UserDisplay
+                        onClick = { this.handleShowInfo.bind(this) }
                         userShowName="Federico"
                         userName = "fede"
                         userDescription="Fundador de KDABRA - Atentos a las novedades!"
+                    />
+
+                    <UserDisplay
+                        onClick = { this.handleShowInfo.bind(this) }
+                        userShowName="KDABRA"
+                        userName = "gokdabra"
                     />
                 </Section>
                 <Section>

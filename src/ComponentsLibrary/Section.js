@@ -7,8 +7,7 @@ const Section = styled.div`
     margin-left: ${ props => props.noLaterals ? '0rem' : '1rem'};
     padding-top: 1rem;
     padding-bottom: 1rem;
-    border-top: ${ props => props.withBorders ? '2px solid black' : 'none'}
-    border-bottom: ${ props => props.withBorders ? '2px solid black' : 'none'}
+    border-bottom: ${ props => props.withBottomBorders ? '1px solid #dfe6e9' : 'none'}
 `;
 
 export default Section;
