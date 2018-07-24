@@ -43,7 +43,7 @@ class UserContainer extends Component {
                     this.props.dispatch(Actions.finishedFetching());
                     this.props.dispatch(Actions.selectUser(snapshot.val()));
                     const userFromFBPojo = snapshot.val()[Object.keys(snapshot.val())[0]];
-
+                    console.log("vamos a crear el usuario en la sesión");
                     localStorage.setItem("userSession", JSON.stringify({
                         user_name : userFromFBPojo.user_name,
                         email: userFromFBPojo.email,

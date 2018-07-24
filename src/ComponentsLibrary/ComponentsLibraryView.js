@@ -13,6 +13,7 @@ import { TextGlobe, TextGlobeKdabra } from './TextGlobe';
 import Button from './Button';
 import CheckBox from './CheckBox';
 import TextInput from './TextInput';
+import UserDisplay from './UserDisplay';
 /* *
  * Hojas de Estilo y Constantes
  * */ 
@@ -39,6 +40,15 @@ class ComponentsLibraryView extends Component {
                 <Section>
                     <Title h1>Librería de componentes - KDABRA</Title>
                     <Text>Esta librería busca unificar los componentes que se usan en todo el sitio</Text>
+                </Section>
+                <Section>
+                    
+                    <Title h2>Display de Usuario</Title>
+                    <UserDisplay
+                        userShowName="Federico"
+                        userName = "fede"
+                        userDescription="Fundador de KDABRA - Atentos a las novedades!"
+                    />
                 </Section>
                 <Section>
                     <Title h2>Texto</Title>

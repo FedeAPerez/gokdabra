@@ -30,13 +30,13 @@ class SettingsContainer extends Component {
 
     changeOnBoarding(e, value) {
         e.preventDefault();
-        var shouldEnable = value != '';
+        var shouldEnable = value !== '';
         this.setState({ newOnboarding : value, enableUpdate : shouldEnable});
     }
 
     updateOnboarding() {
         const { user } = this.props;
-        if(this.state.newOnboarding != '' ){
+        if(this.state.newOnboarding !== '' ){
             fbUpdateOnboarding(user.user_name, this.state.newOnboarding);
             
             this.setState({ newOnboarding : '' });
@@ -58,7 +58,7 @@ class SettingsContainer extends Component {
         this.setState({ closeSession : true });
     }
     getHtml() {
-        if(this.state.onboarding != '')
+        if(this.state.onboarding !== '')
             return { __html : this.state.onboarding };
         else
             return { __html : "Acá vas a poder ver tu mensaje"};
@@ -80,44 +80,46 @@ class SettingsContainer extends Component {
                 <Redirect to='/login' />
             );
         }
-        return (
-            <main className="admin-settings-container">
-                <section className="admin-settings">
-                <Text centered>{
-                    this.props.user.isBusiness ?
-                    "Actualizá tu mensaje de bienvenida para que todos conozcan lo mejor de vos!":
-                    "Actualizá tu mensaje de bienvenida, para que todos conozcan lo mejor de tu negocio."
-                    }
-                </Text>
-                
-                <TextGlobeKdabra onboarding
-                        dangerouslySetInnerHTML= { this.getHtml() }></TextGlobeKdabra>
-                <footer>
-                    <TextField 
-                        style= { styledTextField }
-                        floatingLabelStyle= { styledFloated }
-                        underlineFocusStyle = { styledFocusUnderline }
-                        floatingLabelText="Mensaje de Bienvenida" 
-                        onChange={this.changeOnBoarding.bind(this)}
-                        value={this.state.newOnboarding}
-                        multiLine
-                    />
-                    <Button
-                        disabled={ !this.state.enableUpdate }
-                        onClick={ this.updateOnboarding.bind(this) }
-                    >
-                        Actualizar
-                    </Button>
-
-                    <Button
-                        onClick={ this.closeSession.bind(this)  }
-                    >
-                        Cerrar Sesión
-                    </Button>
-                </footer>
-                </section>
-            </main>
-        );
+        else {
+            return (
+                <main className="admin-settings-container">
+                    <section className="admin-settings">
+                    <Text centered>{
+                        this.props.user.isBusiness ?
+                        "Actualizá tu mensaje de bienvenida para que todos conozcan lo mejor de vos!":
+                        "Actualizá tu mensaje de bienvenida, para que todos conozcan lo mejor de tu negocio."
+                        }
+                    </Text>
+                    
+                    <TextGlobeKdabra onboarding
+                            dangerouslySetInnerHTML= { this.getHtml() }></TextGlobeKdabra>
+                    <footer>
+                        <TextField 
+                            style= { styledTextField }
+                            floatingLabelStyle= { styledFloated }
+                            underlineFocusStyle = { styledFocusUnderline }
+                            floatingLabelText="Mensaje de Bienvenida" 
+                            onChange={this.changeOnBoarding.bind(this)}
+                            value={this.state.newOnboarding}
+                            multiLine
+                        />
+                        <Button
+                            disabled={ !this.state.enableUpdate }
+                            onClick={ this.updateOnboarding.bind(this) }
+                        >
+                            Actualizar
+                        </Button>
+    
+                        <Button
+                            onClick={ this.closeSession.bind(this)  }
+                        >
+                            Cerrar Sesión
+                        </Button>
+                    </footer>
+                    </section>
+                </main>
+            );
+        }
     }
 }
 

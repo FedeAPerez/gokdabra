@@ -1,14 +1,23 @@
 import styled from 'styled-components';
 import React from 'react';
 
+function getColor(props) {
+    if(props.secondary) {
+        return 'rgb(101, 119, 134)';
+    }
+    if(props.warning) {
+        return '#d63031';
+    }
+}
+
 const TextComponent = styled.p`
     font-family: 'Rubik', sans-serif;
-    font-weight: 400;
+    font-weight: ${ props => props.bolded ? '500' : '400' };
     text-align: ${ props => props.centered ? 'center' : 'left' };
     font-size: 1rem;
-    color: ${ props => props.secondary ? '#454949' : 'black' };
-    color: ${ props => ( props.secondary && props.warning ) ? '#d63031' : '#454949' };
+    color: ${ props => getColor(props) };
     margin: ${ props => props.noMargin ? '0rem auto' : '1rem auto' };
+    margin-top: ${ props => {if(props.topMargin) return '1rem' } };
 `;
 
 const BoldText = styled.span`
