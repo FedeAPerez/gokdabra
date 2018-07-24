@@ -18,6 +18,10 @@ const TextComponent = styled.p`
     color: ${ props => getColor(props) };
     margin: ${ props => props.noMargin ? '0rem auto' : '1rem auto' };
     margin-top: ${ props => {if(props.topMargin) return '1rem' } };
+    
+    margin-right: ${ props => {if(props.lateralMargin) return '1rem' } };
+    
+    margin-left: ${ props => {if(props.lateralMargin) return '1rem' } };
 `;
 
 const BoldText = styled.span`

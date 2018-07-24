@@ -76,6 +76,11 @@ function fbAddNewMessage(visitedUser, user, message, hour, sender) {
     pushVisitedRef.set(messageOb);
 }
 
+function fbGetAllUsers() {
+    const route = '/users';
+    return firebase.database().ref(route).once('value');
+}
+
 function fbCreateNewConversation(visitedUser, user, message, hour) {
     const conversation  = {
         user : {
@@ -130,6 +135,7 @@ export {
     fbAddNewMessage,
     fbGetMessagesConversationSuscription,
     fbCreateUser,
+    fbGetAllUsers,
     fbGetUser,
     fbGetUserByEmail,
     doSignInWithEmailAndPassword,
