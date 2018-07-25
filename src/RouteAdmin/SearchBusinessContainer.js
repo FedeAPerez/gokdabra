@@ -42,7 +42,7 @@ class SearchBusinessContainer extends Component {
     render() {
         return (
             <section>                
-                <Text centered lateralMargin>¡Estas son la personas y emprendedores que ya están confiando en KDABRA!</Text>
+                <Text centered lateralMargin>¡Estas son la personas y emprendedores que ya están usando KDABRA!</Text>
                 {
                     this.state.usersList &&
                     this.state.usersList.map((element, index) => {
@@ -52,6 +52,7 @@ class SearchBusinessContainer extends Component {
                                 userName={ element.user_name }  
                                 userShowName ={ element.show_name }
                                 userDescription={ element.user_description }
+                                userTag={ element.user_tag }
                             />
                         );
                     })

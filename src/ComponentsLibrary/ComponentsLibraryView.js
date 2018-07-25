@@ -52,6 +52,7 @@ class ComponentsLibraryView extends Component {
                         userShowName="Federico"
                         userName = "fede"
                         userDescription="Fundador de KDABRA - Atentos a las novedades!"
+                        userTag = "Emprendedor"
                     />
 
                     <UserDisplay
