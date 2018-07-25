@@ -2,6 +2,7 @@
  * ESTRUCTURA GENERAL
  * */
 html, body {
+    -webkit-font-smoothing: antialiased;
 margin: 0;
 padding: 0;
 height: 100%;
@@ -70,7 +71,10 @@ min-height: 100%;
     position: relative;
 
 }
-
+p {
+    backface-visibility: hidden;
+    -webkit-font-smoothing: subpixel-antialiased;
+}
 @media only screen and (max-width: 768px) 
 {
     .base-container {

@@ -4,7 +4,7 @@ import Section from './Section';
 import Tag from './Tag'
 const UserDisplay = ({...props, children}) => {
     return (
-        <Section noLaterals withBottomBorders {...props} onClick={props.onClick}>
+        <Section noLaterals withBottomBorders withHover {...props} onClick={props.onClick}>
             <Section noPadding relative>
                 {
                     (props.userTag && props.userTag !== '') &&
