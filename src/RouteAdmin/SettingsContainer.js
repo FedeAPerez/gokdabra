@@ -114,6 +114,9 @@ class SettingsContainer extends Component {
                         </Button>
                         <Text primary noMargin withPadding withBackground>General</Text>
                         <Setting 
+                            settingName= "Acerca de KDABRA" 
+                            settingDescrption= "Versión Demo" />
+                        <Setting 
                             settingName="Cerrar Sesión" 
                             onClick={ this.closeSession.bind(this)} />
 
