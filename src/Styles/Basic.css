@@ -20,6 +20,9 @@ p {
     font-weight: 400;
     text-align: center;
 }
+a {
+    color: inherit;
+}
 p .secondary-label {
     color: #95a5a6;
 }
