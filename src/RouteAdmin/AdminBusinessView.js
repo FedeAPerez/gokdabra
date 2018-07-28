@@ -39,7 +39,7 @@ class AdminBusinessView extends Component {
         const userPojo = fbGetUser(this.props.match.params.user);
         userPojo.then(
         (snapshot) => { 
-            
+            console.log("seleccionando el usuario");
             this.props.dispatch(Actions.selectUser(snapshot.val()));
             this.setState({ userOb : snapshot.val() });
         })
