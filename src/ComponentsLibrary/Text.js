@@ -5,6 +5,9 @@ function getColor(props) {
     if(props.secondary) {
         return 'rgb(101, 119, 134)';
     }
+    if(props.primary) {
+        return '#e17055';
+    }
     if(props.warning) {
         return '#d63031';
     }
@@ -22,6 +25,8 @@ const TextComponent = styled.p`
     margin-right: ${ props => {if(props.lateralMargin) return '1rem' } };
     
     margin-left: ${ props => {if(props.lateralMargin) return '1rem' } };
+    padding: ${ props => {if(props.withPadding) return '1rem' } };
+    background-color:  ${ props => {if(props.withBackground) return '#dfe6e9' } };
 `;
 
 const BoldText = styled.span`

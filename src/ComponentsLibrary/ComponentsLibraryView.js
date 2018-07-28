@@ -47,9 +47,7 @@ class ComponentsLibraryView extends Component {
                 </Section>
                 <Section>
                     <Title h2>Configuraciones de Usuario</Title>
-                    <Setting settingName="Mensaje de Bienvenida">
-                        {"Es la forma en la que recibís a tus usuarios!"}
-                    </Setting>
+                    <Setting settingName="Mensaje de Bienvenida" />
                     <Setting settingName="Horario de Atención" settingDescrption="Para mostrar tu horario de atención" />
                     <Setting settingName="Cerrar Sesión" />
                 </Section>

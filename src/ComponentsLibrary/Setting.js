@@ -3,17 +3,18 @@ import React from 'react';
 import Text from './Text';
 import Section from './Section';
 
+/**
+ * @augments {Setting<{settingName: string, settingDescrption: string}}, State>}
+ */
 const Setting = ({ ...props, children}) => {
     
-    var childrenText = children || props.settingDescrption;
+    var childrenText = props.settingDescrption || children ;
     return (
         <Section noLaterals withBottomBorders withHover {...props} onClick={props.onClick}>
         <Section noPadding relative>
             <Text bolded noMargin>{props.settingName}</Text>
-            {
-                childrenText &&
-                <Text noMargin>{childrenText}</Text>
-            }
+            <Text noMargin>{childrenText}</Text>
+            {children}
         </Section>
         </Section>
     );

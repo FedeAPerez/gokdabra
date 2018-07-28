@@ -85,6 +85,8 @@ class SettingsContainer extends Component {
             return (
                 <main className="admin-settings-container">
                     <section className="admin-settings">
+                    
+                    <Text primary noMargin withPadding withBackground>{'@'+ this.props.user.user_name }</Text>
                     <Text centered>{
                         this.props.user.isBusiness ?
                         "Actualizá tu mensaje de bienvenida para que todos conozcan lo mejor de vos!":
@@ -110,6 +112,7 @@ class SettingsContainer extends Component {
                         >
                             Actualizar
                         </Button>
+                        <Text primary noMargin withPadding withBackground>General</Text>
                         <Setting 
                             settingName="Cerrar Sesión" 
                             onClick={ this.closeSession.bind(this)} />
