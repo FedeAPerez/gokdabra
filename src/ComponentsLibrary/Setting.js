@@ -1,4 +1,4 @@
-import styled from "../../node_modules/styled-components";
+import PropTypes from 'prop-types';
 import React from 'react';
 import Text from './Text';
 import Section from './Section';
@@ -17,6 +17,10 @@ const Setting = ({ ...props, children}) => {
         </Section>
         </Section>
     );
+};
+
+Setting.propTypes = {
+    settingName: PropTypes.string
 };
 
 export default Setting;

@@ -12,6 +12,7 @@ import { connect } from 'react-redux';
 import { Text } from '../ComponentsLibrary/Text';
 import { Button } from '../ComponentsLibrary/Button';
 import { TextGlobeKdabra } from '../ComponentsLibrary/TextGlobe';
+import  Setting  from '../ComponentsLibrary/Setting';
 import { fbUpdateOnboarding, fbGetOnboarding } from '../firebase';
 /* *
  * Hojas de Estilo y Constantes
@@ -109,12 +110,10 @@ class SettingsContainer extends Component {
                         >
                             Actualizar
                         </Button>
-    
-                        <Button
-                            onClick={ this.closeSession.bind(this)  }
-                        >
-                            Cerrar Sesión
-                        </Button>
+                        <Setting 
+                            settingName="Cerrar Sesión" 
+                            onClick={ this.closeSession.bind(this)} />
+
                     </footer>
                     </section>
                 </main>
