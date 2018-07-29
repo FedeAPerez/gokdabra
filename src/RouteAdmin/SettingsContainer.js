@@ -109,10 +109,17 @@ class SettingsContainer extends Component {
                             Actualizar
                         </Button>
                     </Setting>
+                    <Setting 
+                            settingName= "Compartir" 
+                            settingDescrption= "Apretá para copiar el link y llevarlo a tus fans!" />
+                    <Text primary noMargin withPadding withBackground>Aprender</Text>
+                    <Setting 
+                            settingName= "Mejorar mi comunicación" 
+                            settingDescrption= "¿Cómo mejorar la comunicación usando KDABRA?" />
                         <Text primary noMargin withPadding withBackground>General</Text>
                         <Setting 
                             settingName= "Acerca de KDABRA" 
-                            settingDescrption= "Versión Demo" />
+                            settingDescrption= "Versión Demo - Ingresá para ver actualizaciones" />
                         <Setting 
                             settingName="Cerrar Sesión" 
                             onClick={ this.closeSession.bind(this)} />
