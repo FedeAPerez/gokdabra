@@ -10,11 +10,10 @@ const Setting = ({ ...props, children}) => {
     
     var childrenText = props.settingDescrption || children ;
     return (
-        <Section noLaterals withBottomBorders withHover {...props} onClick={props.onClick}>
+        <Section noLaterals withBottomBorders {...props} onClick={props.onClick}>
         <Section noPadding relative>
             <Text bolded noMargin>{props.settingName}</Text>
             <Text noMargin>{childrenText}</Text>
-            {children}
         </Section>
         </Section>
     );

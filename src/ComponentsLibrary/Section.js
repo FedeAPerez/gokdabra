@@ -9,15 +9,20 @@ const Section = styled.div`
     padding-bottom: ${ props => props.noPadding ? '0rem' : '1rem'};
     border-bottom: ${ props => props.withBottomBorders ? '1px solid #dfe6e9' : 'none'}
     position: ${ props => props.relative ? 'relative' : 'initial'};
+    
+    background-position: center;
+    transition: background 0.8s;
 
     &:hover {
-        background-color: ${ props => props.withHover ? '#f4f5f5' : 'inherit'};
+        background-color: #f4f5f5;
         
-        cursor: ${ props => props.withHover ? 'pointer' : 'inherit'};
+        cursor: pointer;
     }
 
     &:active {
-        background-color: ${ props => props.withHover ? '#f4f5f5' : 'inherit'};
+        background-color: #f4f5f5;
+        background-size: 100%;
+        transition: background 0s;
     }
 `;
 

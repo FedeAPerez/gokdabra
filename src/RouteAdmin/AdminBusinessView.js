@@ -11,7 +11,6 @@ import { connect } from 'react-redux';
 import AdminBusinessHeader from './AdminBusinessHeader';
 import MessagesContainer from './MessagesContainer';
 import SettingsContainer from './SettingsContainer';
-import ShareContainer from './ShareContainer';
 import SearchBusinessContainer from './SearchBusinessContainer';
 import { fbGetUser  } from '../firebase';
 import * as Actions from '../redux/actions/actions';
@@ -23,7 +22,6 @@ import './AdminBusinessView.css';
 const keyMap = {
     'chat' : MessagesContainer,
     'settings' : SettingsContainer,
-    'share': ShareContainer,
     'search': SearchBusinessContainer,
     'default' : SearchBusinessContainer
 };
@@ -33,7 +31,7 @@ class AdminBusinessView extends Component {
         super(props);
         this.state = {
             'userOb' : null,
-            'selected_container' : ShareContainer
+            'selected_container' : SearchBusinessContainer
         };
 
         const userPojo = fbGetUser(this.props.match.params.user);

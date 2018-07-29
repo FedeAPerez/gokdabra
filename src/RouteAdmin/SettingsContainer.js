@@ -87,16 +87,12 @@ class SettingsContainer extends Component {
                     <section className="admin-settings">
                     
                     <Text primary noMargin withPadding withBackground>{'@'+ this.props.user.user_name }</Text>
-                    <Text centered>{
-                        this.props.user.isBusiness ?
-                        "Actualizá tu mensaje de bienvenida para que todos conozcan lo mejor de vos!":
-                        "Actualizá tu mensaje de bienvenida, para que todos conozcan lo mejor de tu negocio."
-                        }
-                    </Text>
                     
+                    <Setting 
+                            settingName= "Mensaje de Bienvenida" 
+                            settingDescrption= "Es tu forma de recibir a los otros usuarios en KDABRA.">
                     <TextGlobeKdabra onboarding
                             dangerouslySetInnerHTML= { this.getHtml() }></TextGlobeKdabra>
-                    <footer>
                         <TextField 
                             style= { styledTextField }
                             floatingLabelStyle= { styledFloated }
@@ -112,6 +108,7 @@ class SettingsContainer extends Component {
                         >
                             Actualizar
                         </Button>
+                    </Setting>
                         <Text primary noMargin withPadding withBackground>General</Text>
                         <Setting 
                             settingName= "Acerca de KDABRA" 
@@ -120,7 +117,6 @@ class SettingsContainer extends Component {
                             settingName="Cerrar Sesión" 
                             onClick={ this.closeSession.bind(this)} />
 
-                    </footer>
                     </section>
                 </main>
             );
