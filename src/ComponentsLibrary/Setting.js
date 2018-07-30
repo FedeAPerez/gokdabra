@@ -14,6 +14,9 @@ const Setting = ({ ...props, children}) => {
         <Section noPadding relative>
             <Text bolded noMargin>{props.settingName}</Text>
             <Text noMargin>{childrenText}</Text>
+            {
+                // if children -> renderizar como modal
+            }
         </Section>
         </Section>
     );
