@@ -35,7 +35,7 @@ class CreateUserContainer extends Component {
     authUser() {
         const { dispatch } = this.props;
         dispatch(Actions.startFetching());
-        doCreateUserWithEmailAndPassword(this.state.email, this.state.password)
+        doCreateUserWithEmailAndPassword(this.state.email.toLowerCase(), this.state.password)
         .then((res) => {
                 var user = {};
                 user.email = this.state.email;
