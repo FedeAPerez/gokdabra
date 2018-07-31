@@ -33,7 +33,7 @@ class UserContainer extends Component {
     authUser() {
         const { dispatch } = this.props;
         dispatch(Actions.startFetching());
-        doSignInWithEmailAndPassword(this.state.email, this.state.password)
+        doSignInWithEmailAndPassword(this.state.email.toLowerCase(), this.state.password)
         .then((res) => {
 
             const userPojo = fbGetUserByEmail(this.state.email);
