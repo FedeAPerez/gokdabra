@@ -4,6 +4,7 @@
  * */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import moment from 'moment';
 /* *
  * Código de librerías internas
  * */ 
@@ -48,10 +49,18 @@ class ConversationMessagesContainer extends Component {
     }
 
 
-    onAnswerSubmit = (input_value, text) => {     
+    onAnswerSubmit = (input_value, text) => {
+        var time = moment().format('HH:mm');
+        var SubmitedMessage = {
+            receiver : {},
+            sender : {},
+            payload : {
+                time : time
+            }
+        }    
         // Creo o actualizo la conversación, agrego nuevos mensajes
-        fbCreateNewConversation(this.props.visitedUser.user_name, this.props.user.user_name, text, "22:38");
-        fbAddNewMessage(this.props.visitedUser.user_name, this.props.user.user_name, text, "22:38", this.props.user.user_name);
+        fbCreateNewConversation(this.props.visitedUser.user_name, this.props.user.user_name, text, time);
+        fbAddNewMessage(this.props.visitedUser.user_name, this.props.user.user_name, text, time, this.props.user.user_name);
 
     };
 
