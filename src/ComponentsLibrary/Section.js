@@ -10,19 +10,21 @@ const Section = styled.div`
     border-bottom: ${ props => props.withBottomBorders ? '1px solid #dfe6e9' : 'none'}
     position: ${ props => props.relative ? 'relative' : 'initial'};
     
+    background-color: ${props => props.disabled ? '#E0DDDD' : ''};
+    
     background-position: center;
     transition: background 0.8s;
 
     &:hover {
-        background-color: #f4f5f5;
+        background-color: ${props => props.disabled ? '' : '#f4f5f5'};
         
-        cursor: pointer;
+        cursor: ${props => props.disabled ? '' : 'pointer'};
     }
 
     &:active {
-        background-color: #f4f5f5;
-        background-size: 100%;
-        transition: background 0s;
+        background-color: ${props => props.disabled ? '' : '#95a5a6'};
+        background-size: ${props => props.disabled ? '' : '100%'};
+        transition: ${props => props.disabled ? '' : 'background 0s'};
     }
 `;
 

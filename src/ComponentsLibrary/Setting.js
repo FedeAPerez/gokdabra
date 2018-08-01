@@ -11,7 +11,7 @@ const Setting = ({ ...props, children}) => {
     var childrenText = props.settingDescrption || children ;
     return (
         <Section noLaterals withBottomBorders {...props} onClick={props.onClick}>
-        <Section noPadding relative>
+        <Section disabled={props.disabled} noPadding relative>
             <Text bolded noMargin>{props.settingName}</Text>
             <Text noMargin>{childrenText}</Text>
             {
