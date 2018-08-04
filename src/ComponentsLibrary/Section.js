@@ -10,7 +10,7 @@ const Section = styled.div`
     border-bottom: ${ props => props.withBottomBorders ? '1px solid #dfe6e9' : 'none'}
     position: ${ props => props.relative ? 'relative' : 'initial'};
     
-    background-color: ${props => props.disabled ? '#E0DDDD' : ''};
+    background-color: ${props => props.disabled ? '#E0DDDD' : 'white'};
     
     background-position: center;
     transition: background 0.8s;
@@ -28,4 +28,36 @@ const Section = styled.div`
     }
 `;
 
+const ModalSection = styled.div`
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    background-color: rgb(34,47,62, 0.9);
+    margin: 0rem auto;
+`;
+
+const ModalInnerSection = styled.div`
+    position: absolute;
+    top: 1rem;
+    bottom: 1rem;
+    left: 1rem;
+    right: 1rem;
+    background-color: white;
+    padding: 1rem;
+`;
+const FlexSection = styled.div`
+    display: flex;
+    flex-direction: row;
+    flex-flow: row;
+    justify-content: space-around;
+`;
 export default Section;
+export {
+    Section,
+    ModalSection,
+    ModalInnerSection,
+    FlexSection
+}

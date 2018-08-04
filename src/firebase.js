@@ -30,6 +30,10 @@ function fbCreateUser(user) {
     firebase.database().ref('/users/'+user.user_name+'/').set(user);
 }
 
+function fbModifyUser(user, parameter, value) {
+    firebase.database().ref('/users/'+user.user_name+'/'+parameter).set(value);
+}
+
 function fbGetUser(user) {
     const route = '/users/' + user.toLowerCase() + '/';
     return firebase.database().ref(route).once('value');
@@ -137,6 +141,7 @@ export {
     fbCreateUser,
     fbGetAllUsers,
     fbGetUser,
+    fbModifyUser,
     fbGetUserByEmail,
     doSignInWithEmailAndPassword,
     doCreateUserWithEmailAndPassword

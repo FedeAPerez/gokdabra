@@ -10,7 +10,7 @@ const Setting = ({ ...props, children}) => {
     
     var childrenText = props.settingDescrption || children ;
     return (
-        <Section noLaterals withBottomBorders {...props} onClick={props.onClick}>
+        <Section noLaterals withBottomBorders {...props} onClick={(e) => { props.onClick ? props.onClick(e, props.value) : null }}>
         <Section disabled={props.disabled} noPadding relative>
             <Text bolded noMargin>{props.settingName}</Text>
             <Text noMargin>{childrenText}</Text>
@@ -27,3 +27,6 @@ Setting.propTypes = {
 };
 
 export default Setting;
+export {
+    Setting
+}

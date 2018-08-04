@@ -65,8 +65,14 @@ const Button = ({children, ...props}) => {
     );
 };
 
+const SimpleButton = styled.span`
+    ${textstyles}
+    text-transform: uppercase;
+    color : #e84118;
+`;
 
 export default Button;
 export {
-    Button
+    Button,
+    SimpleButton
 };

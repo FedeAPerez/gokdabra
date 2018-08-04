@@ -10,10 +10,9 @@ import { connect } from 'react-redux';
  * Código de librerías internas
  * */
 import { Text } from '../ComponentsLibrary/Text';
-import { Button } from '../ComponentsLibrary/Button';
-import { TextGlobeKdabra } from '../ComponentsLibrary/TextGlobe';
 import  Setting  from '../ComponentsLibrary/Setting';
-import { fbUpdateOnboarding, fbGetOnboarding } from '../firebase';
+import  { ModalSetting } from '../ComponentsLibrary/ModalSetting';
+import { fbUpdateOnboarding, fbGetOnboarding, fbModifyUser } from '../firebase';
 /* *
  * Hojas de Estilo y Constantes
  * */
@@ -25,57 +24,49 @@ class SettingsContainer extends Component {
         this.state = {
             onboarding : '',
             newOnboarding : '',
-            enableUpdate : false
+            enableUpdate : false,
+            show_settings : {
+                show_name : { show : false, value : "" }
+            }
         };
     }
 
-    changeOnBoarding(e, value) {
+    showSetting(e, idSetting) {
         e.preventDefault();
-        var shouldEnable = value !== '';
-        this.setState({ newOnboarding : value, enableUpdate : shouldEnable});
+        var newState = {...this.state.show_settings};
+        newState[idSetting].show = !newState[idSetting].show;
+        this.setState({ show_settings : newState });
     }
 
-    updateOnboarding() {
-        const { user } = this.props;
-        if(this.state.newOnboarding !== '' ){
-            fbUpdateOnboarding(user.user_name, this.state.newOnboarding);
-            
-            this.setState({ newOnboarding : '' });
-        }
+    changeSetting(e, idSetting) {
+        e.preventDefault();
+        console.log(e.target.value);
+        var newState = {...this.state.show_settings};
+        newState[idSetting].value = e.target.value;
+        this.setState({ show_settings : newState });
+    }
+
+    updateSetting(e, idSetting, value) {
+        e.preventDefault();
+        fbModifyUser(this.props.user, idSetting, value);
+        var newState = {...this.state.show_settings};
+        newState[idSetting].show = !newState[idSetting].show;
+        newState[idSetting].value = value;
+        this.setState({ show_settings : newState });
     }
 
     componentDidMount() {
-        const { user } = this.props;
-        fbGetOnboarding(user.user_name)
-        .then((res) => {
-            this.setState({ onboarding : res.val().message });
-        })
-        .catch((err) => {
 
-        });
     }
+
     closeSession() {
         localStorage.removeItem("userSession");
         this.setState({ closeSession : true });
     }
-    getHtml() {
-        if(this.state.onboarding !== '')
-            return { __html : this.state.onboarding };
-        else
-            return { __html : "Acá vas a poder ver tu mensaje"};
-    }
 
     render() {
-        const styledTextField = {
-            margin: '0rem auto',
-            display: 'block'
-        };
-        const styledFocusUnderline = {
-            borderColor: "#f16334"
-        }
-        const styledFloated = {
-            color: "black"
-        }
+        const { user } = this.props;
+
         if(this.state.closeSession) {
             return (
                 <Redirect to='/login' />
@@ -89,44 +80,49 @@ class SettingsContainer extends Component {
                     <Text primary noMargin withPadding withBackground>{'@'+ this.props.user.user_name }</Text>
                     
                     <Setting
-                            disabled 
-                            settingName= "Mensaje de Bienvenida" 
-                            settingDescrption= "Es tu forma de recibir a los otros usuarios en KDABRA.">
-                    <TextGlobeKdabra onboarding
-                            dangerouslySetInnerHTML= { this.getHtml() }></TextGlobeKdabra>
-                        <TextField 
-                            style= { styledTextField }
-                            floatingLabelStyle= { styledFloated }
-                            underlineFocusStyle = { styledFocusUnderline }
-                            floatingLabelText="Mensaje de Bienvenida" 
-                            onChange={this.changeOnBoarding.bind(this)}
-                            value={this.state.newOnboarding}
-                            multiLine
-                        />
-                        <Button
-                            disabled={ !this.state.enableUpdate }
-                            onClick={ this.updateOnboarding.bind(this) }
-                        >
-                            Actualizar
-                        </Button>
+                        disabled 
+                        settingName= "Mensaje de Bienvenida" 
+                        settingDescrption= "Es tu forma de recibir a los otros usuarios en KDABRA.">
                     </Setting>
+
                     <Setting
-                            disabled 
-                            settingName= "Compartir" 
-                            settingDescrption= "Apretá para copiar el link y llevarlo a tus fans!" />
+                        settingName= "Nombre para mostrar" 
+                        settingDescrption= { user.show_name }
+                        value="show_name"
+                        onClick={this.showSetting.bind(this)} />
+                    {
+                        this.state.show_settings.show_name.show && 
+                        <ModalSetting
+                            settingName= "Nombre para mostrar" 
+                            settingDescrption= { user.show_name }
+                            id="show_name"
+                            value={this.state.show_settings.show_name.value}
+                            onChange={this.changeSetting.bind(this)}
+                            onCancel={this.showSetting.bind(this)}
+                            onClick={this.updateSetting.bind(this)} />
+                        
+                    } 
+                    <Setting
+                        disabled 
+                        settingName= "Compartir" 
+                        settingDescrption= "Apretá para copiar el link y llevarlo a tus fans!" />
+                    
                     <Text primary noMargin withPadding withBackground>Aprender</Text>
+
                     <Setting 
-                            disabled
-                            settingName= "Mejorar mi comunicación" 
-                            settingDescrption= "¿Cómo mejorar la comunicación usando KDABRA?" />
-                        <Text primary noMargin withPadding withBackground>General</Text>
-                        <Setting
-                            disabled 
-                            settingName= "Acerca de KDABRA" 
-                            settingDescrption= "Versión Demo - Ingresá para ver actualizaciones" />
-                        <Setting 
-                            settingName="Cerrar Sesión" 
-                            onClick={ this.closeSession.bind(this)} />
+                        disabled
+                        settingName= "Mejorar mi comunicación" 
+                        settingDescrption= "¿Cómo mejorar la comunicación usando KDABRA?" />
+                    
+                    <Text primary noMargin withPadding withBackground>General</Text>
+
+                    <Setting
+                        disabled 
+                        settingName= "Acerca de KDABRA" 
+                        settingDescrption= "Versión Demo - Ingresá para ver actualizaciones" />
+                    <Setting 
+                        settingName="Cerrar Sesión" 
+                        onClick={ this.closeSession.bind(this)} />
 
                     </section>
                 </main>

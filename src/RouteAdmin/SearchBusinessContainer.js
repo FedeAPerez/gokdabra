@@ -27,7 +27,6 @@ class SearchBusinessContainer extends Component {
     
         usersRef
         .then((res) => {
-            console.log(res.val());
             var keysList = Object.keys(res.val());
             var usersList = [];
             keysList.forEach(element => {
@@ -49,7 +48,8 @@ class SearchBusinessContainer extends Component {
                     this.state.usersList.map((element, index) => {
                         return (
                             <Link
-                            to={"/" + element.user_name}
+                            key={ "user_display_link" + index}
+                            to={ "/" + element.user_name}
                             >
                                 <UserDisplay
                                     key={ "user_display_" + index} 
