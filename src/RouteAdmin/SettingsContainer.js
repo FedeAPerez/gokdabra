@@ -27,7 +27,8 @@ class SettingsContainer extends Component {
             enableUpdate : false,
             show_settings : {
                 show_name : { show : false, value : "" },
-                user_description : { show : false, value : "" }
+                user_description : { show : false, value : "" },
+                user_tag : { show : false, value : "" }
             }
         };
     }
@@ -111,7 +112,7 @@ class SettingsContainer extends Component {
                     {
                         this.state.show_settings.user_description.show && 
                         <ModalSetting
-                            settingName= "Nombre para mostrar" 
+                            settingName= "Descripción" 
                             settingDescrption= { user.user_description }
                             id="user_description"
                             value={this.state.show_settings.user_description.value}
@@ -119,7 +120,24 @@ class SettingsContainer extends Component {
                             onCancel={this.showSetting.bind(this)}
                             onClick={this.updateSetting.bind(this)} />
                         
-                    }  
+                    }
+                     <Setting
+                        settingName= "Tag o Etiqueta" 
+                        settingDescrption= { user.user_tag }
+                        value="user_tag"
+                        onClick={this.showSetting.bind(this)} />
+                    {
+                        this.state.show_settings.user_tag.show && 
+                        <ModalSetting
+                            settingName= "Tag o Etiqueta" 
+                            settingDescrption= { user.user_tag }
+                            id="user_tag"
+                            value={this.state.show_settings.user_tag.value}
+                            onChange={this.changeSetting.bind(this)}
+                            onCancel={this.showSetting.bind(this)}
+                            onClick={this.updateSetting.bind(this)} />
+                        
+                    }   
                     <Setting
                         disabled 
                         settingName= "Compartir" 
