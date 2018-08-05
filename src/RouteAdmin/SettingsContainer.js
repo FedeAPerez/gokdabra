@@ -26,7 +26,8 @@ class SettingsContainer extends Component {
             newOnboarding : '',
             enableUpdate : false,
             show_settings : {
-                show_name : { show : false, value : "" }
+                show_name : { show : false, value : "" },
+                user_description : { show : false, value : "" }
             }
         };
     }
@@ -101,7 +102,24 @@ class SettingsContainer extends Component {
                             onCancel={this.showSetting.bind(this)}
                             onClick={this.updateSetting.bind(this)} />
                         
-                    } 
+                    }
+                     <Setting
+                        settingName= "Descripción" 
+                        settingDescrption= { user.user_description }
+                        value="user_description"
+                        onClick={this.showSetting.bind(this)} />
+                    {
+                        this.state.show_settings.user_description.show && 
+                        <ModalSetting
+                            settingName= "Nombre para mostrar" 
+                            settingDescrption= { user.user_description }
+                            id="user_description"
+                            value={this.state.show_settings.user_description.value}
+                            onChange={this.changeSetting.bind(this)}
+                            onCancel={this.showSetting.bind(this)}
+                            onClick={this.updateSetting.bind(this)} />
+                        
+                    }  
                     <Setting
                         disabled 
                         settingName= "Compartir" 

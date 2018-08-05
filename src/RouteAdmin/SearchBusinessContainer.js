@@ -30,7 +30,6 @@ class SearchBusinessContainer extends Component {
             var keysList = Object.keys(res.val());
             var usersList = [];
             keysList.forEach(element => {
-                console.log(res.val()[element]);
                 usersList.push(res.val()[element]);
             });
             this.setState({ usersList : usersList });
@@ -39,6 +38,7 @@ class SearchBusinessContainer extends Component {
             console.log(err);
         });
     }
+
     render() {
         return (
             <section>                
