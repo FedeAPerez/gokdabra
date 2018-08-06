@@ -1,5 +1,6 @@
 .message-div {
     position: relative;
+    display: flex;
 }
 .message-handler-container {
     display: block;

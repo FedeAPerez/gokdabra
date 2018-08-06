@@ -9,6 +9,7 @@ import TextField from 'material-ui/TextField';
  Código Propio y librerías desarrolladas por KDABRA
  */
 import MessageSubmitButton from './MessageSubmitButton';
+import MessageMoreOptions from './MessageMoreOptions';
 import './MessageHandler.css';
 const __MESSAGE_HINT = "Escribí un mensaje...";
 const __MESSAGE_HANDLER_CONTAINER_CLASS = "message-handler-container";
@@ -28,6 +29,11 @@ class MessageHandler extends Component {
             this.props.onAnswerSubmit("text_input", this.state.value);
             this.setState({ value : ''});
         }
+    }
+
+    handleSeeMore(e) {
+        e.preventDefault();
+        console.log("ver más opciones");
     }
 
     handleChange = (e) => {        
@@ -67,6 +73,8 @@ class MessageHandler extends Component {
                 <div 
                     className= { __MESSAGE_DIV_CLASS }
                 >
+                    <MessageMoreOptions
+                        onClick={this.handleSeeMore.bind(this)} />
                     <TextField 
                         hintText= {__MESSAGE_HINT}
                         style= {inputStyle}
@@ -75,7 +83,7 @@ class MessageHandler extends Component {
                         onFocus={ this.scrollToHandler.bind(this) }
                         /> 
                     <MessageSubmitButton 
-                        onClick={this.handleSubmit.bind(this)}/>
+                        onClick={this.handleSubmit.bind(this)} />
 
                 </div>
                 </form>
