@@ -34,11 +34,11 @@ class MessageContainer extends Component {
                 </article>
 
                 {
-                    this.props.message.hour &&
+                    this.props.message.time &&
                     <aside
                         className="message-hour"
                     >
-                    { this.props.message.hour }
+                    { this.props.message.time }
                     </aside>
                 }
                 <div className="clear">
