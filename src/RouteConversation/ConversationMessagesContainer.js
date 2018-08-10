@@ -12,6 +12,7 @@ import { fbGetMessagesConversationSuscription } from '../firebase';
 import MessagesList from './MessagesList';
 import { getCompleteConversation } from '../redux/actions/actions';
 import MessageHandler from '../ComponentsLibrary/MessageHandler';
+import ExtraHandler from './ExtraHandler';
 /* *
  * Hojas de Estilo y Constantes
  * */ 
@@ -20,7 +21,7 @@ class ConversationMessagesContainer extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            writing : false
+            addExtra : false
         }
 }
 
@@ -47,11 +48,37 @@ class ConversationMessagesContainer extends Component {
         
     }
 
+    onExtraChange = (e) => {
+        this.setState((prevState, props) => {
+            return { addExtra : !prevState.addExtra };
+        });
+    }
 
-    onAnswerSubmit = (input_value, text) => {
+    onExtraCreate = (e) => {
+        var kdabraSubmitedMessage = {
+            receiver : this.props.visitedUser,
+            sender : this.props.user,
+            isBot : true,
+            category : "event",
+            payload : {
+                text : "¡Listo! Ya les cree el evento, próximamente lo van a poder ver en sus agendas. &#x1F558"
+            }
+        };
+
+        var conv = new Conversation();
+        kdabraSubmitedMessage = conv.createNewMessage(kdabraSubmitedMessage);
+        
+        this.setState((prevState, props) => {
+            return { addExtra : !prevState.addExtra };
+        });
+    }
+
+    onAnswerSubmit = (text) => {
         var submitedMessage = {
             receiver : this.props.visitedUser,
             sender : this.props.user,
+            isBot : false,
+            category : "text",
             payload : {
                 text : text
             }
@@ -70,7 +97,15 @@ class ConversationMessagesContainer extends Component {
                 />
                 <MessageHandler 
                     onAnswerSubmit = { this.onAnswerSubmit.bind(this) } 
+                    onExtraSubmit = { this.onExtraChange.bind(this) }
                 />
+                {
+                    this.state.addExtra &&
+                    <ExtraHandler
+                        onExtraClose = { this.onExtraChange.bind(this) }
+                        onExtraCreate = { this.onExtraCreate.bind(this) }
+                    />
+                }
             </section>
         );
     }

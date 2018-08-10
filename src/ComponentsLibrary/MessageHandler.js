@@ -26,14 +26,15 @@ class MessageHandler extends Component {
     handleSubmit(e) {
         e.preventDefault();
         if(this.props.onAnswerSubmit) {
-            this.props.onAnswerSubmit("text_input", this.state.value);
+            this.props.onAnswerSubmit(this.state.value);
             this.setState({ value : ''});
         }
     }
 
     handleSeeMore(e) {
         e.preventDefault();
-        console.log("ver más opciones");
+        if(this.props.onExtraSubmit)
+            this.props.onExtraSubmit(e);
     }
 
     handleChange = (e) => {        

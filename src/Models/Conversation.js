@@ -44,7 +44,8 @@ class Conversation{
         const messageOb = {
             text : messagePayload.payload.text,
             type : {
-                category : "text_message"
+                category : messagePayload.category,
+                isBot : messagePayload.isBot
             },
             time : time,
             sender : messagePayload.sender.user_name

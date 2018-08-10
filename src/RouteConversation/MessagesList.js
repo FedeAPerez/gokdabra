@@ -8,6 +8,7 @@ import React, { Component } from 'react';
  * */ 
 
 import Message from './Message';
+import { TextGlobeKdabra } from '../ComponentsLibrary/TextGlobe';
 /* *
  * Hojas de Estilo y Constantes
  * */ 
@@ -30,13 +31,20 @@ class MessagesList extends Component {
                         (element, index) => {
                             console.log(element);
                             var elementClass = element.sender === this.props.user.user_name ? 'message-user' : '';
-                            return (
-                                <Message 
-                                    message={ element } 
-                                    key={"conversation-messages" + index} 
-                                    class = { elementClass }
-                                />
-                            );
+                            if((element.type || {}).isBot) {
+                                return (
+                                    <TextGlobeKdabra>{ element.text }</TextGlobeKdabra>
+                                );
+                            }
+                            else {
+                                return (
+                                    <Message 
+                                        message={ element } 
+                                        key={"conversation-messages" + index} 
+                                        class = { elementClass }
+                                    />
+                                );
+                            }
                         }
                     )
                 }

@@ -45,11 +45,16 @@ const TextGlobe = ({children, ...props}) => (
     </TextArticle>
 );
 
+const getMessageHtml = (element) => {
+    return { __html: element };
+}
+
 const TextGlobeKdabra = ({children, ...props}) => (
     <TextArticle>
-    <KdabraTextGlobe {...props}>
-        {children}
-    </KdabraTextGlobe>
+        <KdabraTextGlobe 
+            {...props} 
+            dangerouslySetInnerHTML= { getMessageHtml(children) }
+        />
     </TextArticle>
 );
 

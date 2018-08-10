@@ -3,13 +3,13 @@
  * */
 html, body {
     -webkit-font-smoothing: antialiased;
-margin: 0;
-padding: 0;
-height: 100%;
-width: 100%;
-max-width: 100%;
-overflow-x: hidden;
-background-color: #f16334;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    background-color: #f16334;
 }
 html {
     overflow: scroll;
@@ -23,13 +23,8 @@ p {
 a {
     color: inherit;
 }
-p .secondary-label {
-    color: #95a5a6;
-}
-p .primary-label {
-    color: #f16334;
-    font-weight: 400;
-}
+
+
 ::-webkit-scrollbar {
     width: 0px;  /* remove scrollbar space */
     background: transparent;  /* optional: just make scrollbar invisible */
@@ -43,35 +38,23 @@ p .primary-label {
     visibility: hidden;
 }
 main {
-margin: 0 auto;
-width: 100%;
-min-height: 100%;
+    margin: 0 auto;
+    width: 100%;
+    min-height: 100%;
 }
 #root {
     background-color: white;
     display: block;
     min-height: 100%;
+    overflow: hidden;
+    overflow-y: hidden;
 }
 .clear {
     clear:both;
 }
-.view-container {
-    display: flex;
-    height: 100%;
-    flex-direction: column;
-}
+
 .base-container {
-    width: 100%;
-    height: 100%;
-    -ms-flex-positive: 1;
-    flex-grow: 1;
-    margin: 0 auto;
-    overflow: hidden;
-    overflow-y: auto;
-    display: flex;
-    clear: both;
-    flex-direction: column;
-    position: relative;
+    overflow: auto;
 
 }
 p {
@@ -104,11 +87,4 @@ p {
         min-width: 768px;
         width: 98%;
     }
-}
-.kdabra-orange {
-    color: #f16334;
-}
-.kdabra-orange-text {
-    color: #f16334;
-    font-weight: 500;
 }
