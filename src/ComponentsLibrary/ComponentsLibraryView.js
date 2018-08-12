@@ -15,6 +15,7 @@ import CheckBox from './CheckBox';
 import TextInput from './TextInput';
 import UserDisplay from './UserDisplay';
 import Setting from './Setting';
+import Event from './Event';
 /* *
  * Hojas de Estilo y Constantes
  * */ 
@@ -44,6 +45,10 @@ class ComponentsLibraryView extends Component {
                 <Section>
                     <Title h1>Librería de componentes - KDABRA</Title>
                     <Text>Esta librería busca unificar los componentes que se usan en todo el sitio</Text>
+                </Section>
+                <Section>
+                    <Title h2>Eventos</Title>
+                    <Event date="12/03/1995" hour="18:00" userName="Federico Pérez" />
                 </Section>
                 <Section>
                     <Title h2>Configuraciones de Usuario</Title>

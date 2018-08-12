@@ -9,8 +9,9 @@ import { connect } from 'react-redux';
  * Código de librerías internas
  * */ 
 import AdminBusinessHeader from './AdminBusinessHeader';
-import MessagesContainer from './MessagesContainer';
-import SettingsContainer from './SettingsContainer';
+import MessagesContainer from '../RouteConversations/MessagesContainer';
+import SettingsContainer from '../RouteSettings/SettingsContainer';
+import EventsContainer from '../RouteEvents/EventsContainer';
 import SearchBusinessContainer from './SearchBusinessContainer';
 import { fbGetUser  } from '../firebase';
 import * as Actions from '../redux/actions/actions';
@@ -23,6 +24,7 @@ const keyMap = {
     'chat' : MessagesContainer,
     'settings' : SettingsContainer,
     'search': SearchBusinessContainer,
+    'events': EventsContainer,
     'default' : SearchBusinessContainer
 };
 
@@ -37,7 +39,6 @@ class AdminBusinessView extends Component {
         const userPojo = fbGetUser(this.props.match.params.user);
         userPojo.then(
         (snapshot) => { 
-            console.log("seleccionando el usuario");
             this.props.dispatch(Actions.selectUser(snapshot.val()));
             this.setState({ userOb : snapshot.val() });
         })

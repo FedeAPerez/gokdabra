@@ -11,7 +11,9 @@ import React, { Component } from 'react';
  * Hojas de Estilo y Constantes
  * */ 
 class BlankFile extends Component {
-    
+    render() {
+        
+    }
 }
 
 export default BlankFile;

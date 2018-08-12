@@ -20,8 +20,10 @@ const __BUSINESS_HEADER_TEXT_IMAGE = "admin-business-header-text";
 const __BUSINESS_HEADER_HOME_IMAGE = "/content/images/HomeButton.svg";
 const __BUSINESS_HEADER_SETTINGS_IMAGE = "/content/images/SettingsButton.svg";
 const __BUSINESS_HEADER_SETTINGS_SELECTED_IMAGE = "/content/images/SettingsButtonSelected.svg";
-const __BUSINESS_HEADER_ANALYTICS_IMAGE = "/content/images/actions/search.svg";
-const __BUSINESS_HEADER_ANALYTICS_SELECTED_IMAGE = "/content/images/actions/search_active.svg";
+const SEARCH_IMAGE = "/content/images/actions/search.svg";
+const SEARCH_IMAGE_ACTIVE = "/content/images/actions/search_active.svg";
+const EVENT_IMAGE = "/content/images/actions/event.svg";
+const EVENT_IMAGE_ACTIVE = "/content/images/actions/event_orange.svg";
 const __BUSINESS_HEADER_MESSAGES_IMAGE = "/content/images/MessagesButton.svg";
 const __BUSINESS_HEADER_MESSAGES_SELECTED_IMAGE = "/content/images/MessagesButtonSelected.svg";
 
@@ -72,8 +74,8 @@ class AdminBusinessHeader extends Component {
                     <NavigationItem 
                         value= { "search" }
                         isSelected= { this.state.option_selected === "search" }
-                        defaultImage= { __BUSINESS_HEADER_ANALYTICS_IMAGE }
-                        selectedImage= { __BUSINESS_HEADER_ANALYTICS_SELECTED_IMAGE }
+                        defaultImage= { SEARCH_IMAGE }
+                        selectedImage= { SEARCH_IMAGE_ACTIVE }
                         navigateOption= { this.navigateOption.bind(this) }
                         showMessage= { "Buscar" }
                     />
@@ -84,6 +86,14 @@ class AdminBusinessHeader extends Component {
                         selectedImage= { __BUSINESS_HEADER_MESSAGES_SELECTED_IMAGE }
                         navigateOption= { this.navigateOption.bind(this) }
                         showMessage= { "Mensajes" }
+                    />
+                    <NavigationItem 
+                        value= { "events" }
+                        isSelected= { this.state.option_selected === "events" }
+                        defaultImage= { EVENT_IMAGE }
+                        selectedImage= { EVENT_IMAGE_ACTIVE }
+                        navigateOption= { this.navigateOption.bind(this) }
+                        showMessage= { "Eventos" }
                     />
                     <NavigationItem 
                         value= { "settings" }

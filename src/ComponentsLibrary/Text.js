@@ -17,7 +17,7 @@ const TextComponent = styled.p`
     font-family: 'Rubik', sans-serif;
     font-weight: ${ props => props.bolded ? '500' : '400' };
     text-align: ${ props => props.centered ? 'center' : 'left' };
-    font-size: 1rem;
+    font-size: ${ props => props.bigSize ? '1.8rem' : '1rem' };
     color: ${ props => getColor(props) };
     margin: ${ props => props.noMargin ? '0rem auto' : '1rem auto' };
     margin-top: ${ props => {if(props.topMargin) return '1rem' } };
@@ -36,17 +36,28 @@ const BoldText = styled.span`
     color: black;
     display: inline;
 `;
-
+const getMessageHtml = (element) => {
+    return { __html: element };
+}
 const Text = ({...props, children}) => {
     return (
-        <TextComponent {...props}>
-            {children}
+        <TextComponent {...props} >
+        {children}
         </TextComponent>
     );
 };
 
+const TextV2  = ({...props, children}) => (
+    <TextComponent
+        lateralMargin={props.lateralMargin}
+        withPadding={props.withPadding}
+        bigSize={props.bigSize}
+        dangerouslySetInnerHTML= { getMessageHtml(children) }>
+    </TextComponent>
+);
 export default Text;
 export {
     Text,
+    TextV2,
     BoldText
 };

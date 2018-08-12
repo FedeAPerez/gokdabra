@@ -1,12 +1,8 @@
-'use strict';
 import * as firebase from 'firebase';
 import ReactGA from 'react-ga';
 import moment from 'moment';
 
 class Conversation{
-
-    constructor() {
-    }
 
     updateConversation(messagePayload) {
         const conversation  = {
@@ -37,7 +33,8 @@ class Conversation{
         }
         firebase.database().ref('/conversations/'+messagePayload.receiver.user_name+'/'+messagePayload.sender.user_name).set(conversation);
         firebase.database().ref('/conversations/'+messagePayload.sender.user_name+'/'+messagePayload.receiver.user_name).set(conversationVisited);
-}
+    }
+    
     createNewMessage(messagePayload) {
         console.log(messagePayload);
         var time = moment().format('HH:mm');

@@ -2,7 +2,6 @@ import { fbGetOnboarding } from '../../firebase';
 import * as Actions from './actions_type';
 import moment from 'moment';
 
-// Informa del pedido de la lista de negocios
 const startFetching = function() {
   return {
     type: Actions.START_FETCHING,
@@ -10,7 +9,6 @@ const startFetching = function() {
   };
 }
 
-// Informa del pedido de la lista de negocios
 const finishedFetching = function() {
   return {
     type: Actions.FINISHED_FETCHING,
@@ -65,8 +63,6 @@ const getMessagesOnboarding = function(user_name) {
 const getCompleteConversation = function(messagesList) {
   return function (dispatch) {
     dispatch(startFetching());
-    // Enviar la conversación
-      console.log("procesemos los mensajes");
     dispatch(receiveMessages(messagesList));
     dispatch(finishedFetching());
   }

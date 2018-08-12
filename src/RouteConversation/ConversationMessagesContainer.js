@@ -8,6 +8,7 @@ import { connect } from 'react-redux';
  * Código de librerías internas
  * */ 
 import { Conversation } from '../Models/Conversation';
+import { Event } from '../Models/Event';
 import { fbGetMessagesConversationSuscription } from '../firebase';
 import MessagesList from './MessagesList';
 import { getCompleteConversation } from '../redux/actions/actions';
@@ -36,7 +37,6 @@ class ConversationMessagesContainer extends Component {
                 }, 5000);
             }
             else {
-                console.log(snapshot.val());
                 const { dispatch } = this.props;
                 dispatch(getCompleteConversation(
                     snapshot.val()
@@ -54,7 +54,7 @@ class ConversationMessagesContainer extends Component {
         });
     }
 
-    onExtraCreate = (e) => {
+    onExtraCreate = (e, extraEvent) => {
         var kdabraSubmitedMessage = {
             receiver : this.props.visitedUser,
             sender : this.props.user,
@@ -66,8 +66,18 @@ class ConversationMessagesContainer extends Component {
         };
 
         var conv = new Conversation();
-        kdabraSubmitedMessage = conv.createNewMessage(kdabraSubmitedMessage);
+        conv.createNewMessage(kdabraSubmitedMessage);
         
+        var eventPayload = {
+            creator : this.props.user,
+            receiver : this.props.visitedUser,
+            event : {
+                date : extraEvent.date.getDay() + "/" + extraEvent.date.getMonth() + "/" + extraEvent.date.getFullYear(),
+                time : extraEvent.time.getHours() + ":" + extraEvent.time.getMinutes() + ":" + extraEvent.time.getSeconds()
+            }
+        };
+        var event = new Event(eventPayload);
+        event.createEvent();
         this.setState((prevState, props) => {
             return { addExtra : !prevState.addExtra };
         });
@@ -84,7 +94,7 @@ class ConversationMessagesContainer extends Component {
             }
         }    
         var conv = new Conversation();
-        submitedMessage = conv.createNewMessage(submitedMessage);
+        conv.createNewMessage(submitedMessage);
     };
 
     render() {

@@ -19,9 +19,7 @@ function fbGetConversationsSuscription(entity_name) {
 }
 
 function fbGetMessagesConversationSuscription(user, visitedUser) {
-    console.log("voy por " + user + " de " + visitedUser);
     var routeRef = '/messages/' + user + '/' + visitedUser;
-    console.log(routeRef);
     return firebase.database().ref().child(routeRef);
 }
 

@@ -1,5 +1,5 @@
 module.exports = {
     getEmoji(emojiCode) {
-        return "" + emojiCode;
+        return "&#x" + emojiCode;
     }
 };

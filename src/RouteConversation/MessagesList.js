@@ -29,11 +29,12 @@ class MessagesList extends Component {
                     messages &&
                     messages.map(
                         (element, index) => {
-                            console.log(element);
+                            //console.log(element);
                             var elementClass = element.sender === this.props.user.user_name ? 'message-user' : '';
                             if((element.type || {}).isBot) {
                                 return (
-                                    <TextGlobeKdabra>{ element.text }</TextGlobeKdabra>
+                                    <TextGlobeKdabra 
+                                    key={"conversation-messages" + index} >{ element.text }</TextGlobeKdabra>
                                 );
                             }
                             else {
@@ -47,18 +48,6 @@ class MessagesList extends Component {
                             }
                         }
                     )
-                }
-                {
-                    this.props.isWriting && 
-                    <Message
-                        message= { {
-                            text : "Escribiendo...",
-                            type : {
-                                class_used : "waiting"
-                            },
-                            sender : ''
-                        } }
-                    />
                 }
             </section>
         );

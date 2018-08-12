@@ -1,7 +1,3 @@
-'use strict';
-import * as firebase from 'firebase';
-import ReactGA from 'react-ga';
-
 class Message {
     constructor(user, visitedUser, messagePayload) {
         this.sender = user.user_name;

@@ -4,7 +4,6 @@
  * */
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
-import { TextField } from 'material-ui';
 import { connect } from 'react-redux';
 /* *
  * Código de librerías internas
@@ -12,7 +11,7 @@ import { connect } from 'react-redux';
 import { Text } from '../ComponentsLibrary/Text';
 import  Setting  from '../ComponentsLibrary/Setting';
 import  { ModalSetting } from '../ComponentsLibrary/ModalSetting';
-import { fbUpdateOnboarding, fbGetOnboarding, fbModifyUser } from '../firebase';
+import { fbModifyUser } from '../firebase';
 /* *
  * Hojas de Estilo y Constantes
  * */
