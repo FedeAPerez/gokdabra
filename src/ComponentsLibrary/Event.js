@@ -10,7 +10,7 @@ const Event = ({ ...props, children}) => {
     
     return (
         <Card noPadding noLaterals>
-        <Section noPadding relative>
+        <Section noPadding noLaterals relative>
             <Text bolded noMargin>{props.userName}</Text>
             <Text noMargin>{"El " + props.date + " a las " + props.hour}</Text>
         </Section>
