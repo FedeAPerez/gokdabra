@@ -48,7 +48,10 @@ class EventsContainer extends Component {
                     { "Ahora podés manejar tus reuniones desde KDABRA&nbsp;" + getEmoji("1F60E") }
                 </TextV2>
                 <TextV2 lateralMargin>
-                    { "La próxima vez que hables con alguien, aprovechá para organizar tus eventos en el chat." }
+                    { "La próxima vez que hables con alguien, aprovechá para crear eventos desde el chat." }
+                </TextV2>
+                <TextV2 lateralMargin>
+                    { "Pueden ser recordatorios para comentar a tus clientes acerca de ofertas especiales, o explicarles cómo funciona tu producto. ¡Es una buena idea para potenciar tu negocio!" }
                 </TextV2>
                 {
                     this.state.eventsList && 

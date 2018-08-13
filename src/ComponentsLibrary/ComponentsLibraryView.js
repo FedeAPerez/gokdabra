@@ -8,7 +8,7 @@ import React, { Component } from 'react';
  * */ 
 import { Text, BoldText } from './Text';
 import Title from './Title';
-import Section from './Section';
+import { Section, SimpleSection } from './Section';
 import { TextGlobe, TextGlobeKdabra } from './TextGlobe';
 import Button from './Button';
 import CheckBox from './CheckBox';
@@ -46,10 +46,13 @@ class ComponentsLibraryView extends Component {
                     <Title h1>Librería de componentes - KDABRA</Title>
                     <Text>Esta librería busca unificar los componentes que se usan en todo el sitio</Text>
                 </Section>
-                <Section>
+                <SimpleSection>
                     <Title h2>Eventos</Title>
+                    <SimpleSection>
                     <Event date="12/03/1995" hour="18:00" userName="Federico Pérez" />
-                </Section>
+                    <Event date="08/05/1996" hour="19:00" userName="Nicolás Yazky" />
+                    </SimpleSection>
+                </SimpleSection>
                 <Section>
                     <Title h2>Configuraciones de Usuario</Title>
                     <Setting settingName="Mensaje de Bienvenida" />

@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import Text from './Text';
-import Section from './Section';
+import { SimpleSection } from './Section';
 import Card from './Card';
 /**
  * @augments {Setting<{settingName: string, settingDescrption: string}}, State>}
@@ -10,10 +10,10 @@ const Event = ({ ...props, children}) => {
     
     return (
         <Card noPadding noLaterals>
-        <Section noPadding noLaterals relative>
-            <Text bolded noMargin>{props.userName}</Text>
-            <Text noMargin secondary>{"El " + props.date + " a las " + props.hour}</Text>
-        </Section>
+            <SimpleSection noPadding noLaterals relative>
+                <Text bolded noMargin>{props.userName}</Text>
+                <Text noMargin secondary>{"El " + props.date + " a las " + props.hour}</Text>
+            </SimpleSection>
         </Card>
     );
 };

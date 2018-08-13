@@ -7,7 +7,7 @@ import React, { Component } from 'react';
  * Código de librerías internas
  * */ 
 
-import { Section } from '../ComponentsLibrary/Section';
+import { SimpleSection } from '../ComponentsLibrary/Section';
 import { Event } from '../ComponentsLibrary/Event';
 /* *
  * Hojas de Estilo y Constantes
@@ -18,7 +18,7 @@ class Events extends Component {
         console.log(this.props.eventsList);
         return (
                 this.props.eventsList &&
-                <Section>
+                <SimpleSection>
                     {
                         this.props.eventsList.map((element, index) => {
                             return (
@@ -31,7 +31,7 @@ class Events extends Component {
                             )
                         })
                     }
-                </Section>
+                </SimpleSection>
         );
     }
 }
