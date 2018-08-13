@@ -14,8 +14,6 @@ import { EventV2 } from '../ComponentsLibrary/Event';
  * */ 
 class Events extends Component {
     render() {
-        console.log("para usar");
-        console.log(this.props.eventsList);
         return (
                 this.props.eventsList &&
                 <SimpleSection>

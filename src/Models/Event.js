@@ -39,13 +39,7 @@ class Event {
                 }
             };
             var alta = firebase.database().ref('/reunions/'+this.receiver.user_name+'/'+this.creator.user_name);
-            alta.push(event).then(success => {
-                    console.log('success',success);
-                },
-                error => {
-                    console.log('error',error);
-                }
-            );
+            alta.push(event);
 
             var eventInverse = {
                 userName : this.receiver.user_name,
@@ -57,13 +51,7 @@ class Event {
                 }
             };
             var altaInversa = firebase.database().ref('/reunions/'+this.creator.user_name+'/'+this.receiver.user_name);
-            altaInversa.push(eventInverse).then(success => {
-                console.log('success',success);
-            },
-            error => {
-                console.log('error',error);
-            }
-        );
+            altaInversa.push(eventInverse);
         }
         catch(e) {
         }

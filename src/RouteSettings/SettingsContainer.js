@@ -41,7 +41,6 @@ class SettingsContainer extends Component {
 
     changeSetting(e, idSetting) {
         e.preventDefault();
-        console.log(e.target.value);
         var newState = {...this.state.show_settings};
         newState[idSetting].value = e.target.value;
         this.setState({ show_settings : newState });

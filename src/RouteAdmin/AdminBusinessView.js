@@ -43,7 +43,6 @@ class AdminBusinessView extends Component {
             this.setState({ userOb : snapshot.val() });
         })
         .catch((err) => {
-            console.log(err);
         });
         
     }

@@ -35,7 +35,6 @@ class SearchBusinessContainer extends Component {
             this.setState({ usersList : usersList });
         })
         .catch((err) => {
-            console.log(err);
         });
     }
 

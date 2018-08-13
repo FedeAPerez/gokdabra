@@ -40,7 +40,6 @@ class EventsContainer extends Component {
                     }
                 }
 
-                console.log(eventsList);
                 this.setState((prevState, props) => {
                     return { eventsList : eventsList }
                 });

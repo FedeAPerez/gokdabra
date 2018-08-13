@@ -29,7 +29,6 @@ class MessagesList extends Component {
                     messages &&
                     messages.map(
                         (element, index) => {
-                            //console.log(element);
                             var elementClass = element.sender === this.props.user.user_name ? 'message-user' : '';
                             if((element.type || {}).isBot) {
                                 return (

@@ -36,7 +36,6 @@ class Conversation{
     }
     
     createNewMessage(messagePayload) {
-        console.log(messagePayload);
         var time = moment().format('HH:mm');
         const messageOb = {
             text : messagePayload.payload.text,
@@ -63,7 +62,6 @@ class Conversation{
             this.updateConversation(messagePayload);
         }
         catch(e) {
-            console.log(e);
         }
         finally {
             return messagePayload;

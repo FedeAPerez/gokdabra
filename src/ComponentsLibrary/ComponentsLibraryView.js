@@ -37,7 +37,6 @@ class ComponentsLibraryView extends Component {
     }
 
     handleShowInfo(e) {
-        console.log("en la empresa");
     }
     render() {
         return(
