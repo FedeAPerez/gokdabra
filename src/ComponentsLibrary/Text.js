@@ -32,7 +32,7 @@ const TextComponent = styled.p`
 const BoldText = styled.span`
     font-family: 'Rubik', sans-serif;
     font-size: 1rem;
-    font-weight: ${ props => props.secondary ? '400' : '600'};
+    font-weight: ${ props => props.secondary ? '400' : '500'};
     color: black;
     display: inline;
 `;

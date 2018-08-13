@@ -8,7 +8,7 @@ import React, { Component } from 'react';
  * */ 
 
 import { SimpleSection } from '../ComponentsLibrary/Section';
-import { Event } from '../ComponentsLibrary/Event';
+import { EventV2 } from '../ComponentsLibrary/Event';
 /* *
  * Hojas de Estilo y Constantes
  * */ 
@@ -22,11 +22,12 @@ class Events extends Component {
                     {
                         this.props.eventsList.map((element, index) => {
                             return (
-                                <Event
+                                <EventV2
                                     key={"event_"+index}
+                                    description={(element.type || {}).description ? element.type.description : 'Sin descripción' }
                                     date={element.date} 
                                     hour={element.time}
-                                    userName={element.userName}
+                                    userName={'@' + element.userName }
                                 />
                             )
                         })

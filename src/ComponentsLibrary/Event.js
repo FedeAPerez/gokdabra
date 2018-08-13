@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import Text from './Text';
+import { Text, BoldText } from './Text';
 import { SimpleSection } from './Section';
 import Card from './Card';
 /**
@@ -18,7 +18,20 @@ const Event = ({ ...props, children}) => {
     );
 };
 
+const EventV2 = ({ ...props, children}) => {
+    
+    return (
+        <Card noPadding noLaterals>
+            <SimpleSection noPadding noLaterals relative>
+                <Text bolded noMargin>{props.description}</Text>
+                <Text noMargin secondary><BoldText>{"Con " + props.userName}</BoldText> {" - El " + props.date + " a las " + props.hour}</Text>
+            </SimpleSection>
+        </Card>
+    );
+};
+
 export default Event;
 export {
-    Event
+    Event,
+    EventV2
 }

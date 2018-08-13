@@ -9,12 +9,14 @@ class Event {
             this.receiver = eventPayload.receiver;
             this.date = eventPayload.event.date;
             this.time = eventPayload.event.time;
+            this.description = eventPayload.event.description;
         }
         else {
             this.creator = '';
             this.receiver = '';
             this.date = '';
             this.time = '';
+            this.description = '';
         }
     }
     getEventsSubscription(user) {
@@ -31,7 +33,8 @@ class Event {
                 date : this.date,
                 time : this.time,
                 type : {
-                    category : 'event'
+                    category : 'event',
+                    description : this.description
                 }
             };
             var alta = firebase.database().ref('/reunions/'+this.receiver.user_name+'/'+this.creator.user_name);

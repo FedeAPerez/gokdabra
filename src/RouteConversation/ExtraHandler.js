@@ -12,6 +12,7 @@ import { ModalSection, ModalInnerSection, FlexSection, SimpleSection } from '../
 import { SimpleButton } from '../ComponentsLibrary/Button';
 import { TextGlobeKdabra } from '../ComponentsLibrary/TextGlobe';
 import { getEmoji } from '../Models/Emoji';
+import { TextField } from 'material-ui';
 /* *
  * Hojas de Estilo y Constantes
  * */ 
@@ -25,7 +26,8 @@ class ExtraHandler extends Component {
             },
             event : {
                 date : {},
-                time : {}
+                time : {},
+                description : ''
             }
         };
     }
@@ -75,6 +77,14 @@ class ExtraHandler extends Component {
         });
     };
 
+    handleDescriptionChange = (event, value) => {
+        this.setState((prevState, props) => {
+            var newEvent = Object.assign({}, prevState.event);
+            newEvent.description = value;
+            return { event : newEvent };
+        });
+    };
+
     render() {
         return (
             <ModalSection>
@@ -94,14 +104,23 @@ class ExtraHandler extends Component {
                             hintText="Seleccioná la fecha"
                             value={this.state.event.date}
                             onChange={this.handleDateChange}
+                            fullWidth={true}
                         />
                         <TimePicker
                             format="24hr"
                             hintText="Elegí un horario"
                             value={this.state.event.time}
                             onChange={this.handleTimeChange}
+                            fullWidth={true}
                             />
+                        <TextField
+                            value={this.state.event.description}
+                            hintText="Agregá un motivo"
+                            onChange={this.handleDescriptionChange}
+                            fullWidth={true}
+                        />
                         <FlexSection>
+                            
                             <SimpleButton onClick={ (e) => { this.props.onExtraClose ? this.props.onExtraClose(e) : null } }>Cancelar</SimpleButton>
                             <SimpleButton onClick={ (e) => { this.props.onExtraCreate ? this.props.onExtraCreate(e, this.state.event) : null } }>Crear</SimpleButton>
                         </FlexSection>

@@ -15,7 +15,7 @@ import CheckBox from './CheckBox';
 import TextInput from './TextInput';
 import UserDisplay from './UserDisplay';
 import Setting from './Setting';
-import Event from './Event';
+import { Event, EventV2 } from './Event';
 /* *
  * Hojas de Estilo y Constantes
  * */ 
@@ -51,6 +51,7 @@ class ComponentsLibraryView extends Component {
                     <SimpleSection>
                     <Event date="12/03/1995" hour="18:00" userName="Federico Pérez" />
                     <Event date="08/05/1996" hour="19:00" userName="Nicolás Yazky" />
+                    <EventV2 date="08/05/1996" hour="19:00" userName="Nicolás Yazky" description="Demo de mejoras." />
                     </SimpleSection>
                 </SimpleSection>
                 <Section>
