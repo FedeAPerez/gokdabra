@@ -72,7 +72,7 @@ class ConversationMessagesContainer extends Component {
             creator : this.props.user,
             receiver : this.props.visitedUser,
             event : {
-                date : extraEvent.date.getDay() + "/" + extraEvent.date.getMonth() + "/" + extraEvent.date.getFullYear(),
+                date : extraEvent.date.getDay() + "/" + (extraEvent.date.getMonth()+1) + "/" + extraEvent.date.getFullYear(),
                 time : extraEvent.time.getHours() + ":" + ( (extraEvent.time.getMinutes()<10?'0':'') + extraEvent.time.getMinutes() ),
                 description : extraEvent.description
             }
