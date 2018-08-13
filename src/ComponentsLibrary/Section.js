@@ -9,6 +9,8 @@ const SimpleSection = styled.div`
     padding-bottom: ${ props => props.noPadding ? '0rem' : '1rem'};
     border-bottom: ${ props => props.withBottomBorders ? '1px solid #dfe6e9' : 'none'}
     position: ${ props => props.relative ? 'relative' : 'initial'};
+    background-color: inherit;
+    cursor: inherit;
 `;
 
 const Section = styled.div`
