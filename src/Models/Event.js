@@ -30,6 +30,7 @@ class Event {
 
         try {
             var event = {
+                userName : this.creator.user_name,
                 date : this.date,
                 time : this.time,
                 type : {
@@ -38,15 +39,25 @@ class Event {
                 }
             };
             var alta = firebase.database().ref('/reunions/'+this.receiver.user_name+'/'+this.creator.user_name);
-            alta.set(event).then(success => {
-                console.log('success',success);
-            },
-            error => {
-                console.log('error',error);
-            }
-        );
+            alta.push(event).then(success => {
+                    console.log('success',success);
+                },
+                error => {
+                    console.log('error',error);
+                }
+            );
+
+            var eventInverse = {
+                userName : this.receiver.user_name,
+                date : this.date,
+                time : this.time,
+                type : {
+                    category : 'event',
+                    description : this.description
+                }
+            };
             var altaInversa = firebase.database().ref('/reunions/'+this.creator.user_name+'/'+this.receiver.user_name);
-            altaInversa.set(event).then(success => {
+            altaInversa.push(eventInverse).then(success => {
                 console.log('success',success);
             },
             error => {

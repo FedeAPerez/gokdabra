@@ -27,17 +27,24 @@ class EventsContainer extends Component {
         var event = new Event();
         const eventsFirebase = event.getEventsSubscription(this.props.user);
         eventsFirebase.on('value', snapshot => {
-            console.log(snapshot.val());
-            const events_list = snapshot.val();
-            var eventsList = [];
-            var keys = Object.keys(events_list);
-            for(var i =0; i< keys.length; i++)
-            {
-                eventsList.push(Object.assign({}, events_list[keys[i]], { userName : keys[i] } ));
+            var events_list = snapshot.toJSON();
+            if(events_list) {
+                var eventsList = [];
+                var keys = Object.keys(events_list);
+                for(var i =0; i < keys.length; i++)
+                {
+                    var keysParent = Object.keys(events_list[keys[i]]);
+                    for(var j =0; j < keysParent.length; j++)
+                    {
+                        eventsList.push(Object.assign({}, events_list[keys[i]][keysParent[j]] ));
+                    }
+                }
+
+                console.log(eventsList);
+                this.setState((prevState, props) => {
+                    return { eventsList : eventsList }
+                });
             }
-            this.setState((prevState, props) => {
-                return { eventsList : eventsList }
-            });
         })
     }
 
