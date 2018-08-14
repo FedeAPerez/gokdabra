@@ -7,7 +7,7 @@ import { TextField   } from 'material-ui';
 import { connect } from 'react-redux';
 import * as Actions from '../redux/actions/actions';
 import Button from '../ComponentsLibrary/Button';
-import Text from '../ComponentsLibrary/Text';
+import { Text, BoldText} from '../ComponentsLibrary/Text';
 import { fbGetUserByEmail } from '../firebase';
 import {
     Redirect, Link
@@ -128,10 +128,8 @@ class UserContainer extends Component {
                 >
                     Ingresar
                 </Button>
-                <p>
-                <span className="secondary-label">¿No estás registrado?</span>
-                <Link to="/signup"> <span className="primary-label">Create una cuenta.</span></Link>
-                </p>
+                <Text centered noMargin>¿No estás registrado?
+                <Link to="/signup"> <BoldText>Create una cuenta.</BoldText></Link></Text>
                 {
                     this.state.errorLogin && 
                     <footer>

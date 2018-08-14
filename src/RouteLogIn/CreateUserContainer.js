@@ -99,7 +99,7 @@ class CreateUserContainer extends Component {
         return (
             <section>
                 <img src={"/kdabra-icon-512.png"} className="kdabra-logo" />
- 
+                <Text centered noMargin primary>Mejorando la comunicación, con foco en las personas<br /> y las marcas que los representan.</Text>
                 <TextField
                     style= { styledTextField }
                     floatingLabelStyle= { styledFloated }
@@ -132,8 +132,10 @@ class CreateUserContainer extends Component {
                     onChange={this.changePassword.bind(this)}
                     value={this.state.password}
                 />
+                <Text centered noMargin>Hagamos que tu experiencia sea la más adecuada... <br />¿Querés usar KDABRA como una empresa?</Text>
+
                 <CheckBox  onClick={this.handleBusinessChange.bind(this)} checked={this.state.isBusiness} >
-                    Tengo una empresa!
+                    ¡Sí, tengo una!
                 </CheckBox>
                 <Button primary
                     onClick={this.authUser.bind(this)}

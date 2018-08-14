@@ -12,7 +12,16 @@ var config = {
 
 firebase.initializeApp(config);
 const auth = firebase.auth();
-
+/*const messaging = firebase.messaging();
+// Add the public key generated from the console here.
+messaging.usePublicVapidKey("BM8rdnNpwKWN7guNcddTBIw29FEzdEprUY05FCAozTZBqS3cYeH9NazxRmItmquXqUXJryQICEtjKjySdwZSpYc");
+messaging.requestPermission().then(function() {
+    console.log('Notification permission granted.');
+    // TODO(developer): Retrieve an Instance ID token for use with FCM.
+    // ...
+  }).catch(function(err) {
+    console.log('Unable to get permission to notify.', err);
+  });*/
 function fbGetConversationsSuscription(entity_name) {
     
     return firebase.database().ref().child('/conversations/' + entity_name);
