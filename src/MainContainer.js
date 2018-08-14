@@ -14,6 +14,7 @@ import AdminBusinessView from './RouteAdmin/AdminBusinessView';
 import OnboardingView from './RouteOnboarding/OnboardingView';
 import ConversationContainer from './RouteConversation/ConversationContainer';
 import ComponentsLibraryView from './ComponentsLibrary/ComponentsLibraryView';
+import OptInView from './RouteOnboarding/OptInView';
 
 const fakeAuth = () => {
     const cachedUser = JSON.parse(localStorage.getItem("userSession"));
@@ -40,6 +41,7 @@ class MainContainer extends Component {
                 <Route exact path="/componentslibrary" component={ComponentsLibraryView} />
                 <Route exact path="/onboarding" component={OnboardingView} />
                 <Route exact path="/login" component={LogInView} />
+                <Route exact path="/optin" component={OptInView} />
                 <Route exact path="/signup" component={SingUpView} />
                 <PrivateRoute path="/admin/:user" component={AdminBusinessView} />
                 <PrivateRoute path="/:user" component={ConversationContainer} />

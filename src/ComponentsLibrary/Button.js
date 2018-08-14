@@ -54,6 +54,40 @@ const ButtonComponent = styled.button`
     }
 `;
 
+const RoundedButtonComponent = styled.button`
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    font-family: 'Rubik',sans-serif;
+    font-weight: 400;
+    border-radius: 0.5rem;
+    min-width: 200px;
+    background-color: white;
+    background-image: none;
+    background-color: white;
+    display: block;
+    margin: 2rem auto;
+    color: white;
+    text-align: center;
+    font-size: 1rem;
+    border: none;
+    background-color: #f16334;
+
+    &:focus {
+        outline: none;
+    }
+
+    &:hover {
+        cursor: pointer;
+        background-color: #e17055;
+    }
+
+    &:active {
+        cursor: pointer;
+    }
+`;
+
 const Button = ({children, ...props}) => {
     return (
         <ButtonComponent 
@@ -70,9 +104,22 @@ const SimpleButton = styled.span`
     text-transform: uppercase;
     color : #e84118;
 `;
+const getMessageHtml = (element) => {
+    return { __html: element };
+}
+const RoundedButton = ({children, ...props}) => {
+    return (
+        <RoundedButtonComponent 
+            dangerouslySetInnerHTML= { getMessageHtml(children) }
+            onClick={ props.onClick ? props.onClick.bind(this) : null }
+        >
+        </RoundedButtonComponent>
+    );
+};
 
 export default Button;
 export {
     Button,
-    SimpleButton
+    SimpleButton,
+    RoundedButton
 };

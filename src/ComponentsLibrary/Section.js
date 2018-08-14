@@ -60,7 +60,27 @@ const ModalInnerSection = styled.div`
     right: 1rem;
     background-color: white;
     padding: 1rem;
+    border-radius: ${ props => props.withRadius ? '1rem' : '' };
 `;
+
+const ModalCenteredInnerSection = styled.div`
+    position: absolute;
+    top: 0;
+    top: 1rem;
+    bottom: 1rem;
+    left: 1rem;
+    right: 1rem;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    width: 70%;
+    height: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+`;
+
 const FlexSection = styled.div`
     display: flex;
     flex-direction: row;
@@ -72,6 +92,7 @@ export {
     Section,
     ModalSection,
     ModalInnerSection,
+    ModalCenteredInnerSection,
     SimpleSection,
     FlexSection
 }

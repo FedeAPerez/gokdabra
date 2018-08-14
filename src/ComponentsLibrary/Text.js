@@ -29,6 +29,13 @@ const TextComponent = styled.p`
     background-color:  ${ props => {if(props.withBackground) return '#dfe6e9' } };
 `;
 
+const TextComponentOnboarding = TextComponent.extend`
+    font-size: 2rem;
+    font-weight: 200;
+    font-family: 'Open Sans', sans-serif;
+    margin-bottom: 2rem;
+`;
+
 const BoldText = styled.span`
     font-family: 'Rubik', sans-serif;
     font-size: 1rem;
@@ -47,6 +54,14 @@ const Text = ({...props, children}) => {
     );
 };
 
+const TextOnboarding = ({...props, children}) => {
+    return (
+        <TextComponentOnboarding {...props} >
+        {children}
+        </TextComponentOnboarding>
+    );
+};
+
 const TextV2  = ({...props, children}) => (
     <TextComponent
         lateralMargin={props.lateralMargin}
@@ -59,5 +74,6 @@ export default Text;
 export {
     Text,
     TextV2,
+    TextOnboarding,
     BoldText
 };
