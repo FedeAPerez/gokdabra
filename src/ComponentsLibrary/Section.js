@@ -48,7 +48,7 @@ const ModalSection = styled.div`
     right: 0;
     bottom: 0;
     z-index: 10;
-    background-color: rgba(41, 42, 43, 0.9)
+    background-color: rgba(41, 42, 43, 0.9);
     margin: 0rem auto;
 `;
 
