@@ -79,6 +79,10 @@ const ModalCenteredInnerSection = styled.div`
     margin-right: auto;
     margin-top: auto;
     margin-bottom: auto;
+
+    @media (max-height: 700px) {
+        height: 40%;
+    }
 `;
 
 const FlexSection = styled.div`
