@@ -92,6 +92,12 @@ const RoundedButtonComponent = styled.button`
       padding-left: 0.3rem;
       padding-right: 0.3rem;
     }
+
+    @media (max-width: 600px) {
+        min-width: 120px;
+        padding-left: 0.4rem;
+        padding-right: 0.4rem;
+      }
 `;
 
 const Button = ({children, ...props}) => {
