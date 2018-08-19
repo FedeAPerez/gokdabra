@@ -50,6 +50,7 @@ const ModalSection = styled.div`
     z-index: 10;
     background-color: rgba(41, 42, 43, 0.9);
     margin: 0rem auto;
+    display: flex;
 `;
 
 const ModalInnerSection = styled.div`
@@ -64,7 +65,6 @@ const ModalInnerSection = styled.div`
 `;
 
 const ModalCenteredInnerSection = styled.div`
-    position: absolute;
     top: 0;
     top: 1rem;
     bottom: 1rem;
@@ -74,19 +74,11 @@ const ModalCenteredInnerSection = styled.div`
     padding: 1rem;
     border-radius: 0.5rem;
     width: 70%;
-    height: 30%;
     margin-left: auto;
     margin-right: auto;
     margin-top: auto;
     margin-bottom: auto;
 
-    @media (max-height: 700px) {
-        height: 40%;
-    }
-
-    @media (max-height: 850px) {
-        height: 40%;
-      }
 `;
 
 const FlexSection = styled.div`

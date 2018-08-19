@@ -16,7 +16,7 @@ import { getEmoji } from '../Models/Emoji';
 class OptInOnboarding extends Component {
     render() {
         return (
-            <ModalSection>
+            <ModalSection flexCenter>
                 <ModalCenteredInnerSection>
                     <TextV2 amazingSize noMargin centered>{getEmoji("1F575")}</TextV2>
                     <TextOnboarding centered noMargin>Hagamos esto personal...</TextOnboarding>
