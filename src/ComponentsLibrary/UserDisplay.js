@@ -6,7 +6,7 @@ import Tag from './Tag'
 const UserDisplay = ({...props, children}) => {
     return (
         <Section noLaterals withBottomBorders withHover {...props} onClick={props.onClick}>
-            <SimpleSection noPadding  relative>
+            <SimpleSection noPadding relative>
                 {
                     (props.userTag && props.userTag !== '') &&
                     <Tag>{props.userTag}</Tag>

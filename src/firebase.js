@@ -69,9 +69,16 @@ function fbUpdateOnboarding(user_name, message) {
 }
 
 
-function fbGetAllUsers() {
-    const route = '/users';
-    return firebase.database().ref(route).once('value');
+function fbGetAllUsers(onlyBusiness = false) {
+    console.log(onlyBusiness);
+    if(onlyBusiness) {
+        const route = '/users';
+        return firebase.database().ref(route).once('value');
+    }
+    else {
+        const route = '/users';
+        return firebase.database().ref(route).once('value');
+    }
 }
 
 const doSignInWithEmailAndPassword = (email, password) => {

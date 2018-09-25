@@ -115,6 +115,10 @@ const SimpleButton = styled.span`
     ${textstyles}
     text-transform: uppercase;
     color : #e84118;
+
+    &:hover {
+        cursor: pointer;
+    }
 `;
 const getMessageHtml = (element) => {
     return { __html: element };

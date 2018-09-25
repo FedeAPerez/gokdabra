@@ -41,6 +41,10 @@ const Section = styled.div`
     }
 `;
 
+const TransparentSection = Section.extend`
+    background-color: transparent;
+`;
+
 const ModalSection = styled.div`
     position: absolute;
     top: 0;
@@ -90,6 +94,7 @@ const FlexSection = styled.div`
 export default Section;
 export {
     Section,
+    TransparentSection,
     ModalSection,
     ModalInnerSection,
     ModalCenteredInnerSection,

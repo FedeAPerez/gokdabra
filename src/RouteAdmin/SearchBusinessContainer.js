@@ -23,14 +23,15 @@ class SearchBusinessContainer extends Component {
     }
 
     componentDidMount() {
-        const usersRef = fbGetAllUsers(this.props.user.user_name);
+        const usersRef = fbGetAllUsers(true);
     
         usersRef
         .then((res) => {
             var keysList = Object.keys(res.val());
             var usersList = [];
             keysList.forEach(element => {
-                usersList.push(res.val()[element]);
+                if(res.val()[element].isBusiness)
+                    usersList.push(res.val()[element]);
             });
             this.setState({ usersList : usersList });
         })
@@ -41,7 +42,7 @@ class SearchBusinessContainer extends Component {
     render() {
         return (
             <section>                
-                <Text centered lateralMargin>¡Estas son la personas y emprendedores que ya están usando KDABRA!</Text>
+                <Text centered lateralMargin>¡Estas son emprendedores que ya están usando KDABRA!</Text>
                 {
                     this.state.usersList &&
                     this.state.usersList.map((element, index) => {
