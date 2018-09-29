@@ -15,6 +15,7 @@ import OnboardingView from './RouteOnboarding/OnboardingView';
 import ConversationContainer from './RouteConversation/ConversationContainer';
 import ComponentsLibraryView from './ComponentsLibrary/ComponentsLibraryView';
 import OptInView from './RouteOnboarding/OptInView';
+import JobsView from './RouteJobs/JobsView';
 
 const fakeAuth = () => {
     const cachedUser = JSON.parse(localStorage.getItem("userSession"));
@@ -38,6 +39,7 @@ class MainContainer extends Component {
             <Switch className="section-switch">
                 <Route exact path="/index.html" component={LogInView}/>
                 <Route exact path="/" component={LogInView}/>
+                <Route exact path="/jobs" component={JobsView} />
                 <Route exact path="/componentslibrary" component={ComponentsLibraryView} />
                 <Route exact path="/onboarding" component={OnboardingView} />
                 <Route exact path="/login" component={LogInView} />

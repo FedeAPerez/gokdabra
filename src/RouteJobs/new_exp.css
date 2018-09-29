@@ -1,0 +1,57 @@
+
+.text-chat-arq {
+    border-radius: 16px;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 16px;
+    float: none;
+    display: inline-block;
+    -webkit-box-shadow: 0 1px 3px 0 rgba(0,0,0,.5);
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.5);
+    font-family: 'Rubik',sans-serif;
+    font-weight: 400;
+    margin: 0.5rem;
+    position: relative;
+    padding: 1rem;
+    color: black;
+    background-color: white
+}
+.user {
+    color: white;
+    background-color: cornflowerblue;
+    border-radius: 16px;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 2px;
+    float: right;
+}
+.new-exp-text {
+    
+    font-family: 'Rubik';
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+.new-exp-text-aclara {
+    font-family: 'Rubik';
+    font-weight: 500;
+    font-size: 1rem;
+}
+.new-exp-text-aclara > * {
+    color: #95a5a6;
+}
+
+.emoji {
+    font-size: 2rem;
+}
+.new-exp-header {
+    
+    box-sizing: content-box;
+    background-color: #f16334;
+    background-image: linear-gradient( to bottom right,#f0932b,#f16334);
+    padding: 2rem;
+}
+.new-exp-title {
+    
+    margin: 0rem;
+    font-family: 'Roboto';
+    color: white;
+}

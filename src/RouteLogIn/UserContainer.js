@@ -126,7 +126,7 @@ class UserContainer extends Component {
                     primary
                     disabled={!this.state.buttonEnabled}
                 >
-                    Ingresar
+                    Continuar
                 </Button>
                 <Text centered noMargin>¿No estás registrado?
                 <Link to="/signup"> <BoldText>Create una cuenta.</BoldText></Link></Text>
