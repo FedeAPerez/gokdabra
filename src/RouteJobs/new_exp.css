@@ -1,3 +1,8 @@
+h2 {
+    margin: 0rem;
+}
+h3{ margin: 0rem;
+}
 
 .text-chat-arq {
     border-radius: 16px;
@@ -14,6 +19,10 @@
     padding: 1rem;
     color: black;
     background-color: white
+}
+.text-chat-arq h2 {
+    
+    margin-bottom: 1rem;
 }
 .user {
     color: white;
@@ -47,7 +56,7 @@
     box-sizing: content-box;
     background-color: #f16334;
     background-image: linear-gradient( to bottom right,#f0932b,#f16334);
-    padding: 2rem;
+    padding: 1rem;
 }
 .new-exp-title {
     
