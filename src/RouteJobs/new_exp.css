@@ -74,3 +74,15 @@ h3{ margin: 0rem;
     font-weight: 500;
     display: block;
 }
+
+.chat-container > article {
+    overflow: auto;
+}
+
+.chat-container > article:first-child {
+    margin-top: 1rem;
+}
+
+.chat-container > article:not(:first-child){
+    margin-top: 2rem;
+} 

@@ -21,7 +21,7 @@ class JobsView extends Component {
                         Mis Aplicaciones - Federico Pérez
                     </h2>
                 </div>
-
+                <main className="chat-container">
                 <article className="article">
                     <h3 className="new-exp-text-aclara">
                         Jorgelina Gómez <span>Experta en RR.HH</span>
@@ -59,7 +59,7 @@ class JobsView extends Component {
                         </h2>
                     </div>
                 </article>
-
+                </main>
 
             </div>
         );
