@@ -5,9 +5,8 @@ h3{ margin: 0rem;
 }
 
 .text-chat-arq {
-    border-radius: 16px;
-    border-bottom-left-radius: 2px;
-    border-bottom-right-radius: 16px;
+    border-radius: 30px;
+    border-top-left-radius: 2px;
     float: none;
     display: inline-block;
     -webkit-box-shadow: 0 1px 3px 0 rgba(0,0,0,.5);
@@ -20,16 +19,12 @@ h3{ margin: 0rem;
     color: black;
     background-color: white
 }
-.text-chat-arq h2 {
-    
-    margin-bottom: 1rem;
-}
+
 .user {
-    color: white;
-    background-color: cornflowerblue;
-    border-radius: 16px;
-    border-bottom-left-radius: 16px;
-    border-bottom-right-radius: 2px;
+    color: #2f3542;
+    background-color: #ffffff;
+    border-radius: 30px;
+    border-top-right-radius: 2px;
     float: right;
 }
 .new-exp-text {
@@ -44,6 +39,14 @@ h3{ margin: 0rem;
     font-weight: 500;
     font-size: 1rem;
 }
+.article  .new-exp-text-aclara {
+    margin-left: 1rem;
+}
+.article-user .new-exp-text-aclara {
+    margin-right: 1rem;
+    float: right;
+}
+
 .new-exp-text-aclara > * {
     color: #95a5a6;
 }
@@ -63,4 +66,11 @@ h3{ margin: 0rem;
     margin: 0rem;
     font-family: 'Roboto';
     color: white;
+}
+
+.actionable {
+    color: #3742fa;
+    margin-top: 1rem;
+    font-weight: 500;
+    display: block;
 }
