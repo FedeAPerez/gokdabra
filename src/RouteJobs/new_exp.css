@@ -45,6 +45,8 @@ h3{ margin: 0rem;
 .article-user .new-exp-text-aclara {
     margin-right: 1rem;
     float: right;
+    width: 100%;
+    text-align: right;
 }
 
 .new-exp-text-aclara > * {
