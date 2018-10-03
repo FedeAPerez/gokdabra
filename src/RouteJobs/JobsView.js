@@ -70,19 +70,19 @@ class JobsViewEN extends Component {
             <div>
             <div className="new-exp-header">
                 <h2 className="new-exp-title">
-                    Mis Aplicaciones - Federico Pérez
+                    My Applications - Federico Pérez
                 </h2>
             </div>
             <main className="chat-container">
             <article className="article">
                 <h3 className="new-exp-text-aclara">
-                    Jorgelina Gómez <span>Experta en RR.HH</span>
+                    Jorgelina Gómez <span>IT Recruiter</span>
                 </h3>
                 <div className="text-chat-arq">
                 <h2 className="new-exp-text">
-                    Fede, antes que nada me gustó tu aplicación.
-                    Pero me gustaría que hagamos incapíe sobre las aclaraciones que hace nuestro líder técnico.
-                    ¡Buen trabajo!
+                    Fede, first of all I liked your application.
+                    But I would like you to emphasize the clarifications that our technical leader makes.
+                    Good job!
                 </h2>
 
             </div>
@@ -90,12 +90,12 @@ class JobsViewEN extends Component {
 
             <article className="article">
                 <h3 className="new-exp-text-aclara">
-                    José Gómez <span>Arquitecto en sistemas</span>
+                    José Gómez <span>Technical leader</span>
                 </h3>
                 <div className="text-chat-arq">
                 <h2 className="new-exp-text">
-                    ¡Buenas tardes! Me gustaría más detalle acerca de tus conocimientos en ReactJS y Redux.
-                    ¿Podrías comentarnos un poco de tu experiencia?
+                    Good afternoon! I would like to have more details about your knowledge in ReactJS and Redux.
+                    Could you tell us a little more about your experience?
                 </h2>
 
             </div>
@@ -104,7 +104,7 @@ class JobsViewEN extends Component {
             <article className="article-user">
                 <div className="text-chat-arq user">
                     <h2 className="new-exp-text">
-                        Yes, I'll add them in the file.<span className="actionable">See document</span>
+                        Sure, I'll add them in the file.<span className="actionable">See document</span>
                     </h2>
                 </div>
             </article>
